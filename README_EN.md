@@ -4,14 +4,14 @@
 
 [![skills.sh](https://skills.sh/b/juju-w/card-creator-skill)](https://skills.sh/juju-w/card-creator-skill)
 
-A Codex Skill for creating print-ready AirCard, NFC-card, and transit-card faces. ImageGen creates the
-complete artwork and marks in one pass; the Skill handles dimensions, crop checks, and 300 DPI exports.
-This repository does not include an online editor.
+A one-sentence Skill for AirCard, bank-card and transit-card artwork. Image generation creates the whole
+composition, including style-matched logos. Reference pictures guide their appearance; foil, monochrome
+and line-art interpretations are welcome. No Python dependency or online editor.
 
 ## Start here: ten card styles and one-line prompts
 
-Dimensions, bleed, layout, rounded-display behavior, and export rules already live in the Skill.
-Paste one sentence into ChatGPT or Gemini; upload a reference in the same message when applicable.
+Use an image-capable tool such as ChatGPT or Gemini. Install the Skill or ask the model to read it from
+this repository, then paste one sentence; attach a reference when applicable.
 
 | Minimal character card · Magikarp × ICOCA | Purple tech · Gengar × Octopus |
 |---|---|
@@ -42,8 +42,7 @@ The Magikarp and Gengar images are user-supplied Gemini outputs published with p
 ICOCA, JR-West, and purple Octopus marks are non-official stylized interpretations. The Hua Shan, Guangzhou,
 and Palace examples likewise use AI-generated marks guided by visual references. All
 examples are personal, non-commercial demonstrations and do not imply authorization or endorsement. The
-two Gemini images keep their original display ratio; production exports still use the Skill's
-`1011 × 638 px` specification.
+gallery images retain their original dimensions and aspect ratios.
 
 ## Install
 
@@ -57,7 +56,6 @@ Or install manually:
 
 ```bash
 cp -R skills/card-creator ~/.codex/skills/
-python3 -m pip install -r skills/card-creator/scripts/requirements.txt
 ```
 
 The localized SkillHub / WorkBuddy package is maintained under
@@ -77,38 +75,29 @@ into “generate a background, then paste a logo.” The prompt only needs a sub
 Using the card-creator Skill, create a simple Magikarp × ICOCA card with ICOCA at lower right.
 ```
 
-Repository PNGs are visual references for ImageGen. The Skill opens only the one relevant to the requested
-card instead of scanning the asset library.
+PNGs guide the model; they are not pasted onto the output. Open only the relevant pictures, falling back
+to user attachments or model knowledge when unavailable. For wallet screenshots, ignore balances and
+reader UI. Let the model balance logo size, spacing and colors within the composition.
 
-Mobile-wallet screenshots work as references. The Skill isolates the card face, ignores balances,
-reader instructions, interface corners, shadows, and watermarks, and transfers design grammar into a
-new composition instead of copying the original. See
-[reference-card remix](skills/card-creator/references/reference-remix.md).
+## Images and references
 
-## Output specification
+Default to landscape card proportions and return the image generator's original output. There is no
+automatic cropping or print-export pipeline. See the short [card rules](skills/card-creator/references/card-rules.md).
 
-- Trim: `1011 × 638 px` at 300 DPI, representing `85.60 × 53.98 mm`.
-- Full bleed: `1081 × 708 px`, with `35 px` bleed on every edge.
-- The `59 px` blue guide is advisory for small functional information; it does not constrain marks,
-  illustration, or full-face compositions.
-- Exports include `bleed`, `trim`, and `guides` PNG files. Physical or wallet-display corner rounding is
-  never baked into source artwork.
-- ImageGen handles deliberate multi-mark layouts as part of the complete composition.
+- Transit references are grouped by mainland China, Hong Kong, Japan, USA, UK, Germany and Australia.
+  Suica is in the Japan directory alongside ICOCA and the other Japanese cards.
+- 30 bank references cover China's Big Four and common commercial banks, Hong Kong, the USA, the UK,
+  Singapore, Germany and Australia.
+- The [picture index](skills/card-creator/references/logo-reference-index.md) links to actual files.
+  [Sources and attribution](SOURCES.md) stay at the repository root, outside the installed Skill.
+- Contactless indicators are opt-in. The repository's MIT License does not relicense third-party logos,
+  characters or example artwork.
 
-[card-rules.md](skills/card-creator/references/card-rules.md) is the single source of truth for dimensions
-and coordinates.
+## Disclaimer
 
-## Assets and boundaries
-
-- The repository keeps PNG references for common payment, transit, and city-card marks. They guide ImageGen
-  and are not exact overlays. See the
-  [logo reference index](skills/card-creator/references/logo-reference-index.md).
-- UnionPay and Diners Club may use compact or full compositions according to card convention. Marks may
-  dominate a corner or the full face and are not forced inside the advisory blue guide.
-- Contactless marks are opt-in. The exact EMVCo four-wave indicator requires the applicable permission,
-  and the generic Material icon is not a substitute.
-- The MIT License covers original code and documentation only; it does not relicense third-party marks,
-  characters, music, or example artwork.
+This free, non-commercial project shares references and creative experiments; it does not sell assets or
+claim brand authorization. Third-party rights remain with their owners. Non-profit use is not a guarantee
+against infringement. Rights holders may request removal or correction; see the [full notice](DISCLAIMER.md).
 
 ## Validate
 

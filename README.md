@@ -4,13 +4,13 @@
 
 [![skills.sh](https://skills.sh/b/juju-w/card-creator-skill)](https://skills.sh/juju-w/card-creator-skill)
 
-一个为 AirCard、NFC 卡片和交通卡生成可打印卡面的 Codex Skill：ImageGen 一次完成画面与标志，
-Skill 负责尺寸、裁切检查和 300 DPI 导出。仓库不包含在线编辑器。
+一个用一句话生成 AirCard、银行卡和交通卡卡面的 Skill。图片生成工具一次完成画面与标志；
+参考图库帮助模型理解 Logo，也允许烫金、单色、线稿等风格变化。无需 Python，不含在线编辑器。
 
 ## 先看作品：10 种卡面与一句话 Prompt
 
-尺寸、出血、排版、圆角展示适配和导出规则都在 Skill 内部。复制一句话给 ChatGPT / Gemini
-即可；有参考图时同时上传并写“参考图如上”。
+在支持图片生成的 ChatGPT / Gemini 等工具中使用。安装或让模型读取本仓库的 Skill 后，
+复制一句话即可；有参考图时同时上传并写“参考图如上”。
 
 | 简洁角色卡 · 鲤鱼王 × ICOCA | 紫色科技感 · 耿鬼 × 八达通 |
 |---|---|
@@ -40,8 +40,7 @@ Skill 负责尺寸、裁切检查和 300 DPI 导出。仓库不包含在线编�
 鲤鱼王与耿鬼两张是用户提供并授权发布的 Gemini 成图原样展示，其中生成图内的 ICOCA、
 JR-West 与紫色八达通标志均为非官方风格化诠释。华山、广州与故宫示例中的标志也是由 AI
 结合参考图生成的非官方风格化版本。所有示例均为个人、非商业创作演示，不代表品牌、角色、交通
-运营方或金融机构授权、合作或认可。两张 Gemini 图片保留原始展示比例，正式导出仍以 Skill 的
-`1011 × 638 px` 规格为准。
+运营方或金融机构授权、合作或认可。图库示例保留各自的原始尺寸与比例。
 
 ## 安装
 
@@ -55,7 +54,6 @@ npx skills add juju-w/card-creator-skill
 
 ```bash
 cp -R skills/card-creator ~/.codex/skills/
-python3 -m pip install -r skills/card-creator/scripts/requirements.txt
 ```
 
 SkillHub / WorkBuddy 简体中文版的源码与发布说明位于
@@ -74,31 +72,25 @@ skillhub install card-creator
 使用 card-creator Skill，生成一张鲤鱼王 × ICOCA 卡面：简洁，右下角 ICOCA。
 ```
 
-仓库中的 PNG 图标只作为 ImageGen 的视觉参考；模型只读取当前卡面需要的一张，不扫描整个素材库。
+PNG 只供模型参考，不是最后贴上去的图层。只读取本次需要的图，缺图时使用用户附件或模型知识。
+钱包截图只参考卡面，忽略余额、读卡提示等界面元素。Logo 的大小、留白、配色由模型结合画面调整。
 
-手机钱包截图也可以作为参考。Skill 只分析卡面区域，会忽略余额、币种、读卡提示、界面圆角、
-阴影和水印，并把设计语言转化成新的构图，而不是复制原卡。完整规则见
-[reference-remix.md](skills/card-creator/references/reference-remix.md)。
+## 图片与参考
 
-## 输出规格
+默认横向卡片比例，返回图片生成工具的原始成图，不自动裁切、不附加印刷导出流程。
+简短规则见 [card-rules.md](skills/card-creator/references/card-rules.md)。
 
-- 裁切图：`1011 × 638 px`，300 DPI，对应 `85.60 × 53.98 mm`。
-- 出血图：`1081 × 708 px`，四边各 `35 px`。
-- `59 px` 蓝线仅是普通小字和功能信息的建议区域，不限制 Logo、插画和满版构图。
-- 输出 `bleed`、`trim` 和 `guides` 三张 PNG；实体圆角或钱包展示圆角不烘焙进源图。
-- 多标志由 ImageGen 在整体构图中一次完成；Skill 会复核层级与实体裁切边距。
+- 交通参考按地区整理：中国内地、香港、日本、美国、英国、德国、澳洲。Suica 与 ICOCA 等统一放在日本目录。
+- 银行参考共 30 家：包含四大行及常见商业银行、香港常用银行，以及美国、英国、新加坡、德国和澳洲银行。
+- [参考图索引](skills/card-creator/references/logo-reference-index.md)直接链接实际图片；
+  [完整来源与署名](SOURCES.md)在仓库外层供维护查阅，不放入 Skill。
+- 感应支付标志默认不添加。仓库 MIT License 不覆盖第三方标志、角色及示例素材。
 
-尺寸与坐标的单一来源是 [card-rules.md](skills/card-creator/references/card-rules.md)。
+## 免责声明
 
-## 素材与边界
-
-- 仓库保留常见支付、交通和城市卡标志的 PNG 参考图，供 ImageGen 理解外形与常见写法，不作为
-  成品上的精确贴纸。索引见
-  [logo-reference-index.md](skills/card-creator/references/logo-reference-index.md)。
-- 银联、Diners Club 等标志按卡面惯例选择紧凑或完整构图；Logo 可以占据角落或铺满画面，不会
-  被蓝色建议线强制缩小。
-- 感应支付标志默认不添加。EMVCo 四弧线版本需要相应许可，通用 Material 图标不能代替它。
-- 仓库 MIT License 只覆盖原创代码与文档，不会重新授权第三方商标、角色、音乐或示例素材。
+本项目仅为免费、非商业的收集分享与创作交流，不出售素材，不代表品牌授权或合作。
+第三方内容权利归原权利人；非盈利不构成无侵权保证。权利人可联系移除或更正，
+详见[使用与权利声明](DISCLAIMER.md)。
 
 ## 验证
 

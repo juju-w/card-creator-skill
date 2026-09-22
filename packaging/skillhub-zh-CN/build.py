@@ -12,8 +12,6 @@ LOCALIZED_FILES = (
     Path("SKILL.md"),
     Path("agents/openai.yaml"),
     Path("references/card-rules.md"),
-    Path("references/prompt-guide.md"),
-    Path("references/reference-remix.md"),
 )
 
 
@@ -26,13 +24,18 @@ def remove_junk(output: Path) -> None:
 
 
 def omit_binary_references(output: Path) -> None:
-    """SkillHub is text-only; the GitHub package retains optional PNG references."""
+    """Keep a direct remote picture index in the text-only distribution."""
     references = output / "assets" / "logo-references"
     if references.exists():
         shutil.rmtree(references)
     logo_index = output / "references" / "logo-reference-index.md"
     if logo_index.exists():
-        logo_index.unlink()
+        text = logo_index.read_text(encoding="utf-8")
+        text = text.replace(
+            "../assets/logo-references/",
+            "https://raw.githubusercontent.com/juju-w/card-creator-skill/main/skills/card-creator/assets/logo-references/",
+        )
+        logo_index.write_text(text, encoding="utf-8")
 
 
 def main() -> int:

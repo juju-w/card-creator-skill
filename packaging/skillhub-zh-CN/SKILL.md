@@ -2,19 +2,18 @@
 name: card-creator
 slug: card-creator
 displayName: 卡面生成器
-version: 0.2.0
-description: 根据一句简短描述快速生成 AirCard、NFC 卡、银行卡或交通卡卡面。始终用 ImageGen 一次生成完整卡面，不使用 SVG 或脚本拼贴 Logo。
-summary: 用一句话和 ImageGen 快速生成完整卡面。
+version: 0.3.0
+description: 用一句话或参考图生成 AirCard、银行卡、交通卡卡面。用图片生成工具完成整张图，Logo 图片只供参考，可随画面风格变化。
+summary: 一句话生成完整卡面，参考图按需读取。
 homepage: https://github.com/juju-w/card-creator-skill
 license: MIT
 metadata:
-  version: 0.2.0
+  version: 0.3.0
   author: JuJu
   tags:
     - image-generation
     - card-design
     - transit
-    - print
   openclaw:
     emoji: "🎴"
     homepage: https://github.com/juju-w/card-creator-skill
@@ -22,35 +21,10 @@ metadata:
 
 # 卡面生成器
 
-“鲤鱼王 × ICOCA，简洁，右下角 ICOCA”这样的一句话已经完整。直接开始生成，不要把普通卡面
-请求变成 Logo 研究、SVG 绘图或贴图工程。
+“鲤鱼王 × ICOCA，简洁，右下角 ICOCA”就够了。使用当前可用的图片生成工具，一次创作包含 Logo 的完整卡面。不得用代码绘制卡面，也不要先生成背景再贴 Logo。没有图片生成工具就说明情况，不用脚本替代。
 
-## 必须遵循的流程
+1. 阅读简短的[卡面规则](references/card-rules.md)。提到 Logo 时，从[参考图索引](references/logo-reference-index.md)取对应图片交给图片生成工具，只取这张卡需要的图，优先使用用户附件。没有可用图片就依靠模型知识；仅在用户要求搜索或确实无法辨认时搜索。不为出图检查整个图库或追查来源历史。
+2. 按用户的主题、风格、位置生成。Logo 可以配合画面变成烫金、单色、线稿。按卡面惯例选择标志（例如银联通常用短款），不要把所有品牌都强制缩成短款。让模型自己平衡 Logo 大小、留白与插画，不设固定位置框或大小上限。
+3. 返回生成图片，检查主体和 Logo 是否可辨认、排版是否协调；明显错误再修正，不扩展成制作流水线。
 
-1. **首先调用 ImageGen。** 一次生成包含主体、风格、所需标志和位置的完整横向卡面。不得使用
-   SVG、HTML、Canvas 或代码绘图代替 ImageGen。
-2. 品牌名、“Logo”、位置要求以及裁切/出血下载要求都不表示需要精确贴图。不要读取 SVG、
-   manifest 或合成参数。
-3. 用户提供 Logo 参考图时，必须将它交给 ImageGen，而不是凭记忆重画或贴到成品上。中文分发包
-   不附带二进制参考图库；没有用户参考时再使用模型知识，不要自动联网研究。
-4. 不添加用户未要求的文字、卡号、芯片、二维码、条形码或感应/NFC 标志。避免手、设备、钱包
-   界面、透视样机、水印、阴影和烘焙圆角。
-5. 只检查主体与标志是否出现、层级是否清楚、重要内容是否意外裁切。只有成品明显不可用时，
-   最多进行一次聚焦重试。
-6. 图片生成完成后，才运行 `scripts/prepare_card.py` 输出 300 DPI 的 trim、bleed 和 guides。
-   `cover` 用于满版；边缘内容可能被裁切时使用 `--fit-mode contain`。导出脚本不添加 Logo。
-
-## 输出与边界
-
-- 优先返回 `1011 × 638 px` trim，再按需提供 `1081 × 708 px` bleed 与检查版。
-- 生成的第三方标志属于非官方风格化诠释，不得声称品牌规范准确、授权、互通、赞助或认可。
-- 用户私人图片默认只在本地处理，除非用户明确要求发布。
-- 不得创建支付凭据，或足以冒充真实支付卡、门禁卡、交通卡、证件的设计。
-- 感应/支付指示图标默认不添加。
-
-## 仅在需要时读取参考文件
-
-- 只有编写或调试 Prompt 时读取[Prompt 指南](references/prompt-guide.md)。
-- 只有根据已有卡面、照片或钱包截图做变化时读取
-  [参考卡面改造](references/reference-remix.md)。
-- 尺寸与坐标以[卡面规则](references/card-rules.md)为准。
+钱包截图只参考卡面设计，不带上周围界面。默认不添加无关文字、号码、芯片、二维码、感应/NFC 标记。第三方标志属于非官方艺术诠释，不代表品牌授权或卡片具有实际功能。未经允许不公开用户私人参考图。

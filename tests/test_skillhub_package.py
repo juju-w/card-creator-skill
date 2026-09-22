@@ -25,21 +25,25 @@ class SkillHubPackageTests(unittest.TestCase):
 
             skill_text = (output / "SKILL.md").read_text(encoding="utf-8")
             self.assertIn("displayName: 卡面生成器", skill_text)
-            self.assertIn("首先调用 ImageGen", skill_text)
-            self.assertIn("不得使用", skill_text)
+            self.assertIn("图片生成工具", skill_text)
+            self.assertIn("不得用代码绘制卡面", skill_text)
+            self.assertIn("version: 0.3.0", skill_text)
+            self.assertIn("没有图片生成工具就说明情况", skill_text)
             self.assertNotIn("精确贴纸模式", skill_text)
-            self.assertTrue(
-                output.joinpath("references/reference-remix.md").is_file()
-            )
+            self.assertFalse(output.joinpath("references/reference-remix.md").exists())
+            self.assertFalse(output.joinpath("references/prompt-guide.md").exists())
             self.assertFalse(
                 output.joinpath("references/bank-issuer-catalog.md").exists()
             )
-            self.assertEqual(
-                (output / "scripts" / "prepare_card.py").read_bytes(),
-                (CANONICAL_SKILL / "scripts" / "prepare_card.py").read_bytes(),
-            )
+            self.assertFalse(any(output.rglob("*.py")))
+            self.assertFalse(any(output.rglob("requirements.txt")))
             self.assertFalse(output.joinpath("assets/logo-references").exists())
-            self.assertFalse(output.joinpath("references/logo-reference-index.md").exists())
+            index = output.joinpath("references/logo-reference-index.md").read_text(encoding="utf-8")
+            self.assertIn("https://raw.githubusercontent.com/juju-w/card-creator-skill/main/", index)
+            self.assertNotIn("../assets/logo-references/", index)
+            for reference in ("banks/china/cmb.png", "banks/usa/chase.png", "overseas/japan/suica.png"):
+                self.assertIn(reference, index)
+            self.assertFalse(any(output.rglob("SOURCES.md")))
             self.assertFalse(output.joinpath("references/sticker-catalog.md").exists())
             self.assertFalse(output.joinpath("references/sticker-research.md").exists())
             self.assertFalse(output.joinpath("scripts/render_stickers.py").exists())
