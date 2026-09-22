@@ -108,9 +108,9 @@ repository's `suica.png`:
 ```text
 Follow the dimensions and safe-area rules in https://github.com/juju-w/card-creator-skill and use my uploaded reference image (reference image above) to create an unofficial, non-commercial Chiikawa × Suica fan card face. Paint a fresh spring meadow in pale mint green beneath a powder-blue sky, with rounded white clouds and a soft watercolor-and-gouache texture. Place Chiikawa alone slightly left of center, smiling and holding a four-leaf clover. Keep the lower-right clean.
 
-Create flat landscape artwork at 1.58577:1, targeting a 1011 × 638 px trim at 300 DPI. Keep the character and important details inside the central safe area. No card mockup, hand, perspective, rounded-corner mask, border, shadow, card number, QR code, barcode, watermark, or unrequested text.
+Create flat landscape artwork at 1.58577:1, targeting a 1011 × 638 px trim at 300 DPI. Avoid accidental cropping of the character and important details; the blue safe guide is advisory for small functional information. No card mockup, hand, perspective, rounded-corner mask, border, shadow, card number, QR code, barcode, watermark, or unrequested text.
 
-If I uploaded a transparent Suica PNG, place it unchanged in the lower-right safe area and preserve its proportions, colors, lettering, and transparency. Otherwise leave the space empty; do not generate an approximate Suica logo. Generate one complete preview and include the final prompt you used.
+If I uploaded a transparent Suica PNG, place it unchanged in a natural lower-right card-corner position and preserve its proportions, colors, lettering, and transparency. Let the Skill review optical weight and physical trim breathing room. Otherwise leave the space empty; do not generate an approximate Suica logo. Generate one complete preview and include the final prompt you used.
 ```
 
 ### Minimal line art × Mastercard
@@ -129,27 +129,28 @@ Follow the dimensions and safe-area rules in https://github.com/juju-w/card-crea
 
 Create flat landscape artwork at 1.58577:1, targeting a 1011 × 638 px trim at 300 DPI. No chip, card number, QR code, barcode, watermark, unrequested text, card mockup, hand, perspective, rounded-corner mask, border, or shadow. Do not use background circles that imitate the Mastercard mark.
 
-If I uploaded a transparent Mastercard PNG, place it unchanged in the lower-right safe area and preserve its red/orange colors, proportions, and transparency. Otherwise leave the space empty. Generate one complete preview and include the final prompt you used.
+If I uploaded a transparent Mastercard PNG, place it unchanged in a natural lower-right card-corner position and preserve its red/orange colors, proportions, and transparency. Let the Skill review optical weight and physical trim breathing room. Otherwise leave the space empty. Generate one complete preview and include the final prompt you used.
 ```
 
-### Beijing ink-wash background — city marks unavailable
+### Beijing ink wash × municipal transit × China T-Union
 
 <p align="center">
-  <img src="examples/beijing-ink-transit-background.png" width="600" alt="Beijing ink-wash background awaiting verified stickers">
+  <img src="examples/beijing-ink-transit-background.png" width="600" alt="Beijing ink-wash card with stylized municipal transit and China T-Union marks">
 </p>
 
-This is intentionally a background-only example. It reserves two areas for China T-Union and
-Beijing Yikatong marks. China T-Union is `blocked`; the collected Yikatong website-header sample is
-`reference-only`. The Skill reports that exact assets are unavailable instead of silently omitting them.
+This explicit stylized-mode example keeps the conventional municipal-transit symbol-plus-name lockup
+at upper-left and a compact China T-Union mark at lower-right, translating both into mineral blue,
+cinnabar, and ink-wash edges. Their exact assets remain `reference-only` and `blocked`, so these are
+disclosed non-official interpretations and are never promoted into the exact `ready` sticker pack.
 
-Copy into ChatGPT or Gemini after uploading a reference and any verified transparent marks you own:
+Copy into ChatGPT or Gemini after uploading traceable municipal-transit and China T-Union card references:
 
 ```text
-Follow the dimensions and safe-area rules in https://github.com/juju-w/card-creator-skill and use my uploaded reference image (reference image above) to create a contemporary Beijing ink-wash transit-card face. Fill the canvas with warm ivory rice paper, paint a complete Temple of Heaven on the left, and place a misty Great Wall across the distant mountains. Keep the composition spacious and editorial, with two clean sticker areas stacked on the right.
+Follow the dimensions and composition rules in https://github.com/juju-w/card-creator-skill and use my uploaded reference image (reference image above) to create a contemporary Beijing ink-wash transit-card face. Fill the canvas with warm ivory rice paper, paint the Temple of Heaven on the left, and place a misty Great Wall across the distant mountains. Keep the composition spacious and editorial.
 
-Create flat landscape artwork at 1.58577:1, targeting a 1011 × 638 px trim at 300 DPI. Keep the complete architecture inside the central safe area. No card mockup, hand, perspective, rounded-corner mask, border, shadow, card number, QR code, barcode, watermark, Chinese characters, or unrequested text.
+Create flat landscape artwork at 1.58577:1, targeting a 1011 × 638 px trim at 300 DPI. Architecture and ink wash may naturally run toward the trim, but do not accidentally crop the Temple of Heaven hero. No card mockup, hand, perspective, rounded-corner mask, border, shadow, card number, QR code, barcode, watermark, or unrequested text.
 
-If I uploaded transparent China T-Union and Beijing Yikatong stickers, place them unchanged in the two right-side safe areas and preserve their proportions, colors, lettering, and transparency. If either file is missing, generate the background only and keep its position empty; do not approximate either logo. Generate one complete preview and include the final prompt you used.
+From the traceable card references, place the conventional municipal-transit symbol-plus-name lockup at upper-left and the compact China T-Union mark at lower-right. Reinterpret both with mineral blue, a small cinnabar accent, and ink-wash paper edges; disclose them as non-official stylized interpretations. Let the Skill review optical weight and physical trim breathing room. Do not add a contactless mark. If either reference is missing, leave that area empty rather than inventing it. Generate one complete preview and include the final prompt you used.
 ```
 
 ### Mica clouds and cranes × Bank of China × Palace Museum × UnionPay
