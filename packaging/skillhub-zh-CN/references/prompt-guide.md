@@ -11,8 +11,11 @@
 - `no logo, no brand mark, no card number, no QR code, no barcode, no watermark`；
 - `no card mockup, no hand, no perspective, no rounded-corner mask, no shadow`。
 
-用户请求已知贴纸时，ImageGen Prompt 只描述要预留的位置。真实贴纸之后通过
-`prepare_card.py` 叠加。
+默认精确模式下，ImageGen Prompt 只描述留位，真实贴纸之后通过 `prepare_card.py` 叠加；
+应根据标志类别和官方参考选择约定俗成的卡面版本，不能全局强制短款或完整横版。
+
+用户明确选择风格化模式时，把可追溯标志作为注明用途的参考图，并写清材质、位置和披露：结果
+是非官方艺术化诠释，不能进入精确贴纸包。两种模式都不得默认加入感应标志。
 
 用户提供已有卡面或手机钱包截图并要求做风格变化时，先读取
 [参考卡面风格化改造](reference-remix.md)，再编写 Prompt。

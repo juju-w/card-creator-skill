@@ -3,13 +3,13 @@
 先用本目录选择贴纸类别，再从 `../assets/stickers/manifest.json` 读取准确路径和来源记录。
 清单是贴纸能否使用的唯一权威：只有 `status: ready` 的条目可以合成。
 
-找不到官方透明素材时，先读取[贴纸研究与卡面提取](sticker-research.md)，再考虑从官方卡面
-提取原有像素。提取候选必须保持 `pending`，直到来源、像素一致性、透明度和用途全部通过复核。
+找不到官方透明素材时，先读取[贴纸研究与卡面提取](sticker-research.md)。来源样本标为
+`reference-only`；缺少准确素材或所需许可的标志标为 `blocked`。两者都不能合成。
 
 支付卡组织、钱包、非接触受理标志和交通卡代表不同含义，不要把它们统称为“卡组织”。
 
 银行 Logo 属于发行方标识，不是支付网络。工商银行、招商银行、中国银行、汇丰、渣打等条目见
-[银行发行方参考目录](bank-issuer-catalog.md)。它们目前全部是 `pending`，只能用于识别需求和
+[银行发行方参考目录](bank-issuer-catalog.md)。它们目前全部是 `blocked`，只能用于识别需求和
 预留版面，不能直接合成。
 
 ## 已就绪：支付卡组织和网络
@@ -17,28 +17,26 @@
 - `visa` — Visa
 - `mastercard` — Mastercard 红橙双色标志
 - `american-express` — American Express
-- `unionpay` — UnionPay / 银联完整横版标志
-- `unionpay-compact` — UnionPay / 银联紧凑卡角标志，不带右侧字样
+- `unionpay-compact` — UnionPay / 银联紧凑卡角接受标志；卡角场景通常使用
+- `unionpay` — UnionPay / 银联完整横版标志；仅在用户明确要求时使用
 - `jcb` — JCB
 - `discover` — Discover
-- `diners-club` — Diners Club International 完整字标
-- `diners-club-symbol` — Diners Club 紧凑图形，不带右侧字样
+- `diners-club-symbol` — Diners Club 紧凑图形；参考卡使用图形版时选择
+- `diners-club` — Diners Club International 完整字标；仅在用户明确要求时使用
 - `rupay` — RuPay
 - `mir` — MIR；必须保留清单中的署名与相同方式共享说明
 
-## 非接触与 NFC 标志
+## 非接触与 NFC 标志（仅在用户明确要求时处理）
 
-- `generic-contactless-material` — 已就绪；Google Material 的 Apache-2.0 圆形通用感应图标，
-  只能作为装饰性的 contactless/NFC 提示，不能宣称代表 EMV 兼容。
-- `emv-contactless-indicator` — 待授权；即常见于卡面右侧、由四道渐大的半圆弧组成的精确标志。
+- `generic-contactless-material` — `reference-only`；Google Material 的 Apache-2.0 图标带实心
+  圆底，并不是卡面常用的标准感应标志。经视觉复核后已从 `ready` 退役，不能默认推荐或叠加。
+- `emv-contactless-indicator` — `blocked`；即卡面右侧常见、透明底的四道渐大弧线精确标志。
   EMVCo 要求先签署书面商标许可，并在签约后提供官方文件，因此仓库只记录官方来源与复现规范，
   不分发文件，也不自行描摹。
 
 不要把卡面上的 **Contactless Indicator** 和支付终端上的大型 **Contactless Symbol** 混淆。
-用户明确要求四道弧线标志时，不能自动用圆形通用图标代替。
-
-卡面构图通常在右侧、安全区以内为感应标志留位。它应与银行发行方和支付网络标识保持视觉分离，
-不能拼成一个新的组合 Logo。
+除非用户明确要求，否则不要加入任何感应标志。用户要求四道弧线时，不能用圆形通用图标代替；
+必须使用准确、透明且来源可追溯的素材，并与银行发行方和支付网络标识保持视觉分离。
 
 ## 已就绪：日本全国交通 IC 互通体系
 
@@ -52,15 +50,15 @@
 - `hayakaken` — 福冈市交通局
 - `pitapa` — 关西地区后付费交通 IC
 
-`kitaca` 已收集但仍为 `pending`：当前可追溯 SVG 带不透明米色底，尚未核验单独的透明字标来源。
+`kitaca` 为 `reference-only`：当前可追溯 SVG 带不透明米色底，尚未核验单独的透明字标来源。
 
 这些系统参与日本全国 IC 互通体系，但服务规则并不完全相同。贴纸包只提供装饰性标志；不得声称
 自制卡由任何运营方发行、受理或认可。
 
-## 研究队列：内地和大湾区城市交通卡
+## 不可合成参考：内地和大湾区城市交通卡
 
-以下条目有明确的清单记录以及运营方或官方信息页，但仍是 `pending`。可以在背景中预留位置，
-不可以合成：
+以下条目有明确的清单记录以及运营方或官方信息页，状态为 `reference-only` 或 `blocked`。
+可以识别需求和预留位置，不可以合成：
 
 - `china-t-union` — 交通联合
 - `beijing-yikatong` — 北京一卡通

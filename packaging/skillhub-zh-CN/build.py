@@ -46,6 +46,12 @@ def encode_binary_stickers(output: Path) -> None:
             )
             raster_path.unlink()
             item["file"] = encoded_relative
+        elif raster_file:
+            item["file"] = None
+            item["distribution_note"] = (
+                "Non-ready raster omitted from the SkillHub text-only package; "
+                "see the canonical GitHub repository for the preserved reference source."
+            )
 
         research_file = item.pop("research_file", None)
         if research_file:

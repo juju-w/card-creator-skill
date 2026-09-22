@@ -47,10 +47,10 @@ class SkillHubPackageTests(unittest.TestCase):
                     "assets/stickers/payment/mastercard.png.base64.txt"
                 ).is_file()
             )
-            self.assertTrue(
+            self.assertFalse(
                 output.joinpath(
                     "assets/stickers/generic/contactless-material.png.base64.txt"
-                ).is_file()
+                ).exists()
             )
             self.assertFalse(any(output.rglob("*.png")))
             self.assertFalse(any(output.rglob(".DS_Store")))
@@ -74,12 +74,18 @@ class SkillHubPackageTests(unittest.TestCase):
                 item for item in manifest["items"] if item["category"] == "issuer-bank"
             ]
             self.assertEqual(len(issuer_banks), 25)
-            self.assertTrue(all(item["status"] == "pending" for item in issuer_banks))
+            self.assertTrue(all(item["status"] == "blocked" for item in issuer_banks))
+            self.assertFalse(any(item["status"] == "pending" for item in manifest["items"]))
             contactless = {
                 item["id"]: item for item in manifest["items"] if "contactless" in item["id"]
             }
-            self.assertEqual(contactless["generic-contactless-material"]["status"], "ready")
-            self.assertEqual(contactless["emv-contactless-indicator"]["status"], "pending")
+            self.assertEqual(
+                contactless["generic-contactless-material"]["status"],
+                "reference-only",
+            )
+            self.assertEqual(contactless["emv-contactless-indicator"]["status"], "blocked")
+            self.assertIsNone(contactless["generic-contactless-material"]["file"])
+            self.assertIn("conventional card-face variant", manifest["variant_policy"])
 
 
 if __name__ == "__main__":

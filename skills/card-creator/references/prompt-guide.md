@@ -11,8 +11,13 @@ Include:
 - `no logo, no brand mark, no card number, no QR code, no barcode, no watermark`
 - `no card mockup, no hand, no perspective, no rounded-corner mask, no shadow`
 
-When the user requests a known sticker, describe only its reserved location in the ImageGen prompt. Add
-the actual sticker afterward with `prepare_card.py`.
+In default exact mode, describe only the reserved location in the ImageGen prompt and add the actual
+sticker afterward with `prepare_card.py`. Choose the conventional card-side variant from the mark
+category and official reference rather than globally forcing compact or full lockups.
+
+In explicit stylized mode, attach the traceable mark as a labeled reference and state the requested
+material treatment, placement, and disclosure: the result is a non-official artistic interpretation
+and must not be promoted to the exact sticker pack. Contactless marks remain opt-in in both modes.
 
 When the user supplies an existing card face or a mobile-wallet screenshot and asks for a style
 variation, read [reference-card remix](reference-remix.md) before writing the prompt.

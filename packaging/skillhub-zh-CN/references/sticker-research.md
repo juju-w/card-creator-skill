@@ -30,10 +30,12 @@ AI 只能生成前景蒙版，或从卡面原图中去除单色背景。不得�
   本地使用且被 Git 忽略；工作记录中保存公开来源 URL、获取日期、原图 SHA-256、尺寸、裁切坐标
   和提取方法。
 - 只有在公开仓库保留该原图或衍生文件具有依据时，才放入 `assets/stickers/research/`。同时在
-  manifest 写入 `status: pending`、`research_file`、`source`、`source_asset`、`license`、
+  manifest 写入 `status: reference-only`、`research_file`、`source`、`source_asset`、`license`、
   `usage`、`sha256`、`transparency` 和明确的 blocker。
 - 不要把公共图床当作来源和授权的替代品。只有用户明确要求使用其自有对象存储时，才记录不可变
   URL 与 SHA-256；用于确定性构建的已批准素材仍优先保存在仓库内。
 
 候选只有在来源可追溯、像素与标志一致、透明衍生文件通过校验，而且用途说明支持计划中的分发时，
-才可以提升为 `ready`。在此之前只为贴纸预留位置，并明确报告仍在审核。
+才可以提升为 `ready`；否则明确标记为 `reference-only` 或 `blocked`。精确模式只预留位置并报告
+不可用。用户明确选择风格化模式时，可把可追溯来源作为一次性 ImageGen 参考，但生成结果必须
+标注为非官方且不能进入 manifest。

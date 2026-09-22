@@ -9,10 +9,12 @@ three concerns separate:
 
 - exact card dimensions, bleed, and safe-area rules;
 - traceable transparent payment and transit sticker assets;
-- deterministic scripts that crop AI-generated backgrounds and composite approved stickers.
+- deterministic scripts that crop AI-generated backgrounds and composite approved stickers;
+- explicit opt-in, non-official mark reinterpretations such as foil, monochrome, and line art.
 
-The repository does not contain an online editor. Image models generate background artwork only;
-they never redraw protected brand marks.
+The repository does not contain an online editor. Exact mode keeps marks as approved overlays;
+explicit stylized mode may use a traceable mark as an image reference and labels the output as a
+non-official artistic interpretation.
 
 ## Install from GitHub / skills.sh
 
@@ -130,15 +132,15 @@ Create flat landscape artwork at 1.58577:1, targeting a 1011 × 638 px trim at 3
 If I uploaded a transparent Mastercard PNG, place it unchanged in the lower-right safe area and preserve its red/orange colors, proportions, and transparency. Otherwise leave the space empty. Generate one complete preview and include the final prompt you used.
 ```
 
-### Beijing ink-wash background — stickers pending
+### Beijing ink-wash background — city marks unavailable
 
 <p align="center">
   <img src="examples/beijing-ink-transit-background.png" width="600" alt="Beijing ink-wash background awaiting verified stickers">
 </p>
 
 This is intentionally a background-only example. It reserves two areas for China T-Union and
-Beijing Yikatong marks, but both manifest entries remain `pending`. The Skill reports the missing
-assets instead of generating or approximating either logo.
+Beijing Yikatong marks. China T-Union is `blocked`; the collected Yikatong website-header sample is
+`reference-only`. The Skill reports that exact assets are unavailable instead of silently omitting them.
 
 Copy into ChatGPT or Gemini after uploading a reference and any verified transparent marks you own:
 
@@ -150,19 +152,50 @@ Create flat landscape artwork at 1.58577:1, targeting a 1011 × 638 px trim at 3
 If I uploaded transparent China T-Union and Beijing Yikatong stickers, place them unchanged in the two right-side safe areas and preserve their proportions, colors, lettering, and transparency. If either file is missing, generate the background only and keep its position empty; do not approximate either logo. Generate one complete preview and include the final prompt you used.
 ```
 
+### Mica clouds and cranes × Bank of China × Palace Museum × UnionPay
+
+<p align="center">
+  <img src="examples/palace-museum-cranes-unionpay.png" width="600" alt="Mica-cloud crane card with stylized Bank of China, Palace Museum, and compact UnionPay marks">
+</p>
+
+The upper-left normal Bank of China issuer lockup, upper-right normal Palace Museum emblem lockup,
+and lower-right conventionally compact `unionpay-compact` card-corner mark are coordinated
+non-official antique-gold interpretations. The Skill chooses variants by category and card convention
+instead of globally forcing compact marks. This
+example intentionally lets large marks dominate their corners and cross the advisory blue guide;
+the guide must not shrink the composition. No contactless mark is added unless explicitly requested.
+
+Multi-mark cards automatically trigger the Skill's art-direction review for optical weight, edge
+breathing room, and hierarchy; the user does not need to ask for layout optimization in the prompt.
+
+Copy into ChatGPT or Gemini after uploading the repository's `unionpay-compact.png` plus official
+Bank of China and Palace Museum identity references:
+
+```text
+Follow the dimensions and composition rules in https://github.com/juju-w/card-creator-skill. Create an original Chinese heritage card face with a museum-collection mood: warm pearl-white rice paper, translucent mica-like auspicious clouds, three red-crowned cranes in flight, and palace architecture along the lower area. Use pearl white, antique gold, cinnabar, charcoal, and a touch of muted jade. Preserve a bold edge-to-edge composition; do not shrink the cranes, architecture, or marks merely to fit the advisory blue guide.
+
+Create flat opaque edge-to-edge landscape artwork at 1.58577:1, targeting a 1011 × 638 px trim at 300 DPI. Decorative clouds, architecture, and cranes may intentionally run toward or through the trim. No mockup, hand, phone UI, perspective, rounded-corner mask, vignette, border, shadow, chip, card number, QR code, barcode, watermark, or contactless mark.
+
+Add the Bank of China, Palace Museum, and UnionPay references while following the card-creator Skill's conventional variant selection and automatic layout direction. Give all three the same matte antique-gold foil and subtle mica texture. Treat them as non-official stylized interpretations. Use the compact card-corner UnionPay mark; do not add ICBC or a contactless symbol. If any reference is missing, leave its area empty. Generate one complete preview and include the final prompt you used.
+```
+
+Reference sources: [official Bank of China identity description](https://www.boc.cn/aboutboc/bi1/201110/t20111014_1556052.html) and
+[official Palace Museum emblem announcement](https://www.dpm.org.cn/classify_detail/158858.html).
+
 The complete background prompts are documented in the [Chinese README](README.md).
 
 ## Sticker policy
 
-Only manifest entries with `status: ready` may be composited. Every ready asset records its file,
-source URL, license note, and usage note. Research assets and observed URLs remain unavailable to
-the compositor until their exact source and usage status are resolved.
+Exact-logo mode composites only manifest entries with `status: ready`. Compact variants are the
+default: `unionpay-compact` instead of `unionpay`, and `diners-club-symbol` instead of
+`diners-club`, unless the user requests a full wordmark. Explicit stylized mode may use a traceable
+mark as an ImageGen reference, but its output must be labeled non-official and never promoted into
+the exact ready sticker pack.
 
-The pack includes a ready Apache-2.0 Google Material contactless icon as a generic decorative NFC
-cue. It is not the EMV Contactless Indicator. The exact four-semicircle card mark is recorded as
-`emv-contactless-indicator`, but remains `pending` because EMVCo requires a written trademark
-license and supplies the official artwork after the agreement is executed. The generic icon must
-not be substituted when the user specifically requests the EMV mark.
+Contactless marks are opt-in only. The circular Google Material icon is `reference-only` because it
+does not match the usual card-side indicator. The exact four-wave `emv-contactless-indicator` is
+`blocked` because EMVCo supplies the artwork after the applicable trademark agreement is executed.
+The generic icon must never be substituted for that exact mark.
 
 Bank issuers are tracked separately from payment networks. The initial issuer reference set covers
 major mainland Chinese banks—ICBC, ABC, Bank of China, CCB, Bank of Communications, PSBC, China
@@ -170,14 +203,14 @@ Merchants Bank, CITIC, Everbright, Minsheng, Industrial Bank, SPD Bank, Ping An,
 commonly requested Hong Kong or international issuers including BOCHK, HSBC, Standard Chartered,
 Hang Seng, BEA, Dah Sing, CMB Wing Lung, DBS, OCBC, UOB, and Citi. See the
 [bank issuer reference catalog](skills/card-creator/references/bank-issuer-catalog.md). All issuer
-entries are currently `pending`: the Skill may reserve space for an exact lockup, but may not draw,
-approximate, or substitute it.
+entries are currently `blocked` for exact reusable overlays. Exact mode may reserve space; explicit
+stylized mode may create a disclosed non-official reinterpretation from a traceable reference.
 
 When no official transparent asset can be found, an official card face or a traceable user-supplied
-card image may be used as a last-resort research source. AI may produce a mask and remove the
-background, but it may not redraw, recolor, or reconstruct the mark. Candidates with unresolved
-usage terms stay in the local `output/research-cache/` and are not uploaded to a public image host or
-used by the compositor. See [sticker research](skills/card-creator/references/sticker-research.md).
+card image may be used as a last-resort research source. Exact-mode candidates with unresolved usage
+terms remain `reference-only` or `blocked` and are not uploaded as reusable sticker assets. Explicit
+stylized mode may reinterpret them for a single disclosed artwork, but must not promote the result
+to `ready`. See [sticker research](skills/card-creator/references/sticker-research.md).
 
 Brand and character rights remain with their respective owners. The repository's MIT license
 covers original code and documentation only; it does not relicense third-party marks or artwork.

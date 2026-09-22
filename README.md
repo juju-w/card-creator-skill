@@ -9,8 +9,10 @@
 - 标准卡面尺寸、出血区和安全区规则。
 - 有来源记录的透明交通/支付贴纸素材。
 - 将 AI 背景图裁切、缩放并叠加贴纸的确定性脚本。
+- 用户明确选择时，把可追溯 Logo 参考融入烫金、单色、线稿等非官方风格化卡面。
 
-它不包含在线编辑器，也不会让图像模型重画品牌 Logo。
+它不包含在线编辑器。默认使用准确贴纸；只有用户明确要求风格匹配时，才让图像模型参考 Logo
+做艺术化诠释，并明确标注为非官方版本。
 
 ## 安装
 
@@ -93,10 +95,11 @@ skillhub install card-creator
 
 ## 卡面示例与 Prompt
 
-ImageGen 只负责无文字、无 Logo 的背景；`card-creator` 再将清单中 `status: ready` 的
-透明贴纸确定性叠加到安全区内。下面的预览限制为 `600 px` 宽，仓库仍保留完整
-`1011 × 638 px` 裁切图。第 1、3 张是已贴标成品；第 2 张故意只展示背景，因为它请求的
-两个贴纸仍是 `pending`，不是 Skill 失效或漏贴。
+默认精确模式中，ImageGen 只负责背景，`card-creator` 再叠加 `status: ready` 的透明贴纸；
+用户明确选择风格化模式时，ImageGen 可以参考可追溯 Logo 做非官方材质化诠释。下面的预览限制
+为 `600 px` 宽，仓库仍保留完整
+`1011 × 638 px` 裁切图。第 1、3、4 张是已贴标成品；第 2 张故意只展示背景，因为它请求的
+两个城市交通标志当前不可合成，不是 Skill 失效或漏贴。非接触感应标志不会默认加入任何示例。
 
 ### 1. Chiikawa × Suica
 
@@ -136,15 +139,15 @@ Constraints: background artwork only; no logo, no brand mark, no Suica text, no 
 
 </details>
 
-### 2. 北京水墨交通卡背景（待补贴纸）
+### 2. 北京水墨交通卡背景（城市标志不可用）
 
 <p align="center">
   <img src="examples/beijing-ink-transit-background.png" width="600" alt="北京水墨交通卡背景示例">
 </p>
 
-**这张图是背景稿，不是已贴标成品。** 背景已完成，并为“交通联合”和“北京一卡通”预留右侧双贴纸位。两个标志目前仍是
-`pending`，所以此示例没有调用非自由 SVG、官网页头图或 AI 近似 Logo；待合格素材进入
-`ready` 后即可确定性补齐。
+**这张图是背景稿，不是已贴标成品。** 背景已完成，并为“交通联合”和“北京一卡通”预留右侧双贴纸位。
+交通联合目前是 `blocked`；北京一卡通官网页头样本是 `reference-only`。因此示例没有调用非自由
+SVG、错版官网页头图或 AI 近似 Logo。
 
 直接复制给 ChatGPT / Gemini（如果你已经有可用的“交通联合”和“北京一卡通”透明图，请与参考图
 一起上传）：
@@ -214,25 +217,58 @@ Constraints: background artwork only; no logo, no brand mark, no circles that ex
 
 </details>
 
+### 4. 云母祥云仙鹤 × 中国银行 × 故宫博物院 × 银联
+
+<p align="center">
+  <img src="examples/palace-museum-cranes-unionpay.png" width="600" alt="云母祥云仙鹤与中国银行、故宫博物院和银联风格化标志卡面示例">
+</p>
+
+标记：左上使用中国银行正常行徽＋名称组合，右上使用故宫博物院正常院徽组合，右下使用卡角
+惯例中的 `unionpay-compact`。三个标志均为哑金风格化版本；Skill 按类别与参考卡面的惯例选择
+版本，而不是全局强制短款。
+这组示例专门验证“大标志构图”：Logo 可以占据角落的大部分空间并跨过蓝色建议安全线，不会
+因为安全线被强制缩小；只需避免非预期裁断。它们是基于可追溯参考制作的非官方艺术化诠释，
+不是品牌规范母版，也不默认加入感应标志。
+
+多标志卡面会自动触发 Skill 的美术指导复核，由 Skill 统一处理视觉重量、光学边距和主次层级；
+用户不需要在 Prompt 里另外要求“优化排版”。
+
+直接复制给 ChatGPT / Gemini（上传短款 `unionpay-compact.png`、中国银行官方标志参考和故宫
+博物院院徽参考）：
+
+```text
+请参考 https://github.com/juju-w/card-creator-skill 的尺寸与构图规则，生成一张故宫博物院典藏气质的原创中式卡面。画面使用暖白宣纸、半透明云母质感祥云、三只展翅的丹顶鹤和位于下方的宫殿建筑；整体轻盈但具有大构图张力，配色以珍珠白、古金、朱砂红、炭黑和少量黛绿为主。不要为了蓝色建议安全线缩小仙鹤、宫殿或 Logo；安全线只用于普通小字和功能信息参考。
+
+输出横向平面画稿，宽高比 1.58577:1，目标裁切尺寸 1011 × 638 px、300 DPI，背景必须不透明并铺满四边。装饰性祥云、建筑和仙鹤可以按构图出边。不要生成卡片样机、手、手机界面、透视、圆角遮罩、晕影、边框、阴影、芯片、卡号、二维码、条形码、水印或感应标志。
+
+加入中国银行、故宫博物院与银联三个参考标志，并遵循 card-creator Skill 的惯例版本选择和自动排版规则。三个标志统一使用哑金烫金与细微云母质感。它们均为非官方风格化诠释；银联使用卡角短款，不要加入 ICBC 或感应标志。如果缺少任一参考，就保留该位置，不要凭空补画。请生成一张完整卡面预览，并附上最终使用的 Prompt。
+```
+
+参考来源：[中国银行官方标志说明](https://www.boc.cn/aboutboc/bi1/201110/t20111014_1556052.html)；
+[故宫博物院院徽启用说明](https://www.dpm.org.cn/classify_detail/158858.html)。
+
 ## 贴纸状态
 
 当前已准备透明 SVG 与 PNG：
 
-- 支付卡组织/网络：Visa、红橙双色 Mastercard、American Express、UnionPay、JCB、Discover、Diners Club、RuPay、MIR。银联和 Diners Club 同时提供完整横版与无右侧文字的紧凑卡面版。
-- 通用标志：Google Material 的圆形 contactless/NFC 图标，可用于装饰性感应提示，但不代表 EMV 兼容。
+- 支付卡组织/网络：Visa、红橙双色 Mastercard、American Express、UnionPay、JCB、Discover、Diners Club、RuPay、MIR。银联默认使用 `unionpay-compact`，Diners Club 默认使用 `diners-club-symbol`；完整横版只在用户明确指定时使用。
 - 日本全国交通 IC 互通体系：Suica、PASMO、ICOCA、TOICA、manaca、SUGOCA、nimoca、Hayakaken、PiTaPa。
 
-Kitaca 的可追溯 SVG 带有不透明米色底，已保留源文件但保持 `pending`；在找到可核验的透明词标前不会手工去底或让 Skill 调用。
+Kitaca 的可追溯 SVG 带有不透明米色底，已保留为 `reference-only`；不会手工去底或让 Skill 调用。
 
 卡面右侧常见的“四道雷达波”准确名称是 EMVCo `Contactless Indicator`。它与支付终端上的
 `Contactless Symbol` 不是同一个图形。EMVCo 要求先签署书面商标许可，并在签约后才提供官方
-文件，因此精确四弧线版本已进入 manifest，但保持 `pending`；Skill 不会用圆形通用图标冒充它。
+文件，因此精确四弧线版本在 manifest 中明确标为 `blocked`。原先的圆形 Google Material 图标
+视觉并不相同，已从 `ready` 退役为 `reference-only`。除非用户明确要求，Skill 不提供任何感应标志。
 
 交通联合与北京、上海、天津、广州、深圳、杭州、南京、成都、重庆、武汉、西安等城市交通卡标志，以及岭南通、香港八达通、澳门通，已经进入素材清单并记录运营方或官方信息来源。北京、深圳、杭州、西安、天津、成都、重庆官网提供的 7 份透明 PNG 原件，以及羊城通、岭南通官网合作方提供的 2 份不透明 PNG 原件，已收入 `research/cities/`，并记录原始 URL、透明状态、用途差异和 SHA-256；它们仍是研究样本，而不是可调用贴纸。上海、武汉目前只找到官网的不透明页面横幅，清单只记录地址，不会手工抠图。
 
 岭南通官网网充平台另有公开的“品牌素材下载”，但压缩包里是三张门店标牌 JPG，没有独立透明或矢量 Logo。其页面、压缩包地址和内容检查结果均已写入 manifest。
 
-在找到可验证的透明矢量源文件与可再分发/商标使用依据前，上述城市条目保持 `pending`，Skill 不会使用近似图替代，也不会把运营方 Logo 冒充具体卡产品标志。八达通官网虽然提供 AI/JPG 压缩包，但品牌指引明确要求书面认可，因此仓库只记录官方下载与指引地址，不收录文件、更不会自动解锁。
+这些城市条目已不再使用模糊的 `pending`：保留了准确来源样本但不适合作贴纸的标为
+`reference-only`；缺少准确透明素材或所需许可的标为 `blocked`。Skill 不会使用近似图替代，
+也不会把运营方 Logo 冒充具体卡产品标志。八达通官网虽然提供 AI/JPG 压缩包，但品牌指引明确
+要求书面认可，因此保持 `blocked`。
 
 梗图中常见的 Maestro、Cirrus、PLUS、V Pay、Interac、Bancontact、CB、BC Card、Apple Pay、e-CNY、非接触标志、EZ-Link、T-money 等已整理进 [sticker-catalog.md](skills/card-creator/references/sticker-catalog.md) 的研究队列；它们还不是可调用素材。
 
@@ -241,14 +277,16 @@ Kitaca 的可追溯 SVG 带有不透明米色底，已保留源文件但保持 `
 广发，以及香港和国际常见的中银香港、汇丰、渣打、恒生、东亚、大新、招商永隆、星展、华侨、
 大华和花旗。完整名称、地区与官方来源见
 [bank-issuer-catalog.md](skills/card-creator/references/bank-issuer-catalog.md)。这些银行条目目前全部为
-`pending`：Skill 可以为指定组合标识预留位置，但不能调用、重画或用另一个地区版本代替。
+`blocked`：精确模式只能为指定组合标识预留位置，不能调用或用另一个地区版本代替；用户明确
+选择风格化模式时，可以从可追溯参考生成标注为非官方的艺术化版本，但不会进入 `ready` 贴纸包。
 
 完整来源、许可备注和状态见 [manifest.json](skills/card-creator/assets/stickers/manifest.json)。品牌与商标仍可能受各司法辖区的商标规则约束；本项目不代表相关机构授权或合作。
 
 如果官方透明素材确实找不到，可以把官方卡面或用户提供的卡面作为最后一级研究来源：AI 只生成
 蒙版并移除背景，不能补画、改色或重构 Logo。权利条件未确认的原图和候选保存在本地
 `output/research-cache/`，不上传公共图床、不进入自动合成；完整流程见
-[sticker-research.md](skills/card-creator/references/sticker-research.md)。
+[sticker-research.md](skills/card-creator/references/sticker-research.md)。这段规则针对“精确贴纸入库”；
+用户明确选择的一次性非官方风格化卡面不进入 manifest，按独立风格化流程处理。
 
 仓库根目录的 MIT License 只覆盖本项目原创代码与文档，不会把第三方标志、角色形象或示例中的第三方元素重新授权为 MIT；每个贴纸仍按 manifest 中记录的来源、许可说明和商标限制处理。
 

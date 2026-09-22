@@ -1,24 +1,26 @@
 {
-  "version": 6,
-  "policy": "Only status=ready assets may be composited. Ready assets must include a traceable source page, a license note, an intended-use note, an original transparent SVG, and a generated transparent PNG derivative. A research_file is an exact source artifact retained for provenance review; transparent and opaque research files both remain non-compositable while status=pending.",
+  "version": 8,
+  "policy": "Only status=ready assets may be composited. reference-only preserves traceable source material that is visually unsuitable, incomplete, or not approved for reusable overlays. blocked is a terminal decision for assets that cannot be distributed by this repository without an exact transparent source, verified product identity, or required permission. Contactless marks are never added by default and require an explicit user request.",
+  "variant_policy": "Choose the conventional card-face variant from the official reference and mark category; do not globally force compact or full lockups. User direction overrides convention.",
   "items": [
     {
       "id": "china-t-union",
       "name": "交通联合",
       "category": "national",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.cttic.cn/info/3171",
       "license": "Official service-information source located; artwork redistribution permission not verified",
       "usage": "discovery-only; do not composite until a transparent source and mark-usage terms are verified",
-      "blocker": "No verified redistributable transparent SVG has been located"
+      "blocker": "No verified redistributable transparent SVG has been located",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "beijing-yikatong",
       "name": "北京一卡通",
       "category": "cities",
       "region": "北京",
-      "status": "pending",
+      "status": "reference-only",
       "file": null,
       "source": "https://www.bmac.com.cn/",
       "research_file": "research/cities/beijing-yikatong-white-header.png",
@@ -28,28 +30,30 @@
       "sha256": "de835b10dd5d48a2a6a87c61afcfd5c2bbedc7a68cfea61a01cc1dec7f9cb728",
       "license": "Official operator source located; logo redistribution permission not verified",
       "usage": "research-only; do not composite; the collected file is the official site's white header variant, not a general-purpose card mark",
-      "blocker": "Official transparent raster collected, but no redistributable transparent SVG or public mark-usage grant has been located"
+      "blocker": "Official transparent raster collected, but no redistributable transparent SVG or public mark-usage grant has been located",
+      "resolution": "reference-preserved"
     },
     {
       "id": "shanghai-public-transport-card",
       "name": "上海公共交通卡",
       "category": "cities",
       "region": "上海",
-      "status": "pending",
+      "status": "reference-only",
       "file": null,
       "source": "https://www.sptcc.com/",
       "observed_asset": "https://www.sptcc.com/img/head1.jpg",
       "observed_format": "JPG 1280x47 website-header strip; not a clean transparent mark",
       "license": "Official operator source located; logo redistribution permission not verified",
       "usage": "discovery-only; do not composite",
-      "blocker": "The official website asset located is an opaque header strip; no verified redistributable transparent standalone mark has been located"
+      "blocker": "The official website asset located is an opaque header strip; no verified redistributable transparent standalone mark has been located",
+      "resolution": "reference-preserved"
     },
     {
       "id": "hangzhou-tong",
       "name": "杭州通",
       "category": "cities",
       "region": "杭州",
-      "status": "pending",
+      "status": "reference-only",
       "file": null,
       "source": "https://www.96225.com/smknet/service/show_allGet.action",
       "research_file": "research/cities/hangzhou-citizen-card-operator.png",
@@ -60,14 +64,15 @@
       "sha256": "6a8ee0112bf5b68181b10a7108df7d9428cd616c5c97d04b07ebcd80b231fe15",
       "license": "Official product-information source located; logo redistribution permission not verified",
       "usage": "research-only; do not composite or label this operator mark as the 杭州通 product mark",
-      "blocker": "Official transparent operator raster collected, but the 杭州通 product mark and redistribution permission remain unverified"
+      "blocker": "Official transparent operator raster collected, but the 杭州通 product mark and redistribution permission remain unverified",
+      "resolution": "reference-preserved"
     },
     {
       "id": "xian-changan-tong",
       "name": "长安通",
       "category": "cities",
       "region": "西安",
-      "status": "pending",
+      "status": "reference-only",
       "file": null,
       "source": "http://www.xaykt.com/",
       "research_file": "research/cities/xian-changan-tong.png",
@@ -77,14 +82,15 @@
       "sha256": "30a8a9204698fd7dbf6f652b7e82ad2f7cae5b96ea602e4c17b56b79bfbab819",
       "license": "Official operator source located; logo redistribution permission not verified",
       "usage": "research-only; do not composite",
-      "blocker": "Official transparent raster collected, but no redistributable transparent SVG or public mark-usage grant has been located"
+      "blocker": "Official transparent raster collected, but no redistributable transparent SVG or public mark-usage grant has been located",
+      "resolution": "reference-preserved"
     },
     {
       "id": "guangzhou-yangchengtong",
       "name": "羊城通",
       "category": "cities",
       "region": "广州",
-      "status": "pending",
+      "status": "reference-only",
       "file": null,
       "source": "https://www.gzyct.com/",
       "research_file": "research/cities/guangzhou-yangchengtong-official-opaque.png",
@@ -95,14 +101,15 @@
       "sha256": "3294aca9fbbd817651460eeae3e51aa381ec9c45d36ac3cdb10470ae3ec945b8",
       "license": "Official operator source located; logo redistribution permission not verified",
       "usage": "research-only; preserve the official Chinese wordmark if later approved; do not remove the white background or composite",
-      "blocker": "Only an opaque official raster has been located; no verified redistributable transparent source has been found"
+      "blocker": "Only an opaque official raster has been located; no verified redistributable transparent source has been found",
+      "resolution": "reference-preserved"
     },
     {
       "id": "lingnan-pass",
       "name": "岭南通",
       "category": "cities",
       "region": "广东",
-      "status": "pending",
+      "status": "reference-only",
       "file": null,
       "source": "https://www.lingnanpass.com/sy",
       "research_file": "research/cities/lingnan-pass-official-opaque.png",
@@ -116,14 +123,15 @@
       "sha256": "3165f4dc415e388c906f23c4a59bae924cc370bd75cb61978cb7ed90fa253320",
       "license": "Official public brand-material download located; no explicit redistribution or derivative license found",
       "usage": "research-only; preserve the official Chinese wordmark if later approved; do not remove the white background or composite",
-      "blocker": "Only an opaque official raster has been located; no verified redistributable transparent source has been found"
+      "blocker": "Only an opaque official raster has been located; no verified redistributable transparent source has been found",
+      "resolution": "reference-preserved"
     },
     {
       "id": "shenzhen-tong",
       "name": "深圳通",
       "category": "cities",
       "region": "深圳",
-      "status": "pending",
+      "status": "reference-only",
       "file": null,
       "source": "https://www.shenzhentong.com/",
       "research_file": "research/cities/shenzhen-tong-symbol.png",
@@ -133,41 +141,47 @@
       "sha256": "3e3060ce103b6e1a1168d9cb7ac7b5f52072c2916503b4a84545c1f7f45f8068",
       "license": "Official operator source located; logo redistribution permission not verified",
       "usage": "research-only; do not composite; collected artwork is the official symbol without a wordmark",
-      "blocker": "Official transparent raster collected, but no redistributable transparent SVG or public mark-usage grant has been located"
+      "blocker": "Official transparent raster collected, but no redistributable transparent SVG or public mark-usage grant has been located",
+      "resolution": "reference-preserved"
     },
     {
       "id": "hong-kong-octopus",
       "name": "八达通 Octopus",
       "category": "transit-ic",
       "region": "香港",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.octopus.com.hk/sc/business/merchant-support/branding-guideline/index.html",
       "source_asset": "https://www.octopus.com.hk/common/files/ocl-logo.zip",
-      "available_formats": ["AI", "JPG"],
+      "available_formats": [
+        "AI",
+        "JPG"
+      ],
       "brand_guide": "https://www.octopus.com.hk/en/document/identity-guideline.pdf",
       "license": "Proprietary trademark; Octopus states that use requires compliance with its guidelines and written approval",
       "usage": "discovery-only; do not download, redistribute, or composite without documented written approval",
-      "blocker": "Official branding materials require written approval, and the brand guide prohibits reproduction without written permission"
+      "blocker": "Official branding materials require written approval, and the brand guide prohibits reproduction without written permission",
+      "resolution": "requires-license"
     },
     {
       "id": "macau-pass",
       "name": "澳门通 Macau Pass",
       "category": "transit-ic",
       "region": "澳门",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://macaupass.com/news_detail/351",
       "license": "Official brand-identity source located; logo redistribution permission not verified",
       "usage": "discovery-only; do not composite",
-      "blocker": "No verified redistributable transparent SVG or public mark-usage grant has been located"
+      "blocker": "No verified redistributable transparent SVG or public mark-usage grant has been located",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "tianjin-city-card",
       "name": "天津城市卡",
       "category": "cities",
       "region": "天津",
-      "status": "pending",
+      "status": "reference-only",
       "file": null,
       "source": "https://www.tjykt.com/html/citycard/",
       "research_file": "research/cities/tianjin-city-card.png",
@@ -177,26 +191,28 @@
       "sha256": "63d8c66045958942ebfc6c05a8b5005f6b5102d7eb3bab99a372462c5cb644ce",
       "license": "Official operator source located; logo redistribution permission not verified",
       "usage": "research-only; do not composite",
-      "blocker": "Official transparent raster collected, but no redistributable transparent SVG or public mark-usage grant has been located"
+      "blocker": "Official transparent raster collected, but no redistributable transparent SVG or public mark-usage grant has been located",
+      "resolution": "reference-preserved"
     },
     {
       "id": "nanjing-jinling-tong",
       "name": "金陵通",
       "category": "cities",
       "region": "南京",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.jszhihui.cn/",
       "license": "Operator source located; logo redistribution permission not verified",
       "usage": "discovery-only; do not composite",
-      "blocker": "No verified redistributable transparent SVG has been located"
+      "blocker": "No verified redistributable transparent SVG has been located",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "chengdu-tianfu-tong",
       "name": "天府通",
       "category": "cities",
       "region": "成都",
-      "status": "pending",
+      "status": "reference-only",
       "file": null,
       "source": "https://www.cdtft.cn/",
       "research_file": "research/cities/chengdu-tianfu-tong.png",
@@ -206,14 +222,15 @@
       "sha256": "ca726446ee67cb788c71c0083a510b58dae23582f9cff3e526f53ed7cbbef22b",
       "license": "Official operator source located; logo redistribution permission not verified",
       "usage": "research-only; do not composite",
-      "blocker": "Official transparent raster collected, but no redistributable transparent SVG or public mark-usage grant has been located"
+      "blocker": "Official transparent raster collected, but no redistributable transparent SVG or public mark-usage grant has been located",
+      "resolution": "reference-preserved"
     },
     {
       "id": "chongqing-city-card",
       "name": "重庆畅通卡",
       "category": "cities",
       "region": "重庆",
-      "status": "pending",
+      "status": "reference-only",
       "file": null,
       "source": "https://www.cqtk.com.cn/",
       "research_file": "research/cities/chongqing-city-card-operator.png",
@@ -224,21 +241,23 @@
       "sha256": "1a02b75920b0536bc71258d13744552e98f2a21cecfd8ccb6e5f3aba6b84e015",
       "license": "Official operator source located; logo redistribution permission not verified",
       "usage": "research-only; do not composite or label this operator mark as the 畅通卡 product mark",
-      "blocker": "Official transparent operator raster collected, but the 畅通卡 product mark and redistribution permission remain unverified"
+      "blocker": "Official transparent operator raster collected, but the 畅通卡 product mark and redistribution permission remain unverified",
+      "resolution": "reference-preserved"
     },
     {
       "id": "wuhan-tong",
       "name": "武汉通",
       "category": "cities",
       "region": "武汉",
-      "status": "pending",
+      "status": "reference-only",
       "file": null,
       "source": "http://www.whcst.com/",
       "observed_asset": "https://www.whcst.com/common/images/logo.jpg",
       "observed_format": "JPG 347x107 with an opaque background",
       "license": "Official operator source located; logo redistribution permission not verified",
       "usage": "discovery-only; do not composite",
-      "blocker": "Only an opaque official raster has been located; no verified redistributable transparent source has been found"
+      "blocker": "Only an opaque official raster has been located; no verified redistributable transparent source has been found",
+      "resolution": "reference-preserved"
     },
     {
       "id": "unionpay",
@@ -419,13 +438,14 @@
       "name": "Kitaca",
       "category": "transit-ic",
       "region": "日本・JR北海道",
-      "status": "pending",
+      "status": "reference-only",
       "file": "overseas/japan/kitaca.png",
       "vector_file": "overseas/japan/kitaca.svg",
       "source": "https://commons.wikimedia.org/wiki/File:Kitaca_logo.svg",
       "license": "PD-textlogo under the file-page rationale; trademark restrictions may apply",
       "usage": "discovery-only until a traceable transparent wordmark source is found",
-      "blocker": "The source SVG includes an opaque beige background; do not remove it by hand or composite this asset"
+      "blocker": "The source SVG includes an opaque beige background; do not remove it by hand or composite this asset",
+      "resolution": "reference-preserved"
     },
     {
       "id": "toica",
@@ -504,300 +524,338 @@
       "name": "中国工商银行 ICBC",
       "category": "issuer-bank",
       "region": "中国内地",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.icbc.com.cn/ICBCLtd/%E5%85%B3%E4%BA%8E%E6%88%91%E8%A1%8C/%E9%9B%86%E5%9B%A2%E5%93%81%E7%89%8C/",
       "license": "Official brand standards page; the bank explicitly prohibits copying or using its marks without permission",
       "usage": "reference-only; reserve space for the official horizontal or compact issuer lockup; do not composite",
-      "blocker": "Written permission and a redistributable transparent source are required"
+      "blocker": "Written permission and a redistributable transparent source are required",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "agricultural-bank-of-china",
       "name": "中国农业银行 ABC",
       "category": "issuer-bank",
       "region": "中国内地",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.abchina.com/cn/PublicPlate/documents/201512/t20151228_817036.htm",
       "license": "Official site statement; the bank explicitly prohibits copying or using its marks without permission",
       "usage": "reference-only; reserve space for the official bilingual issuer lockup; do not composite",
-      "blocker": "Written permission and a redistributable transparent source are required"
+      "blocker": "Written permission and a redistributable transparent source are required",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "bank-of-china",
       "name": "中国银行 Bank of China",
       "category": "issuer-bank",
       "region": "中国内地・全球",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.boc.cn/english/thisisboc/ab3/brd/202601/t20260104_25638404.html",
       "license": "Official identity page; Bank of China states that trademark use may require prior written permission",
       "usage": "reference-only; reserve space for the official symbol and bilingual wordmark; do not composite",
-      "blocker": "No verified redistribution grant for a transparent master asset"
+      "blocker": "No verified redistribution grant for a transparent master asset",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "china-construction-bank",
       "name": "中国建设银行 CCB",
       "category": "issuer-bank",
       "region": "中国内地",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://company.ccb.com/cn/home/indexv3.html",
       "license": "Official bank source displaying the current mark; redistribution permission not verified",
       "usage": "reference-only; reserve space for the official bilingual issuer lockup; do not composite",
-      "blocker": "Official transparent master and public mark-usage terms have not been located"
+      "blocker": "Official transparent master and public mark-usage terms have not been located",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "bank-of-communications",
       "name": "交通银行 Bank of Communications",
       "category": "issuer-bank",
       "region": "中国内地",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.bankcomm.com/BankCommSite/default.shtml",
       "license": "Official bank source displaying the current mark; redistribution permission not verified",
       "usage": "reference-only; reserve space for the official bilingual issuer lockup; do not composite",
-      "blocker": "Official transparent master and public mark-usage terms have not been located"
+      "blocker": "Official transparent master and public mark-usage terms have not been located",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "postal-savings-bank-of-china",
       "name": "中国邮政储蓄银行 PSBC",
       "category": "issuer-bank",
       "region": "中国内地",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.psbc.com/",
       "license": "Official bank source displaying the current mark; redistribution permission not verified",
       "usage": "reference-only; reserve space for the official bilingual issuer lockup; do not composite",
-      "blocker": "Official transparent master and public mark-usage terms have not been located"
+      "blocker": "Official transparent master and public mark-usage terms have not been located",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "china-merchants-bank",
       "name": "招商银行 China Merchants Bank",
       "category": "issuer-bank",
       "region": "中国内地",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.cmbchina.com/",
       "license": "Official bank source displaying the current mark; redistribution permission not verified",
       "usage": "reference-only; reserve space for the official bilingual issuer lockup; do not composite",
-      "blocker": "Official transparent master and public mark-usage terms have not been located"
+      "blocker": "Official transparent master and public mark-usage terms have not been located",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "china-citic-bank",
       "name": "中信银行 China CITIC Bank",
       "category": "issuer-bank",
       "region": "中国内地",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.citicbank.com/",
       "license": "Official bank source displaying the current mark; redistribution permission not verified",
       "usage": "reference-only; reserve space for the official bilingual issuer lockup; do not composite",
-      "blocker": "Official transparent master and public mark-usage terms have not been located"
+      "blocker": "Official transparent master and public mark-usage terms have not been located",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "china-everbright-bank",
       "name": "中国光大银行 China Everbright Bank",
       "category": "issuer-bank",
       "region": "中国内地",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.cebbank.com/site/dzyx/index.html",
       "license": "Official bank source displaying the current mark; redistribution permission not verified",
       "usage": "reference-only; reserve space for the official bilingual issuer lockup; do not composite",
-      "blocker": "Official transparent master and public mark-usage terms have not been located"
+      "blocker": "Official transparent master and public mark-usage terms have not been located",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "china-minsheng-bank",
       "name": "中国民生银行 CMBC",
       "category": "issuer-bank",
       "region": "中国内地",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.cmbc.com.cn/",
       "license": "Official bank source displaying the current mark; redistribution permission not verified",
       "usage": "reference-only; reserve space for the official bilingual issuer lockup; do not composite",
-      "blocker": "Official transparent master and public mark-usage terms have not been located"
+      "blocker": "Official transparent master and public mark-usage terms have not been located",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "industrial-bank-china",
       "name": "兴业银行 Industrial Bank",
       "category": "issuer-bank",
       "region": "中国内地",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.cib.com.cn/cn/aboutCIB/investor/profile/logo.html",
       "license": "Official corporate identity page; redistribution permission not stated",
       "usage": "reference-only; reserve space for the official bilingual issuer lockup; do not composite",
-      "blocker": "Official transparent master and public mark-usage terms have not been located"
+      "blocker": "Official transparent master and public mark-usage terms have not been located",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "shanghai-pudong-development-bank",
       "name": "浦发银行 SPD Bank",
       "category": "issuer-bank",
       "region": "中国内地",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://news.spdb.com.cn/about_spd/brand_index/ppdtbs/",
       "license": "Official brand identity platform; redistribution permission not stated",
       "usage": "reference-only; reserve space for the official bilingual issuer lockup; do not composite",
-      "blocker": "Official transparent master and public mark-usage terms have not been located"
+      "blocker": "Official transparent master and public mark-usage terms have not been located",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "ping-an-bank",
       "name": "平安银行 Ping An Bank",
       "category": "issuer-bank",
       "region": "中国内地",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://bank.pingan.com/",
       "license": "Official bank source displaying the current mark; redistribution permission not verified",
       "usage": "reference-only; reserve space for the official bilingual issuer lockup; do not composite",
-      "blocker": "Official transparent master and public mark-usage terms have not been located"
+      "blocker": "Official transparent master and public mark-usage terms have not been located",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "china-guangfa-bank",
       "name": "广发银行 China Guangfa Bank",
       "category": "issuer-bank",
       "region": "中国内地",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.cgbchina.com.cn/",
       "license": "Official bank source displaying the current mark; redistribution permission not verified",
       "usage": "reference-only; reserve space for the official bilingual issuer lockup; do not composite",
-      "blocker": "Official transparent master and public mark-usage terms have not been located"
+      "blocker": "Official transparent master and public mark-usage terms have not been located",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "bank-of-china-hong-kong",
       "name": "中国银行（香港） BOCHK",
       "category": "issuer-bank",
       "region": "中国香港",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.bochk.com/en",
       "license": "Official bank source displaying the current Hong Kong issuer lockup; redistribution permission not verified",
       "usage": "reference-only; use the BOCHK lockup rather than the mainland Bank of China lockup; do not composite",
-      "blocker": "Official transparent master and public mark-usage terms have not been located"
+      "blocker": "Official transparent master and public mark-usage terms have not been located",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "hsbc",
       "name": "汇丰 HSBC",
       "category": "issuer-bank",
       "region": "中国香港・全球",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://history.hsbc.com/index.php/exhibitions/hsbc-and-the-hexagon",
       "license": "Official brand-history source; HSBC states its name and hexagon are protected trademarks and reproduction is restricted",
       "usage": "reference-only; reserve space for the current hexagon-plus-wordmark lockup; do not composite",
-      "blocker": "Written permission and a redistributable transparent source are required"
+      "blocker": "Written permission and a redistributable transparent source are required",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "standard-chartered",
       "name": "渣打银行 Standard Chartered",
       "category": "issuer-bank",
       "region": "中国香港・全球",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.sc.com/en/media",
       "license": "Official media page offers high-resolution logos for media use; repository redistribution is not covered",
       "usage": "reference-only; reserve space for the current full-colour issuer lockup; do not composite",
-      "blocker": "Media-use availability is not a redistribution grant for this sticker pack"
+      "blocker": "Media-use availability is not a redistribution grant for this sticker pack",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "hang-seng-bank",
       "name": "恒生银行 Hang Seng Bank",
       "category": "issuer-bank",
       "region": "中国香港",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.hangseng.com/en-hk/about-us/",
       "license": "Official bank source displaying the current mark; redistribution permission not verified",
       "usage": "reference-only; reserve space for the official bilingual Hong Kong issuer lockup; do not composite",
-      "blocker": "Official transparent master and public mark-usage terms have not been located"
+      "blocker": "Official transparent master and public mark-usage terms have not been located",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "bank-of-east-asia",
       "name": "东亚银行 Bank of East Asia",
       "category": "issuer-bank",
       "region": "中国香港",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.hkbea.com/pdf/en/Notice-EN-2.pdf",
       "license": "Official brand-refresh notice displaying the current identity; redistribution permission not verified",
       "usage": "reference-only; reserve space for the current bilingual issuer lockup; do not composite",
-      "blocker": "Official transparent master and public mark-usage terms have not been located"
+      "blocker": "Official transparent master and public mark-usage terms have not been located",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "dbs-bank",
       "name": "星展银行 DBS",
       "category": "issuer-bank",
       "region": "新加坡・中国香港・亚洲",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.dbs.com/media/image-video-library.page",
       "license": "Official media library; it does not publish a clear redistribution grant for a standalone logo in this skill",
       "usage": "reference-only; reserve space for the current DBS issuer lockup; do not composite",
-      "blocker": "A redistributable transparent logo master and applicable usage terms have not been verified"
+      "blocker": "A redistributable transparent logo master and applicable usage terms have not been verified",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "ocbc",
       "name": "华侨银行 OCBC",
       "category": "issuer-bank",
       "region": "新加坡・中国香港・亚洲",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.ocbc.com/group/about-us/our-brand.page",
       "license": "Official brand page directs users to contact Group Brand and Communications for use of brand assets",
       "usage": "reference-only; reserve space for the post-2023 OCBC lockup; do not use the legacy Wing Hang mark",
-      "blocker": "Brand-asset use requires approval from OCBC"
+      "blocker": "Brand-asset use requires approval from OCBC",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "uob",
       "name": "大华银行 UOB",
       "category": "issuer-bank",
       "region": "新加坡・中国香港・亚洲",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.uobgroup.com/uobgroup/index.page",
       "license": "Official bank source displaying the current mark; redistribution permission not verified",
       "usage": "reference-only; reserve space for the current UOB issuer lockup; do not composite",
-      "blocker": "Official transparent master and public mark-usage terms have not been located"
+      "blocker": "Official transparent master and public mark-usage terms have not been located",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "citi",
       "name": "花旗 Citi",
       "category": "issuer-bank",
       "region": "全球",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.citigroup.com/global/news/media-resources",
       "license": "Official media resource page; Citi brand-asset redistribution permission not verified",
       "usage": "reference-only; reserve space for the current Citi issuer wordmark; do not composite",
-      "blocker": "A redistributable transparent logo master and applicable usage terms have not been verified"
+      "blocker": "A redistributable transparent logo master and applicable usage terms have not been verified",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "dah-sing-bank",
       "name": "大新银行 Dah Sing Bank",
       "category": "issuer-bank",
       "region": "中国香港",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.dahsing.com/html/en/index.html",
       "license": "Official bank source displaying the current mark; redistribution permission not verified",
       "usage": "reference-only; reserve space for the official bilingual Hong Kong issuer lockup; do not composite",
-      "blocker": "Official transparent master and public mark-usage terms have not been located"
+      "blocker": "Official transparent master and public mark-usage terms have not been located",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "cmb-wing-lung-bank",
       "name": "招商永隆银行 CMB Wing Lung Bank",
       "category": "issuer-bank",
       "region": "中国香港",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.cmbwinglungbank.com/",
       "license": "Official bank source displaying the current mark; redistribution permission not verified",
       "usage": "reference-only; reserve space for the current bilingual Hong Kong issuer lockup; do not composite",
-      "blocker": "Official transparent master and public mark-usage terms have not been located"
+      "blocker": "Official transparent master and public mark-usage terms have not been located",
+      "resolution": "no-distributable-asset"
+    },
+    {
+      "id": "palace-museum",
+      "name": "故宫博物院 The Palace Museum",
+      "category": "cultural-institution",
+      "region": "中国内地・北京",
+      "status": "blocked",
+      "file": null,
+      "source": "https://www.dpm.org.cn/classify_detail/158858.html",
+      "license": "Official identity announcement and site terms; trademark and redistribution permission not granted by this repository",
+      "usage": "reference-only; exact mode reserves space; an explicit stylized-mode request may use the official identity page or a user-supplied card image as a one-off ImageGen reference",
+      "blocker": "No verified redistribution grant for a transparent master asset",
+      "resolution": "no-distributable-asset"
     },
     {
       "id": "generic-contactless-material",
@@ -806,13 +864,15 @@
       "region": "global",
       "variant": "filled-circle",
       "placement_hint": "right side inside the safe area; keep visually separate from issuer and payment-network marks",
-      "status": "ready",
+      "status": "reference-only",
       "file": "generic/contactless-material.png",
       "vector_file": "generic/contactless-material.svg",
       "source": "https://github.com/google/material-design-icons/blob/master/src/action/contactless/materialicons/24px.svg",
       "license": "Apache License 2.0",
       "attribution": "Google Material Design Icons; unmodified source SVG with a generated transparent PNG derivative",
-      "usage": "generic decorative contactless/NFC cue only; does not claim EMV compatibility and must not be described as the EMV Contactless Indicator"
+      "usage": "generic decorative contactless/NFC cue only; does not claim EMV compatibility and must not be described as the EMV Contactless Indicator",
+      "blocker": "The filled-circle Google Material icon is not the standard card-side Contactless Indicator and must not be offered as a default card sticker",
+      "resolution": "retired-from-ready"
     },
     {
       "id": "emv-contactless-indicator",
@@ -821,13 +881,14 @@
       "region": "global",
       "variant": "four-semicircle-card-mark",
       "placement_hint": "commonly placed on the right side of a contactless card; follow the official clear-space rules if licensed",
-      "status": "pending",
+      "status": "blocked",
       "file": null,
       "source": "https://www.emvco.com/trademark-centre/",
       "guidance": "https://www.emvco.com/wp-content/uploads/2022/10/EMVCo-Contactless-Indicator-Reproduction-Requirements-Nov-2019.pdf",
       "license": "EMVCo trademark; a written Trademark License Agreement is required and artwork is supplied after execution",
       "usage": "reference-only; this is the exact four-semicircle mark used on contactless cards; reserve space but do not composite or approximate",
-      "blocker": "The repository has no EMVCo trademark license and cannot redistribute the licensed artwork"
+      "blocker": "The repository has no EMVCo trademark license and cannot redistribute the licensed artwork",
+      "resolution": "requires-license"
     }
   ]
 }

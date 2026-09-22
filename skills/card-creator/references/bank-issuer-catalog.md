@@ -11,10 +11,10 @@ Never replace one layer with another. A card may legitimately reserve space for 
 one payment-network mark, but their presence must not imply that the generated artwork is a genuine
 bank-issued payment card.
 
-All entries below are `pending` in `../assets/stickers/manifest.json`. They are reference targets only:
-reserve a clean area, name the missing asset in the result, and do not ask an image model to draw or
-approximate the logo. The official source pages are recorded in the manifest. Promote an entry to
-`ready` only after a transparent master and its redistribution or mark-usage terms have been verified.
+All entries below are `blocked` as exact reusable overlays in `../assets/stickers/manifest.json`.
+Exact mode reserves a clean area and names the missing asset. If the user explicitly selects stylized
+mode and supplies or approves a traceable reference, ImageGen may create a disclosed non-official
+interpretation for that artwork only. Never promote that generated result to `ready`.
 
 ## Mainland China
 

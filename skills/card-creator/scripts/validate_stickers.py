@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate ready stickers and quarantined research assets."""
+"""Validate ready stickers and non-compositable reference assets."""
 
 from __future__ import annotations
 
@@ -14,7 +14,8 @@ from PIL import Image
 
 
 REQUIRED_READY_FIELDS = ("file", "vector_file", "source", "license", "usage")
-REQUIRED_PENDING_FIELDS = ("source", "license", "usage", "blocker")
+NON_COMPOSITABLE_STATUSES = {"reference-only", "blocked"}
+REQUIRED_NON_READY_FIELDS = ("source", "license", "usage", "blocker", "resolution")
 
 
 def open_raster(path: Path) -> Image.Image:
@@ -38,19 +39,22 @@ def main() -> None:
     errors: list[str] = []
     seen_ids: set[str] = set()
     ready_count = 0
-    research_count = 0
+    status_counts: dict[str, int] = {}
 
     for item in manifest.get("items", []):
         sticker_id = item.get("id", "<missing-id>")
+        status = item.get("status")
+        status_counts[status] = status_counts.get(status, 0) + 1
         if sticker_id in seen_ids:
             errors.append(f"duplicate id: {sticker_id}")
         seen_ids.add(sticker_id)
 
         research_file = item.get("research_file")
         if research_file:
-            research_count += 1
-            if item.get("status") != "pending":
-                errors.append(f"{sticker_id}: research_file must remain status=pending")
+            if status != "reference-only":
+                errors.append(
+                    f"{sticker_id}: research_file must remain status=reference-only"
+                )
             missing = [
                 field
                 for field in (
@@ -90,13 +94,17 @@ def main() -> None:
                                 f"{sticker_id}: research PNG is not fully opaque"
                             )
 
-        if item.get("status") == "pending":
-            missing = [field for field in REQUIRED_PENDING_FIELDS if not item.get(field)]
+        if status in NON_COMPOSITABLE_STATUSES:
+            missing = [
+                field for field in REQUIRED_NON_READY_FIELDS if not item.get(field)
+            ]
             if missing:
-                errors.append(f"{sticker_id}: missing pending fields: {', '.join(missing)}")
+                errors.append(
+                    f"{sticker_id}: missing non-ready fields: {', '.join(missing)}"
+                )
             continue
-        if item.get("status") != "ready":
-            errors.append(f"{sticker_id}: unsupported status: {item.get('status')}")
+        if status != "ready":
+            errors.append(f"{sticker_id}: unsupported status: {status}")
             continue
         ready_count += 1
 
@@ -128,7 +136,7 @@ def main() -> None:
                     if alpha.getextrema()[0] == 255:
                         errors.append(f"{sticker_id}: PNG alpha channel is fully opaque")
 
-    result = {"ready": ready_count, "research": research_count, "errors": errors}
+    result = {"ready": ready_count, "statuses": status_counts, "errors": errors}
     print(json.dumps(result, ensure_ascii=False, indent=2))
     if errors:
         raise SystemExit(1)

@@ -23,7 +23,8 @@ Summarize the reference in six fields before prompting:
 4. **Motif density** — sparse single character, repeated pattern, narrative scene, or architectural
    centerpiece.
 5. **Mood and material** — playful, premium, civic, heritage, wintry, paper-like, metallic, and so on.
-6. **Immutable overlays** — only manifest `ready` stickers or user-supplied traceable assets.
+6. **Mark mode** — default to exact `ready` overlays; use a traceable mark as an ImageGen reference
+   only when the user explicitly requests a disclosed non-official stylized interpretation.
 
 Transfer these relationships, not exact artwork. Useful transformations include giving a character one
 garment in the transit brand color, translating a heritage motif into new line art, or reusing the
@@ -33,13 +34,15 @@ reference's balance between a large quiet field and one small narrative scene.
 
 - card numbers, masked digits, balances, currencies, names, chips, QR codes, barcodes, or functional
   acceptance claims;
-- issuer, bank, museum, transit, payment, or contactless marks unless the exact asset is approved;
+- issuer, bank, museum, transit, payment, or contactless marks unless the exact asset is approved or
+  the user explicitly opts into a disclosed stylized interpretation;
 - proprietary illustrations copied from the source;
 - wallet UI, device instructions, mockup shadows, rounded-corner masks, or screenshot watermarks.
 
-If an unavailable mark is important to the layout, reserve its zone and report it as missing. Do not
-use the screenshot as a license to crop and reuse the mark; follow
-[sticker research](sticker-research.md) when the user explicitly requests asset research.
+If an unavailable mark is important to the layout, exact mode reserves its zone and reports it as
+missing. In explicit stylized mode, keep the reference source and final prompt, label the output
+non-official, and never promote it to `ready`. Follow [sticker research](sticker-research.md) when
+the user explicitly requests asset research.
 
 ## Direct web prompt template
 

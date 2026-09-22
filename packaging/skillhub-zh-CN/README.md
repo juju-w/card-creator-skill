@@ -32,4 +32,5 @@ skillhub publish /tmp/card-creator-skillhub-zh-CN \
 ```
 
 发布新版本时，同时更新 `SKILL.md` 顶层和 `metadata.version` 中的版本号。发布前必须运行
-根目录 README 中的 Skill 与贴纸校验；不得把 `pending` 或 `research_file` 当成可调用贴纸。
+根目录 README 中的 Skill 与贴纸校验；不得把 `reference-only`、`blocked` 或 `research_file`
+当成可调用贴纸。

@@ -33,7 +33,7 @@ result.
   `output/research-cache/`; this path is local and ignored by Git. Record the public source URL,
   retrieval date, source SHA-256, dimensions, crop rectangle, and extraction method in working notes.
 - Add a file under `assets/stickers/research/` only when keeping that exact source or derivative in the
-  public repository is supportable. Add a manifest entry with `status: pending`, `research_file`,
+  public repository is supportable. Add a manifest entry with `status: reference-only`, `research_file`,
   `source`, `source_asset`, `license`, `usage`, `sha256`, `transparency`, and an explicit blocker.
 - Do not use a public image host as a substitute for provenance or permission. If the user explicitly
   requires their own object storage, retain an immutable source URL and SHA-256 in the manifest, but
@@ -41,4 +41,7 @@ result.
 
 Only promote a candidate to `ready` after its source is traceable, its pixels match the identified
 mark, its transparent derivative has passed validation, and the usage note supports the intended
-distribution. Until then, reserve space in the background and report that the sticker is pending.
+distribution. If it cannot, mark the item `blocked`; otherwise keep the source `reference-only`.
+In exact mode, reserve space in the background and report that the sticker is unavailable. An
+explicit stylized-mode request may use the traceable source as a one-off ImageGen reference, but the
+generated result remains outside the manifest and must be disclosed as non-official.
