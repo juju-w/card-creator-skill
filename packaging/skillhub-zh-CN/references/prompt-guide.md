@@ -14,6 +14,9 @@
 用户请求已知贴纸时，ImageGen Prompt 只描述要预留的位置。真实贴纸之后通过
 `prepare_card.py` 叠加。
 
+用户提供已有卡面或手机钱包截图并要求做风格变化时，先读取
+[参考卡面风格化改造](reference-remix.md)，再编写 Prompt。
+
 示例：
 
 ```text

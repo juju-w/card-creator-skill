@@ -30,6 +30,9 @@ class SkillHubPackageTests(unittest.TestCase):
             self.assertTrue(
                 output.joinpath("references/sticker-research.md").is_file()
             )
+            self.assertTrue(
+                output.joinpath("references/reference-remix.md").is_file()
+            )
             self.assertEqual(
                 (output / "scripts" / "prepare_card.py").read_bytes(),
                 (CANONICAL_SKILL / "scripts" / "prepare_card.py").read_bytes(),

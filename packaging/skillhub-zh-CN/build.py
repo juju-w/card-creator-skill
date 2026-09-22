@@ -15,6 +15,7 @@ LOCALIZED_FILES = (
     Path("agents/openai.yaml"),
     Path("references/card-rules.md"),
     Path("references/prompt-guide.md"),
+    Path("references/reference-remix.md"),
     Path("references/sticker-catalog.md"),
     Path("references/sticker-research.md"),
 )

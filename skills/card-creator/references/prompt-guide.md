@@ -14,6 +14,9 @@ Include:
 When the user requests a known sticker, describe only its reserved location in the ImageGen prompt. Add
 the actual sticker afterward with `prepare_card.py`.
 
+When the user supplies an existing card face or a mobile-wallet screenshot and asks for a style
+variation, read [reference-card remix](reference-remix.md) before writing the prompt.
+
 Example:
 
 ```text
@@ -24,4 +27,3 @@ negative space in the upper-right for a later transparent transit sticker. No lo
 number, QR code, barcode, watermark, card mockup, hand, perspective, border, rounded-corner mask, or
 shadow.
 ```
-

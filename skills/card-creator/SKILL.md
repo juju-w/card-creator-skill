@@ -12,6 +12,9 @@ approximate, stylize, or repair a logo.
 ## Workflow
 
 1. Read [card rules](references/card-rules.md) before generating.
+   When the input is an existing card face or a wallet screenshot, also read
+   [reference-card remix](references/reference-remix.md). Isolate the card artwork, ignore the
+   surrounding interface, and translate its design grammar into a distinct new composition.
 2. Read [sticker catalog](references/sticker-catalog.md) when choosing among payment and transit
    sticker families. Then read [sticker manifest](assets/stickers/manifest.json) and use only entries whose status is `ready`.
    If a requested sticker is not ready, generate the background without it and report the missing asset.
@@ -38,11 +41,16 @@ approximate, stylize, or repair a logo.
 - Do not claim that included brand names imply sponsorship or official cooperation.
 - Do not generate card numbers, payment credentials, QR codes, barcodes, or designs intended to pass as
   a functional payment, access, or government-issued card.
+- A reference card is a source for palette relationships, spacing, line weight, motif density, and
+  composition zones—not permission to copy its card number, wallet balance, issuer text, proprietary
+  artwork, or unavailable logos.
 
 ## Files
 
 - For exact dimensions and coordinate systems, read [card rules](references/card-rules.md).
 - For prompt construction, read [prompt guide](references/prompt-guide.md).
+- For a style variation based on an existing card face or wallet screenshot, read
+  [reference-card remix](references/reference-remix.md).
 - For sticker families and the research backlog, read [sticker catalog](references/sticker-catalog.md).
 - For sourcing or extracting a missing mark from an official card face, read
   [sticker research](references/sticker-research.md).
