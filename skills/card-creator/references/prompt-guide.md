@@ -2,7 +2,7 @@
 
 Keep user-facing prompts short. The Skill supplies dimensions, export rules, and ordinary exclusions.
 
-## Default fast mode
+## One-pass ImageGen workflow
 
 Use one sentence containing the subject, style, and mark placement:
 
@@ -10,12 +10,12 @@ Use one sentence containing the subject, style, and mark placement:
 Use the card-creator Skill to create a simple Magikarp × ICOCA card with ICOCA at lower right.
 ```
 
-Internally add only the minimum production direction needed by ImageGen: flat landscape card artwork,
-no mockup or functional card data, and no contactless symbol unless requested. Generate requested marks
-inside the artwork and disclose them as non-official stylized interpretations.
+This prompt must lead directly to one ImageGen call. Do not research the logo, inspect SVG, construct the
+artwork in code, or split the job into “background generation + logo compositing.” Internally add only the
+minimum production direction: flat landscape card artwork, no mockup or functional card data, and no
+contactless symbol unless requested.
 
-## Exact-overlay mode
-
-When the user explicitly requests an exact local sticker, generate the background with a clean placement
-zone and no logo, then add the `ready` asset with `prepare_card.py`. Do not search for missing assets unless
-the user explicitly asks for research.
+When a matching repository PNG or user attachment is available, always provide it to ImageGen as a visual
+reference while still generating the complete card in one pass. Do not redraw a referenced mark from memory.
+Generated marks are non-official stylized
+interpretations.

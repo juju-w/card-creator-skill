@@ -1,5 +1,5 @@
 interface:
   display_name: "卡面生成器"
-  short_description: "一句话快速生成卡面；精确贴纸按需启用"
+  short_description: "一句话调用 ImageGen 生成完整卡面"
   brand_color: "#CC4A3A"
-  default_prompt: "使用 $card-creator 根据这句简短描述生成一张卡面。"
+  default_prompt: "使用 $card-creator 和 ImageGen 根据这句简短描述生成一张完整卡面。"

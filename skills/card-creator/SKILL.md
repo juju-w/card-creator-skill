@@ -1,65 +1,50 @@
 ---
 name: card-creator
-description: Create print-ready AirCard, NFC-card, and transit-card faces quickly from short visual briefs. Use one-pass stylized marks by default; use verified transparent stickers only when the user explicitly asks for exact logos.
+description: Create print-ready AirCard, NFC-card, bank-card, and transit-card faces quickly from short visual briefs. Always generate the complete artwork with ImageGen; repository logo PNGs are optional visual references, not compositing layers.
 ---
 
 # Card Creator
 
-Prefer the shortest route that satisfies the request. A brief such as “Magikarp × ICOCA, simple, ICOCA
-at lower right” is enough; do not turn it into an asset-research project.
+A short brief such as “Magikarp × ICOCA, simple, ICOCA at lower right” is complete. Start creating;
+do not turn it into logo research or a vector-graphics task.
 
-## Choose one route
+## Required workflow
 
-### Fast artistic mode — default
+1. **Call ImageGen first.** Generate one flat landscape card face containing the subject, style, requested
+   marks, and placement in a single image-generation pass. Never substitute SVG, HTML, Canvas, or code-drawn
+   artwork for ImageGen.
+2. A brand name, the word “Logo,” a placement such as “lower right,” or a request for trim/bleed downloads
+   does **not** request a deterministic overlay. Do not inspect SVG files, a manifest, or compositing options.
+3. For each requested mark, check the small [logo reference index](references/logo-reference-index.md). If a
+   matching PNG exists, open only that PNG and pass it to ImageGen; do not redraw the mark from memory. If no
+   reference exists, use model knowledge or a user attachment without starting web research. The PNG guides
+   appearance; it is not pasted onto the finished card.
+4. Do not add unrequested text, card numbers, chips, QR codes, barcodes, or contactless/NFC symbols. Avoid
+   hands, devices, wallet UI, perspective, mockups, watermarks, shadows, and baked corner masks.
+5. Check only that the requested subject and marks are present, visual hierarchy works, and important content
+   is not accidentally cropped. Make at most one focused retry when the card is clearly unusable.
+6. Run `scripts/prepare_card.py` only after generation to produce deterministic 300 DPI trim, bleed, and guide
+   files. Use default `cover` for full-bleed art; use `--fit-mode contain` when edge content would otherwise be
+   cut. The export script resizes and checks artwork; it does not add logos.
 
-Use for ordinary card requests and for style-matched marks such as “make the Octopus logo purple.”
+## Output
 
-- Generate the artwork and requested marks together in one ImageGen call.
-- Use the user's reference or model knowledge. Do not browse, inspect the sticker manifest, extract Alpha,
-  or compare logo variants.
-- Treat generated payment, transit, bank, and city-card marks as one-off non-official stylized
-  interpretations. Mention that briefly when delivering; never add them to the `ready` sticker pack.
-- Make at most one focused retry when the composition is clearly unusable. A stylized mark differing from
-  official geometry is not by itself a reason to research or restart.
-
-### Exact-overlay mode — explicit opt-in
-
-Use only when the user asks for an “exact,” “official,” “original,” or local transparent logo/sticker.
-
-- Read [sticker catalog](references/sticker-catalog.md) and the
-  [manifest](assets/stickers/manifest.json), then composite only `status: ready` assets.
-- If the exact mark is absent, report it immediately. Search or extract a new asset only when the user
-  explicitly asks to find, search, collect, or cut one out; then read
-  [sticker research](references/sticker-research.md).
-- Keep exact source geometry. A requested color/material treatment may use the compositor's
-  `foil-gold`, `monochrome`, or `outline` treatment.
-
-## Fast workflow
-
-1. Default to one card face. Use the user's short brief directly; do not ask for details that can be
-   inferred safely.
-2. Generate flat landscape artwork containing the subject, style, requested marks, and placement. Avoid
-   hands, devices, mockups, perspective, watermarks, functional card numbers, QR codes, and barcodes.
-   Do not add a contactless/NFC symbol unless requested.
-3. Check only the essentials: requested subject and marks are present, the hierarchy is readable, and
-   important content is not accidentally cropped. Do not perform a mandatory second art-direction pass.
-4. Run `scripts/prepare_card.py` for the deterministic 300 DPI exports. The default `cover` mode suits
-   full-bleed art; use `--fit-mode contain` when embedded edge content would otherwise be cut.
-5. Return the trim file path and a short disclosure for any generated third-party mark.
+Return the trim file first, followed by bleed and guide files when useful. Mention briefly that generated
+third-party marks are non-official stylized interpretations. Do not claim brand accuracy, authorization,
+interoperability, sponsorship, or endorsement.
 
 ## Fixed boundaries
 
-- Dimensions and coordinates live in [card rules](references/card-rules.md); the export script produces
-  `1011 × 638 px` trim and `1081 × 708 px` bleed files.
+- Dimensions and coordinates live in [card rules](references/card-rules.md): `1011 × 638 px` trim and
+  `1081 × 708 px` bleed.
 - Private user images remain local unless the user explicitly asks to publish them.
-- Do not claim brand accuracy, authorization, interoperability, sponsorship, or endorsement.
 - Do not create credentials or a design intended to pass as a functional payment, access, transit, or
   government-issued card.
+- Contactless/payment indicators are opt-in only.
 
 ## Read references only when needed
 
 - Read [prompt guide](references/prompt-guide.md) only when drafting or debugging a prompt.
-- Read [reference-card remix](references/reference-remix.md) only for a variation based on an existing
-  card, photo, or wallet screenshot.
-- Read the sticker catalog and manifest only in exact-overlay mode.
-- Read sticker research only after an explicit asset-search request.
+- Read [logo reference index](references/logo-reference-index.md) when the request names a brand or transit mark.
+- Read [reference-card remix](references/reference-remix.md) only for a variation based on an existing card,
+  photo, or wallet screenshot.

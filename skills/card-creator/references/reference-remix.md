@@ -23,8 +23,8 @@ Summarize the reference in six fields before prompting:
 4. **Motif density** — sparse single character, repeated pattern, narrative scene, or architectural
    centerpiece.
 5. **Mood and material** — playful, premium, civic, heritage, wintry, paper-like, metallic, and so on.
-6. **Mark mode** — default to exact `ready` overlays; use a traceable mark as an ImageGen reference
-   only when the user explicitly requests a disclosed non-official stylized interpretation.
+6. **Mark reference** — use a user-supplied or matching repository PNG as an ImageGen visual reference
+   when helpful; otherwise use model knowledge.
 
 Transfer these relationships, not exact artwork. Useful transformations include giving a character one
 garment in the transit brand color, translating a heritage motif into new line art, or reusing the
@@ -34,22 +34,20 @@ reference's balance between a large quiet field and one small narrative scene.
 
 - card numbers, masked digits, balances, currencies, names, chips, QR codes, barcodes, or functional
   acceptance claims;
-- issuer, bank, museum, transit, payment, or contactless marks unless the exact asset is approved or
-  the user explicitly opts into a disclosed stylized interpretation;
+- issuer, bank, museum, transit, payment, or contactless marks that the user did not request;
 - proprietary illustrations copied from the source;
 - wallet UI, device instructions, mockup shadows, rounded-corner masks, or screenshot watermarks.
 
-If an unavailable mark is important to the layout, exact mode reserves its zone and reports it as
-missing. In explicit stylized mode, keep the reference source and final prompt, label the output
-non-official, and never promote it to `ready`. Follow [sticker research](sticker-research.md) when
-the user explicitly requests asset research.
+Generate requested marks as part of the complete ImageGen composition. When a reference PNG exists, use it
+to guide the mark rather than pasting it afterward. Label third-party marks as non-official stylized
+interpretations.
 
 ## Direct web prompt template
 
 ```text
 Use the card-face rules in https://github.com/juju-w/card-creator-skill and the reference image I uploaded above. The reference may be a mobile-wallet screenshot: analyze only the card artwork and ignore the balance, currency, reader instructions, interface, mockup corners, shadows, and watermark.
 
-Do not copy the card literally. First extract its design grammar—palette relationships, whitespace, composition zones, line weight, motif density, and mood—then create a clearly new [target theme] variation using those relationships. Keep all important content in the central safe area of a flat 1.58577:1 landscape card face targeting a 1011 × 638 px trim at 300 DPI.
+Do not copy the card literally. First extract its design grammar—palette relationships, whitespace, composition zones, line weight, motif density, and mood—then create a clearly new [target theme] variation using those relationships. Create a flat 1.58577:1 landscape card face targeting a 1011 × 638 px trim at 300 DPI; allow intentional full-bleed elements while avoiding accidental clipping.
 
-Do not reproduce card numbers, masked digits, names, chips, balances, QR codes, barcodes, issuer text, or unavailable logos. Reserve clean zones for [requested stickers]. If I uploaded verified transparent sticker files, preserve them as immutable overlays; otherwise leave those zones empty. Output artwork only, with no hand, device, card mockup, perspective, rounded-corner mask, border, or shadow. Generate one complete preview and include the final prompt you used.
+Do not reproduce card numbers, masked digits, names, chips, balances, QR codes, barcodes, or unrequested marks. Generate [requested marks] inside the complete artwork; use any uploaded logo image only as an ImageGen visual reference. Output artwork only, with no hand, device, card mockup, perspective, rounded-corner mask, border, or shadow. Generate one complete preview and include the final prompt you used.
 ```

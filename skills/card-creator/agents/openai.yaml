@@ -1,5 +1,5 @@
 interface:
   display_name: "Card Creator"
-  short_description: "Create card faces fast; exact stickers only on request"
+  short_description: "Generate complete card faces from one short brief"
   brand_color: "#CC4A3A"
-  default_prompt: "Use $card-creator to create a card face from this short brief."
+  default_prompt: "Use $card-creator and ImageGen to create one complete card face from this short brief."

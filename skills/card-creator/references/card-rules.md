@@ -21,15 +21,6 @@ Coordinate system for the full-bleed master:
 - Trim bounds: x 35–1045, y 35–672.
 - Advisory safe bounds: x 94–986, y 94–613. The blue line in the guide preview visualizes this
   conservative zone; it does not constrain artwork or logo scale.
-- Sticker positions are expressed relative to the trim bounds, not the full-bleed canvas.
-- `prepare_card.py --sticker ID@ANCHOR` supports a complete 3 × 3 anchor grid: `top-left`,
-  `top-center`, `top-right`, `center-left`, `center-center`, `center-right`, `bottom-left`,
-  `bottom-center`, and `bottom-right`. Omitting `@ANCHOR` preserves the original bottom-right
-  stacking behavior. The center column is useful for deliberate multi-logo collage layouts.
-- `--sticker-style ID=foil-gold`, `ID=monochrome:#RRGGBB`, and `ID=outline:#RRGGBB` apply a
-  material treatment inside the exact source-logo geometry. Omit the option for original colors.
-- `--sticker-width ID=420` sets an explicit rendered width. Use it for intentionally oversized,
-  corner-filling, repeated, or near-full-card marks instead of shrinking every mark into the blue guide.
 - `prepare_card.py --fit-mode contain --contain-inset 20` preserves an edge-bound source composition
   inside trim and extends a sampled paper/background color into bleed. Use it when cover-cropping would
   cut embedded marks or focal artwork; the default `cover` mode remains appropriate for true full-bleed
@@ -43,16 +34,15 @@ Coordinate system for the full-bleed master:
   bleed when that is the requested composition.
 - Keep small text, card numbers, and other conventional functional data away from trim by default.
   For logos and focal art, reject only accidental clipping; deliberate cropping or full-bleed use is valid.
-- In exact compositor mode, a requested surface treatment must preserve the source geometry and may
-  not repair or invent a mark. In explicit stylized mode, ImageGen may reinterpret the reference's
-  geometry, lettering treatment, color, and material as a disclosed non-official artwork.
+- ImageGen may reinterpret a reference mark's geometry, lettering treatment, color, and material as a
+  disclosed non-official artwork. PNG logo files are references, not deterministic overlays.
 - Do not rasterize rounded corners. Printers and card manufacturers apply the physical corner cut.
-- Text generated inside background artwork is discouraged. Add important text later as a deterministic
-  editable layer when the caller provides a supported compositor.
+- Avoid unnecessary generated text. Short text that is integral to a requested mark may remain part of the
+  generated artwork.
 
 ## Export acceptance
 
 - PNG in sRGB.
-- No alpha is required for the background; transparent stickers retain alpha before compositing.
+- No alpha is required for the generated card artwork.
 - No metadata containing private source paths or user identifiers.
 - Inspect the guide preview before delivering the clean files.

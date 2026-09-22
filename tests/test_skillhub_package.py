@@ -4,7 +4,6 @@ import subprocess
 import sys
 import tempfile
 import unittest
-import json
 from pathlib import Path
 
 
@@ -14,7 +13,7 @@ CANONICAL_SKILL = REPOSITORY / "skills" / "card-creator"
 
 
 class SkillHubPackageTests(unittest.TestCase):
-    def test_build_localizes_docs_and_preserves_runtime_assets(self) -> None:
+    def test_build_localizes_docs_and_omits_binary_references(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             output = Path(temporary) / "card-creator"
             subprocess.run(
@@ -26,11 +25,9 @@ class SkillHubPackageTests(unittest.TestCase):
 
             skill_text = (output / "SKILL.md").read_text(encoding="utf-8")
             self.assertIn("displayName: 卡面生成器", skill_text)
-            self.assertIn("快速艺术模式（默认）", skill_text)
-            self.assertIn("只有精确贴纸模式才读取贴纸目录与清单", skill_text)
-            self.assertTrue(
-                output.joinpath("references/sticker-research.md").is_file()
-            )
+            self.assertIn("首先调用 ImageGen", skill_text)
+            self.assertIn("不得使用", skill_text)
+            self.assertNotIn("精确贴纸模式", skill_text)
             self.assertTrue(
                 output.joinpath("references/reference-remix.md").is_file()
             )
@@ -41,53 +38,14 @@ class SkillHubPackageTests(unittest.TestCase):
                 (output / "scripts" / "prepare_card.py").read_bytes(),
                 (CANONICAL_SKILL / "scripts" / "prepare_card.py").read_bytes(),
             )
-            self.assertTrue(output.joinpath("assets/stickers/manifest.json").is_file())
-            self.assertTrue(output.joinpath("assets/stickers/payment/mastercard.svg").is_file())
-            self.assertTrue(
-                output.joinpath(
-                    "assets/stickers/payment/mastercard.png.base64.txt"
-                ).is_file()
-            )
-            self.assertFalse(
-                output.joinpath(
-                    "assets/stickers/generic/contactless-material.png.base64.txt"
-                ).exists()
-            )
+            self.assertFalse(output.joinpath("assets/logo-references").exists())
+            self.assertFalse(output.joinpath("references/logo-reference-index.md").exists())
+            self.assertFalse(output.joinpath("references/sticker-catalog.md").exists())
+            self.assertFalse(output.joinpath("references/sticker-research.md").exists())
+            self.assertFalse(output.joinpath("scripts/render_stickers.py").exists())
             self.assertFalse(any(output.rglob("*.png")))
+            self.assertFalse(any(output.rglob("*.svg")))
             self.assertFalse(any(output.rglob(".DS_Store")))
-
-            manifest = json.loads(
-                output.joinpath("assets/stickers/manifest.json").read_text(
-                    encoding="utf-8"
-                )
-            )
-            mastercard = next(
-                item for item in manifest["items"] if item["id"] == "mastercard"
-            )
-            self.assertEqual(
-                mastercard["file"],
-                "payment/mastercard.png.base64.txt",
-            )
-            self.assertTrue(
-                all("research_file" not in item for item in manifest["items"])
-            )
-            self.assertEqual(
-                {item["status"] for item in manifest["items"]},
-                {"ready", "reference-only"},
-            )
-            self.assertFalse(
-                any(item["category"] == "issuer-bank" for item in manifest["items"])
-            )
-            contactless = {
-                item["id"]: item for item in manifest["items"] if "contactless" in item["id"]
-            }
-            self.assertEqual(
-                contactless["generic-contactless-material"]["status"],
-                "reference-only",
-            )
-            self.assertNotIn("emv-contactless-indicator", contactless)
-            self.assertIsNone(contactless["generic-contactless-material"]["file"])
-            self.assertIn("conventional card-face variant", manifest["variant_policy"])
 
 
 if __name__ == "__main__":
