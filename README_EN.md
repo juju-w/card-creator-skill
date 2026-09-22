@@ -8,34 +8,43 @@ A Codex Skill for creating print-ready AirCard, NFC-card, and transit-card faces
 artwork; the Skill handles dimensions, trim, layout, transparent stickers, and 300 DPI exports.
 This repository does not include an online editor.
 
-## Start here: seven card styles and one-line prompts
+## Start here: nine card styles and one-line prompts
 
 Dimensions, bleed, layout, rounded-display behavior, and export rules already live in the Skill.
 Paste one sentence into ChatGPT or Gemini; upload a reference in the same message when applicable.
 
+| Minimal character card · Magikarp × ICOCA | Purple tech · Gengar × Octopus |
+|---|---|
+| <img src="examples/gemini-magikarp-icoca.jpeg" width="420" alt="Minimal Magikarp and ICOCA card"> | <img src="examples/gemini-gengar-octopus.jpeg" width="420" alt="Purple Gengar and Octopus card"> |
+| `Using the card-creator Skill, create a simple Magikarp × ICOCA card with ICOCA at lower right.` | `Using the card-creator Skill, create a Gengar × Octopus card and recolor the Octopus logo purple to match the artwork.` |
+
 | High art · Vienna Secession × Diners Club |
 |---|
 | <img src="examples/vienna-secession-diners.png" width="420" alt="Vienna Secession black-and-gold portrait with Diners Club"> |
-| `Using the card-creator Skill, make a high-art Vienna Secession card with an original profile, black-and-gold mosaics, mother-of-pearl flowers, and a matte-gold compact Diners Club mark.` |
+| `Using the card-creator Skill, create a black-and-gold Vienna Secession card with matte-gold Diners Club at lower right.` |
 
 | Fresh watercolor · Chiikawa × Suica | Post-impressionist · swirling night × Visa |
 |---|---|
 | <img src="examples/chiikawa-suica.png" width="420" alt="Fresh watercolor Chiikawa and Suica card"> | <img src="examples/post-impressionist-visa.png" width="420" alt="Post-impressionist swirling-night card with matte-gold Visa"> |
-| `Using the card-creator Skill and the reference above, make a fresh watercolor Chiikawa × Suica card with a spring clover meadow and Suica at lower right.` | `Using the card-creator Skill, make a premium post-impressionist card with a deep-cobalt swirling night, golden stars, cypress trees, and matte-gold Visa.` |
+| `Using the card-creator Skill, create a fresh watercolor Chiikawa × Suica card with Suica at lower right.` | `Using the card-creator Skill, create a post-impressionist card with a deep-blue swirling night and matte-gold Visa at lower right.` |
 
 | Beijing ink wash · transit marks | Ultra-minimal line art · Mastercard |
 |---|---|
 | <img src="examples/beijing-ink-transit-background.png" width="420" alt="Beijing ink-wash transit card"> | <img src="examples/minimal-mastercard.png" width="420" alt="Ultra-minimal line-art Mastercard card"> |
-| `Using the card-creator Skill and the reference above, make a Beijing ink-wash transit card with the Temple of Heaven, Great Wall, rice-paper texture, and style-matched Beijing transit marks.` | `Using the card-creator Skill and the reference above, make a warm-ivory ultra-minimal line-art card with red-and-orange Mastercard at lower right.` |
+| `Using the card-creator Skill, create a Beijing ink-wash transit card with the Temple of Heaven, Great Wall, Beijing Transit Card, and China T-Union.` | `Using the card-creator Skill, create a warm-ivory minimal line-art card with Mastercard at lower right.` |
 
 | Palace collection · mica clouds and cranes | Shanghai Art Deco · night skyline × UnionPay |
 |---|---|
 | <img src="examples/palace-museum-cranes-unionpay.png" width="420" alt="Palace collection card with mica clouds and cranes"> | <img src="examples/shanghai-art-deco-unionpay.png" width="420" alt="Shanghai Art Deco night card with matte-gold UnionPay"> |
-| `Using the card-creator Skill and the reference above, make a Palace collection card with mica clouds, cranes, architecture, and style-matched antique-gold marks.` | `Using the card-creator Skill, make a 1930s Shanghai Art Deco card with a deep-jade Bund nightscape, antique-gold linework, and compact UnionPay at lower right.` |
+| `Using the card-creator Skill, create a Palace collection card with mica clouds, cranes, architecture, and style-matched antique-gold marks.` | `Using the card-creator Skill, create a deep-jade and antique-gold Shanghai Art Deco card with compact UnionPay at lower right.` |
 
-The Beijing and Palace examples use disclosed non-official stylized marks. Payment and transit overlays
-are exact transparent assets whose manifest status is `ready`. All examples are personal, non-commercial
-demonstrations and do not imply authorization, sponsorship, or endorsement.
+The Magikarp and Gengar images are user-supplied Gemini outputs published with permission. Their generated
+ICOCA, JR-West, and purple Octopus marks are non-official stylized interpretations and are not added to the
+exact `ready` sticker pack. The Beijing and Palace examples also use disclosed non-official stylized marks;
+other payment and transit overlays use exact transparent assets whose manifest status is `ready`. All
+examples are personal, non-commercial demonstrations and do not imply authorization or endorsement. The
+two Gemini images keep their original display ratio; production exports still use the Skill's
+`1011 × 638 px` specification.
 
 ## Install
 
