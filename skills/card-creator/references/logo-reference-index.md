@@ -18,12 +18,16 @@ overlays. Open only the image that matches the requested mark and include it in 
 
 ## Other mainland transit references
 
-The same `assets/logo-references/cities/` directory contains Beijing, Hangzhou, Xi'an, Tianjin, Chengdu, and Chongqing
-operator references. Use them only when their filenames clearly match the user's request.
+- 北京市政交通一卡通: `../assets/logo-references/cities/beijing-municipal-transport-card-reference.png`
+- 上海公共交通卡: `../assets/logo-references/cities/shanghai-public-transport-card-symbol.png`
+
+The same `assets/logo-references/cities/` directory also contains Hangzhou, Xi'an, Tianjin, Chengdu, and
+Chongqing operator references. Use them only when their filenames clearly match the user's request.
 
 ## Payment and overseas transit
 
 - Payment marks: `../assets/logo-references/payment/<name>.png`
+- 八达通 / Octopus: `../assets/logo-references/overseas/hong-kong/octopus-horizontal.png`
 - Suica: `../assets/logo-references/overseas/suica.png`
 - Other Japanese transit marks: `../assets/logo-references/overseas/japan/<name>.png`
 
