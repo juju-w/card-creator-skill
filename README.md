@@ -45,7 +45,9 @@ reserve the upper-right for the China T-Union sticker, and export print-ready PN
 
 Kitaca 的可追溯 SVG 带有不透明米色底，已保留源文件但保持 `pending`；在找到可核验的透明词标前不会手工去底或让 Skill 调用。
 
-交通联合与北京、上海、天津、广州、深圳、杭州、南京、成都、重庆、武汉、西安等城市交通卡标志，以及岭南通、香港八达通、澳门通，已经进入素材清单并记录运营方或官方信息来源。在找到可验证的透明源文件与可再分发许可前保持 `pending`，Skill 不会使用近似图替代。八达通官方还明确要求商标使用须取得书面认可，因此即使能下载高清图也不会自动解锁。
+交通联合与北京、上海、天津、广州、深圳、杭州、南京、成都、重庆、武汉、西安等城市交通卡标志，以及岭南通、香港八达通、澳门通，已经进入素材清单并记录运营方或官方信息来源。北京、深圳、杭州、西安、天津、成都、重庆官网提供的 7 份透明 PNG 原件已收入 `research/cities/`，并记录原始 URL、尺寸、用途差异和 SHA-256；它们仍是研究样本，而不是可调用贴纸。上海、羊城通、岭南通、武汉目前只找到官网的不透明图或页面横幅，清单只记录地址，不会手工抠图。
+
+在找到可验证的透明矢量源文件与可再分发/商标使用依据前，上述城市条目保持 `pending`，Skill 不会使用近似图替代，也不会把运营方 Logo 冒充具体卡产品标志。八达通官网虽然提供 AI/JPG 压缩包，但品牌指引明确要求书面认可，因此仓库只记录官方下载与指引地址，不收录文件、更不会自动解锁。
 
 梗图中常见的 Maestro、Cirrus、PLUS、V Pay、Interac、Bancontact、CB、BC Card、Apple Pay、e-CNY、非接触标志、EZ-Link、T-money 等已整理进 [sticker-catalog.md](skills/card-creator/references/sticker-catalog.md) 的研究队列；它们还不是可调用素材。
 

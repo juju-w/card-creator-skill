@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Validate ready sticker provenance, file presence, and PNG transparency."""
+"""Validate ready stickers and quarantined research assets."""
 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from pathlib import Path
 
@@ -27,12 +28,45 @@ def main() -> None:
     errors: list[str] = []
     seen_ids: set[str] = set()
     ready_count = 0
+    research_count = 0
 
     for item in manifest.get("items", []):
         sticker_id = item.get("id", "<missing-id>")
         if sticker_id in seen_ids:
             errors.append(f"duplicate id: {sticker_id}")
         seen_ids.add(sticker_id)
+
+        research_file = item.get("research_file")
+        if research_file:
+            research_count += 1
+            if item.get("status") != "pending":
+                errors.append(f"{sticker_id}: research_file must remain status=pending")
+            missing = [
+                field
+                for field in ("source", "source_asset", "license", "usage", "sha256")
+                if not item.get(field)
+            ]
+            if missing:
+                errors.append(f"{sticker_id}: missing research fields: {', '.join(missing)}")
+            research_path = (manifest_path.parent / research_file).resolve()
+            if not research_path.is_file():
+                errors.append(f"{sticker_id}: missing research file: {research_path}")
+            else:
+                digest = hashlib.sha256(research_path.read_bytes()).hexdigest()
+                if digest != item.get("sha256"):
+                    errors.append(f"{sticker_id}: research SHA-256 mismatch")
+                with Image.open(research_path) as image:
+                    if "A" not in image.getbands() and "transparency" not in image.info:
+                        errors.append(
+                            f"{sticker_id}: research PNG has no transparency metadata: "
+                            f"mode={image.mode}"
+                        )
+                    else:
+                        alpha = image.convert("RGBA").getchannel("A")
+                        if alpha.getextrema()[0] == 255:
+                            errors.append(
+                                f"{sticker_id}: research PNG transparency is fully opaque"
+                            )
 
         if item.get("status") != "ready":
             continue
@@ -61,7 +95,7 @@ def main() -> None:
                     if alpha.getextrema()[0] == 255:
                         errors.append(f"{sticker_id}: PNG alpha channel is fully opaque")
 
-    result = {"ready": ready_count, "errors": errors}
+    result = {"ready": ready_count, "research": research_count, "errors": errors}
     print(json.dumps(result, ensure_ascii=False, indent=2))
     if errors:
         raise SystemExit(1)

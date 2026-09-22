@@ -48,7 +48,8 @@ source and usage terms are recorded in the manifest.
 ### Mainland China and Greater Bay Area city-card marks
 
 The following marks now have named manifest entries and traceable operator or official information
-pages. They remain `pending`, so the skill must reserve space for them but must not composite them:
+pages. They remain `pending`, so the skill may discuss or reserve space for them but must not
+composite them:
 
 - `beijing-yikatong` — 北京一卡通
 - `shanghai-public-transport-card` — 上海公共交通卡
@@ -65,9 +66,22 @@ pages. They remain `pending`, so the skill must reserve space for them but must 
 - `hong-kong-octopus` — 香港八达通 / Octopus
 - `macau-pass` — 澳门通 / Macau Pass
 
+Exact transparent PNGs served by official websites have been retained under
+`assets/stickers/research/cities/` for Beijing, Shenzhen, Hangzhou, Xi'an, Tianjin, Chengdu, and
+Chongqing. These files are provenance samples, not an approved sticker pack: their manifest items
+remain `pending`, and `research_file` must never be treated as `file`. The Beijing image is a white
+website-header variant; Shenzhen's is symbol-only; the Hangzhou and Chongqing images are operator
+marks that have not been verified as the corresponding transit-card product marks.
+
+For Shanghai, Yang Cheng Tong, Lingnan Pass, and Wuhan Tong, the official web assets located so far
+are opaque rasters or page-header strips. Their exact URLs and formats are recorded as
+`observed_asset` in the manifest, but the images are not copied into the sticker pack and must not
+be manually background-removed.
+
 Octopus is a special hard stop: its official branding page says trademark use requires written
 approval, and its brand guide prohibits reproduction without written permission. Do not promote it
-to `ready` merely because a high-resolution download exists.
+to `ready` merely because an official AI/JPG archive exists. The download URL is recorded for
+traceability, but the archive is intentionally not stored in this repository.
 
 ### Payment and banking networks
 
