@@ -45,6 +45,30 @@ custom card is issued by, accepted by, or interoperable with any operator.
 No asset in this section may be composited until its official or freely reusable transparent
 source and usage terms are recorded in the manifest.
 
+### Mainland China and Greater Bay Area city-card marks
+
+The following marks now have named manifest entries and traceable operator or official information
+pages. They remain `pending`, so the skill must reserve space for them but must not composite them:
+
+- `beijing-yikatong` — 北京一卡通
+- `shanghai-public-transport-card` — 上海公共交通卡
+- `tianjin-city-card` — 天津城市卡
+- `guangzhou-yangchengtong` — 羊城通
+- `lingnan-pass` — 岭南通
+- `shenzhen-tong` — 深圳通
+- `hangzhou-tong` — 杭州通
+- `nanjing-jinling-tong` — 金陵通
+- `chengdu-tianfu-tong` — 天府通
+- `chongqing-city-card` — 重庆畅通卡
+- `wuhan-tong` — 武汉通
+- `xian-changan-tong` — 长安通
+- `hong-kong-octopus` — 香港八达通 / Octopus
+- `macau-pass` — 澳门通 / Macau Pass
+
+Octopus is a special hard stop: its official branding page says trademark use requires written
+approval, and its brand guide prohibits reproduction without written permission. Do not promote it
+to `ready` merely because a high-resolution download exists.
+
 ### Payment and banking networks
 
 - Maestro
@@ -67,7 +91,6 @@ source and usage terms are recorded in the manifest.
 
 ### Transit and stored-value systems outside mainland China and Japan
 
-- Octopus / 八达通
 - EZ-Link
 
 Keep these groups distinct in prompts. A payment-network logo, wallet badge, contactless

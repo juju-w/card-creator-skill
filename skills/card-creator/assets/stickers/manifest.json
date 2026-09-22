@@ -8,9 +8,10 @@
       "category": "national",
       "status": "pending",
       "file": null,
-      "source": null,
-      "license": "Unverified; do not redistribute or composite",
-      "usage": "discovery-only"
+      "source": "https://www.cttic.cn/info/3171",
+      "license": "Official service-information source located; artwork redistribution permission not verified",
+      "usage": "discovery-only; do not composite until a transparent source and mark-usage terms are verified",
+      "blocker": "No verified redistributable transparent SVG has been located"
     },
     {
       "id": "beijing-yikatong",
@@ -19,9 +20,10 @@
       "region": "北京",
       "status": "pending",
       "file": null,
-      "source": null,
-      "license": "Unverified; do not redistribute or composite",
-      "usage": "discovery-only"
+      "source": "https://www.bmac.com.cn/",
+      "license": "Official operator source located; logo redistribution permission not verified",
+      "usage": "discovery-only; do not composite",
+      "blocker": "No verified redistributable transparent SVG has been located"
     },
     {
       "id": "shanghai-public-transport-card",
@@ -30,9 +32,10 @@
       "region": "上海",
       "status": "pending",
       "file": null,
-      "source": null,
-      "license": "Unverified; do not redistribute or composite",
-      "usage": "discovery-only"
+      "source": "https://www.sptcc.com/",
+      "license": "Official operator source located; logo redistribution permission not verified",
+      "usage": "discovery-only; do not composite",
+      "blocker": "No verified redistributable transparent SVG has been located"
     },
     {
       "id": "hangzhou-tong",
@@ -41,9 +44,10 @@
       "region": "杭州",
       "status": "pending",
       "file": null,
-      "source": null,
-      "license": "Unverified; do not redistribute or composite",
-      "usage": "discovery-only"
+      "source": "https://www.96225.com/smknet/service/show_allGet.action",
+      "license": "Official product-information source located; logo redistribution permission not verified",
+      "usage": "discovery-only; do not composite",
+      "blocker": "No verified redistributable transparent SVG has been located"
     },
     {
       "id": "xian-changan-tong",
@@ -52,9 +56,10 @@
       "region": "西安",
       "status": "pending",
       "file": null,
-      "source": null,
-      "license": "Unverified; do not redistribute or composite",
-      "usage": "discovery-only"
+      "source": "http://www.xaykt.com/",
+      "license": "Official operator source located; logo redistribution permission not verified",
+      "usage": "discovery-only; do not composite",
+      "blocker": "No verified redistributable transparent SVG has been located"
     },
     {
       "id": "guangzhou-yangchengtong",
@@ -63,9 +68,10 @@
       "region": "广州",
       "status": "pending",
       "file": null,
-      "source": null,
-      "license": "Unverified; do not redistribute or composite",
-      "usage": "discovery-only"
+      "source": "https://www.gzyct.com/",
+      "license": "Official operator source located; logo redistribution permission not verified",
+      "usage": "discovery-only; preserve the official Chinese wordmark if later approved; do not composite",
+      "blocker": "No verified redistributable transparent SVG has been located"
     },
     {
       "id": "lingnan-pass",
@@ -74,9 +80,106 @@
       "region": "广东",
       "status": "pending",
       "file": null,
-      "source": null,
-      "license": "Unverified; do not redistribute or composite",
-      "usage": "discovery-only"
+      "source": "https://www.lingnanpass.com/sy",
+      "license": "Official operator source located; logo redistribution permission not verified",
+      "usage": "discovery-only; preserve the official Chinese wordmark if later approved; do not composite",
+      "blocker": "No verified redistributable transparent SVG has been located"
+    },
+    {
+      "id": "shenzhen-tong",
+      "name": "深圳通",
+      "category": "cities",
+      "region": "深圳",
+      "status": "pending",
+      "file": null,
+      "source": "https://www.shenzhentong.com/",
+      "license": "Official operator source located; logo redistribution permission not verified",
+      "usage": "discovery-only; do not composite",
+      "blocker": "Official pages expose raster marks, but no verified redistributable transparent SVG and usage permission have been located"
+    },
+    {
+      "id": "hong-kong-octopus",
+      "name": "八达通 Octopus",
+      "category": "transit-ic",
+      "region": "香港",
+      "status": "pending",
+      "file": null,
+      "source": "https://www.octopus.com.hk/sc/business/merchant-support/branding-guideline/index.html",
+      "license": "Proprietary trademark; Octopus states that use requires compliance with its guidelines and written approval",
+      "usage": "discovery-only; do not download, redistribute, or composite without documented written approval",
+      "blocker": "Official branding materials require written approval, and the brand guide prohibits reproduction without written permission"
+    },
+    {
+      "id": "macau-pass",
+      "name": "澳门通 Macau Pass",
+      "category": "transit-ic",
+      "region": "澳门",
+      "status": "pending",
+      "file": null,
+      "source": "https://macaupass.com/news_detail/351",
+      "license": "Official brand-identity source located; logo redistribution permission not verified",
+      "usage": "discovery-only; do not composite",
+      "blocker": "No verified redistributable transparent SVG or public mark-usage grant has been located"
+    },
+    {
+      "id": "tianjin-city-card",
+      "name": "天津城市卡",
+      "category": "cities",
+      "region": "天津",
+      "status": "pending",
+      "file": null,
+      "source": "https://www.tjykt.com/html/citycard/",
+      "license": "Official operator source located; logo redistribution permission not verified",
+      "usage": "discovery-only; do not composite",
+      "blocker": "No verified redistributable transparent SVG has been located"
+    },
+    {
+      "id": "nanjing-jinling-tong",
+      "name": "金陵通",
+      "category": "cities",
+      "region": "南京",
+      "status": "pending",
+      "file": null,
+      "source": "https://www.jszhihui.cn/",
+      "license": "Operator source located; logo redistribution permission not verified",
+      "usage": "discovery-only; do not composite",
+      "blocker": "No verified redistributable transparent SVG has been located"
+    },
+    {
+      "id": "chengdu-tianfu-tong",
+      "name": "天府通",
+      "category": "cities",
+      "region": "成都",
+      "status": "pending",
+      "file": null,
+      "source": "https://www.cdtft.cn/",
+      "license": "Official operator source located; logo redistribution permission not verified",
+      "usage": "discovery-only; do not composite",
+      "blocker": "No verified redistributable transparent SVG has been located"
+    },
+    {
+      "id": "chongqing-city-card",
+      "name": "重庆畅通卡",
+      "category": "cities",
+      "region": "重庆",
+      "status": "pending",
+      "file": null,
+      "source": "https://www.cqtk.com.cn/",
+      "license": "Official operator source located; logo redistribution permission not verified",
+      "usage": "discovery-only; do not composite",
+      "blocker": "No verified redistributable transparent SVG has been located"
+    },
+    {
+      "id": "wuhan-tong",
+      "name": "武汉通",
+      "category": "cities",
+      "region": "武汉",
+      "status": "pending",
+      "file": null,
+      "source": "http://www.whcst.com/",
+      "license": "Official operator source located; logo redistribution permission not verified",
+      "usage": "discovery-only; do not composite",
+      "blocker": "No verified redistributable transparent SVG has been located"
     },
     {
       "id": "unionpay",
