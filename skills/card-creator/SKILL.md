@@ -12,7 +12,8 @@ approximate, stylize, or repair a logo.
 ## Workflow
 
 1. Read [card rules](references/card-rules.md) before generating.
-2. Read [sticker manifest](assets/stickers/manifest.json) and use only entries whose status is `ready`.
+2. Read [sticker catalog](references/sticker-catalog.md) when choosing among payment and transit
+   sticker families. Then read [sticker manifest](assets/stickers/manifest.json) and use only entries whose status is `ready`.
    If a requested sticker is not ready, generate the background without it and report the missing asset.
 3. Default to one card face. Ask about front/back only when the request clearly requires a paired design.
 4. Use the built-in image generation tool to create only the background artwork. Prompt for a flat,
@@ -39,5 +40,6 @@ approximate, stylize, or repair a logo.
 
 - For exact dimensions and coordinate systems, read [card rules](references/card-rules.md).
 - For prompt construction, read [prompt guide](references/prompt-guide.md).
+- For sticker families and the research backlog, read [sticker catalog](references/sticker-catalog.md).
 - Sticker assets and provenance live under `assets/stickers/`.
 - Run `python3 scripts/prepare_card.py --help` for deterministic export options.

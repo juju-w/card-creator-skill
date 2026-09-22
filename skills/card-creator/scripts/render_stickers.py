@@ -4,10 +4,12 @@
 from __future__ import annotations
 
 import argparse
+import io
 import json
 from pathlib import Path
 
 import cairosvg
+from PIL import Image
 
 
 def main() -> None:
@@ -20,13 +22,21 @@ def main() -> None:
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     rendered = []
     for item in manifest["items"]:
-        if item.get("status") != "ready" or not item.get("file"):
+        vector_file = item.get("vector_file")
+        raster_file = item.get("file")
+        if item.get("status") != "ready" or not vector_file or not raster_file:
             continue
-        source = (manifest_path.parent / item["file"]).resolve()
+        source = (manifest_path.parent / vector_file).resolve()
         if source.suffix.lower() != ".svg":
             continue
-        target = source.with_suffix(".png")
-        cairosvg.svg2png(url=str(source), write_to=str(target), output_width=args.width)
+        target = (manifest_path.parent / raster_file).resolve()
+        target.parent.mkdir(parents=True, exist_ok=True)
+        raster = cairosvg.svg2png(url=str(source), output_width=args.width)
+        image = Image.open(io.BytesIO(raster)).convert("RGBA")
+        alpha_bounds = image.getchannel("A").getbbox()
+        if not alpha_bounds:
+            raise SystemExit(f"Rendered sticker is fully transparent: {source}")
+        image.crop(alpha_bounds).save(target, optimize=True)
         rendered.append(str(target))
     print(json.dumps({"rendered": rendered}, ensure_ascii=False, indent=2))
 
