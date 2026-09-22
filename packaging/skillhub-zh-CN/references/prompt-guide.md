@@ -1,32 +1,19 @@
-# 背景 Prompt 指南
+# Prompt 指南
 
-生成 Prompt 描述的是平面画稿，而不是实体卡产品或样机。
+给用户看的 Prompt 保持简短。尺寸、导出规则和常规排除项由 Skill 自己处理。
 
-必须包含：
+## 默认快速模式
 
-- `flat edge-to-edge landscape artwork, 1.58577:1 composition`；
-- 主体、视觉风格、色板、氛围和焦点位置；
-- `important content centered within a generous safe area`；
-- 后续透明贴纸所需的干净留白位置；
-- `no logo, no brand mark, no card number, no QR code, no barcode, no watermark`；
-- `no card mockup, no hand, no perspective, no rounded-corner mask, no shadow`。
-
-默认精确模式下，ImageGen Prompt 只描述留位，真实贴纸之后通过 `prepare_card.py` 叠加；
-应根据标志类别和官方参考选择约定俗成的卡面版本，不能全局强制短款或完整横版。
-
-用户明确选择风格化模式时，把可追溯标志作为注明用途的参考图，并写清材质、位置和披露：结果
-是非官方艺术化诠释，不能进入精确贴纸包。两种模式都不得默认加入感应标志。
-
-用户提供已有卡面或手机钱包截图并要求做风格变化时，先读取
-[参考卡面风格化改造](reference-remix.md)，再编写 Prompt。
-
-示例：
+一句话写明主体、风格和标志位置：
 
 ```text
-Create flat edge-to-edge landscape artwork in a 1.58577:1 composition. A quiet ink-and-gouache city
-morning with a train crossing the lower third, warm paper texture, pine green and vermilion palette.
-Keep the central title area calm and all important subjects inside a generous safe area. Leave clean
-negative space in the upper-right for a later transparent transit sticker. No logo, brand mark, card
-number, QR code, barcode, watermark, card mockup, hand, perspective, border, rounded-corner mask,
-or shadow.
+使用 card-creator Skill，生成一张鲤鱼王 × ICOCA 卡面：简洁，右下角 ICOCA。
 ```
+
+内部只补充 ImageGen 真正需要的最少制作要求：平面横向卡面、不要样机与功能性卡片数据、用户
+未要求时不加感应标志。所需 Logo 直接生成在画面里，并披露为非官方风格化诠释。
+
+## 精确贴纸模式
+
+用户明确要求本地精确贴纸时，先生成留出干净位置且不含 Logo 的背景，再用 `prepare_card.py`
+加入 `ready` 素材。用户未明确要求研究时，不得为缺失素材自动搜索。

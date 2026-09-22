@@ -1,5 +1,5 @@
 interface:
   display_name: "卡面生成器"
-  short_description: "按标准尺寸、安全区和可追溯贴纸素材生成可印刷卡面"
+  short_description: "一句话快速生成卡面；精确贴纸按需启用"
   brand_color: "#CC4A3A"
-  default_prompt: "使用 $card-creator 根据我的描述生成可印刷卡面，并且只叠加已核验的贴纸素材。"
+  default_prompt: "使用 $card-creator 根据这句简短描述生成一张卡面。"

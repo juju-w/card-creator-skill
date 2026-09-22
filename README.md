@@ -68,11 +68,15 @@ skillhub install card-creator
 
 ## 使用
 
-不需要把尺寸和排版规则重复写进 Prompt：
+默认走快速艺术模式：一次生成画面与风格化标志，不搜索素材、不读取贴纸清单。Prompt 只需要
+“主题 + 风格 + Logo/位置”：
 
 ```text
-使用 card-creator Skill，参考图如上，生成一张 [主题] 卡面，加入 [贴纸]，整体为 [风格]；不要添加感应支付标志和无关文字。
+使用 card-creator Skill，生成一张鲤鱼王 × ICOCA 卡面：简洁，右下角 ICOCA。
 ```
+
+只有需要原版透明标志时才显式写“使用精确贴纸模式”。缺少素材时 Skill 会直接报告；只有你明确
+要求搜索或抠图，它才会进入素材研究流程。
 
 手机钱包截图也可以作为参考。Skill 只分析卡面区域，会忽略余额、币种、读卡提示、界面圆角、
 阴影和水印，并把设计语言转化成新的构图，而不是复制原卡。完整规则见
@@ -90,11 +94,11 @@ skillhub install card-creator
 
 ## 素材与边界
 
-- 可直接合成的 `ready` 素材包括 Visa、Mastercard、American Express、银联、JCB、Discover、
-  Diners Club、RuPay、MIR，以及 Suica、PASMO、ICOCA 等日本交通 IC 标志。
+- 精确贴纸模式可直接合成的 `ready` 素材包括 Visa、Mastercard、American Express、银联、JCB、
+  Discover、Diners Club、RuPay、MIR，以及 Suica、PASMO、ICOCA 等日本交通 IC 标志。
 - manifest 只保留仓库里实际存在的 `ready` 与 `reference-only` 文件，不再维护无法获取的空
-  `blocked` 条目。缺失的城市交通、银行、钱包或支付标志会在用户请求时现场搜索、抠取 Alpha
-  候选，或在明确风格化模式下由模型生成一次性的非官方诠释。详见
+  `blocked` 条目。默认快速模式直接由模型生成一次性的非官方风格化标志；只有用户明确要求
+  搜索、寻找或抠图时，才为缺失的城市交通、银行、钱包或支付标志研究 Alpha 候选。详见
   [sticker-catalog.md](skills/card-creator/references/sticker-catalog.md)、
   [sticker-research.md](skills/card-creator/references/sticker-research.md) 和
   [manifest.json](skills/card-creator/assets/stickers/manifest.json)。

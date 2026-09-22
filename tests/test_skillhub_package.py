@@ -26,7 +26,8 @@ class SkillHubPackageTests(unittest.TestCase):
 
             skill_text = (output / "SKILL.md").read_text(encoding="utf-8")
             self.assertIn("displayName: 卡面生成器", skill_text)
-            self.assertIn("只有 `status: ready`", skill_text)
+            self.assertIn("快速艺术模式（默认）", skill_text)
+            self.assertIn("只有精确贴纸模式才读取贴纸目录与清单", skill_text)
             self.assertTrue(
                 output.joinpath("references/sticker-research.md").is_file()
             )

@@ -70,11 +70,15 @@ skillhub install card-creator
 
 ## Use
 
-Do not repeat dimensions and layout mechanics in every prompt:
+Fast artistic mode is the default: one pass creates the artwork and stylized marks without searching or
+loading the sticker catalog. The prompt only needs a subject, style, and mark placement:
 
 ```text
-Using the card-creator Skill and the reference image above, create a [theme] card with [stickers] in a [style]. Add no contactless mark or unrelated text.
+Using the card-creator Skill, create a simple Magikarp × ICOCA card with ICOCA at lower right.
 ```
+
+Say “use exact-overlay mode” only when you need an original transparent mark. A missing asset is reported
+immediately; asset search or extraction runs only when you explicitly request it.
 
 Mobile-wallet screenshots work as references. The Skill isolates the card face, ignores balances,
 reader instructions, interface corners, shadows, and watermarks, and transfers design grammar into a
@@ -96,12 +100,12 @@ and coordinates.
 
 ## Assets and boundaries
 
-- Ready overlays include Visa, Mastercard, American Express, UnionPay, JCB, Discover, Diners Club,
-  RuPay, MIR, and Japanese transit marks including Suica, PASMO, and ICOCA.
+- Exact-overlay mode can use ready assets for Visa, Mastercard, American Express, UnionPay, JCB,
+  Discover, Diners Club, RuPay, MIR, and Japanese transit marks including Suica, PASMO, and ICOCA.
 - The manifest keeps only repository-backed `ready` and `reference-only` files; unavailable brands no
-  longer create empty `blocked` rows. Missing city, bank, wallet, or payment marks are researched and
-  alpha-extracted on demand, or rendered as one-off non-official interpretations when the user explicitly
-  selects stylized mode. See the [sticker catalog](skills/card-creator/references/sticker-catalog.md),
+  longer create empty `blocked` rows. Fast mode renders missing marks as one-off non-official stylized
+  interpretations. Research and Alpha extraction run only after an explicit request to search, find, or
+  cut out an asset. See the [sticker catalog](skills/card-creator/references/sticker-catalog.md),
   [research workflow](skills/card-creator/references/sticker-research.md), and
   [manifest](skills/card-creator/assets/stickers/manifest.json).
 - `unionpay-compact` is the conventional card-corner default; Diners Club similarly uses its compact mark
