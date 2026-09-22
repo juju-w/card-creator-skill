@@ -33,8 +33,8 @@ class SkillHubPackageTests(unittest.TestCase):
             self.assertTrue(
                 output.joinpath("references/reference-remix.md").is_file()
             )
-            self.assertTrue(
-                output.joinpath("references/bank-issuer-catalog.md").is_file()
+            self.assertFalse(
+                output.joinpath("references/bank-issuer-catalog.md").exists()
             )
             self.assertEqual(
                 (output / "scripts" / "prepare_card.py").read_bytes(),
@@ -70,12 +70,13 @@ class SkillHubPackageTests(unittest.TestCase):
             self.assertTrue(
                 all("research_file" not in item for item in manifest["items"])
             )
-            issuer_banks = [
-                item for item in manifest["items"] if item["category"] == "issuer-bank"
-            ]
-            self.assertEqual(len(issuer_banks), 25)
-            self.assertTrue(all(item["status"] == "blocked" for item in issuer_banks))
-            self.assertFalse(any(item["status"] == "pending" for item in manifest["items"]))
+            self.assertEqual(
+                {item["status"] for item in manifest["items"]},
+                {"ready", "reference-only"},
+            )
+            self.assertFalse(
+                any(item["category"] == "issuer-bank" for item in manifest["items"])
+            )
             contactless = {
                 item["id"]: item for item in manifest["items"] if "contactless" in item["id"]
             }
@@ -83,7 +84,7 @@ class SkillHubPackageTests(unittest.TestCase):
                 contactless["generic-contactless-material"]["status"],
                 "reference-only",
             )
-            self.assertEqual(contactless["emv-contactless-indicator"]["status"], "blocked")
+            self.assertNotIn("emv-contactless-indicator", contactless)
             self.assertIsNone(contactless["generic-contactless-material"]["file"])
             self.assertIn("conventional card-face variant", manifest["variant_policy"])
 

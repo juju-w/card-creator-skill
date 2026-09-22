@@ -1,47 +1,46 @@
-# Sticker Research and Card-Face Extraction
+# On-Demand Sticker Research and Alpha Extraction
 
-Use this workflow only when a requested mark is missing from the ready sticker pack. It produces a
-review candidate, not an automatically approved sticker.
+Use this workflow only when a requested exact mark is absent from the ready sticker pack. Do not keep
+an exhaustive backlog of unavailable brands in the manifest.
 
 ## Source order
 
-Prefer sources in this order:
+Prefer, in order:
 
-1. an operator or network's official transparent download;
+1. an operator, issuer, or network's official transparent download;
 2. an official vector, brand guide, production PDF, or press kit;
 3. an official flat card-face artwork or high-resolution straight-on card image;
-4. a user-supplied card image whose origin the user can identify.
+4. a traceable user-supplied image;
+5. another high-resolution source whose origin and usage note can be recorded.
 
-Do not extract from search thumbnails, marketplace listings, social-media reposts, perspective
-photos, compressed memes, or another person's reconstructed logo when a traceable primary source is
-available.
+Avoid thumbnails, perspective photos, heavily compressed memes, and reconstructed logos when a better
+source is available.
 
-## Pixel-extraction boundary
+## Creating an alpha candidate
 
-AI may create a foreground mask or remove a uniform background from a card-face source. It must not
-invent missing strokes, redraw letters, correct geometry, recolor the mark, vector-trace an uncertain
-edge, upscale by hallucinating detail, or replace the extracted pixels with a generated imitation.
+AI or image tools may crop a mark, create a foreground mask, and remove a uniform or visually separable
+background. Preserve visible pixels, proportions, lettering, and colors. Do not repair missing strokes,
+invent hidden geometry, or use generative upscaling while presenting the result as exact.
 
-Compare the candidate over light, dark, and checkerboard backgrounds at 100% and 400%. Reject it when
-the source is too small, perspective-distorted, partly occluded, or the mask changes visible logo
-pixels. Record the crop rectangle and extraction method so another maintainer can reproduce the
-result.
+Inspect the candidate over light, dark, and checkerboard backgrounds at 100% and 400%. Reject exact-mode
+candidates whose source is too small, distorted, occluded, or changed by the mask.
 
-## Storage and provenance
+## Storage and promotion
 
-- If redistribution or mark usage is not verified, keep the source and extracted candidate under
-  `output/research-cache/`; this path is local and ignored by Git. Record the public source URL,
-  retrieval date, source SHA-256, dimensions, crop rectangle, and extraction method in working notes.
-- Add a file under `assets/stickers/research/` only when keeping that exact source or derivative in the
-  public repository is supportable. Add a manifest entry with `status: reference-only`, `research_file`,
-  `source`, `source_asset`, `license`, `usage`, `sha256`, `transparency`, and an explicit blocker.
-- Do not use a public image host as a substitute for provenance or permission. If the user explicitly
-  requires their own object storage, retain an immutable source URL and SHA-256 in the manifest, but
-  prefer repository-local approved assets for deterministic builds.
+- Keep unresolved sources and alpha candidates under ignored `output/research-cache/`, with source URL,
+  retrieval date, SHA-256, dimensions, crop rectangle, and extraction method.
+- Add a public `reference-only` item only when an actual traceable source or research file is preserved
+  in the repository. Record source, source asset, license/usage note, SHA-256, and transparency.
+- Promote to `ready` only when the source is traceable, the transparent derivative matches the mark,
+  redistribution/use notes support the repository, and validation passes.
+- If those requirements cannot be met, keep the candidate local or delete it. Do not add a `blocked`
+  placeholder row merely to remember that the search failed.
 
-Only promote a candidate to `ready` after its source is traceable, its pixels match the identified
-mark, its transparent derivative has passed validation, and the usage note supports the intended
-distribution. If it cannot, mark the item `blocked`; otherwise keep the source `reference-only`.
-In exact mode, reserve space in the background and report that the sticker is unavailable. An
-explicit stylized-mode request may use the traceable source as a one-off ImageGen reference, but the
-generated result remains outside the manifest and must be disclosed as non-official.
+## Stylized fallback
+
+When the user explicitly requests style matching or reinterpretation, ImageGen may transform a found
+reference, a user-provided image, or model prior knowledge into a one-off artistic mark as part of the
+card face. Record the source decision—use the URL or file when available, otherwise explicitly write
+`model-prior / no external asset`—and retain the final prompt. Label the result as a non-official
+stylized interpretation. Never extract that generated mark into the exact `ready` sticker pack or claim
+brand-guideline accuracy, authorization, interoperability, or endorsement.

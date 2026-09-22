@@ -1,98 +1,40 @@
 # 贴纸目录
 
-先用本目录选择贴纸类别，再从 `../assets/stickers/manifest.json` 读取准确路径和来源记录。
-清单是贴纸能否使用的唯一权威：只有 `status: ready` 的条目可以合成。
+精确合成以 `../assets/stickers/manifest.json` 为唯一依据。manifest 只保存仓库里实际存在的文件：
 
-找不到官方透明素材时，先读取[贴纸研究与卡面提取](sticker-research.md)。来源样本标为
-`reference-only`；缺少准确素材或所需许可的标志标为 `blocked`。两者都不能合成。
+- `ready`：有准确透明来源和衍生文件，可以合成；
+- `reference-only`：保留了可追溯研究文件，但不能合成。
 
-支付卡组织、钱包、非接触受理标志和交通卡代表不同含义，不要把它们统称为“卡组织”。
+缺失品牌只在用户真正请求时研究，不再写入空的 `blocked` 占位记录。
 
-银行 Logo 属于发行方标识，不是支付网络。工商银行、招商银行、中国银行、汇丰、渣打等条目见
-[银行发行方参考目录](bank-issuer-catalog.md)。它们目前全部是 `blocked`，只能用于识别需求和
-预留版面，不能直接合成。
+## 已就绪支付标志
 
-## 已就绪：支付卡组织和网络
+- Visa、Mastercard、American Express、JCB、Discover、RuPay、MIR
+- 银联：卡角默认 `unionpay-compact`，明确要求时使用完整 `unionpay`
+- Diners Club：默认紧凑 `diners-club-symbol`，明确要求时使用完整字标
 
-- `visa` — Visa
-- `mastercard` — Mastercard 红橙双色标志
-- `american-express` — American Express
-- `unionpay-compact` — UnionPay / 银联紧凑卡角接受标志；卡角场景通常使用
-- `unionpay` — UnionPay / 银联完整横版标志；仅在用户明确要求时使用
-- `jcb` — JCB
-- `discover` — Discover
-- `diners-club-symbol` — Diners Club 紧凑图形；参考卡使用图形版时选择
-- `diners-club` — Diners Club International 完整字标；仅在用户明确要求时使用
-- `rupay` — RuPay
-- `mir` — MIR；必须保留清单中的署名与相同方式共享说明
+## 已就绪日本交通 IC 标志
 
-## 非接触与 NFC 标志（仅在用户明确要求时处理）
+- Suica、PASMO、ICOCA、TOICA、manaca
+- SUGOCA、nimoca、Hayakaken、PiTaPa
 
-- `generic-contactless-material` — `reference-only`；Google Material 的 Apache-2.0 图标带实心
-  圆底，并不是卡面常用的标准感应标志。经视觉复核后已从 `ready` 退役，不能默认推荐或叠加。
-- `emv-contactless-indicator` — `blocked`；即卡面右侧常见、透明底的四道渐大弧线精确标志。
-  EMVCo 要求先签署书面商标许可，并在签约后提供官方文件，因此仓库只记录官方来源与复现规范，
-  不分发文件，也不自行描摹。
+这些只是装饰素材，不得声称自制卡由运营方发行、受理或认可。
 
-不要把卡面上的 **Contactless Indicator** 和支付终端上的大型 **Contactless Symbol** 混淆。
-除非用户明确要求，否则不要加入任何感应标志。用户要求四道弧线时，不能用圆形通用图标代替；
-必须使用准确、透明且来源可追溯的素材，并与银行发行方和支付网络标识保持视觉分离。
+## 已保留研究文件
 
-## 已就绪：日本全国交通 IC 互通体系
+manifest 中的 `reference-only` 包括北京、杭州、西安、广州、岭南通、深圳、天津、成都、重庆
+的来源样本，以及带不透明底的 Kitaca 源文件和 Material 通用感应图标。它们是证据，不是贴纸。
 
-- `suica` — JR 东日本
-- `pasmo` — 关东私铁与巴士
-- `icoca` — JR 西日本
-- `toica` — JR 东海
-- `manaca` — 名古屋地区
-- `sugoca` — JR 九州
-- `nimoca` — 西日本铁道集团
-- `hayakaken` — 福冈市交通局
-- `pitapa` — 关西地区后付费交通 IC
+## 缺失标志如何处理
 
-`kitaca` 为 `reference-only`：当前可追溯 SVG 带不透明米色底，尚未核验单独的透明字标来源。
+1. 精确模式读取[按需素材研究与 Alpha 提取](sticker-research.md)，现场查找可追溯来源。
+2. 无法建立精确素材时，保持空位并报告缺失，不新增 manifest 占位行。
+3. 用户明确要求风格匹配或重新诠释时，可以搜索参考图，或基于模型先验生成只用于当前卡面的
+   非官方版本；记录参考决策与最终 Prompt，绝不提升为 `ready`。
 
-这些系统参与日本全国 IC 互通体系，但服务规则并不完全相同。贴纸包只提供装饰性标志；不得声称
-自制卡由任何运营方发行、受理或认可。
+银行发行方、支付网络、钱包、交通产品和受理标志仍要区分；只有用户明确要做拼贴或戏仿时才混排。
 
-## 不可合成参考：内地和大湾区城市交通卡
+## 感应标志
 
-以下条目有明确的清单记录以及运营方或官方信息页，状态为 `reference-only` 或 `blocked`。
-可以识别需求和预留位置，不可以合成：
-
-- `china-t-union` — 交通联合
-- `beijing-yikatong` — 北京一卡通
-- `shanghai-public-transport-card` — 上海公共交通卡
-- `tianjin-city-card` — 天津城市卡
-- `guangzhou-yangchengtong` — 羊城通
-- `lingnan-pass` — 岭南通
-- `shenzhen-tong` — 深圳通
-- `hangzhou-tong` — 杭州通
-- `nanjing-jinling-tong` — 金陵通
-- `chengdu-tianfu-tong` — 天府通
-- `chongqing-city-card` — 重庆畅通卡
-- `wuhan-tong` — 武汉通
-- `xian-changan-tong` — 长安通
-- `hong-kong-octopus` — 香港八达通 / Octopus
-- `macau-pass` — 澳门通 / Macau Pass
-
-`assets/stickers/research/cities/` 保存的是官方网页提供的来源样本，不是可用贴纸。
-`research_file` 绝不能当成 `file`。羊城通和岭南通的研究 PNG 是不透明的合作方目录图，不能手工
-去底；北京文件是白色官网页头版本；深圳是单独图形；杭州和重庆是运营方标志，尚未确认等同于
-对应交通卡产品标志。上海和武汉目前只记录了官网页面横幅地址。
-
-八达通是明确的硬性停止项：其官方品牌指引要求书面认可。即使存在 AI/JPG 官方下载包，也不得
-因此把它提升为 `ready`。
-
-## 研究队列：支付、钱包与其他交通体系
-
-以下标志仍不可调用：
-
-- 支付网络：Maestro、Cirrus、PLUS、V Pay、Interac、Bancontact、Cartes Bancaires
-  (CB)、BC Card、Elo。
-- 钱包、数字货币和受理标志：Apple Pay、e-CNY / 数字人民币、Rakuten Edy、
-  T-money。
-- 中国内地和日本之外的交通储值系统：EZ-Link。
-
-除非用户明确要做拼贴或戏仿，不要把支付网络、钱包、受理标志、交通产品和银行发行方等不同类型
-堆在一起。贴纸是否可用始终以 manifest 为准。
+感应/NFC 标志仅在用户明确要求时加入。`generic-contactless-material` 是 `reference-only`，并非
+标准卡面受理标志。精确授权标志必须来自可追溯且允许使用的来源，不能用通用图标代替。

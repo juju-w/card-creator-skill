@@ -2,13 +2,13 @@
 name: card-creator
 slug: card-creator
 displayName: 卡面生成器
-version: 0.1.6
+version: 0.1.7
 description: 根据用户描述生成可印刷的 AirCard、NFC 卡或交通卡卡面。严格执行标准比例、出血区和安全区规则；默认使用 ready 透明贴纸精确合成，用户明确要求时也可生成标注为非官方的风格化 Logo 诠释。适合制作新卡面、修改卡面风格和导出印刷 PNG，不用于伪造功能卡。
 summary: 用 AI 画背景，再用可追溯透明贴纸确定性合成标准尺寸卡面。
 homepage: https://github.com/juju-w/card-creator-skill
 license: MIT
 metadata:
-  version: 0.1.6
+  version: 0.1.7
   author: JuJu
   tags:
     - image-generation
@@ -25,9 +25,9 @@ metadata:
 明确区分两种 Logo 模式：
 
 - **精确模式（默认）**：AI 只画背景，合成器叠加 manifest 中 `ready` 的准确素材。
-- **风格化模式（用户明确选择）**：ImageGen 可以参考可追溯或用户提供的 Logo，将其转化为
-  烫金、单色、线稿、墨色、玉石等画面语言。结果必须标注为非官方艺术化诠释，保留参考来源与
-  最终 Prompt，并且绝不能收入精确 `ready` 贴纸包。
+- **风格化模式（用户明确选择）**：ImageGen 可以根据搜索参考、用户图片或模型先验，将 Logo
+  转化为烫金、单色、线稿、墨色、玉石等画面语言。结果必须标注为非官方艺术化诠释，记录参考
+  决策与最终 Prompt，并且绝不能收入精确 `ready` 贴纸包。
 
 ## 自动排版指导
 
@@ -55,17 +55,15 @@ metadata:
    [贴纸清单](assets/stickers/manifest.json)。只有 `status: ready` 的条目可以叠加。
    按卡面惯例选择版本：支付网络常用卡角接受标志，发卡银行和文化机构通常使用正常的图形＋
    名称组合。不得把所有品牌强制变成短款图形或完整横版；用户明确指定时以用户要求为准。
-   用户点名银行发行方时，还要读取[银行发行方参考目录](references/bank-issuer-catalog.md)，
-   不得把银行标识与银联、Visa、Mastercard 等支付网络标识混为一类。
-   如果用户要的贴纸尚未就绪，只生成并交付预留好位置的背景，同时明确报告缺少的素材；
-   不得静默漏贴，也不得用近似图替代。
-   上述限制适用于精确模式。用户明确选择风格化模式时，可以把可追溯源文件仅作为 ImageGen
-   参考，但必须说明结果不是准确 Logo。
+   银行发行方与银联、Visa、Mastercard 等支付网络必须保持类别区分。
+   如果精确贴纸缺失，读取[按需素材研究与 Alpha 提取](references/sticker-research.md)，现场查找
+   可追溯来源并在合适时制作 Alpha 候选。无法升级为 `ready` 时只交付预留位置的背景并报告
+   缺失，不新增空的 `blocked` 清单记录。用户明确选择风格化模式时，可以搜索参考图或使用模型
+   先验生成一次性非官方版本；记录 URL/文件，或明确记录 `model-prior / no external asset`，并
+   保留最终 Prompt。
    不得默认加入非接触/NFC 标志；只有用户明确要求时才处理，并且不得用通用图标冒充卡面上的
    精确授权标志。
-   用户要求继续研究缺失标志，或提供了具体卡面原图时，读取
-   [贴纸研究与卡面提取](references/sticker-research.md)。从卡面抠图只能产生研究候选，不能
-   自动把条目提升为 `ready`。
+   从卡面抠图只能产生研究候选，不能自动把条目提升为 `ready`。
 3. 默认只做一个卡面。只有用户明确需要正反面组合时，才确认成套设计要求。
 4. 精确模式下，内置图像生成工具只创建背景。风格化模式下，把 Logo 作为标明用途的参考图，
    让 ImageGen 把指定材质融入平视、横向、满版画稿。两种模式都不能出现设备、卡片样机、
@@ -91,7 +89,8 @@ metadata:
   构图的硬限制。
 - 精确模式的轮廓、比例、字形、颜色和透明关系必须来自可追溯源文件。只有用户明确选择后，
   风格化模式才可偏离这些属性，并且必须标注为非官方艺术化诠释，而不是已核验 Logo 资产。
-- manifest 中的 `reference-only` 与 `blocked` 是明确的不可合成终态，不是“快要可用”的队列。
+- manifest 只保存仓库里实际存在的 `ready` 和 `reference-only` 文件。搜索失败不新增占位行，
+  `reference-only` 始终不可合成。
 - 使用约定俗成的卡面版本。例如银联卡角通常用 `unionpay-compact`；银行或机构则保留正常主
   组合标，除非用户或参考卡面明确要求图形短款。
 - 用户私人图片默认只在本地处理，除非用户明确要求上传或发布。
@@ -106,8 +105,7 @@ metadata:
 - Prompt 写法见[背景 Prompt 指南](references/prompt-guide.md)。
 - 根据已有卡面或手机钱包截图做风格变化时，读取
   [参考卡面风格化改造](references/reference-remix.md)。
-- 贴纸类别与研究队列见[贴纸目录](references/sticker-catalog.md)。
-- 中国内地、香港和常见国际银行发行方见[银行发行方参考目录](references/bank-issuer-catalog.md)。
-- 缺失标志的来源检索与卡面像素提取见[贴纸研究与卡面提取](references/sticker-research.md)。
+- 可用贴纸类别与缺失标志路由见[贴纸目录](references/sticker-catalog.md)。
+- 缺失标志的来源检索与卡面像素提取见[按需素材研究与 Alpha 提取](references/sticker-research.md)。
 - 贴纸文件与来源记录位于 `assets/stickers/`。
 - 确定性导出参数运行 `python3 scripts/prepare_card.py --help` 查看。

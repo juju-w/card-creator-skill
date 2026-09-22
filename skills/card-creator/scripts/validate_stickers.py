@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate ready stickers and non-compositable reference assets."""
+"""Validate ready stickers and repository-backed reference assets."""
 
 from __future__ import annotations
 
@@ -14,7 +14,7 @@ from PIL import Image
 
 
 REQUIRED_READY_FIELDS = ("file", "vector_file", "source", "license", "usage")
-NON_COMPOSITABLE_STATUSES = {"reference-only", "blocked"}
+NON_COMPOSITABLE_STATUSES = {"reference-only"}
 REQUIRED_NON_READY_FIELDS = ("source", "license", "usage", "blocker", "resolution")
 
 

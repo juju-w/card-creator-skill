@@ -138,7 +138,7 @@ class PrepareCardTests(unittest.TestCase):
                     "--output-dir",
                     str(root / "output"),
                     "--sticker",
-                    "emv-contactless-indicator@center-right",
+                    "generic-contactless-material@center-right",
                 ],
                 capture_output=True,
                 text=True,

@@ -84,9 +84,11 @@ skillhub install card-creator
 
 - 可直接合成的 `ready` 素材包括 Visa、Mastercard、American Express、银联、JCB、Discover、
   Diners Club、RuPay、MIR，以及 Suica、PASMO、ICOCA 等日本交通 IC 标志。
-- 城市交通、交通联合、八达通和银行发行方已建立来源目录，但只有 manifest 标为 `ready` 的素材
-  才会进入精确合成；完整清单见 [sticker-catalog.md](skills/card-creator/references/sticker-catalog.md)、
-  [bank-issuer-catalog.md](skills/card-creator/references/bank-issuer-catalog.md) 和
+- manifest 只保留仓库里实际存在的 `ready` 与 `reference-only` 文件，不再维护无法获取的空
+  `blocked` 条目。缺失的城市交通、银行、钱包或支付标志会在用户请求时现场搜索、抠取 Alpha
+  候选，或在明确风格化模式下由模型生成一次性的非官方诠释。详见
+  [sticker-catalog.md](skills/card-creator/references/sticker-catalog.md)、
+  [sticker-research.md](skills/card-creator/references/sticker-research.md) 和
   [manifest.json](skills/card-creator/assets/stickers/manifest.json)。
 - 银联卡角默认选 `unionpay-compact`，Diners Club 默认按卡面惯例选紧凑标志；用户指定时可改用
   完整横版。Logo 可按构图占据角落或铺满画面，不会被蓝色建议线强制缩小。

@@ -9,9 +9,9 @@ Support two clearly separated mark modes:
 
 - **Exact mode (default):** AI generates the background and the compositor adds a `ready` manifest asset.
 - **Stylized mode (explicit opt-in):** when the user asks for a mark to match the artwork, ImageGen may
-  reinterpret a traceable or user-supplied logo reference as foil, monochrome, line art, ink, jade, or
-  another requested material. Label it as non-official, retain the reference source and final prompt,
-  and never add the generated mark to the exact `ready` sticker pack.
+  reinterpret a searched reference, user-supplied image, or model prior knowledge as foil, monochrome,
+  line art, ink, jade, or another requested material. Label it as non-official, record the reference
+  decision and final prompt, and never add the generated mark to the exact `ready` sticker pack.
 
 ## Automatic layout direction
 
@@ -46,17 +46,16 @@ the face with a visually dense hero scene. The user does not need to request lay
    while issuer banks and cultural institutions normally use their primary symbol-plus-name lockup.
    Do not force every brand into either a compact symbol or a full horizontal wordmark. User direction
    overrides convention.
-   When the request names a bank issuer, also read
-   [bank issuer reference catalog](references/bank-issuer-catalog.md) and keep the issuer mark distinct
-   from its payment-network mark.
-   If a requested sticker is not ready, generate the background without it and report the missing asset.
-   This restriction applies to exact mode. An explicit stylized-mode request may instead use the
-   traceable source only as an ImageGen reference and must disclose that the result is not an exact logo.
+   Keep issuer-bank marks distinct from payment-network marks.
+   If a requested exact sticker is absent, use [sticker research](references/sticker-research.md) to
+   search for a traceable source and, when suitable, create an alpha candidate. If it cannot qualify as
+   `ready`, generate the background without it and report the missing asset; do not add an empty
+   `blocked` manifest row. In explicit stylized mode, ImageGen may instead search for a reference or use
+   model prior knowledge for a one-off non-official interpretation. Record the URL/file used, or record
+   `model-prior / no external asset`, together with the final prompt.
    Never add a contactless/NFC mark by default. Only consider one when the user explicitly requests
    it, and do not substitute a generic icon for an exact licensed card-side indicator.
-   When the user asks to research a missing mark or supplies a card-face image, read
-   [sticker research](references/sticker-research.md). Card-face extraction is a research fallback,
-   never an automatic way to promote a mark to `ready`.
+   Card-face extraction is a research fallback, never an automatic way to promote a mark to `ready`.
 3. Default to one card face. Ask about front/back only when the request clearly requires a paired design.
 4. In exact mode, use the built-in image generation tool to create only the background artwork. In
    explicit stylized mode, provide the mark as a labeled reference and ask ImageGen to integrate the
@@ -87,8 +86,8 @@ the face with a visually dense hero scene. The user does not need to request lay
 - Exact mode keeps sticker geometry, proportions, lettering, color, and transparency derived from the
   traceable source. Stylized mode may depart from those properties only after explicit user opt-in and
   must be described as a non-official artistic interpretation rather than a verified logo asset.
-- `reference-only` and `blocked` manifest entries are terminal non-compositable records, not a
-  queue of almost-ready stickers.
+- The manifest stores only repository-backed `ready` and `reference-only` assets. Missing or failed
+  searches do not receive placeholder rows. `reference-only` remains non-compositable.
 - Use the conventionally expected card-side variant. For example, use `unionpay-compact` for the usual
   UnionPay card-corner acceptance mark; keep a bank or institution's normal primary lockup unless the
   supplied reference or user request calls for symbol-only treatment.
@@ -106,9 +105,8 @@ the face with a visually dense hero scene. The user does not need to request lay
 - For prompt construction, read [prompt guide](references/prompt-guide.md).
 - For a style variation based on an existing card face or wallet screenshot, read
   [reference-card remix](references/reference-remix.md).
-- For sticker families and the research backlog, read [sticker catalog](references/sticker-catalog.md).
-- For mainland Chinese, Hong Kong, and international bank issuer marks, read
-  [bank issuer reference catalog](references/bank-issuer-catalog.md).
+- For available sticker families and missing-mark routing, read
+  [sticker catalog](references/sticker-catalog.md).
 - For sourcing or extracting a missing mark from an official card face, read
   [sticker research](references/sticker-research.md).
 - Sticker assets and provenance live under `assets/stickers/`.

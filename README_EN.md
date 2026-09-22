@@ -89,9 +89,11 @@ and coordinates.
 
 - Ready overlays include Visa, Mastercard, American Express, UnionPay, JCB, Discover, Diners Club,
   RuPay, MIR, and Japanese transit marks including Suica, PASMO, and ICOCA.
-- City transit, China T-Union, Octopus, and bank issuers have traceable catalogs, but exact mode uses only
-  manifest entries with `status: ready`. See the [sticker catalog](skills/card-creator/references/sticker-catalog.md),
-  [bank issuer catalog](skills/card-creator/references/bank-issuer-catalog.md), and
+- The manifest keeps only repository-backed `ready` and `reference-only` files; unavailable brands no
+  longer create empty `blocked` rows. Missing city, bank, wallet, or payment marks are researched and
+  alpha-extracted on demand, or rendered as one-off non-official interpretations when the user explicitly
+  selects stylized mode. See the [sticker catalog](skills/card-creator/references/sticker-catalog.md),
+  [research workflow](skills/card-creator/references/sticker-research.md), and
   [manifest](skills/card-creator/assets/stickers/manifest.json).
 - `unionpay-compact` is the conventional card-corner default; Diners Club similarly uses its compact mark
   unless a full lockup is requested. Marks may dominate a corner or the full face and are not forced inside
