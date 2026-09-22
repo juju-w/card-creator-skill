@@ -23,10 +23,13 @@ SAFE_INSET = 59
 MARK_INSET = 35
 STICKER_ANCHORS = {
     "top-left",
+    "top-center",
     "top-right",
     "center-left",
+    "center-center",
     "center-right",
     "bottom-left",
+    "bottom-center",
     "bottom-right",
 }
 STICKER_STYLES = {"original", "foil-gold"}
@@ -196,8 +199,13 @@ def composite_sticker(
         x = mark_right - sticker.width
         y = mark_bottom - sticker.height - slot * (sticker.height + 18)
     else:
-        horizontal, vertical = anchor.split("-")[1], anchor.split("-")[0]
-        x = mark_left if horizontal == "left" else mark_right - sticker.width
+        vertical, horizontal = anchor.split("-")
+        if horizontal == "left":
+            x = mark_left
+        elif horizontal == "right":
+            x = mark_right - sticker.width
+        else:
+            x = mark_left + (mark_right - mark_left - sticker.width) // 2
         if vertical == "top":
             y = mark_top
         elif vertical == "bottom":

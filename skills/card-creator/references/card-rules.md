@@ -22,9 +22,10 @@ Coordinate system for the full-bleed master:
 - Advisory safe bounds: x 94–986, y 94–613. The blue line in the guide preview visualizes this
   conservative zone; it does not constrain artwork or logo scale.
 - Sticker positions are expressed relative to the trim bounds, not the full-bleed canvas.
-- `prepare_card.py --sticker ID@ANCHOR` supports `top-left`, `top-right`, `center-left`,
-  `center-right`, `bottom-left`, and `bottom-right`. Omitting `@ANCHOR` preserves the original
-  bottom-right stacking behavior.
+- `prepare_card.py --sticker ID@ANCHOR` supports a complete 3 × 3 anchor grid: `top-left`,
+  `top-center`, `top-right`, `center-left`, `center-center`, `center-right`, `bottom-left`,
+  `bottom-center`, and `bottom-right`. Omitting `@ANCHOR` preserves the original bottom-right
+  stacking behavior. The center column is useful for deliberate multi-logo collage layouts.
 - `--sticker-style ID=foil-gold`, `ID=monochrome:#RRGGBB`, and `ID=outline:#RRGGBB` apply a
   material treatment inside the exact source-logo geometry. Omit the option for original colors.
 - `--sticker-width ID=420` sets an explicit rendered width. Use it for intentionally oversized,

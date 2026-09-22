@@ -89,6 +89,41 @@ class PrepareCardTests(unittest.TestCase):
             with Image.open(output / "card-face-trim.png") as image:
                 self.assertEqual(image.size, (1011, 638))
 
+    def test_center_column_anchor_supports_collage_layouts(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            background = root / "background.png"
+            output = root / "output"
+            Image.new("RGB", (1586, 1000), "#77b72b").save(background)
+
+            completed = subprocess.run(
+                [
+                    sys.executable,
+                    str(SCRIPT),
+                    "--input",
+                    str(background),
+                    "--output-dir",
+                    str(output),
+                    "--sticker",
+                    "mastercard@top-center",
+                    "--sticker",
+                    "unionpay-compact@center-center",
+                    "--sticker",
+                    "suica@bottom-center",
+                ],
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+
+            placements = json.loads(completed.stdout)["sticker_placements"]
+            self.assertEqual(
+                [placement["anchor"] for placement in placements],
+                ["top-center", "center-center", "bottom-center"],
+            )
+            with Image.open(output / "card-face-trim.png") as image:
+                self.assertEqual(image.size, (1011, 638))
+
     def test_non_ready_sticker_is_rejected(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
