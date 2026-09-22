@@ -146,6 +146,42 @@ class PrepareCardTests(unittest.TestCase):
             self.assertNotEqual(completed.returncode, 0)
             self.assertIn("not approved/ready", completed.stderr)
 
+    def test_contain_mode_preserves_edge_content_with_inset(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            background = root / "background.png"
+            output = root / "output"
+            source = Image.new("RGB", (1500, 1000), "#f6f0e6")
+            source.putpixel((0, 0), (180, 20, 20))
+            source.putpixel((1499, 999), (20, 20, 180))
+            source.save(background)
+
+            completed = subprocess.run(
+                [
+                    sys.executable,
+                    str(SCRIPT),
+                    "--input",
+                    str(background),
+                    "--output-dir",
+                    str(output),
+                    "--name",
+                    "contained",
+                    "--fit-mode",
+                    "contain",
+                    "--contain-inset",
+                    "20",
+                ],
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+
+            result = json.loads(completed.stdout)
+            self.assertEqual(result["fit"], {"mode": "contain", "contain_inset": 20})
+            with Image.open(output / "contained-trim.png") as image:
+                self.assertEqual(image.size, (1011, 638))
+                self.assertNotEqual(image.getpixel((0, 0)), (180, 20, 20))
+
 
 if __name__ == "__main__":
     unittest.main()

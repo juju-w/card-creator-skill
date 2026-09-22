@@ -30,6 +30,10 @@ Coordinate system for the full-bleed master:
   material treatment inside the exact source-logo geometry. Omit the option for original colors.
 - `--sticker-width ID=420` sets an explicit rendered width. Use it for intentionally oversized,
   corner-filling, repeated, or near-full-card marks instead of shrinking every mark into the blue guide.
+- `prepare_card.py --fit-mode contain --contain-inset 20` preserves an edge-bound source composition
+  inside trim and extends a sampled paper/background color into bleed. Use it when cover-cropping would
+  cut embedded marks or focal artwork; the default `cover` mode remains appropriate for true full-bleed
+  backgrounds.
 
 ## Composition
 
