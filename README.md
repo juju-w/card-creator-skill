@@ -7,7 +7,7 @@
 一个为 AirCard、NFC 卡片和交通卡生成可打印卡面的 Codex Skill：AI 负责画面，Skill 负责尺寸、
 裁切、排版、透明贴纸和 300 DPI 导出。仓库不包含在线编辑器。
 
-## 先看作品：9 种卡面与一句话 Prompt
+## 先看作品：10 种卡面与一句话 Prompt
 
 尺寸、出血、排版、圆角展示适配和导出规则都在 Skill 内部。复制一句话给 ChatGPT / Gemini
 即可；有参考图时同时上传并写“参考图如上”。
@@ -17,20 +17,20 @@
 | <img src="examples/gemini-magikarp-icoca.jpeg" width="420" alt="简洁鲤鱼王与 ICOCA 卡面"> | <img src="examples/gemini-gengar-octopus.jpeg" width="420" alt="紫色耿鬼与八达通卡面"> |
 | `使用 card-creator Skill，生成一张鲤鱼王 × ICOCA 卡面：简洁，右下角 ICOCA。` | `使用 card-creator Skill，生成一张耿鬼 × 八达通卡面，让八达通 Logo 变成与画面匹配的紫色。` |
 
-| 高级艺术 · 维也纳分离派 × Diners Club |
-|---|
-| <img src="examples/vienna-secession-diners.png" width="420" alt="维也纳分离派黑金人物与哑金 Diners Club 卡面"> |
-| `使用 card-creator Skill，生成一张维也纳分离派风格的黑金高级艺术卡面，右下角哑金 Diners Club。` |
-
-| 清新水彩 · Chiikawa × Suica | 后印象派 · 旋涡夜景 × Visa |
+| 华山水墨 · 交通联合 | 广州极简线条 · 岭南通 × 交通联合 |
 |---|---|
-| <img src="examples/chiikawa-suica.png" width="420" alt="Chiikawa × Suica 清新水彩卡面"> | <img src="examples/post-impressionist-visa.png" width="420" alt="后印象派旋涡夜景与哑金 Visa 卡面"> |
-| `使用 card-creator Skill，生成一张清新水彩风 Chiikawa × Suica 卡面，右下角 Suica。` | `使用 card-creator Skill，生成一张深蓝旋涡夜空的后印象派卡面，右下角哑金 Visa。` |
+| <img src="examples/huashan-ink-tunion.png" width="420" alt="华山水墨与交通联合卡面"> | <img src="examples/guangzhou-minimal-lingnantong-tunion.png" width="420" alt="广州极简线条岭南通与交通联合卡面"> |
+| `使用 card-creator Skill，生成一张华山水墨画风格的交通卡面，右下角交通联合。` | `使用 card-creator Skill，生成一张广州极简线条卡面，包含岭南通和交通联合。` |
 
-| 北京水墨 · 一卡通 × 交通联合 | 极简线条 · Mastercard |
+| 高级艺术 · 维也纳分离派 × Diners Club | 后印象派 · 旋涡夜景 × Visa |
 |---|---|
-| <img src="examples/beijing-ink-transit-background.png" width="420" alt="北京水墨交通卡面"> | <img src="examples/minimal-mastercard.png" width="420" alt="极简线条 Mastercard 卡面"> |
-| `使用 card-creator Skill，生成一张北京水墨交通卡面，包含天坛、长城、北京一卡通和交通联合。` | `使用 card-creator Skill，生成一张暖象牙白的极简线条 Mastercard 卡面，右下角 Mastercard。` |
+| <img src="examples/vienna-secession-diners.png" width="420" alt="维也纳分离派黑金人物与哑金 Diners Club 卡面"> | <img src="examples/post-impressionist-visa.png" width="420" alt="后印象派旋涡夜景与哑金 Visa 卡面"> |
+| `使用 card-creator Skill，生成一张维也纳分离派风格的黑金高级艺术卡面，右下角哑金 Diners Club。` | `使用 card-creator Skill，生成一张深蓝旋涡夜空的后印象派卡面，右下角哑金 Visa。` |
+
+| 清新水彩 · Chiikawa × Suica | 极简线条 · Mastercard |
+|---|---|
+| <img src="examples/chiikawa-suica.png" width="420" alt="Chiikawa × Suica 清新水彩卡面"> | <img src="examples/minimal-mastercard.png" width="420" alt="极简线条 Mastercard 卡面"> |
+| `使用 card-creator Skill，生成一张清新水彩风 Chiikawa × Suica 卡面，右下角 Suica。` | `使用 card-creator Skill，生成一张暖象牙白的极简线条 Mastercard 卡面，右下角 Mastercard。` |
 
 | 故宫典藏 · 云母祥云与仙鹤 | 上海装饰艺术 · 夜景 × 银联 |
 |---|---|
@@ -38,7 +38,7 @@
 | `使用 card-creator Skill，生成一张故宫典藏风卡面，使用云母祥云、仙鹤、宫殿和哑金风格化标志。` | `使用 card-creator Skill，生成一张深翡翠与古金配色的上海装饰艺术卡面，右下角哑金短款银联。` |
 
 鲤鱼王与耿鬼两张是用户提供并授权发布的 Gemini 成图原样展示，其中生成图内的 ICOCA、
-JR-West 与紫色八达通标志均为非官方风格化诠释，不会加入 `ready` 精确贴纸包。北京水墨与故宫
+JR-West 与紫色八达通标志均为非官方风格化诠释，不会加入 `ready` 精确贴纸包。华山、广州与故宫
 示例也使用明确标注的非官方风格化标志；其他卡组织与交通标志只合成 manifest 中
 `status: ready` 的精确透明贴纸。所有示例均为个人、非商业创作演示，不代表品牌、角色、交通
 运营方或金融机构授权、合作或认可。两张 Gemini 图片保留原始展示比例，正式导出仍以 Skill 的
