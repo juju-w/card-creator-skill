@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "policy": "Only status=ready assets may be composited. Pending entries require a verified transparent source file and provenance review.",
+  "items": [
+    { "id": "china-t-union", "name": "交通联合", "category": "national", "status": "pending", "file": null, "source": null, "usage": "personal-noncommercial" },
+    { "id": "beijing-yikatong", "name": "北京一卡通", "category": "cities", "region": "北京", "status": "pending", "file": null, "source": null, "usage": "personal-noncommercial" },
+    { "id": "shanghai-public-transport-card", "name": "上海公共交通卡", "category": "cities", "region": "上海", "status": "pending", "file": null, "source": null, "usage": "personal-noncommercial" },
+    { "id": "hangzhou-tong", "name": "杭州通", "category": "cities", "region": "杭州", "status": "pending", "file": null, "source": null, "usage": "personal-noncommercial" },
+    { "id": "xian-changan-tong", "name": "长安通", "category": "cities", "region": "西安", "status": "pending", "file": null, "source": null, "usage": "personal-noncommercial" },
+    { "id": "guangzhou-yangchengtong", "name": "羊城通", "category": "cities", "region": "广州", "status": "pending", "file": null, "source": null, "usage": "personal-noncommercial" },
+    { "id": "lingnan-pass", "name": "岭南通", "category": "cities", "region": "广东", "status": "pending", "file": null, "source": null, "usage": "personal-noncommercial" },
+    { "id": "unionpay", "name": "UnionPay 银联", "category": "payment", "status": "ready", "file": "payment/unionpay.png", "vector_file": "payment/unionpay.svg", "source": "https://commons.wikimedia.org/wiki/File:UnionPay_logo_(Full).svg", "license": "PD-textlogo; trademark restrictions may apply", "usage": "personal-noncommercial" },
+    { "id": "visa", "name": "Visa", "category": "payment", "status": "ready", "file": "payment/visa.png", "vector_file": "payment/visa.svg", "source": "https://simpleicons.org/?q=visa", "license": "Simple Icons CC0; trademark restrictions may apply", "usage": "personal-noncommercial" },
+    { "id": "mastercard", "name": "Mastercard", "category": "payment", "status": "ready", "file": "payment/mastercard.png", "vector_file": "payment/mastercard.svg", "source": "https://simpleicons.org/?q=mastercard", "license": "Simple Icons CC0; trademark restrictions may apply", "usage": "personal-noncommercial" },
+    { "id": "american-express", "name": "American Express", "category": "payment", "status": "ready", "file": "payment/american-express.png", "vector_file": "payment/american-express.svg", "source": "https://simpleicons.org/?q=americanexpress", "license": "Simple Icons CC0; trademark restrictions may apply", "usage": "personal-noncommercial" },
+    { "id": "suica", "name": "Suica 西瓜卡", "category": "overseas", "region": "日本", "status": "ready", "file": "overseas/suica.png", "vector_file": "overseas/suica.svg", "source": "https://commons.wikimedia.org/wiki/File:Suica_logo.svg", "license": "Verify file-page license before redistribution; trademark restrictions may apply", "usage": "personal-noncommercial" }
+  ]
+}
