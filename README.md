@@ -95,11 +95,9 @@ skillhub install card-creator
 
 ## 卡面示例与 Prompt
 
-默认精确模式中，ImageGen 只负责背景，`card-creator` 再叠加 `status: ready` 的透明贴纸；
-用户明确选择风格化模式时，ImageGen 可以参考可追溯 Logo 做非官方材质化诠释。下面的预览限制
-为 `600 px` 宽，仓库仍保留完整
-`1011 × 638 px` 裁切图。第 1、3 张使用 `ready` 透明贴纸精确合成；第 2、4 张是用户明确选择的
-非官方风格化诠释。非接触感应标志不会默认加入任何示例。
+尺寸、裁切、排版、贴纸模式和导出规则已经写在 Skill 里，所以这里的 Prompt 只描述创作意图。
+复制一句话给 ChatGPT / Gemini 即可；有构图参考时在同一条消息上传并写“参考图如上”。下面预览
+限制为 `600 px` 宽，仓库仍保留完整 `1011 × 638 px` 裁切图。非接触感应标志不会默认加入。
 
 ### 1. Chiikawa × Suica
 
@@ -109,35 +107,11 @@ skillhub install card-creator
 
 贴纸：`suica`（`ready`）。非官方、非商业同人示例；不代表角色或交通卡权利方授权、合作或认可。
 
-直接复制给 ChatGPT / Gemini（先上传你喜欢的构图参考图；需要精确 Suica 标志时，同时上传仓库中的
-`suica.png`）：
+直接复制（如有参考图或精确 Suica 贴纸，请同时上传）：
 
 ```text
-请参考 https://github.com/juju-w/card-creator-skill 的尺寸与安全区规则，并结合我在当前对话上传的参考图（参考图如上），生成一张清新可爱的 Chiikawa × Suica 非官方个人同人卡面。画面是春日浅绿色草地、淡蓝天空、圆润白云和柔和水彩水粉质感；Chiikawa 单独坐在画面偏左位置，表情开心，手里拿着四叶草。右下角留出干净空间。
-
-输出横向平面画稿，宽高比 1.58577:1，目标裁切尺寸 1011 × 638 px、300 DPI。背景必须铺满画布，人物和重要细节避免非预期裁切；蓝色安全线只是小字和功能信息参考。不要生成卡片样机、手、透视、圆角遮罩、边框、阴影、卡号、二维码、条形码、水印或无关文字。
-
-如果我上传了 Suica 透明 PNG，请把它原样放在右下自然卡角位置，保持比例、颜色和透明度，不要重画、改字或风格化；由 Skill 自动检查它与角色的视觉重量和实体裁切边距。如果没有收到贴纸文件，就只保留空位，不要生成近似 Suica Logo。请直接生成一张完整卡面预览，并附上最终使用的 Prompt。
+使用 card-creator Skill，参考图如上，生成一张清新可爱的 Chiikawa × Suica 卡面：春日四叶草草地、水彩水粉质感，使用仓库中的 Suica 精确贴纸；不要添加感应支付标志和无关文字。
 ```
-
-<details>
-<summary>高级：查看背景层原始 Prompt</summary>
-
-```text
-Use case: illustration-story
-Asset type: print-ready transit card background artwork
-Primary request: Create a fresh, cute Chiikawa-themed card-face illustration featuring Chiikawa alone, with a gentle happy expression, sitting in a tiny spring meadow with a few small clover leaves and soft rounded clouds.
-Scene/backdrop: airy pale mint-green meadow fading into a clear powder-blue sky, subtle watercolor-and-gouache texture, very clean and uncluttered.
-Subject: one recognizable Chiikawa character, full body visible, placed slightly left of center and comfortably inside the central safe area.
-Style/medium: polished kawaii Japanese character illustration, soft hand-painted watercolor and gouache, simple rounded shapes, delicate texture, crisp clean edges.
-Composition/framing: flat edge-to-edge landscape artwork, 1.58577:1 composition; important content centered within a generous safe area; leave calm clean negative space in the lower-right for a later transparent Suica transit sticker; background extends fully to every edge.
-Lighting/mood: bright soft morning light, fresh, calm, cheerful, adorable.
-Color palette: pale mint, soft grass green, powder blue, cream white, tiny touches of warm peach.
-Text: none.
-Constraints: background artwork only; no logo, no brand mark, no Suica text, no Japanese text, no lettering, no card number, no QR code, no barcode, no watermark; no extra characters; no card mockup, no hand, no perspective, no border, no rounded-corner mask, no shadow; keep the lower-right negative space free of important elements.
-```
-
-</details>
 
 ### 2. 北京水墨 × 市政交通一卡通 × 交通联合
 
@@ -149,34 +123,11 @@ Constraints: background artwork only; no logo, no brand mark, no Suica text, no 
 标志，并把两者转成与宣纸水墨一致的矿物蓝、朱砂与晕染边缘。它们仍分别是 `reference-only`
 和 `blocked`，因此这是标注清楚的非官方艺术化诠释，不会进入精确 `ready` 贴纸包。
 
-直接复制给 ChatGPT / Gemini（上传可追溯的“市政交通一卡通”和“交通联合”卡面参考）：
+直接复制（同时上传可追溯的“市政交通一卡通”和“交通联合”参考）：
 
 ```text
-请参考 https://github.com/juju-w/card-creator-skill 的尺寸与构图规则，并结合我在当前对话上传的参考图（参考图如上），生成一张北京主题的现代水墨交通卡卡面。用暖象牙色宣纸铺满画布，左侧绘制天坛，远处是薄雾中的长城和山势，整体留白克制、安静、有现代编辑感。
-
-输出横向平面画稿，宽高比 1.58577:1，目标裁切尺寸 1011 × 638 px、300 DPI。建筑和水墨可以自然出边，但不得非预期裁断天坛主体。不要生成卡片样机、手、透视、圆角遮罩、边框、阴影、卡号、二维码、条形码、水印或无关文字。
-
-根据参考卡面，把市政交通一卡通常见的图形＋名称组合放在左上，把紧凑交通联合标志放在右下；两者都转换成与水墨画统一的矿物蓝、少量朱砂和晕染纸纹，并标注为非官方风格化诠释。由 Skill 自动复核两个标志的视觉重量和光学边距，不加入感应支付标志。如果缺少任一参考，就保留该位置，不要凭空补画。请直接生成一张完整卡面预览，并附上最终使用的 Prompt。
+使用 card-creator Skill，参考图如上，生成一张北京水墨交通卡面：天坛、长城与宣纸水墨，加入风格匹配的市政交通一卡通和交通联合标志；不要添加感应支付标志和无关文字。
 ```
-
-<details>
-<summary>高级：查看背景层原始 Prompt</summary>
-
-```text
-Use case: stylized-concept
-Asset type: print-ready transit card background artwork
-Primary request: Create a refined Beijing-themed Chinese ink-wash card-face background, calm, contemporary, and fully printable edge to edge.
-Scene/backdrop: the entire rectangular canvas is filled with warm ivory rice paper; misty layered ink landscape with a restrained Temple of Heaven and a distant Great Wall, broad atmospheric blank paper on the right.
-Subject: one complete Temple of Heaven painted in elegant black and gray ink wash, scaled modestly and placed in the left third with at least 12% clear paper margin from the left and bottom edges so the entire building and roof remain visible; the Great Wall runs softly through the middle distance; no people.
-Style/medium: traditional Chinese shui-mo ink painting with modern editorial restraint, visible dry-brush texture, soft ink diffusion, subtle handmade paper grain.
-Composition/framing: flat edge-to-edge landscape artwork, 1.58577:1 composition; keep the complete Temple of Heaven and all important landmarks inside a generous central safe area; reserve two calm clean warm-white negative-space zones along the right side for later transparent China T-Union and Beijing transit stickers; rice-paper background reaches every canvas edge.
-Lighting/mood: quiet early morning mist, dignified, spacious, poetic.
-Color palette: warm rice-paper ivory, charcoal black, soft gray, one small muted cinnabar sun.
-Text: none.
-Constraints: opaque rectangular background artwork only; no cropped architecture, no black voids, no transparent areas, no circular ink frame, no vignette, no heavy border; no logo, no brand mark, no transit symbol, no Chinese characters, no lettering, no card number, no QR code, no barcode, no watermark; no card mockup, no hand, no perspective, no rounded-corner mask, no shadow; keep both right-side reserved zones free of important elements.
-```
-
-</details>
 
 ### 3. 极简线条 × Mastercard
 
@@ -187,34 +138,11 @@ Constraints: opaque rectangular background artwork only; no cropped architecture
 贴纸：红橙双色 `mastercard`（`ready`）。ImageGen 返回透明底时，只将背景修正为不透明暖象牙白；
 Mastercard 双圆标志仍由 Skill 使用已核验 PNG 叠加，不让模型重画。
 
-直接复制给 ChatGPT / Gemini（需要精确标志时，同时上传仓库中的 `mastercard.png`）：
+直接复制（需要精确标志时，同时上传仓库中的 `mastercard.png`）：
 
 ```text
-请参考 https://github.com/juju-w/card-creator-skill 的尺寸与安全区规则，并结合我在当前对话上传的参考图（参考图如上），生成一张极简线条风格的 Mastercard 卡面。背景为不透明暖象牙白，使用极少量的炭黑、珊瑚红和琥珀橙单线条形成抽象弧线，构图安静、现代、克制，右下角留出干净空间。
-
-输出横向平面画稿，宽高比 1.58577:1，目标裁切尺寸 1011 × 638 px、300 DPI。背景铺满画布，重要线条交点位于中央安全区。不要生成芯片、卡号、二维码、条形码、水印、无关文字、卡片样机、手、透视、圆角遮罩、边框或阴影，也不要用背景圆形近似 Mastercard 标志。
-
-如果我上传了 Mastercard 透明 PNG，请保持其红橙配色、比例和透明度，将它原样放在右下自然卡角位置，不要重画、改色或风格化；由 Skill 自动检查它与抽象线条的视觉重量和实体裁切边距。如果没有收到贴纸文件，就只保留空位。请直接生成一张完整卡面预览，并附上最终使用的 Prompt。
+使用 card-creator Skill，参考图如上，生成一张暖象牙白的极简线条 Mastercard 卡面，使用仓库中的红橙双色 Mastercard 精确贴纸；不要添加感应支付标志和无关文字。
 ```
-
-<details>
-<summary>高级：查看背景层原始 Prompt</summary>
-
-```text
-Use case: stylized-concept
-Asset type: print-ready payment card background artwork
-Primary request: Create an elegant ultra-minimal line-art card-face background designed to pair with a later full-color Mastercard symbol.
-Scene/backdrop: smooth warm ivory field with a few precise continuous lines forming two large overlapping circular arcs and a subtle flowing path, abstract rather than illustrative.
-Style/medium: premium Swiss-influenced minimal graphic design, crisp monoline geometry, restrained editorial composition, flat matte print finish.
-Composition/framing: flat edge-to-edge landscape artwork, 1.58577:1 composition; thin lines sweep from the upper-left toward the center and dissolve gently; leave calm clean negative space in the lower-right for the later transparent Mastercard symbol; all important line intersections remain inside a generous safe area.
-Lighting/mood: quiet, confident, modern, refined.
-Color palette: warm ivory background, hairline charcoal, muted coral red, soft amber orange; very limited palette.
-Materials/textures: almost flat, with only an extremely subtle uncoated-paper grain.
-Text: none.
-Constraints: background artwork only; no logo, no brand mark, no circles that exactly reproduce the Mastercard logo, no lettering, no card number, no chip, no QR code, no barcode, no watermark; no card mockup, no hand, no perspective, no border, no rounded-corner mask, no shadow; keep the lower-right sticker zone empty and clean.
-```
-
-</details>
 
 ### 4. 云母祥云仙鹤 × 中国银行 × 故宫博物院 × 银联
 
@@ -232,19 +160,29 @@ Constraints: background artwork only; no logo, no brand mark, no circles that ex
 多标志卡面会自动触发 Skill 的美术指导复核，由 Skill 统一处理视觉重量、光学边距和主次层级；
 用户不需要在 Prompt 里另外要求“优化排版”。
 
-直接复制给 ChatGPT / Gemini（上传短款 `unionpay-compact.png`、中国银行官方标志参考和故宫
-博物院院徽参考）：
+直接复制（同时上传短款 `unionpay-compact.png`、中国银行和故宫博物院标志参考）：
 
 ```text
-请参考 https://github.com/juju-w/card-creator-skill 的尺寸与构图规则，生成一张故宫博物院典藏气质的原创中式卡面。画面使用暖白宣纸、半透明云母质感祥云、三只展翅的丹顶鹤和位于下方的宫殿建筑；整体轻盈但具有大构图张力，配色以珍珠白、古金、朱砂红、炭黑和少量黛绿为主。不要为了蓝色建议安全线缩小仙鹤、宫殿或 Logo；安全线只用于普通小字和功能信息参考。
-
-输出横向平面画稿，宽高比 1.58577:1，目标裁切尺寸 1011 × 638 px、300 DPI，背景必须不透明并铺满四边。装饰性祥云、建筑和仙鹤可以按构图出边。不要生成卡片样机、手、手机界面、透视、圆角遮罩、晕影、边框、阴影、芯片、卡号、二维码、条形码、水印或感应标志。
-
-加入中国银行、故宫博物院与银联三个参考标志，并遵循 card-creator Skill 的惯例版本选择和自动排版规则。三个标志统一使用哑金烫金与细微云母质感。它们均为非官方风格化诠释；银联使用卡角短款，不要加入 ICBC 或感应标志。如果缺少任一参考，就保留该位置，不要凭空补画。请生成一张完整卡面预览，并附上最终使用的 Prompt。
+使用 card-creator Skill，参考图如上，生成一张云母祥云、仙鹤与宫殿主题的故宫典藏风卡面，加入正常中国银行与故宫博物院组合标、短款银联标志，统一为哑金风格；不要添加感应支付标志。
 ```
 
 参考来源：[中国银行官方标志说明](https://www.boc.cn/aboutboc/bi1/201110/t20111014_1556052.html)；
 [故宫博物院院徽启用说明](https://www.dpm.org.cn/classify_detail/158858.html)。
+
+### 5. 后印象派旋涡夜景 × Visa
+
+<p align="center">
+  <img src="examples/post-impressionist-visa.png" width="600" alt="后印象派旋涡夜景与哑金 Visa 卡面示例">
+</p>
+
+贴纸：`visa`（`ready`），保留精确几何并使用 Skill 的 `foil-gold` 材质处理。画面采用原创的
+后印象派旋涡笔触与夜景构图，不直接复制具体名画。
+
+直接复制：
+
+```text
+使用 card-creator Skill，生成一张高级梵高式后印象派卡面：深钴蓝旋涡夜空、金色星光、柏树与葡萄园，搭配右下角哑金 Visa 标志；不要直接复制具体名画，不要添加感应支付标志和无关文字。
+```
 
 ## 贴纸状态
 

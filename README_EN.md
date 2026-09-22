@@ -93,6 +93,10 @@ See [reference-card remix](skills/card-creator/references/reference-remix.md) fo
 
 ## Examples
 
+Dimensions, trim, layout, sticker modes, and export rules already live in the Skill, so these prompts
+only describe creative intent. Paste one sentence into ChatGPT or Gemini; if you have a composition
+reference, upload it in the same message and say “reference image above.” Contactless marks are opt-in.
+
 ### Chiikawa × Suica
 
 <p align="center">
@@ -102,15 +106,10 @@ See [reference-card remix](skills/card-creator/references/reference-remix.md) fo
 The Suica mark in the lower-right is a deterministic `ready` sticker overlay. This is an
 unofficial, non-commercial fan example and does not imply authorization, sponsorship, or approval.
 
-Copy into ChatGPT or Gemini after uploading a composition reference and, for an exact mark, the
-repository's `suica.png`:
+Copy after uploading a composition reference and, for an exact mark, the repository's `suica.png`:
 
 ```text
-Follow the dimensions and safe-area rules in https://github.com/juju-w/card-creator-skill and use my uploaded reference image (reference image above) to create an unofficial, non-commercial Chiikawa × Suica fan card face. Paint a fresh spring meadow in pale mint green beneath a powder-blue sky, with rounded white clouds and a soft watercolor-and-gouache texture. Place Chiikawa alone slightly left of center, smiling and holding a four-leaf clover. Keep the lower-right clean.
-
-Create flat landscape artwork at 1.58577:1, targeting a 1011 × 638 px trim at 300 DPI. Avoid accidental cropping of the character and important details; the blue safe guide is advisory for small functional information. No card mockup, hand, perspective, rounded-corner mask, border, shadow, card number, QR code, barcode, watermark, or unrequested text.
-
-If I uploaded a transparent Suica PNG, place it unchanged in a natural lower-right card-corner position and preserve its proportions, colors, lettering, and transparency. Let the Skill review optical weight and physical trim breathing room. Otherwise leave the space empty; do not generate an approximate Suica logo. Generate one complete preview and include the final prompt you used.
+Using the card-creator Skill and the reference image above, create a fresh, cute Chiikawa × Suica card face with a spring clover meadow and soft watercolor-gouache texture. Use the repository's exact Suica sticker; add no contactless mark or unrelated text.
 ```
 
 ### Minimal line art × Mastercard
@@ -121,15 +120,10 @@ If I uploaded a transparent Suica PNG, place it unchanged in a natural lower-rig
 
 The red/orange Mastercard symbol in the lower-right is a deterministic `ready` sticker overlay.
 
-Copy into ChatGPT or Gemini after uploading a reference and, for an exact mark, the repository's
-`mastercard.png`:
+Copy after uploading a reference and, for an exact mark, the repository's `mastercard.png`:
 
 ```text
-Follow the dimensions and safe-area rules in https://github.com/juju-w/card-creator-skill and use my uploaded reference image (reference image above) to create an ultra-minimal line-art card face for a later Mastercard sticker. Use an opaque warm-ivory background and a few precise charcoal, coral-red, and amber-orange monoline arcs. Keep the composition quiet, modern, and restrained, with clean space in the lower-right.
-
-Create flat landscape artwork at 1.58577:1, targeting a 1011 × 638 px trim at 300 DPI. No chip, card number, QR code, barcode, watermark, unrequested text, card mockup, hand, perspective, rounded-corner mask, border, or shadow. Do not use background circles that imitate the Mastercard mark.
-
-If I uploaded a transparent Mastercard PNG, place it unchanged in a natural lower-right card-corner position and preserve its red/orange colors, proportions, and transparency. Let the Skill review optical weight and physical trim breathing room. Otherwise leave the space empty. Generate one complete preview and include the final prompt you used.
+Using the card-creator Skill and the reference image above, create a warm-ivory ultra-minimal line-art Mastercard card face. Use the repository's exact red-and-orange Mastercard sticker; add no contactless mark or unrelated text.
 ```
 
 ### Beijing ink wash × municipal transit × China T-Union
@@ -143,14 +137,10 @@ at upper-left and a compact China T-Union mark at lower-right, translating both 
 cinnabar, and ink-wash edges. Their exact assets remain `reference-only` and `blocked`, so these are
 disclosed non-official interpretations and are never promoted into the exact `ready` sticker pack.
 
-Copy into ChatGPT or Gemini after uploading traceable municipal-transit and China T-Union card references:
+Copy after uploading traceable municipal-transit and China T-Union references:
 
 ```text
-Follow the dimensions and composition rules in https://github.com/juju-w/card-creator-skill and use my uploaded reference image (reference image above) to create a contemporary Beijing ink-wash transit-card face. Fill the canvas with warm ivory rice paper, paint the Temple of Heaven on the left, and place a misty Great Wall across the distant mountains. Keep the composition spacious and editorial.
-
-Create flat landscape artwork at 1.58577:1, targeting a 1011 × 638 px trim at 300 DPI. Architecture and ink wash may naturally run toward the trim, but do not accidentally crop the Temple of Heaven hero. No card mockup, hand, perspective, rounded-corner mask, border, shadow, card number, QR code, barcode, watermark, or unrequested text.
-
-From the traceable card references, place the conventional municipal-transit symbol-plus-name lockup at upper-left and the compact China T-Union mark at lower-right. Reinterpret both with mineral blue, a small cinnabar accent, and ink-wash paper edges; disclose them as non-official stylized interpretations. Let the Skill review optical weight and physical trim breathing room. Do not add a contactless mark. If either reference is missing, leave that area empty rather than inventing it. Generate one complete preview and include the final prompt you used.
+Using the card-creator Skill and the reference image above, create a Beijing ink-wash transit card with the Temple of Heaven, Great Wall, and rice-paper texture. Add style-matched municipal-transit and China T-Union marks; add no contactless mark or unrelated text.
 ```
 
 ### Mica clouds and cranes × Bank of China × Palace Museum × UnionPay
@@ -169,21 +159,27 @@ the guide must not shrink the composition. No contactless mark is added unless e
 Multi-mark cards automatically trigger the Skill's art-direction review for optical weight, edge
 breathing room, and hierarchy; the user does not need to ask for layout optimization in the prompt.
 
-Copy into ChatGPT or Gemini after uploading the repository's `unionpay-compact.png` plus official
-Bank of China and Palace Museum identity references:
+Copy after uploading `unionpay-compact.png` plus Bank of China and Palace Museum references:
 
 ```text
-Follow the dimensions and composition rules in https://github.com/juju-w/card-creator-skill. Create an original Chinese heritage card face with a museum-collection mood: warm pearl-white rice paper, translucent mica-like auspicious clouds, three red-crowned cranes in flight, and palace architecture along the lower area. Use pearl white, antique gold, cinnabar, charcoal, and a touch of muted jade. Preserve a bold edge-to-edge composition; do not shrink the cranes, architecture, or marks merely to fit the advisory blue guide.
-
-Create flat opaque edge-to-edge landscape artwork at 1.58577:1, targeting a 1011 × 638 px trim at 300 DPI. Decorative clouds, architecture, and cranes may intentionally run toward or through the trim. No mockup, hand, phone UI, perspective, rounded-corner mask, vignette, border, shadow, chip, card number, QR code, barcode, watermark, or contactless mark.
-
-Add the Bank of China, Palace Museum, and UnionPay references while following the card-creator Skill's conventional variant selection and automatic layout direction. Give all three the same matte antique-gold foil and subtle mica texture. Treat them as non-official stylized interpretations. Use the compact card-corner UnionPay mark; do not add ICBC or a contactless symbol. If any reference is missing, leave its area empty. Generate one complete preview and include the final prompt you used.
+Using the card-creator Skill and the reference image above, create a Palace Museum collection-style card with mica clouds, cranes, and palace architecture. Add normal Bank of China and Palace Museum lockups plus a compact UnionPay mark, all in matte antique gold; add no contactless mark.
 ```
 
 Reference sources: [official Bank of China identity description](https://www.boc.cn/aboutboc/bi1/201110/t20111014_1556052.html) and
 [official Palace Museum emblem announcement](https://www.dpm.org.cn/classify_detail/158858.html).
 
-The complete background prompts are documented in the [Chinese README](README.md).
+### Post-impressionist swirling night × Visa
+
+<p align="center">
+  <img src="examples/post-impressionist-visa.png" width="600" alt="Post-impressionist swirling-night card with a matte-gold Visa mark">
+</p>
+
+The `ready` Visa asset keeps its exact geometry and receives the Skill's `foil-gold` treatment. The
+background uses an original post-impressionist night composition rather than copying a specific painting.
+
+```text
+Using the card-creator Skill, create a premium Van Gogh-like post-impressionist card with a deep-cobalt swirling night sky, golden stars, cypress trees, and vineyards, paired with a matte-gold Visa mark at lower-right. Do not copy a specific painting or add a contactless mark or unrelated text.
+```
 
 ## Sticker policy
 
