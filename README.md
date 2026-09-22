@@ -7,34 +7,39 @@
 一个为 AirCard、NFC 卡片和交通卡生成可打印卡面的 Codex Skill：AI 负责画面，Skill 负责尺寸、
 裁切、排版、透明贴纸和 300 DPI 导出。仓库不包含在线编辑器。
 
-## 先看作品：8 种卡面与一句话 Prompt
+## 先看作品：10 种卡面与一句话 Prompt
 
 尺寸、出血、排版、圆角展示适配和导出规则都在 Skill 内部。复制一句话给 ChatGPT / Gemini
 即可；有参考图时同时上传并写“参考图如上”。
 
-| 清新水彩 · Chiikawa × Suica | 玩梗 · 九标志大集合 |
+| 清新水彩 · Chiikawa × Suica | 五迷应援 · 卜卜 × Mastercard |
 |---|---|
-| <img src="examples/chiikawa-suica.png" width="420" alt="Chiikawa × Suica 清新水彩卡面"> | <img src="examples/multi-network-meme.png" width="420" alt="九个支付与交通标志组成的玩梗卡面"> |
-| `使用 card-creator Skill，参考图如上，生成一张清新可爱的 Chiikawa × Suica 卡面：春日四叶草草地、水彩水粉质感，使用仓库中的 Suica 精确贴纸；不要添加感应支付标志和无关文字。` | `使用 card-creator Skill，参考梗图的荒诞密集感，生成一张绿色复古交通图形的 Logo 大集合卡面；使用 Visa、Mastercard、JCB、American Express、银联、Diners Club、ICOCA、PASMO 和 Suica 精确贴纸，允许标志大面积占据画面，不添加感应支付标志。` |
+| <img src="examples/chiikawa-suica.png" width="420" alt="Chiikawa × Suica 清新水彩卡面"> | <img src="examples/mayday-bubu-mastercard.png" width="420" alt="五月天卜卜五迷应援卡面"> |
+| `使用 card-creator Skill，参考图如上，生成一张 Chiikawa × Suica 清新水彩卡面：春日四叶草草地，右下角 Suica。` | `使用 card-creator Skill，生成一张五月天五迷应援卡：卜卜 / MOJO CARROT 站在五束彩色舞台灯下，深蓝演唱会氛围，右下角 Mastercard。` |
 
-| 五迷应援 · 五月天蓝色星海 | 后印象派 · 旋涡夜景 × Visa |
+| 梦幻鬼系 · 耿鬼 × PASMO | 浮世绘 · 鲤鱼王 × ICOCA |
 |---|---|
-| <img src="examples/mayday-blue-night.png" width="420" alt="五月天蓝色星海应援卡面"> | <img src="examples/post-impressionist-visa.png" width="420" alt="后印象派旋涡夜景与哑金 Visa 卡面"> |
-| `使用 card-creator Skill，生成一张给五迷的五月天应援卡：深蓝星空、五点星座、蓝色灯海、海边舞台和吉他剪影，搭配白色 Visa 标志；不复制专辑封面、人物肖像或歌词，不添加感应支付标志。` | `使用 card-creator Skill，生成一张高级梵高式后印象派卡面：深钴蓝旋涡夜空、金色星光、柏树与葡萄园，搭配右下角哑金 Visa 标志；不要直接复制具体名画，不添加感应支付标志和无关文字。` |
+| <img src="examples/gengar-pasmo.png" width="420" alt="梦幻紫色月夜耿鬼与 PASMO 卡面"> | <img src="examples/magikarp-icoca.png" width="420" alt="浮世绘巨浪鲤鱼王与 ICOCA 卡面"> |
+| `使用 card-creator Skill，生成一张耿鬼 × PASMO 卡面：耿鬼悬浮在紫色月夜与云海中，梦幻俏皮，右下角 PASMO。` | `使用 card-creator Skill，生成一张鲤鱼王 × ICOCA 卡面：鲤鱼王跃出靛蓝巨浪，浮世绘与金箔质感，右下角 ICOCA。` |
+
+| 高级艺术 · 维也纳分离派 × Diners Club | 后印象派 · 旋涡夜景 × Visa |
+|---|---|
+| <img src="examples/vienna-secession-diners.png" width="420" alt="维也纳分离派黑金人物与哑金 Diners Club 卡面"> | <img src="examples/post-impressionist-visa.png" width="420" alt="后印象派旋涡夜景与哑金 Visa 卡面"> |
+| `使用 card-creator Skill，生成一张维也纳分离派高级艺术卡面：原创人物侧影、黑金马赛克与螺钿花卉，右下角哑金 Diners Club 短标。` | `使用 card-creator Skill，生成一张高级后印象派卡面：深钴蓝旋涡夜空、金色星光与柏树，右下角哑金 Visa。` |
 
 | 北京水墨 · 一卡通 × 交通联合 | 极简线条 · Mastercard |
 |---|---|
 | <img src="examples/beijing-ink-transit-background.png" width="420" alt="北京水墨交通卡面"> | <img src="examples/minimal-mastercard.png" width="420" alt="极简线条 Mastercard 卡面"> |
-| `使用 card-creator Skill，参考图如上，生成一张北京水墨交通卡面：天坛、长城与宣纸水墨，加入风格匹配的市政交通一卡通和交通联合标志；不要添加感应支付标志和无关文字。` | `使用 card-creator Skill，参考图如上，生成一张暖象牙白的极简线条 Mastercard 卡面，使用仓库中的红橙双色 Mastercard 精确贴纸；不要添加感应支付标志和无关文字。` |
+| `使用 card-creator Skill，参考图如上，生成一张北京水墨交通卡面：天坛、长城、宣纸质感与风格匹配的北京交通标志。` | `使用 card-creator Skill，参考图如上，生成一张暖象牙白的极简线条 Mastercard 卡面，右下角红橙双色 Mastercard。` |
 
 | 故宫典藏 · 云母祥云与仙鹤 | 上海装饰艺术 · 夜景 × 银联 |
 |---|---|
 | <img src="examples/palace-museum-cranes-unionpay.png" width="420" alt="云母祥云仙鹤与故宫主题卡面"> | <img src="examples/shanghai-art-deco-unionpay.png" width="420" alt="上海装饰艺术夜景与哑金银联卡面"> |
-| `使用 card-creator Skill，参考图如上，生成一张云母祥云、仙鹤与宫殿主题的故宫典藏风卡面，加入正常中国银行与故宫博物院组合标、短款银联标志，统一为哑金风格；不要添加感应支付标志。` | `使用 card-creator Skill，生成一张 1930 年代上海装饰艺术卡面：深翡翠色外滩夜景、黄浦江倒影、几何扇形与古金线条，搭配右下角哑金短款银联标志；不要添加感应支付标志和无关文字。` |
+| `使用 card-creator Skill，参考图如上，生成一张故宫典藏风卡面：云母祥云、仙鹤、宫殿与哑金风格化标志。` | `使用 card-creator Skill，生成一张 1930 年代上海装饰艺术卡面：深翡翠外滩夜景与古金线条，右下角哑金短款银联。` |
 
-其中北京水墨与故宫示例使用明确标注的非官方风格化标志；其余示例只合成 manifest 中
-`status: ready` 的精确透明贴纸。所有示例均为个人、非商业创作演示，不代表品牌、角色、乐团、
-交通运营方或金融机构授权、合作或认可。
+其中北京水墨与故宫示例使用明确标注的非官方风格化标志；卜卜与宝可梦相关画面是非官方
+AI 同人诠释；卡组织与交通标志只合成 manifest 中 `status: ready` 的精确透明贴纸。所有示例均为
+个人、非商业创作演示，不代表品牌、角色、乐团、交通运营方或金融机构授权、合作或认可。
 
 ## 安装
 

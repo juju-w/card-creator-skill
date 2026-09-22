@@ -8,34 +8,40 @@ A Codex Skill for creating print-ready AirCard, NFC-card, and transit-card faces
 artwork; the Skill handles dimensions, trim, layout, transparent stickers, and 300 DPI exports.
 This repository does not include an online editor.
 
-## Start here: eight card styles and one-line prompts
+## Start here: ten card styles and one-line prompts
 
 Dimensions, bleed, layout, rounded-display behavior, and export rules already live in the Skill.
 Paste one sentence into ChatGPT or Gemini; upload a reference in the same message when applicable.
 
-| Fresh watercolor · Chiikawa × Suica | Parody · nine-mark super card |
+| Fresh watercolor · Chiikawa × Suica | Mayday fan card · Bubu × Mastercard |
 |---|---|
-| <img src="examples/chiikawa-suica.png" width="420" alt="Fresh watercolor Chiikawa and Suica card"> | <img src="examples/multi-network-meme.png" width="420" alt="Parody card containing nine exact payment and transit marks"> |
-| `Using the card-creator Skill and the reference image above, create a fresh, cute Chiikawa × Suica card with a spring clover meadow and watercolor-gouache texture. Use the exact Suica sticker; add no contactless mark or unrelated text.` | `Using the card-creator Skill and the meme reference above, create an absurdly dense green retro-transit logo-collage card. Use the exact Visa, Mastercard, JCB, American Express, UnionPay, Diners Club, ICOCA, PASMO, and Suica stickers; let the marks dominate the face and add no contactless mark.` |
+| <img src="examples/chiikawa-suica.png" width="420" alt="Fresh watercolor Chiikawa and Suica card"> | <img src="examples/mayday-bubu-mastercard.png" width="420" alt="Mayday Bubu mascot fan card with Mastercard"> |
+| `Using the card-creator Skill and the reference above, make a fresh watercolor Chiikawa × Suica card with a spring clover meadow and Suica at lower right.` | `Using the card-creator Skill, make a Mayday fan card with Bubu / MOJO CARROT under five colorful stage beams, a deep-blue concert mood, and Mastercard at lower right.` |
 
-| Mayday fan card · blue sea of stars | Post-impressionist · swirling night × Visa |
+| Dreamy ghost · Gengar × PASMO | Ukiyo-e · Magikarp × ICOCA |
 |---|---|
-| <img src="examples/mayday-blue-night.png" width="420" alt="Mayday fan card with a blue concert night"> | <img src="examples/post-impressionist-visa.png" width="420" alt="Post-impressionist swirling-night card with matte-gold Visa"> |
-| `Using the card-creator Skill, create a Mayday fan card with a deep-blue sky, five-point constellation, ocean of blue light sticks, seaside stage, and guitar silhouette, paired with a white Visa mark. Do not copy album art, portraits, or lyrics, and add no contactless mark.` | `Using the card-creator Skill, create a premium Van Gogh-like post-impressionist card with a deep-cobalt swirling sky, golden stars, cypress trees, and vineyards, paired with a matte-gold Visa mark. Do not copy a specific painting or add a contactless mark or unrelated text.` |
+| <img src="examples/gengar-pasmo.png" width="420" alt="Dreamy purple moonlit Gengar and PASMO card"> | <img src="examples/magikarp-icoca.png" width="420" alt="Ukiyo-e Magikarp and ICOCA card"> |
+| `Using the card-creator Skill, make a Gengar × PASMO card with Gengar floating through a playful purple moonlit cloudscape and PASMO at lower right.` | `Using the card-creator Skill, make a Magikarp × ICOCA card with Magikarp leaping from indigo ukiyo-e waves, gold-foil foam, and ICOCA at lower right.` |
+
+| High art · Vienna Secession × Diners Club | Post-impressionist · swirling night × Visa |
+|---|---|
+| <img src="examples/vienna-secession-diners.png" width="420" alt="Vienna Secession black-and-gold portrait with Diners Club"> | <img src="examples/post-impressionist-visa.png" width="420" alt="Post-impressionist swirling-night card with matte-gold Visa"> |
+| `Using the card-creator Skill, make a high-art Vienna Secession card with an original profile, black-and-gold mosaics, mother-of-pearl flowers, and a matte-gold compact Diners Club mark.` | `Using the card-creator Skill, make a premium post-impressionist card with a deep-cobalt swirling night, golden stars, cypress trees, and matte-gold Visa.` |
 
 | Beijing ink wash · transit marks | Ultra-minimal line art · Mastercard |
 |---|---|
 | <img src="examples/beijing-ink-transit-background.png" width="420" alt="Beijing ink-wash transit card"> | <img src="examples/minimal-mastercard.png" width="420" alt="Ultra-minimal line-art Mastercard card"> |
-| `Using the card-creator Skill and the reference above, create a Beijing ink-wash transit card with the Temple of Heaven, Great Wall, and rice-paper texture. Add style-matched municipal-transit and China T-Union marks; add no contactless mark or unrelated text.` | `Using the card-creator Skill and the reference above, create a warm-ivory ultra-minimal line-art Mastercard card. Use the exact red-and-orange Mastercard sticker; add no contactless mark or unrelated text.` |
+| `Using the card-creator Skill and the reference above, make a Beijing ink-wash transit card with the Temple of Heaven, Great Wall, rice-paper texture, and style-matched Beijing transit marks.` | `Using the card-creator Skill and the reference above, make a warm-ivory ultra-minimal line-art card with red-and-orange Mastercard at lower right.` |
 
 | Palace collection · mica clouds and cranes | Shanghai Art Deco · night skyline × UnionPay |
 |---|---|
 | <img src="examples/palace-museum-cranes-unionpay.png" width="420" alt="Palace collection card with mica clouds and cranes"> | <img src="examples/shanghai-art-deco-unionpay.png" width="420" alt="Shanghai Art Deco night card with matte-gold UnionPay"> |
-| `Using the card-creator Skill and the reference above, create a Palace Museum collection-style card with mica clouds, cranes, and palace architecture. Add normal Bank of China and Palace Museum lockups plus a compact UnionPay mark, all in matte antique gold; add no contactless mark.` | `Using the card-creator Skill, create a 1930s Shanghai Art Deco card with a deep-jade Bund nightscape, Huangpu reflections, geometric fans, and antique-gold linework, paired with a matte-gold compact UnionPay mark. Add no contactless mark or unrelated text.` |
+| `Using the card-creator Skill and the reference above, make a Palace collection card with mica clouds, cranes, architecture, and style-matched antique-gold marks.` | `Using the card-creator Skill, make a 1930s Shanghai Art Deco card with a deep-jade Bund nightscape, antique-gold linework, and compact UnionPay at lower right.` |
 
-The Beijing and Palace examples use disclosed non-official stylized marks. Every other example
-composites only exact transparent assets whose manifest status is `ready`. All examples are personal,
-non-commercial demonstrations and do not imply authorization, sponsorship, or endorsement.
+The Beijing and Palace examples use disclosed non-official stylized marks; Bubu and Pokémon-related
+artwork is non-official AI fan art. Payment and transit overlays are exact transparent assets whose
+manifest status is `ready`. All examples are personal, non-commercial demonstrations and do not imply
+authorization, sponsorship, or endorsement.
 
 ## Install
 
