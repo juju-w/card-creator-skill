@@ -44,6 +44,12 @@ references. Its reproducible source and build instructions live in
 [`packaging/skillhub-zh-CN`](packaging/skillhub-zh-CN/README.md). Both distributions copy the same
 scripts, card rules, manifest, and sticker files from the canonical Skill directory.
 
+Install the localized package from SkillHub after its listing is approved:
+
+```bash
+skillhub install card-creator
+```
+
 ## Output specification
 
 - Trim: `1011 × 638 px` at 300 DPI, representing `85.60 × 53.98 mm`.

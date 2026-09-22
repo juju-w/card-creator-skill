@@ -46,6 +46,12 @@ SkillHub/WorkBuddy 使用维护中的简体中文分发包。可复现源码、�
 [`packaging/skillhub-zh-CN`](packaging/skillhub-zh-CN/README.md)。GitHub/skills.sh 默认包保持英文，
 两个版本共享同一套脚本、卡面规则和素材清单，不会各自维护一份易漂移的资产库。
 
+SkillHub 中文版审核上架后可直接安装：
+
+```bash
+skillhub install card-creator
+```
+
 ## 输出规格
 
 - 成品裁切尺寸：`1011 × 638 px`，300 DPI，对应 `85.60 × 53.98 mm`。
