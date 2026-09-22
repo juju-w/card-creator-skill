@@ -66,17 +66,21 @@ composite them:
 - `hong-kong-octopus` — 香港八达通 / Octopus
 - `macau-pass` — 澳门通 / Macau Pass
 
-Exact transparent PNGs served by official websites have been retained under
-`assets/stickers/research/cities/` for Beijing, Shenzhen, Hangzhou, Xi'an, Tianjin, Chengdu, and
-Chongqing. These files are provenance samples, not an approved sticker pack: their manifest items
-remain `pending`, and `research_file` must never be treated as `file`. The Beijing image is a white
-website-header variant; Shenzhen's is symbol-only; the Hangzhou and Chongqing images are operator
-marks that have not been verified as the corresponding transit-card product marks.
+Exact PNGs served by official websites have been retained under `assets/stickers/research/cities/`:
+seven transparent files for Beijing, Shenzhen, Hangzhou, Xi'an, Tianjin, Chengdu, and Chongqing,
+plus two opaque partner-directory marks for Yang Cheng Tong and Lingnan Pass. These files are
+provenance samples, not an approved sticker pack: their manifest items remain `pending`, and
+`research_file` must never be treated as `file`. The manifest's `transparency` field records whether
+the exact source has usable alpha. The Beijing image is a white website-header variant; Shenzhen's
+is symbol-only; the Hangzhou and Chongqing images are operator marks that have not been verified as
+the corresponding transit-card product marks.
 
-For Shanghai, Yang Cheng Tong, Lingnan Pass, and Wuhan Tong, the official web assets located so far
-are opaque rasters or page-header strips. Their exact URLs and formats are recorded as
-`observed_asset` in the manifest, but the images are not copied into the sticker pack and must not
-be manually background-removed.
+The official Lingnan Pass recharge site also publishes a brand-material RAR archive. Inspection
+found three JPG production artworks for merchant signs, not a standalone transparent or vector
+logo; the archive URL and result are recorded in the manifest. The Yang Cheng Tong and Lingnan Pass
+research PNGs must not be manually background-removed. For Shanghai and Wuhan Tong, the official
+web assets located so far are page-header strips, so only their URLs and formats are recorded as
+`observed_asset`.
 
 Octopus is a special hard stop: its official branding page says trademark use requires written
 approval, and its brand guide prohibits reproduction without written permission. Do not promote it

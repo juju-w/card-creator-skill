@@ -43,7 +43,14 @@ def main() -> None:
                 errors.append(f"{sticker_id}: research_file must remain status=pending")
             missing = [
                 field
-                for field in ("source", "source_asset", "license", "usage", "sha256")
+                for field in (
+                    "source",
+                    "source_asset",
+                    "license",
+                    "usage",
+                    "sha256",
+                    "transparency",
+                )
                 if not item.get(field)
             ]
             if missing:
@@ -56,16 +63,21 @@ def main() -> None:
                 if digest != item.get("sha256"):
                     errors.append(f"{sticker_id}: research SHA-256 mismatch")
                 with Image.open(research_path) as image:
-                    if "A" not in image.getbands() and "transparency" not in image.info:
+                    transparency = item.get("transparency")
+                    if transparency not in {"transparent", "opaque"}:
                         errors.append(
-                            f"{sticker_id}: research PNG has no transparency metadata: "
-                            f"mode={image.mode}"
+                            f"{sticker_id}: invalid research transparency: {transparency}"
                         )
                     else:
                         alpha = image.convert("RGBA").getchannel("A")
-                        if alpha.getextrema()[0] == 255:
+                        alpha_min = alpha.getextrema()[0]
+                        if transparency == "transparent" and alpha_min == 255:
                             errors.append(
                                 f"{sticker_id}: research PNG transparency is fully opaque"
+                            )
+                        if transparency == "opaque" and alpha_min < 255:
+                            errors.append(
+                                f"{sticker_id}: research PNG is not fully opaque"
                             )
 
         if item.get("status") != "ready":
