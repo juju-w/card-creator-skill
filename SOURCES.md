@@ -202,3 +202,15 @@ Existing source and license notes were restored from Git history (`08f9176~2`, `
 ## Example artwork
 
 The gallery's Magikarp × ICOCA and Gengar × Octopus pictures were supplied by the user as Gemini outputs and approved for repository display. The other examples are AI-generated artistic demonstrations; the one-line briefs are alongside each image in the READMEs. None is an official bank or transit template. Character and brand rights remain with their owners.
+
+### User-shared ChatGPT web examples
+
+The Gardevoir and Metagross images were supplied by the user for the gallery. Their actual Chinese prompts
+are preserved in both READMEs. Only the prompts and final images were supplied; no execution trace or
+Skill-loading record was provided. Do not present these examples as verified executions of the Skill.
+The original Metagross prompt says `word`, while the output displays `world`.
+
+| Repository file | User-supplied file | Dimensions | SHA-256 of unchanged PNG |
+|---|---|---|---|
+| `examples/chatgpt-gardevoir-cmb-unionpay.png` | `ChatGPT Image 2026年9月22日 23_39_53.png` | 1586 × 992 | `0bfeceff525ec927cbcb0d92dd16630342b69a2f45613ef38fe2ff733037c1fa` |
+| `examples/chatgpt-metagross-icbc-mastercard-world.png` | `codex-clipboard-dfaf87e9-21cd-4d08-ba14-17216b7b49f1.png` | 1583 × 994 | `7d8f17ce5c107db2f7410e0702b7fbb7bf97270b8aa1e111058078532cb4acae` |

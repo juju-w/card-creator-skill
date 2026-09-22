@@ -8,9 +8,36 @@ A one-sentence Skill for AirCard, bank-card and transit-card artwork. Image gene
 composition, including style-matched logos. Reference pictures guide their appearance; foil, monochrome
 and line-art interpretations are welcome. No Python dependency or online editor.
 
-## Start here: ten card styles and one-line prompts
+## Start here: twelve card styles and one-line prompts
 
-These one-line prompts assume the **Skill is already loaded**. For a ChatGPT / Gemini web conversation
+These first two images were shared by the user from ChatGPT on the web, with the actual prompts used.
+**Skill loading was not verified for either generation**; the images are not evidence of successful Skill invocation.
+
+| Psychic-type pink · Gardevoir × CMB / UnionPay | Cyan mica and metal · Metagross × ICBC / Mastercard World |
+|---|---|
+| <img src="examples/chatgpt-gardevoir-cmb-unionpay.png" width="420" alt="User-supplied ChatGPT web output: pink Gardevoir with CMB and UnionPay"> | <img src="examples/chatgpt-metagross-icbc-mastercard-world.png" width="420" alt="User-supplied ChatGPT web output: cyan metallic Metagross with ICBC and outline Mastercard"> |
+
+<details>
+<summary>View the original prompts (Chinese, preserved verbatim)</summary>
+
+Gardevoir:
+
+```text
+使用 [juju-w/card-creator-skill](https://github.com/juju-w/card-creator-skill) card-creator Skill @创建图像 ，生成一张宝可梦里沙奈朵的卡面，简洁，超能系粉色， 招商银行银联信用卡，不要芯片
+```
+
+Metagross:
+
+```text
+@创建图像 使用 [juju-w/card-creator-skill](https://github.com/juju-w/card-creator-skill) card-creator Skill  ，生成一张宝可梦里巨金怪的万事达 word 卡面，工商银行，不要芯片，万事达logo 不要颜色只保留线条，整体有云母/金属光泽，保持青色系
+```
+
+The original input says `word`; the generated image says `world`. Both images are preserved without cropping,
+redrawing or adding logos. The Chinese prompts are the actual inputs, not translated reconstructions.
+
+</details>
+
+The remaining examples have short prompts intended for an **already-loaded Skill**. For a ChatGPT / Gemini web conversation
 without an installed Skill, see [web usage](#web-usage-links-and-reference-pictures) below. Attach references when applicable.
 
 | Minimal character card · Magikarp × ICOCA | Purple tech · Gengar × Octopus |

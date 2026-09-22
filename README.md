@@ -7,9 +7,35 @@
 一个用一句话生成 AirCard、银行卡和交通卡卡面的 Skill。图片生成工具一次完成画面与标志；
 参考图库帮助模型理解 Logo，也允许烫金、单色、线稿等风格变化。无需 Python，不含在线编辑器。
 
-## 先看作品：10 种卡面与一句话 Prompt
+## 先看作品：12 种卡面与一句话 Prompt
 
-下面是**已加载 Skill** 时的一句话 Prompt。没有安装 Skill 的 ChatGPT / Gemini 网页对话，
+先看两张用户分享的 ChatGPT 网页版原图，附实际输入的 Prompt。**未核实这两次生成是否加载了 Skill**，
+不将成图当作 Skill 调用成功的证明。
+
+| 超能系粉色 · 沙奈朵 × 招商银行／银联 | 青色云母金属 · 巨金怪 × 工商银行／Mastercard World |
+|---|---|
+| <img src="examples/chatgpt-gardevoir-cmb-unionpay.png" width="420" alt="沙奈朵粉色招行银联卡面，用户提供的 ChatGPT 网页版原图"> | <img src="examples/chatgpt-metagross-icbc-mastercard-world.png" width="420" alt="巨金怪青色云母金属工行卡面，线稿 Mastercard 标志，用户提供的 ChatGPT 网页版原图"> |
+
+<details>
+<summary>查看两张图的原始 Prompt</summary>
+
+沙奈朵：
+
+```text
+使用 [juju-w/card-creator-skill](https://github.com/juju-w/card-creator-skill) card-creator Skill @创建图像 ，生成一张宝可梦里沙奈朵的卡面，简洁，超能系粉色， 招商银行银联信用卡，不要芯片
+```
+
+巨金怪：
+
+```text
+@创建图像 使用 [juju-w/card-creator-skill](https://github.com/juju-w/card-creator-skill) card-creator Skill  ，生成一张宝可梦里巨金怪的万事达 word 卡面，工商银行，不要芯片，万事达logo 不要颜色只保留线条，整体有云母/金属光泽，保持青色系
+```
+
+原始输入中的 `word` 保持原样；成图中显示的是 `world`。图片均原样保存，未裁切、重画或追加 Logo。
+
+</details>
+
+以下其他示例配有**已加载 Skill** 时可用的短 Prompt。没有安装 Skill 的 ChatGPT / Gemini 网页对话，
 请用下方的[网页版用法](#网页版链接与参考图)；有参考图时同时上传并写“参考图如上”。
 
 | 简洁角色卡 · 鲤鱼王 × ICOCA | 紫色科技感 · 耿鬼 × 八达通 |
