@@ -33,6 +33,9 @@ class SkillHubPackageTests(unittest.TestCase):
             self.assertTrue(
                 output.joinpath("references/reference-remix.md").is_file()
             )
+            self.assertTrue(
+                output.joinpath("references/bank-issuer-catalog.md").is_file()
+            )
             self.assertEqual(
                 (output / "scripts" / "prepare_card.py").read_bytes(),
                 (CANONICAL_SKILL / "scripts" / "prepare_card.py").read_bytes(),
@@ -62,6 +65,11 @@ class SkillHubPackageTests(unittest.TestCase):
             self.assertTrue(
                 all("research_file" not in item for item in manifest["items"])
             )
+            issuer_banks = [
+                item for item in manifest["items"] if item["category"] == "issuer-bank"
+            ]
+            self.assertEqual(len(issuer_banks), 25)
+            self.assertTrue(all(item["status"] == "pending" for item in issuer_banks))
 
 
 if __name__ == "__main__":

@@ -17,6 +17,9 @@ approximate, stylize, or repair a logo.
    surrounding interface, and translate its design grammar into a distinct new composition.
 2. Read [sticker catalog](references/sticker-catalog.md) when choosing among payment and transit
    sticker families. Then read [sticker manifest](assets/stickers/manifest.json) and use only entries whose status is `ready`.
+   When the request names a bank issuer, also read
+   [bank issuer reference catalog](references/bank-issuer-catalog.md) and keep the issuer mark distinct
+   from its payment-network mark.
    If a requested sticker is not ready, generate the background without it and report the missing asset.
    When the user asks to research a missing mark or supplies a card-face image, read
    [sticker research](references/sticker-research.md). Card-face extraction is a research fallback,
@@ -52,6 +55,8 @@ approximate, stylize, or repair a logo.
 - For a style variation based on an existing card face or wallet screenshot, read
   [reference-card remix](references/reference-remix.md).
 - For sticker families and the research backlog, read [sticker catalog](references/sticker-catalog.md).
+- For mainland Chinese, Hong Kong, and international bank issuer marks, read
+  [bank issuer reference catalog](references/bank-issuer-catalog.md).
 - For sourcing or extracting a missing mark from an official card face, read
   [sticker research](references/sticker-research.md).
 - Sticker assets and provenance live under `assets/stickers/`.

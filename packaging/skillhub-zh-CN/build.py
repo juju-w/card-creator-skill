@@ -14,6 +14,7 @@ LOCALIZED_FILES = (
     Path("SKILL.md"),
     Path("agents/openai.yaml"),
     Path("references/card-rules.md"),
+    Path("references/bank-issuer-catalog.md"),
     Path("references/prompt-guide.md"),
     Path("references/reference-remix.md"),
     Path("references/sticker-catalog.md"),

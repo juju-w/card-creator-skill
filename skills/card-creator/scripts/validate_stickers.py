@@ -14,6 +14,7 @@ from PIL import Image
 
 
 REQUIRED_READY_FIELDS = ("file", "vector_file", "source", "license", "usage")
+REQUIRED_PENDING_FIELDS = ("source", "license", "usage", "blocker")
 
 
 def open_raster(path: Path) -> Image.Image:
@@ -89,7 +90,13 @@ def main() -> None:
                                 f"{sticker_id}: research PNG is not fully opaque"
                             )
 
+        if item.get("status") == "pending":
+            missing = [field for field in REQUIRED_PENDING_FIELDS if not item.get(field)]
+            if missing:
+                errors.append(f"{sticker_id}: missing pending fields: {', '.join(missing)}")
+            continue
         if item.get("status") != "ready":
+            errors.append(f"{sticker_id}: unsupported status: {item.get('status')}")
             continue
         ready_count += 1
 

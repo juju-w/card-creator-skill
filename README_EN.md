@@ -158,6 +158,15 @@ Only manifest entries with `status: ready` may be composited. Every ready asset 
 source URL, license note, and usage note. Research assets and observed URLs remain unavailable to
 the compositor until their exact source and usage status are resolved.
 
+Bank issuers are tracked separately from payment networks. The initial issuer reference set covers
+major mainland Chinese banks—ICBC, ABC, Bank of China, CCB, Bank of Communications, PSBC, China
+Merchants Bank, CITIC, Everbright, Minsheng, Industrial Bank, SPD Bank, Ping An, and Guangfa—and
+commonly requested Hong Kong or international issuers including BOCHK, HSBC, Standard Chartered,
+Hang Seng, BEA, Dah Sing, CMB Wing Lung, DBS, OCBC, UOB, and Citi. See the
+[bank issuer reference catalog](skills/card-creator/references/bank-issuer-catalog.md). All issuer
+entries are currently `pending`: the Skill may reserve space for an exact lockup, but may not draw,
+approximate, or substitute it.
+
 When no official transparent asset can be found, an official card face or a traceable user-supplied
 card image may be used as a last-resort research source. AI may produce a mask and remove the
 background, but it may not redraw, recolor, or reconstruct the mark. Candidates with unresolved

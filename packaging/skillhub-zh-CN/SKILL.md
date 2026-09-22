@@ -2,13 +2,13 @@
 name: card-creator
 slug: card-creator
 displayName: 卡面生成器
-version: 0.1.2
+version: 0.1.3
 description: 根据用户描述生成可印刷的 AirCard、NFC 卡或交通卡卡面。严格执行标准比例、出血区和安全区规则；图像模型只生成背景，支付与交通标志只从有来源记录且状态为 ready 的透明贴纸包中叠加。适合制作新卡面、修改卡面风格和导出印刷 PNG，不用于伪造功能卡或让 AI 重画品牌 Logo。
 summary: 用 AI 画背景，再用可追溯透明贴纸确定性合成标准尺寸卡面。
 homepage: https://github.com/juju-w/card-creator-skill
 license: MIT
 metadata:
-  version: 0.1.2
+  version: 0.1.3
   author: JuJu
   tags:
     - image-generation
@@ -32,6 +32,8 @@ metadata:
    设计语法转化为明显不同的新构图。
 2. 选择支付或交通贴纸时读取[贴纸目录](references/sticker-catalog.md)，再读取
    [贴纸清单](assets/stickers/manifest.json)。只有 `status: ready` 的条目可以叠加。
+   用户点名银行发行方时，还要读取[银行发行方参考目录](references/bank-issuer-catalog.md)，
+   不得把银行标识与银联、Visa、Mastercard 等支付网络标识混为一类。
    如果用户要的贴纸尚未就绪，只生成并交付预留好位置的背景，同时明确报告缺少的素材；
    不得静默漏贴，也不得用近似图替代。
    用户要求继续研究缺失标志，或提供了具体卡面原图时，读取
@@ -65,6 +67,7 @@ metadata:
 - 根据已有卡面或手机钱包截图做风格变化时，读取
   [参考卡面风格化改造](references/reference-remix.md)。
 - 贴纸类别与研究队列见[贴纸目录](references/sticker-catalog.md)。
+- 中国内地、香港和常见国际银行发行方见[银行发行方参考目录](references/bank-issuer-catalog.md)。
 - 缺失标志的来源检索与卡面像素提取见[贴纸研究与卡面提取](references/sticker-research.md)。
 - 贴纸文件与来源记录位于 `assets/stickers/`。
 - 确定性导出参数运行 `python3 scripts/prepare_card.py --help` 查看。

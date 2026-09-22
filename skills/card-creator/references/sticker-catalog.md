@@ -12,6 +12,11 @@ reviewed.
 The catalog separates visual marks that often appear together on cards but represent different
 things. Do not describe every mark as a “card organization.”
 
+Bank logos are issuer marks, not payment networks. For ICBC, China Merchants Bank, Bank of China,
+HSBC, Standard Chartered, and other bank references, read
+[bank issuer reference catalog](bank-issuer-catalog.md). Those entries are currently `pending` and
+may be used only to reserve layout space.
+
 ## Ready: payment card schemes and networks
 
 - `visa` — Visa
@@ -92,7 +97,7 @@ approval, and its brand guide prohibits reproduction without written permission.
 to `ready` merely because an official AI/JPG archive exists. The download URL is recorded for
 traceability, but the archive is intentionally not stored in this repository.
 
-### Payment and banking networks
+### Payment networks
 
 - Maestro
 - Cirrus
@@ -117,5 +122,5 @@ traceability, but the archive is intentionally not stored in this repository.
 - EZ-Link
 
 Keep these groups distinct in prompts. A payment-network logo, wallet badge, contactless
-indicator, and transit-card logo communicate different claims and should not be stacked together
-unless the user explicitly asks for a collage or parody design.
+indicator, transit-card logo, and bank issuer mark communicate different claims and should not be
+stacked together unless the user explicitly asks for a collage or parody design.

@@ -8,6 +8,10 @@
 
 支付卡组织、钱包、非接触受理标志和交通卡代表不同含义，不要把它们统称为“卡组织”。
 
+银行 Logo 属于发行方标识，不是支付网络。工商银行、招商银行、中国银行、汇丰、渣打等条目见
+[银行发行方参考目录](bank-issuer-catalog.md)。它们目前全部是 `pending`，只能用于识别需求和
+预留版面，不能直接合成。
+
 ## 已就绪：支付卡组织和网络
 
 - `visa` — Visa
@@ -72,10 +76,11 @@
 
 以下标志仍不可调用：
 
-- 支付和银行网络：Maestro、Cirrus、PLUS、V Pay、Interac、Bancontact、Cartes Bancaires
+- 支付网络：Maestro、Cirrus、PLUS、V Pay、Interac、Bancontact、Cartes Bancaires
   (CB)、BC Card、Elo。
 - 钱包、数字货币和受理标志：Apple Pay、e-CNY / 数字人民币、EMV 非接触标志、Rakuten Edy、
   T-money。
 - 中国内地和日本之外的交通储值系统：EZ-Link。
 
-除非用户明确要做拼贴或戏仿，不要把不同类型的标志堆在一起。贴纸是否可用始终以 manifest 为准。
+除非用户明确要做拼贴或戏仿，不要把支付网络、钱包、受理标志、交通产品和银行发行方等不同类型
+堆在一起。贴纸是否可用始终以 manifest 为准。

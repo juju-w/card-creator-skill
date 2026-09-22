@@ -231,6 +231,13 @@ Kitaca 的可追溯 SVG 带有不透明米色底，已保留源文件但保持 `
 
 梗图中常见的 Maestro、Cirrus、PLUS、V Pay、Interac、Bancontact、CB、BC Card、Apple Pay、e-CNY、非接触标志、EZ-Link、T-money 等已整理进 [sticker-catalog.md](skills/card-creator/references/sticker-catalog.md) 的研究队列；它们还不是可调用素材。
 
+银行发行方已经单独建档，不再和 Visa、Mastercard、银联等支付网络混在一起。首批覆盖工商银行、
+农业银行、中国银行、建设银行、交通银行、邮储、招商、中信、光大、民生、兴业、浦发、平安、
+广发，以及香港和国际常见的中银香港、汇丰、渣打、恒生、东亚、大新、招商永隆、星展、华侨、
+大华和花旗。完整名称、地区与官方来源见
+[bank-issuer-catalog.md](skills/card-creator/references/bank-issuer-catalog.md)。这些银行条目目前全部为
+`pending`：Skill 可以为指定组合标识预留位置，但不能调用、重画或用另一个地区版本代替。
+
 完整来源、许可备注和状态见 [manifest.json](skills/card-creator/assets/stickers/manifest.json)。品牌与商标仍可能受各司法辖区的商标规则约束；本项目不代表相关机构授权或合作。
 
 如果官方透明素材确实找不到，可以把官方卡面或用户提供的卡面作为最后一级研究来源：AI 只生成
