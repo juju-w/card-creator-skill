@@ -27,6 +27,9 @@ class SkillHubPackageTests(unittest.TestCase):
             skill_text = (output / "SKILL.md").read_text(encoding="utf-8")
             self.assertIn("displayName: 卡面生成器", skill_text)
             self.assertIn("只有 `status: ready`", skill_text)
+            self.assertTrue(
+                output.joinpath("references/sticker-research.md").is_file()
+            )
             self.assertEqual(
                 (output / "scripts" / "prepare_card.py").read_bytes(),
                 (CANONICAL_SKILL / "scripts" / "prepare_card.py").read_bytes(),

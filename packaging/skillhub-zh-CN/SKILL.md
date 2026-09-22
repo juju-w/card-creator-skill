@@ -2,13 +2,13 @@
 name: card-creator
 slug: card-creator
 displayName: 卡面生成器
-version: 0.1.0
+version: 0.1.1
 description: 根据用户描述生成可印刷的 AirCard、NFC 卡或交通卡卡面。严格执行标准比例、出血区和安全区规则；图像模型只生成背景，支付与交通标志只从有来源记录且状态为 ready 的透明贴纸包中叠加。适合制作新卡面、修改卡面风格和导出印刷 PNG，不用于伪造功能卡或让 AI 重画品牌 Logo。
 summary: 用 AI 画背景，再用可追溯透明贴纸确定性合成标准尺寸卡面。
 homepage: https://github.com/juju-w/card-creator-skill
 license: MIT
 metadata:
-  version: 0.1.0
+  version: 0.1.1
   author: JuJu
   tags:
     - image-generation
@@ -32,6 +32,9 @@ metadata:
    [贴纸清单](assets/stickers/manifest.json)。只有 `status: ready` 的条目可以叠加。
    如果用户要的贴纸尚未就绪，只生成并交付预留好位置的背景，同时明确报告缺少的素材；
    不得静默漏贴，也不得用近似图替代。
+   用户要求继续研究缺失标志，或提供了具体卡面原图时，读取
+   [贴纸研究与卡面提取](references/sticker-research.md)。从卡面抠图只能产生研究候选，不能
+   自动把条目提升为 `ready`。
 3. 默认只做一个卡面。只有用户明确需要正反面组合时，才确认成套设计要求。
 4. 使用内置图像生成工具只创建背景。要求平视、横向、满版，不出现设备、卡片样机、Logo、
    水印、边框或阴影。重要主体远离安全区边缘，并为之后的贴纸留出干净负空间。
@@ -56,5 +59,6 @@ metadata:
 - 精确尺寸与坐标系统见[卡面规则](references/card-rules.md)。
 - Prompt 写法见[背景 Prompt 指南](references/prompt-guide.md)。
 - 贴纸类别与研究队列见[贴纸目录](references/sticker-catalog.md)。
+- 缺失标志的来源检索与卡面像素提取见[贴纸研究与卡面提取](references/sticker-research.md)。
 - 贴纸文件与来源记录位于 `assets/stickers/`。
 - 确定性导出参数运行 `python3 scripts/prepare_card.py --help` 查看。

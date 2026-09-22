@@ -94,6 +94,12 @@ Only manifest entries with `status: ready` may be composited. Every ready asset 
 source URL, license note, and usage note. Research assets and observed URLs remain unavailable to
 the compositor until their exact source and usage status are resolved.
 
+When no official transparent asset can be found, an official card face or a traceable user-supplied
+card image may be used as a last-resort research source. AI may produce a mask and remove the
+background, but it may not redraw, recolor, or reconstruct the mark. Candidates with unresolved
+usage terms stay in the local `output/research-cache/` and are not uploaded to a public image host or
+used by the compositor. See [sticker research](skills/card-creator/references/sticker-research.md).
+
 Brand and character rights remain with their respective owners. The repository's MIT license
 covers original code and documentation only; it does not relicense third-party marks or artwork.
 

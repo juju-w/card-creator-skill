@@ -169,6 +169,11 @@ Kitaca 的可追溯 SVG 带有不透明米色底，已保留源文件但保持 `
 
 完整来源、许可备注和状态见 [manifest.json](skills/card-creator/assets/stickers/manifest.json)。品牌与商标仍可能受各司法辖区的商标规则约束；本项目不代表相关机构授权或合作。
 
+如果官方透明素材确实找不到，可以把官方卡面或用户提供的卡面作为最后一级研究来源：AI 只生成
+蒙版并移除背景，不能补画、改色或重构 Logo。权利条件未确认的原图和候选保存在本地
+`output/research-cache/`，不上传公共图床、不进入自动合成；完整流程见
+[sticker-research.md](skills/card-creator/references/sticker-research.md)。
+
 仓库根目录的 MIT License 只覆盖本项目原创代码与文档，不会把第三方标志、角色形象或示例中的第三方元素重新授权为 MIT；每个贴纸仍按 manifest 中记录的来源、许可说明和商标限制处理。
 
 ## 验证

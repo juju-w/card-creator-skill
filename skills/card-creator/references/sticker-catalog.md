@@ -4,6 +4,11 @@ Use this catalog to choose a sticker family before reading exact paths and prove
 `../assets/stickers/manifest.json`. The manifest is authoritative for whether an asset may be
 composited: only `status: ready` is usable.
 
+When a requested mark cannot be found as an official transparent asset, read
+[sticker research](sticker-research.md) before using a card-face image as a pixel-extraction source.
+An extracted candidate remains `pending` until provenance, fidelity, transparency, and usage are
+reviewed.
+
 The catalog separates visual marks that often appear together on cards but represent different
 things. Do not describe every mark as a “card organization.”
 

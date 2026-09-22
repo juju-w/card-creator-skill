@@ -16,6 +16,7 @@ LOCALIZED_FILES = (
     Path("references/card-rules.md"),
     Path("references/prompt-guide.md"),
     Path("references/sticker-catalog.md"),
+    Path("references/sticker-research.md"),
 )
 
 

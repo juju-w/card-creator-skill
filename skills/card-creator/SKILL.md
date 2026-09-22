@@ -15,6 +15,9 @@ approximate, stylize, or repair a logo.
 2. Read [sticker catalog](references/sticker-catalog.md) when choosing among payment and transit
    sticker families. Then read [sticker manifest](assets/stickers/manifest.json) and use only entries whose status is `ready`.
    If a requested sticker is not ready, generate the background without it and report the missing asset.
+   When the user asks to research a missing mark or supplies a card-face image, read
+   [sticker research](references/sticker-research.md). Card-face extraction is a research fallback,
+   never an automatic way to promote a mark to `ready`.
 3. Default to one card face. Ask about front/back only when the request clearly requires a paired design.
 4. Use the built-in image generation tool to create only the background artwork. Prompt for a flat,
    straight-on landscape composition without a device, card mockup, logo, watermark, border, or shadow.
@@ -41,5 +44,7 @@ approximate, stylize, or repair a logo.
 - For exact dimensions and coordinate systems, read [card rules](references/card-rules.md).
 - For prompt construction, read [prompt guide](references/prompt-guide.md).
 - For sticker families and the research backlog, read [sticker catalog](references/sticker-catalog.md).
+- For sourcing or extracting a missing mark from an official card face, read
+  [sticker research](references/sticker-research.md).
 - Sticker assets and provenance live under `assets/stickers/`.
 - Run `python3 scripts/prepare_card.py --help` for deterministic export options.
