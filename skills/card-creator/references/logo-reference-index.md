@@ -132,6 +132,16 @@ Find the requested name and open only its picture(s). These pictures guide image
 |---|---|
 | 澳洲联邦银行 CommBank | [PNG](../assets/logo-references/banks/australia/commbank.png) |
 
+## 数字钱包与金融科技 / Digital wallets & fintech
+
+| 名称 / Name | 图片 / Picture |
+|---|---|
+| Wise | [PNG](../assets/logo-references/fintech/wise.png) |
+| Bybit（白色字标，透明底 / white wordmark, transparent） | [PNG](../assets/logo-references/fintech/bybit.png) |
+| Apple Cash（不是 Apple Pay / not Apple Pay） | [PNG](../assets/logo-references/fintech/apple-cash.png) |
+| X Money（money.x.com 官网符号 / website symbol） | [PNG](../assets/logo-references/fintech/x-money-symbol.png) |
+| X Money / X Card（官网卡面参考 / card reference） | [PNG](../assets/logo-references/fintech/x-money-card.png) |
+
 ## 支付组织 / Payment networks
 
 | 名称 / Name | 图片 / Picture |

@@ -129,6 +129,7 @@ ChatGPT 的相关能力以[官方 Skill 说明](https://openai.com/academy/skill
 
 - 交通参考按地区整理：中国内地、香港、日本、美国、英国、德国、澳洲。Suica 与 ICOCA 等统一放在日本目录。
 - 银行参考共 30 家：包含四大行及常见商业银行、香港常用银行，以及美国、英国、新加坡、德国和澳洲银行。
+- 数字钱包与金融科技：Wise、Bybit、Apple Cash、X Money，包含品牌字标／符号及 X Card 官网卡面参考。不局限于动漫角色，也可做纯排版、抽象、城市或材质主题。
 - [参考图索引](skills/card-creator/references/logo-reference-index.md)直接链接实际图片；
   [完整来源与署名](SOURCES.md)在仓库外层供维护查阅，不放入 Skill。
 - 感应支付标志默认不添加。仓库 MIT License 不覆盖第三方标志、角色及示例素材。

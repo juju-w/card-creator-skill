@@ -140,6 +140,7 @@ automatic cropping or print-export pipeline. See the short [card rules](skills/c
   Suica is in the Japan directory alongside ICOCA and the other Japanese cards.
 - 30 bank references cover China's Big Four and common commercial banks, Hong Kong, the USA, the UK,
   Singapore, Germany and Australia.
+- Digital wallets and fintech: Wise, Bybit, Apple Cash and X Money, including brand marks and an official X Card reference. Designs can explore typography, abstraction, cities or materials—not only anime characters.
 - The [picture index](skills/card-creator/references/logo-reference-index.md) links to actual files.
   [Sources and attribution](SOURCES.md) stay at the repository root, outside the installed Skill.
 - Contactless indicators are opt-in. The repository's MIT License does not relicense third-party logos,

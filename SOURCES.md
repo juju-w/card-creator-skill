@@ -136,6 +136,18 @@ Existing source and license notes were restored from Git history (`08f9176~2`, `
 |---|---|---|
 | `banks/australia/commbank.png` | [来源](<https://www.commbank.com.au/>) · [原图](<https://www.commbank.com.au/content/dam/commbank/commBank-logo.svg>) | Third-party trademark; a repository redistribution license has not been confirmed. Consult the linked source. Source SVG rasterized to PNG; no logo redraw. |
 
+## 数字钱包与金融科技 / Digital wallets & fintech
+
+Collected on 2026-09-23 from the brands' public websites. These are visual references, not claims that any custom artwork is an issued or supported financial product. Public availability is not a repository redistribution license; third-party trademark and copyright rights remain with their owners. No redistribution grant has been verified for these files.
+
+| 文件（相对于图片目录） | 来源与原图 | 许可、署名与备注 |
+|---|---|---|
+| `fintech/wise.png` | [来源](<https://newsroom.wise.com/en-UKI/assets/>) · [原图](<https://d21buns5ku92am.cloudfront.net/69646/logo/retina-1677657632.png>) | Wise newsroom logo; 250×250 PNG, original colors and transparent padding retained. Not the retired TransferWise identity. Redistribution permission not verified. |
+| `fintech/bybit.png` | [来源与嵌入原图](<https://www.bybit.com/press>) · [官方媒体包](<https://drive.google.com/drive/folders/1GvNHHPAcXka1bCmufEIfUxxVQ-3W8F-l?usp=sharing>) | Website navigation's base64 SVG image, `alt="logo"`, rasterized unchanged to a 696×272 transparent PNG. White wordmark with yellow accent, intended to be viewed on dark backgrounds. No tagline. Media-kit link is provenance only; this file came from the page's embedded image. Redistribution permission not verified. |
+| `fintech/apple-cash.png` | [来源](<https://www.apple.com/apple-cash/>) · [原图](<https://www.apple.com/v/apple-cash/g/images/overview/cash_hero_logo__3shzohux9cym_xlarge_2x.jpg>) | Apple Cash product wordmark; original 288×80 JPEG converted to PNG, black background retained. Not Apple Pay or Apple Card. Redistribution permission not verified. |
+| `fintech/x-money-symbol.png` | [来源与嵌入原图](<https://money.x.com/en>) | X Money website header's first inline SVG (`viewBox="0 0 17.5 21"`), rasterized to 350×409 transparent PNG with its default black currentColor. Original path geometry retained. This is the website symbol, not an invented X + Money lockup; not the unrelated xmoney.com brand. Redistribution permission not verified. |
+| `fintech/x-money-card.png` | [来源](<https://money.x.com/en>) · [原图](<https://ton.twimg.com/xcms/static/illustrations/card-flip/front.webp>) | Official X Card front illustration; original 912×576 WebP converted to PNG without cropping or redrawing. Whole-card reference, not an isolated logo. Its chip is part of the source picture, not an instruction to add a chip to custom artwork. Redistribution permission not verified. |
+
 ## 支付组织 / Payment networks
 
 | 文件（相对于图片目录） | 来源与原图 | 许可、署名与备注 |

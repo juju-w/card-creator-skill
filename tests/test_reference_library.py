@@ -36,6 +36,10 @@ class ReferenceLibraryTests(unittest.TestCase):
         self.assertTrue((PICTURES / "overseas/japan/suica.png").is_file())
         self.assertFalse((PICTURES / "overseas/suica.png").exists())
 
+    def test_fintech_references_are_present(self):
+        for name in ("wise", "bybit", "apple-cash", "x-money-symbol", "x-money-card"):
+            self.assertTrue((PICTURES / f"fintech/{name}.png").is_file(), name)
+
     def test_installed_skill_stays_small_and_script_free(self):
         self.assertFalse(any(SKILL.rglob("*.py")))
         self.assertFalse(any(SKILL.rglob("*.svg")))
