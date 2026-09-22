@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import base64
 import io
 import json
 from pathlib import Path
@@ -36,7 +37,16 @@ def main() -> None:
         alpha_bounds = image.getchannel("A").getbbox()
         if not alpha_bounds:
             raise SystemExit(f"Rendered sticker is fully transparent: {source}")
-        image.crop(alpha_bounds).save(target, optimize=True)
+        cropped = image.crop(alpha_bounds)
+        if target.name.endswith(".base64.txt"):
+            buffer = io.BytesIO()
+            cropped.save(buffer, format="PNG", optimize=True)
+            target.write_text(
+                base64.b64encode(buffer.getvalue()).decode("ascii") + "\n",
+                encoding="ascii",
+            )
+        else:
+            cropped.save(target, optimize=True)
         rendered.append(str(target))
     print(json.dumps({"rendered": rendered}, ensure_ascii=False, indent=2))
 

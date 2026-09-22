@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 import argparse
+import base64
+import json
 import shutil
 from pathlib import Path
 
@@ -23,6 +25,44 @@ def remove_junk(output: Path) -> None:
             path.unlink()
         elif path.is_dir() and path.name == "__pycache__":
             shutil.rmtree(path)
+
+
+def encode_binary_stickers(output: Path) -> None:
+    manifest_path = output / "assets" / "stickers" / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+
+    for item in manifest["items"]:
+        raster_file = item.get("file")
+        if item.get("status") == "ready" and raster_file:
+            raster_path = manifest_path.parent / raster_file
+            encoded_relative = f"{raster_file}.base64.txt"
+            encoded_path = manifest_path.parent / encoded_relative
+            encoded_path.write_text(
+                base64.b64encode(raster_path.read_bytes()).decode("ascii") + "\n",
+                encoding="ascii",
+            )
+            raster_path.unlink()
+            item["file"] = encoded_relative
+
+        research_file = item.pop("research_file", None)
+        if research_file:
+            research_path = manifest_path.parent / research_file
+            if research_path.exists():
+                research_path.unlink()
+            item["distribution_note"] = (
+                "Binary research sample omitted from the SkillHub text-only package; "
+                "see the canonical GitHub repository."
+            )
+
+    for path in (manifest_path.parent / "research").rglob("*.png"):
+        path.unlink()
+    for path in manifest_path.parent.rglob("*.png"):
+        path.unlink()
+
+    manifest_path.write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
 
 
 def main() -> int:
@@ -50,6 +90,7 @@ def main() -> int:
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(localized, destination)
 
+    encode_binary_stickers(output)
     remove_junk(output)
     print(f"Built SkillHub zh-CN package: {output}")
     return 0

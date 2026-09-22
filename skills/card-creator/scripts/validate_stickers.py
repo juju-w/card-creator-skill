@@ -4,7 +4,9 @@
 from __future__ import annotations
 
 import argparse
+import base64
 import hashlib
+import io
 import json
 from pathlib import Path
 
@@ -12,6 +14,13 @@ from PIL import Image
 
 
 REQUIRED_READY_FIELDS = ("file", "vector_file", "source", "license", "usage")
+
+
+def open_raster(path: Path) -> Image.Image:
+    if path.name.endswith(".base64.txt"):
+        data = base64.b64decode(path.read_text(encoding="ascii").strip(), validate=True)
+        return Image.open(io.BytesIO(data))
+    return Image.open(path)
 
 
 def main() -> None:
@@ -89,17 +98,22 @@ def main() -> None:
             errors.append(f"{sticker_id}: missing ready fields: {', '.join(missing)}")
             continue
 
-        png_path = (manifest_path.parent / item["file"]).resolve()
+        raster_path = (manifest_path.parent / item["file"]).resolve()
         svg_path = (manifest_path.parent / item["vector_file"]).resolve()
-        if not png_path.is_file():
-            errors.append(f"{sticker_id}: missing PNG: {png_path}")
+        if not raster_path.is_file():
+            errors.append(f"{sticker_id}: missing raster asset: {raster_path}")
         if not svg_path.is_file():
             errors.append(f"{sticker_id}: missing SVG: {svg_path}")
         if svg_path.suffix.lower() != ".svg":
             errors.append(f"{sticker_id}: vector_file is not SVG: {svg_path}")
 
-        if png_path.is_file():
-            with Image.open(png_path) as image:
+        if raster_path.is_file():
+            try:
+                image_source = open_raster(raster_path)
+            except (OSError, ValueError) as exc:
+                errors.append(f"{sticker_id}: invalid raster asset: {exc}")
+                continue
+            with image_source as image:
                 if image.mode not in {"RGBA", "LA"}:
                     errors.append(f"{sticker_id}: PNG has no alpha channel: mode={image.mode}")
                 else:

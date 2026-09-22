@@ -4,6 +4,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+import json
 from pathlib import Path
 
 
@@ -32,8 +33,29 @@ class SkillHubPackageTests(unittest.TestCase):
             )
             self.assertTrue(output.joinpath("assets/stickers/manifest.json").is_file())
             self.assertTrue(output.joinpath("assets/stickers/payment/mastercard.svg").is_file())
-            self.assertTrue(output.joinpath("assets/stickers/payment/mastercard.png").is_file())
+            self.assertTrue(
+                output.joinpath(
+                    "assets/stickers/payment/mastercard.png.base64.txt"
+                ).is_file()
+            )
+            self.assertFalse(any(output.rglob("*.png")))
             self.assertFalse(any(output.rglob(".DS_Store")))
+
+            manifest = json.loads(
+                output.joinpath("assets/stickers/manifest.json").read_text(
+                    encoding="utf-8"
+                )
+            )
+            mastercard = next(
+                item for item in manifest["items"] if item["id"] == "mastercard"
+            )
+            self.assertEqual(
+                mastercard["file"],
+                "payment/mastercard.png.base64.txt",
+            )
+            self.assertTrue(
+                all("research_file" not in item for item in manifest["items"])
+            )
 
 
 if __name__ == "__main__":

@@ -13,9 +13,10 @@
 python3 packaging/skillhub-zh-CN/build.py /tmp/card-creator-skillhub-zh-CN
 ```
 
-输出目录是可直接交给 SkillHub CLI 的完整 Skill 包，包含透明 SVG 原件和透明 PNG 衍生文件。
-这些二进制贴纸是确定性合成所必需的，不应从分发包中删除。构建过程会清理 `.DS_Store`、
-`__pycache__` 和 `.pyc` 等无关文件。
+输出目录是可直接交给 SkillHub CLI 的完整 Skill 包。SkillHub 不接受 PNG 二进制附件，因此构建器
+会把 `status: ready` 的透明 PNG 无损编码为 `*.base64.txt`；合成脚本在内存中解码，用户无需
+手动处理。透明 SVG 原件仍保留，研究用 PNG 则只留来源记录并从中文分发包中移除。GitHub 主包
+继续保存原始 PNG 衍生文件。构建过程也会清理 `.DS_Store`、`__pycache__` 和 `.pyc`。
 
 普通用户只需安装 `scripts/requirements.txt` 中的 Pillow。只有维护者从 SVG 重新生成 PNG 时，
 才需要 `scripts/requirements-render.txt` 与系统原生 Cairo 库。

@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import base64
 import io
 import json
 from pathlib import Path
@@ -48,6 +49,12 @@ def resolve_stickers(manifest_path: Path, ids: Iterable[str]) -> list[tuple[dict
 
 
 def open_sticker(path: Path) -> Image.Image:
+    if path.name.endswith(".base64.txt"):
+        try:
+            data = base64.b64decode(path.read_text(encoding="ascii").strip(), validate=True)
+        except (OSError, ValueError) as exc:
+            raise SystemExit(f"Invalid base64 sticker asset: {path}") from exc
+        return Image.open(io.BytesIO(data)).convert("RGBA")
     if path.suffix.lower() == ".svg":
         try:
             import cairosvg
