@@ -10,8 +10,8 @@ and line-art interpretations are welcome. No Python dependency or online editor.
 
 ## Start here: ten card styles and one-line prompts
 
-Use an image-capable tool such as ChatGPT or Gemini. Install the Skill or ask the model to read it from
-this repository, then paste one sentence; attach a reference when applicable.
+These one-line prompts assume the **Skill is already loaded**. For a ChatGPT / Gemini web conversation
+without an installed Skill, see [web usage](#web-usage-links-and-reference-pictures) below. Attach references when applicable.
 
 | Minimal character card · Magikarp × ICOCA | Purple tech · Gengar × Octopus |
 |---|---|
@@ -44,15 +44,21 @@ and Palace examples likewise use AI-generated marks guided by visual references.
 examples are personal, non-commercial demonstrations and do not imply authorization or endorsement. The
 gallery images retain their original dimensions and aspect ratios.
 
-## Install
+## How to use
 
-Use Vercel's open-source `skills` CLI:
+### Installed Skill: Codex or a compatible app
+
+The client needs both **Skill loading** and **image generation**. This repository supplies instructions and
+reference pictures, not an image model. A local app or a successful installation alone does not ensure
+that the current session can generate images. Do not substitute code-drawn artwork when it cannot.
+
+Install with Vercel's open-source `skills` CLI and select your compatible client:
 
 ```bash
 npx skills add juju-w/card-creator-skill
 ```
 
-Or install manually:
+Or download this repository and run the following from its root to install into Codex manually:
 
 ```bash
 cp -R skills/card-creator ~/.codex/skills/
@@ -65,19 +71,38 @@ The localized SkillHub / WorkBuddy package is maintained under
 skillhub install card-creator
 ```
 
-## Use
-
-Image generation is the default and only artwork path: one pass creates the complete composition and its
-stylized marks. The Skill does not draw cards with SVG, HTML, or scripts, and it does not split ordinary work
-into “generate a background, then paste a logo.” The prompt only needs a subject, style, and mark placement:
+Once the client recognizes `card-creator`, use a short prompt:
 
 ```text
-Using the card-creator Skill, create a simple Magikarp × ICOCA card with ICOCA at lower right.
+Using the card-creator Skill, create a Pokémon Gardevoir card face with China Merchants Bank and UnionPay branding: minimalist, Psychic-type pink, no chip.
 ```
 
-PNGs guide the model; they are not pasted onto the output. Open only the relevant pictures, falling back
-to user attachments or model knowledge when unavailable. For wallet screenshots, ignore balances and
-reader UI. Let the model balance logo size, spacing and colors within the composition.
+### Web usage: links and reference pictures
+
+**Pasting a GitHub link does not install a Skill or guarantee that its instructions and PNGs were read.**
+Without installation through a platform's Skill interface, treat the repository as reference material.
+Link and image access depend on the capabilities of the current conversation.
+
+Select the image-generation tool in the interface, then send the sentence below. If your interface shows
+`@创建图像` or “Create image,” select that tool; this is not a universal text command to copy into every app.
+See the [official ChatGPT image instructions](https://help.openai.com/en/articles/11084440).
+
+```text
+Refer to the card-creator instructions at https://github.com/juju-w/card-creator-skill and use image generation to create a Pokémon Gardevoir card face with China Merchants Bank and UnionPay branding: minimalist, Psychic-type pink, no chip.
+```
+
+If the repository cannot be read, paste [SKILL.md](skills/card-creator/SKILL.md) and the short
+[card rules](skills/card-creator/references/card-rules.md), then attach the relevant logo or character images.
+There is no need to scan the repository. For this example, attach
+[China Merchants Bank](skills/card-creator/assets/logo-references/banks/china/cmb.png) and
+[compact UnionPay](skills/card-creator/assets/logo-references/payment/unionpay-compact.png), and add “Use the attached references.”
+
+If your platform or workspace provides Skill installation, install it and use the previous section instead;
+Skill loading is not inherently limited to local apps. For ChatGPT, consult the
+[official Skill guide](https://openai.com/academy/skills/) and the controls available to your account.
+
+Both methods use image generation for the entire card. PNGs are visual references, not layers for scripts
+to draw or paste onto the finished artwork.
 
 ## Images and references
 

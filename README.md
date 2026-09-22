@@ -9,8 +9,8 @@
 
 ## 先看作品：10 种卡面与一句话 Prompt
 
-在支持图片生成的 ChatGPT / Gemini 等工具中使用。安装或让模型读取本仓库的 Skill 后，
-复制一句话即可；有参考图时同时上传并写“参考图如上”。
+下面是**已加载 Skill** 时的一句话 Prompt。没有安装 Skill 的 ChatGPT / Gemini 网页对话，
+请用下方的[网页版用法](#网页版链接与参考图)；有参考图时同时上传并写“参考图如上”。
 
 | 简洁角色卡 · 鲤鱼王 × ICOCA | 紫色科技感 · 耿鬼 × 八达通 |
 |---|---|
@@ -42,15 +42,20 @@ JR-West 与紫色八达通标志均为非官方风格化诠释。华山、广州
 结合参考图生成的非官方风格化版本。所有示例均为个人、非商业创作演示，不代表品牌、角色、交通
 运营方或金融机构授权、合作或认可。图库示例保留各自的原始尺寸与比例。
 
-## 安装
+## 使用方式
 
-使用 Vercel 开源 `skills` CLI：
+### 已安装 Skill：Codex 或兼容应用
+
+应用需要同时支持 **Skill 加载**和**图片生成**。本仓库提供创作说明和参考图片，不自带生图模型；
+仅仅是本地 App 或安装成功，并不代表当前会话能生图。没有图片生成工具时，不应用代码画图替代。
+
+在支持 Agent Skills 的客户端中，使用 Vercel 开源 `skills` CLI 安装并选择对应客户端：
 
 ```bash
 npx skills add juju-w/card-creator-skill
 ```
 
-或手动安装：
+或下载本仓库后，在仓库根目录手动安装到 Codex：
 
 ```bash
 cp -R skills/card-creator ~/.codex/skills/
@@ -63,17 +68,33 @@ SkillHub / WorkBuddy 简体中文版的源码与发布说明位于
 skillhub install card-creator
 ```
 
-## 使用
-
-默认且唯一的创作路径是图片生成：一次生成完整画面与风格化标志。不会用 SVG、HTML 或脚本画
-卡面，也不会把任务拆成“先生成背景、再贴 Logo”。Prompt 只需要“主题 + 风格 + Logo/位置”：
+确认客户端已识别 `card-creator` 后，直接使用短 Prompt：
 
 ```text
-使用 card-creator Skill，生成一张鲤鱼王 × ICOCA 卡面：简洁，右下角 ICOCA。
+使用 card-creator Skill，生成一张宝可梦沙奈朵的招商银行银联信用卡卡面：简洁，超能系粉色，不要芯片。
 ```
 
-PNG 只供模型参考，不是最后贴上去的图层。只读取本次需要的图，缺图时使用用户附件或模型知识。
-钱包截图只参考卡面，忽略余额、读卡提示等界面元素。Logo 的大小、留白、配色由模型结合画面调整。
+### 网页版：链接与参考图
+
+**在聊天框贴 GitHub 链接，不等于安装了 Skill，也不保证模型读到了说明和 PNG。**
+未通过平台 Skill 入口安装时，把仓库当作参考资料使用。是否能访问链接、读取图片，以当前会话实际能力为准。
+
+先在界面中选择图片生成功能，再发送下面这句。你的界面如果显示 `@创建图像`，选择该工具即可；
+它不是需要在所有平台照抄的文字命令。ChatGPT 的图片入口见[官方说明](https://help.openai.com/en/articles/11084440)。
+
+```text
+参考 https://github.com/juju-w/card-creator-skill 中的 card-creator 说明，用图片生成功能生成一张宝可梦沙奈朵的招商银行银联信用卡卡面：简洁，超能系粉色，不要芯片。
+```
+
+读不到仓库时，直接粘贴 [SKILL.md](skills/card-creator/SKILL.md) 与简短的
+[卡面规则](skills/card-creator/references/card-rules.md)，并上传需要的 Logo／角色参考图即可，不用让模型遍历仓库。
+例如本例可上传[招商银行](skills/card-creator/assets/logo-references/banks/china/cmb.png)和
+[短款银联](skills/card-creator/assets/logo-references/payment/unionpay-compact.png)，在 Prompt 后加“参考图如上”。
+
+如果你的平台／工作区已经提供 Skill 安装入口，安装后按上一节使用；并非只有本地应用才能加载 Skill。
+ChatGPT 的相关能力以[官方 Skill 说明](https://openai.com/academy/skills/)及账户实际入口为准。
+
+两种用法都让图片生成工具完成整张卡面，PNG 只供参考，不用脚本绘制或事后拼贴 Logo。
 
 ## 图片与参考
 
