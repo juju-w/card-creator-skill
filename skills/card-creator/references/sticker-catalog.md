@@ -31,6 +31,23 @@ may be used only to reserve layout space.
 - `rupay` — RuPay
 - `mir` — MIR; preserve the manifest attribution and ShareAlike notice
 
+## Contactless and NFC marks
+
+- `generic-contactless-material` — ready; an Apache-2.0 Google Material icon in a filled circle.
+  It is a generic decorative contactless/NFC cue and must not be described as an EMV compatibility
+  mark.
+- `emv-contactless-indicator` — pending; the exact four graduated semicircles commonly printed on
+  the right side of contactless cards. EMVCo requires a written Trademark License Agreement and
+  supplies the official files only after execution, so the repository records the official source
+  and reproduction rules but does not distribute or approximate the artwork.
+
+Do not confuse the card-side **Contactless Indicator** with the larger **Contactless Symbol** used
+on payment terminals. When the user specifically requests the four-wave card mark, the generic
+Material icon is not an automatic substitute.
+
+For card-face compositions, reserve the indicator near the right edge but inside the safe area. Keep
+it visually separate from issuer and payment-network marks rather than merging it into either logo.
+
 ## Ready: Japan nationwide interoperable transit IC family
 
 - `suica` — JR East
@@ -113,7 +130,6 @@ traceability, but the archive is intentionally not stored in this repository.
 
 - Apple Pay
 - e-CNY / 数字人民币
-- EMV contactless indicator
 - Rakuten Edy
 - T-money
 

@@ -47,6 +47,11 @@ class SkillHubPackageTests(unittest.TestCase):
                     "assets/stickers/payment/mastercard.png.base64.txt"
                 ).is_file()
             )
+            self.assertTrue(
+                output.joinpath(
+                    "assets/stickers/generic/contactless-material.png.base64.txt"
+                ).is_file()
+            )
             self.assertFalse(any(output.rglob("*.png")))
             self.assertFalse(any(output.rglob(".DS_Store")))
 
@@ -70,6 +75,11 @@ class SkillHubPackageTests(unittest.TestCase):
             ]
             self.assertEqual(len(issuer_banks), 25)
             self.assertTrue(all(item["status"] == "pending" for item in issuer_banks))
+            contactless = {
+                item["id"]: item for item in manifest["items"] if "contactless" in item["id"]
+            }
+            self.assertEqual(contactless["generic-contactless-material"]["status"], "ready")
+            self.assertEqual(contactless["emv-contactless-indicator"]["status"], "pending")
 
 
 if __name__ == "__main__":

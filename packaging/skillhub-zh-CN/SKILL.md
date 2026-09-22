@@ -2,13 +2,13 @@
 name: card-creator
 slug: card-creator
 displayName: 卡面生成器
-version: 0.1.3
+version: 0.1.4
 description: 根据用户描述生成可印刷的 AirCard、NFC 卡或交通卡卡面。严格执行标准比例、出血区和安全区规则；图像模型只生成背景，支付与交通标志只从有来源记录且状态为 ready 的透明贴纸包中叠加。适合制作新卡面、修改卡面风格和导出印刷 PNG，不用于伪造功能卡或让 AI 重画品牌 Logo。
 summary: 用 AI 画背景，再用可追溯透明贴纸确定性合成标准尺寸卡面。
 homepage: https://github.com/juju-w/card-creator-skill
 license: MIT
 metadata:
-  version: 0.1.3
+  version: 0.1.4
   author: JuJu
   tags:
     - image-generation

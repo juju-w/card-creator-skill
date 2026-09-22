@@ -26,6 +26,20 @@
 - `rupay` — RuPay
 - `mir` — MIR；必须保留清单中的署名与相同方式共享说明
 
+## 非接触与 NFC 标志
+
+- `generic-contactless-material` — 已就绪；Google Material 的 Apache-2.0 圆形通用感应图标，
+  只能作为装饰性的 contactless/NFC 提示，不能宣称代表 EMV 兼容。
+- `emv-contactless-indicator` — 待授权；即常见于卡面右侧、由四道渐大的半圆弧组成的精确标志。
+  EMVCo 要求先签署书面商标许可，并在签约后提供官方文件，因此仓库只记录官方来源与复现规范，
+  不分发文件，也不自行描摹。
+
+不要把卡面上的 **Contactless Indicator** 和支付终端上的大型 **Contactless Symbol** 混淆。
+用户明确要求四道弧线标志时，不能自动用圆形通用图标代替。
+
+卡面构图通常在右侧、安全区以内为感应标志留位。它应与银行发行方和支付网络标识保持视觉分离，
+不能拼成一个新的组合 Logo。
+
 ## 已就绪：日本全国交通 IC 互通体系
 
 - `suica` — JR 东日本
@@ -78,7 +92,7 @@
 
 - 支付网络：Maestro、Cirrus、PLUS、V Pay、Interac、Bancontact、Cartes Bancaires
   (CB)、BC Card、Elo。
-- 钱包、数字货币和受理标志：Apple Pay、e-CNY / 数字人民币、EMV 非接触标志、Rakuten Edy、
+- 钱包、数字货币和受理标志：Apple Pay、e-CNY / 数字人民币、Rakuten Edy、
   T-money。
 - 中国内地和日本之外的交通储值系统：EZ-Link。
 

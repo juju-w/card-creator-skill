@@ -158,6 +158,12 @@ Only manifest entries with `status: ready` may be composited. Every ready asset 
 source URL, license note, and usage note. Research assets and observed URLs remain unavailable to
 the compositor until their exact source and usage status are resolved.
 
+The pack includes a ready Apache-2.0 Google Material contactless icon as a generic decorative NFC
+cue. It is not the EMV Contactless Indicator. The exact four-semicircle card mark is recorded as
+`emv-contactless-indicator`, but remains `pending` because EMVCo requires a written trademark
+license and supplies the official artwork after the agreement is executed. The generic icon must
+not be substituted when the user specifically requests the EMV mark.
+
 Bank issuers are tracked separately from payment networks. The initial issuer reference set covers
 major mainland Chinese banks—ICBC, ABC, Bank of China, CCB, Bank of Communications, PSBC, China
 Merchants Bank, CITIC, Everbright, Minsheng, Industrial Bank, SPD Bank, Ping An, and Guangfa—and

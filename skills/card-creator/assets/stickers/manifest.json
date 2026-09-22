@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "policy": "Only status=ready assets may be composited. Ready assets must include a traceable source page, a license note, an intended-use note, an original transparent SVG, and a generated transparent PNG derivative. A research_file is an exact source artifact retained for provenance review; transparent and opaque research files both remain non-compositable while status=pending.",
   "items": [
     {
@@ -798,6 +798,36 @@
       "license": "Official bank source displaying the current mark; redistribution permission not verified",
       "usage": "reference-only; reserve space for the current bilingual Hong Kong issuer lockup; do not composite",
       "blocker": "Official transparent master and public mark-usage terms have not been located"
+    },
+    {
+      "id": "generic-contactless-material",
+      "name": "通用感应图标（Material）",
+      "category": "generic",
+      "region": "global",
+      "variant": "filled-circle",
+      "placement_hint": "right side inside the safe area; keep visually separate from issuer and payment-network marks",
+      "status": "ready",
+      "file": "generic/contactless-material.png",
+      "vector_file": "generic/contactless-material.svg",
+      "source": "https://github.com/google/material-design-icons/blob/master/src/action/contactless/materialicons/24px.svg",
+      "license": "Apache License 2.0",
+      "attribution": "Google Material Design Icons; unmodified source SVG with a generated transparent PNG derivative",
+      "usage": "generic decorative contactless/NFC cue only; does not claim EMV compatibility and must not be described as the EMV Contactless Indicator"
+    },
+    {
+      "id": "emv-contactless-indicator",
+      "name": "EMV Contactless Indicator",
+      "category": "acceptance",
+      "region": "global",
+      "variant": "four-semicircle-card-mark",
+      "placement_hint": "commonly placed on the right side of a contactless card; follow the official clear-space rules if licensed",
+      "status": "pending",
+      "file": null,
+      "source": "https://www.emvco.com/trademark-centre/",
+      "guidance": "https://www.emvco.com/wp-content/uploads/2022/10/EMVCo-Contactless-Indicator-Reproduction-Requirements-Nov-2019.pdf",
+      "license": "EMVCo trademark; a written Trademark License Agreement is required and artwork is supplied after execution",
+      "usage": "reference-only; this is the exact four-semicircle mark used on contactless cards; reserve space but do not composite or approximate",
+      "blocker": "The repository has no EMVCo trademark license and cannot redistribute the licensed artwork"
     }
   ]
 }

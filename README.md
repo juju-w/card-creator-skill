@@ -219,9 +219,14 @@ Constraints: background artwork only; no logo, no brand mark, no circles that ex
 当前已准备透明 SVG 与 PNG：
 
 - 支付卡组织/网络：Visa、红橙双色 Mastercard、American Express、UnionPay、JCB、Discover、Diners Club、RuPay、MIR。银联和 Diners Club 同时提供完整横版与无右侧文字的紧凑卡面版。
+- 通用标志：Google Material 的圆形 contactless/NFC 图标，可用于装饰性感应提示，但不代表 EMV 兼容。
 - 日本全国交通 IC 互通体系：Suica、PASMO、ICOCA、TOICA、manaca、SUGOCA、nimoca、Hayakaken、PiTaPa。
 
 Kitaca 的可追溯 SVG 带有不透明米色底，已保留源文件但保持 `pending`；在找到可核验的透明词标前不会手工去底或让 Skill 调用。
+
+卡面右侧常见的“四道雷达波”准确名称是 EMVCo `Contactless Indicator`。它与支付终端上的
+`Contactless Symbol` 不是同一个图形。EMVCo 要求先签署书面商标许可，并在签约后才提供官方
+文件，因此精确四弧线版本已进入 manifest，但保持 `pending`；Skill 不会用圆形通用图标冒充它。
 
 交通联合与北京、上海、天津、广州、深圳、杭州、南京、成都、重庆、武汉、西安等城市交通卡标志，以及岭南通、香港八达通、澳门通，已经进入素材清单并记录运营方或官方信息来源。北京、深圳、杭州、西安、天津、成都、重庆官网提供的 7 份透明 PNG 原件，以及羊城通、岭南通官网合作方提供的 2 份不透明 PNG 原件，已收入 `research/cities/`，并记录原始 URL、透明状态、用途差异和 SHA-256；它们仍是研究样本，而不是可调用贴纸。上海、武汉目前只找到官网的不透明页面横幅，清单只记录地址，不会手工抠图。
 
