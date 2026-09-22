@@ -11,9 +11,8 @@ from typing import Iterable
 
 try:
     from PIL import Image, ImageDraw, ImageOps
-    import cairosvg
 except ImportError as exc:  # pragma: no cover
-    raise SystemExit("Pillow and CairoSVG are required. Install scripts/requirements.txt.") from exc
+    raise SystemExit("Pillow is required. Install scripts/requirements.txt.") from exc
 
 
 BLEED = 35
@@ -50,6 +49,13 @@ def resolve_stickers(manifest_path: Path, ids: Iterable[str]) -> list[tuple[dict
 
 def open_sticker(path: Path) -> Image.Image:
     if path.suffix.lower() == ".svg":
+        try:
+            import cairosvg
+        except (ImportError, OSError) as exc:  # pragma: no cover
+            raise SystemExit(
+                "CairoSVG and the native Cairo library are required to composite SVG stickers. "
+                "Use the ready PNG derivative or install Cairo first."
+            ) from exc
         raster = cairosvg.svg2png(url=str(path), output_width=1200)
         return Image.open(io.BytesIO(raster)).convert("RGBA")
     return Image.open(path).convert("RGBA")

@@ -1,0 +1,9 @@
+.git/
+.github/
+AGENTS.md
+README.md
+README_EN.md
+examples/
+packaging/
+tests/
+output/

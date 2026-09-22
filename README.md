@@ -1,5 +1,9 @@
 # card-creator-skill
 
+[简体中文](README.md) | [English](README_EN.md)
+
+[![skills.sh](https://skills.sh/b/juju-w/card-creator-skill)](https://skills.sh/juju-w/card-creator-skill)
+
 一个用于生成 AirCard、NFC 卡片和交通卡卡面的 Codex Skill。仓库当前只维护三类内容：
 
 - 标准卡面尺寸、出血区和安全区规则。
@@ -10,7 +14,13 @@
 
 ## 安装
 
-把技能目录复制到 Codex skills 目录：
+推荐使用 Vercel 的开源 `skills` CLI，从 GitHub 安装国际版：
+
+```bash
+npx skills add juju-w/card-creator-skill
+```
+
+也可以手动把技能目录复制到 Codex skills 目录：
 
 ```bash
 cp -R skills/card-creator ~/.codex/skills/
@@ -22,12 +32,19 @@ cp -R skills/card-creator ~/.codex/skills/
 python3 -m pip install -r skills/card-creator/scripts/requirements.txt
 ```
 
+常规裁切和 PNG 贴纸合成只依赖 Pillow。只有维护者需要从 SVG 重新生成透明 PNG 衍生文件时，
+才安装 `requirements-render.txt` 以及系统原生 Cairo 库。
+
 之后可以这样调用：
 
 ```text
 Use $card-creator to create a quiet Guangzhou morning card face,
 reserve the upper-right for the China T-Union sticker, and export print-ready PNGs.
 ```
+
+SkillHub/WorkBuddy 使用维护中的简体中文分发包。可复现源码、构建和发布命令位于
+[`packaging/skillhub-zh-CN`](packaging/skillhub-zh-CN/README.md)。GitHub/skills.sh 默认包保持英文，
+两个版本共享同一套脚本、卡面规则和素材清单，不会各自维护一份易漂移的资产库。
 
 ## 输出规格
 
@@ -40,7 +57,8 @@ reserve the upper-right for the China T-Union sticker, and export print-ready PN
 
 ImageGen 只负责无文字、无 Logo 的背景；`card-creator` 再将清单中 `status: ready` 的
 透明贴纸确定性叠加到安全区内。下面的预览限制为 `600 px` 宽，仓库仍保留完整
-`1011 × 638 px` 裁切图。
+`1011 × 638 px` 裁切图。第 1、3 张是已贴标成品；第 2 张故意只展示背景，因为它请求的
+两个贴纸仍是 `pending`，不是 Skill 失效或漏贴。
 
 ### 1. Chiikawa × Suica
 
@@ -69,13 +87,13 @@ Constraints: background artwork only; no logo, no brand mark, no Suica text, no 
 
 </details>
 
-### 2. 北京水墨交通卡背景
+### 2. 北京水墨交通卡背景（待补贴纸）
 
 <p align="center">
   <img src="examples/beijing-ink-transit-background.png" width="600" alt="北京水墨交通卡背景示例">
 </p>
 
-状态：背景已完成，并为“交通联合”和“北京一卡通”预留右侧双贴纸位。两个标志目前仍是
+**这张图是背景稿，不是已贴标成品。** 背景已完成，并为“交通联合”和“北京一卡通”预留右侧双贴纸位。两个标志目前仍是
 `pending`，所以此示例没有调用非自由 SVG、官网页头图或 AI 近似 Logo；待合格素材进入
 `ready` 后即可确定性补齐。
 
@@ -156,5 +174,7 @@ python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py \
 python3 skills/card-creator/scripts/render_stickers.py
 python3 skills/card-creator/scripts/validate_stickers.py
 ```
+
+`render_stickers.py` 是素材维护命令，需要 `requirements-render.txt`；普通卡面生成不需要它。
 
 核心入口：[SKILL.md](skills/card-creator/SKILL.md)

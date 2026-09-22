@@ -1,5 +1,5 @@
 interface:
   display_name: "Card Creator"
-  short_description: "按标准卡面比例、安全区和贴纸素材规则生成可印刷卡面图像"
+  short_description: "Create print-ready card faces with verified sticker assets"
   brand_color: "#CC4A3A"
   default_prompt: "Use $card-creator to generate a print-ready card face from my brief and the approved sticker pack."

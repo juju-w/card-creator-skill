@@ -1,0 +1,2 @@
+-r requirements.txt
+CairoSVG>=2.7.0,<3
