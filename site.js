@@ -98,5 +98,8 @@ document.querySelector("#copy-prompt").addEventListener("click", async (event) =
     event.currentTarget.textContent = "复制失败，请手动选择";
   }
 });
-document.querySelector(".hero-preview").addEventListener("click", () => openWork(works[0]));
+document.querySelector(".hero-preview").addEventListener("click", (event) => {
+  const work = works.find((item) => item.id === event.currentTarget.dataset.open);
+  if (work) openWork(work);
+});
 render();

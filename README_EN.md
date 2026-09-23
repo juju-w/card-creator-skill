@@ -10,17 +10,21 @@ and line-art interpretations are welcome. No Python dependency or online editor.
 
 ## Explore the gallery
 
-[Browse and download the card gallery](https://juju-w.github.io/card-creator-skill/) by art style, Pokémon, city, anime, and more. Each work has one primary category. The gallery contains each original image, a short prompt, and provenance notes; new examples are primarily maintained there. The meme category will fill as curated work becomes available.
+[Browse and download the card gallery](https://juju-w.github.io/card-creator-skill/) by art style, Pokémon, city, anime, meme, and more. Each work has one primary category. The gallery contains each original image, a short prompt, and provenance notes; new examples are primarily maintained there.
 
-| Impressionist water lilies × Visa | Gilded decorative art × Mastercard |
+| Van Gogh-inspired swirling night × Visa | Art Nouveau portrait × Octopus |
 |---|---|
-| [<img src="examples/monet-water-lilies-visa.png" width="420" alt="Blue-violet water-lily card">](https://juju-w.github.io/card-creator-skill/) | [<img src="examples/klimt-gold-mastercard.png" width="420" alt="Gold-leaf decorative card">](https://juju-w.github.io/card-creator-skill/) |
+| [<img src="examples/post-impressionist-visa.png" width="420" alt="Deep-blue Van Gogh-inspired swirling night Visa card">](https://juju-w.github.io/card-creator-skill/) | [<img src="examples/mucha-art-nouveau-octopus.png" width="420" alt="Art Nouveau Octopus card with a portrait on the left">](https://juju-w.github.io/card-creator-skill/) |
 
-| Gardevoir × CMB / UnionPay | Morandi still life × Wise |
+| Gardevoir × CMB / UnionPay | Greater Bay bridge × conceptual Bay Pass |
 |---|---|
-| [<img src="examples/chatgpt-gardevoir-cmb-unionpay.png" width="420" alt="Pink Gardevoir card">](https://juju-w.github.io/card-creator-skill/) | [<img src="examples/morandi-still-life-wise.png" width="420" alt="Morandi still-life card with WISE lettering">](https://juju-w.github.io/card-creator-skill/) |
+| [<img src="examples/chatgpt-gardevoir-cmb-unionpay.png" width="420" alt="Pink Gardevoir card">](https://juju-w.github.io/card-creator-skill/) | [<img src="examples/greater-bay-sea-bridge-concept.png" width="420" alt="Sea bridge and conceptual Greater Bay transit mark">](https://juju-w.github.io/card-creator-skill/) |
 
-The Gardevoir and Metagross cards were shared by the user from ChatGPT on the web; **Skill loading was not verified**. Their original prompts and provenance remain in the gallery and [SOURCES.md](SOURCES.md). The Wise lettering is an unofficial stylized interpretation; the [unmarked Morandi version](examples/morandi-still-life.png) is also available. See [DISCLAIMER.md](DISCLAIMER.md) for rights notes.
+| Niu Lai × American Express | Crystal cat × HSBC |
+|---|---|
+| [<img src="examples/niu-lai-amex-parody.png" width="420" alt="Niu Lai parody replacing the classic American Express portrait">](https://juju-w.github.io/card-creator-skill/) | [<img src="examples/hsbc-crystal-cat.png" width="420" alt="Blue crystalline cat on an HSBC-inspired card">](https://juju-w.github.io/card-creator-skill/) |
+
+The Gardevoir and Metagross cards were shared by the user from ChatGPT on the web; **Skill loading was not verified**. The Greater Bay transit mark is fictional, and the Niu Lai and brand depictions are non-official fan art. See [SOURCES.md](SOURCES.md) for references and [DISCLAIMER.md](DISCLAIMER.md) for rights notes.
 
 ## How to use
 

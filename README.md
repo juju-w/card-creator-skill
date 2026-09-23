@@ -9,17 +9,21 @@
 
 ## 先看作品
 
-[打开卡面画廊：按艺术风格、宝可梦、城市、二次元等系列浏览与下载](https://juju-w.github.io/card-creator-skill/)。每张作品只归入一个主系列；画廊保存短 Prompt、来源说明与原始文件，新作品主要在那里更新。玩梗系列会在有经过挑选的作品后上线。
+[打开卡面画廊：按艺术风格、宝可梦、城市、二次元、玩梗等系列浏览与下载](https://juju-w.github.io/card-creator-skill/)。每张作品只归入一个主系列；画廊保存短 Prompt、来源说明与原始文件，新作品主要在那里更新。
 
-| 睡莲印象派 × Visa | 金箔装饰画 × Mastercard |
+| 梵高风格旋涡夜景 × Visa | 新艺术人物 × 八达通 |
 |---|---|
-| [<img src="examples/monet-water-lilies-visa.png" width="420" alt="蓝紫色睡莲卡面">](https://juju-w.github.io/card-creator-skill/) | [<img src="examples/klimt-gold-mastercard.png" width="420" alt="金箔装饰卡面">](https://juju-w.github.io/card-creator-skill/) |
+| [<img src="examples/post-impressionist-visa.png" width="420" alt="梵高风格的深蓝旋涡夜景 Visa 卡面">](https://juju-w.github.io/card-creator-skill/) | [<img src="examples/mucha-art-nouveau-octopus.png" width="420" alt="左侧人物肖像的新艺术八达通卡面">](https://juju-w.github.io/card-creator-skill/) |
 
-| 沙奈朵 × 招商银行／银联 | 莫兰迪静物 × Wise |
+| 沙奈朵 × 招商银行／银联 | 大湾区海桥 × 大湾区通概念标志 |
 |---|---|
-| [<img src="examples/chatgpt-gardevoir-cmb-unionpay.png" width="420" alt="粉色沙奈朵卡面">](https://juju-w.github.io/card-creator-skill/) | [<img src="examples/morandi-still-life-wise.png" width="420" alt="莫兰迪静物 WISE 字标卡面">](https://juju-w.github.io/card-creator-skill/) |
+| [<img src="examples/chatgpt-gardevoir-cmb-unionpay.png" width="420" alt="粉色沙奈朵卡面">](https://juju-w.github.io/card-creator-skill/) | [<img src="examples/greater-bay-sea-bridge-concept.png" width="420" alt="海桥与大湾区通概念标志卡面">](https://juju-w.github.io/card-creator-skill/) |
 
-沙奈朵与巨金怪图由用户从 ChatGPT 网页版分享，**无法确认当时是否加载了 Skill**。用户原始 Prompt 原文与来源见画廊、[SOURCES.md](SOURCES.md)。莫兰迪 Wise 是非官方风格化字标，另保留[无标志版](examples/morandi-still-life.png)。图片与标志权利说明见 [DISCLAIMER.md](DISCLAIMER.md)。
+| 牛来 × American Express | 蓝晶猫 × 汇丰 |
+|---|---|
+| [<img src="examples/niu-lai-amex-parody.png" width="420" alt="牛来替代经典运通肖像的玩梗卡面">](https://juju-w.github.io/card-creator-skill/) | [<img src="examples/hsbc-crystal-cat.png" width="420" alt="深蓝色水晶折面猫咪汇丰卡面">](https://juju-w.github.io/card-creator-skill/) |
+
+沙奈朵与巨金怪图由用户从 ChatGPT 网页版分享，**无法确认当时是否加载了 Skill**。大湾区通是虚构概念标志，牛来和品牌标志都是非官方二创；图片来源见 [SOURCES.md](SOURCES.md)，权利说明见 [DISCLAIMER.md](DISCLAIMER.md)。
 
 ## 使用方式
 

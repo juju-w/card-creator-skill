@@ -9,6 +9,18 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class GalleryAssetTests(unittest.TestCase):
+    def test_homepage_showcase_matches_curated_lead(self):
+        gallery = (ROOT / "gallery-data.js").read_text(encoding="utf-8")
+        featured = re.findall(r'image: "([^"]+)"', gallery)[:6]
+        self.assertEqual(len(featured), 6)
+        for readme in ("README.md", "README_EN.md"):
+            content = (ROOT / readme).read_text(encoding="utf-8")
+            showcase = re.findall(r'<img src="examples/([^"]+)" width="420"', content)
+            with self.subTest(readme=readme):
+                self.assertEqual(showcase, featured)
+        homepage = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn(f'<img src="./examples/{featured[0]}"', homepage)
+
     def test_featured_png_downloads_are_opaque(self):
         gallery = (ROOT / "gallery-data.js").read_text(encoding="utf-8")
         for filename in re.findall(r'image: "([^"]+)"', gallery):

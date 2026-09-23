@@ -9,4 +9,4 @@ To add a work:
 3. Record its source and rights context in `SOURCES.md`, and preserve the full generation prompt outside the installed Skill (see `examples/PROMPTS.md`). Check the image before publishing. Keep generated, style-matched logos labelled as non-official.
 4. Run a local static server (`python3 -m http.server 8765`), inspect desktop and mobile layouts, then push to `main`. Pages updates from the branch automatically.
 
-The existing `meme` filter is intentionally empty until a genuinely good example is reviewed. Do not add placeholder art or imply that unofficial character/brand fan art is authorized. Rights concerns can be raised through the linked GitHub issue form; see `DISCLAIMER.md`.
+The `meme` filter is for selected, reviewed examples only. Do not add placeholder art or imply that unofficial character/brand fan art is authorized. Rights concerns can be raised through the linked GitHub issue form; see `DISCLAIMER.md`.
