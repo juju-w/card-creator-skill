@@ -74,6 +74,43 @@ Opacity-repair edit prompt (input: first generated card image):
 Edit the supplied Guangzhou transit card face, preserving its composition, linework, Canton Tower, kapok flower, river curves, and BOTH logos. Crucial correction: fill the ENTIRE current transparent background, from edge to edge, with SOLID OPAQUE warm ivory paper (#F5F1E9). The output must have no transparent pixels anywhere. Make the dark petrol linework and both logo texts fully legible on this light background, with natural antialiasing. Keep the overall restrained editorial minimalism. Do not add objects, card mockup, rounded corners, shadow, border, extra text, NFC icon, card number, or chip. Final raster should be one complete flat rectangular card face, opaque at every pixel.
 ```
 
+The line-art Guangzhou version is retained for provenance but no longer featured in the gallery.
+
+## 广州 · 彩窗夜河 × 羊城通（当前画廊版）
+
+- Output: [`guangzhou-arcade-yangchengtong.png`](guangzhou-arcade-yangchengtong.png)
+- Visual reference: [`../skills/card-creator/assets/logo-references/cities/guangzhou-yangchengtong-official-opaque.png`](../skills/card-creator/assets/logo-references/cities/guangzhou-yangchengtong-official-opaque.png)
+
+```text
+Use case: stylized-concept. Asset type: finished downloadable Guangzhou city transit-card face for a noncommercial fan-art gallery. Image 1 is ONLY a visual identity reference for the 羊城通 / YANG CHENG TONG mark, not a composition reference. Make a completely new, premium, flat edge-to-edge OPAQUE landscape card artwork, about 1.586:1, replacing an ugly sparse line-art card. Art direction: contemporary Lingnan enamel and architectural stained-glass, sophisticated rather than tourist-poster. A single graceful arch inspired by old Guangzhou arcade windows frames a distant, unmistakable slender Canton Tower across the Pearl River at blue hour; luminous river reflections form broad flowing bands. Deep peacock teal, warm coral-orange, ivory and restrained brass-gold; translucent enamel glow and fine grain. Clear hierarchy: architecture and river are the art; a modest, readable style-matched 羊城通 mark based on image 1 sits at the upper-left with generous breathing room, integrated into the artwork. Do NOT add the 交通联合 mark, 岭南通 mark, flower, row of skyline icons, card number, chip, NFC/contactless mark, QR, watermark, border, rounded corners, mockup, device, fake signs or any other text. Nonofficial artistic logo interpretation. Refined, atmospheric, memorable, fully opaque rectangular canvas.
+```
+
+## 大湾区 · 海上相连 × 虚构「大湾区通」/ 交通联合
+
+- Output: [`greater-bay-sea-bridge-concept.png`](greater-bay-sea-bridge-concept.png)
+- The fictional 大湾区通 mark was made for this concept only. The prior [`guangzhou-minimal-lingnantong-tunion-v2.png`](guangzhou-minimal-lingnantong-tunion-v2.png) was passed to the final edit only as a visual reference for the 交通联合 mark, **not** as a composition reference or official logo source.
+
+Initial bridge artwork:
+
+```text
+Use case: stylized-concept. Asset type: finished downloadable Greater Bay Area themed concept card face for a noncommercial art gallery. Create ONE premium flat edge-to-edge fully OPAQUE landscape image, about 1.586:1. This is an artistic regional concept, NOT a real interoperable transit card and NOT an official brand. Scene: seen from above at first light, a single long elegant sea bridge curves gently between a few pearl-like islands across the broad estuary, with delicate wakes and bands of tidal current suggesting connected shores. No rows of city skylines. Art direction: quiet contemporary Japanese-style printmaking meets premium cartography, large balanced shapes, engraved water textures, luminous nacre and pale champagne reflections over deep marine indigo and sea-glass green; restrained, sophisticated, spacious. The bridge is the hero, with the sea taking most of the canvas and a calm upper area. Do not add any logo, fictional operator mark, text, place labels, map pins, card number, chip, NFC/contactless symbol, QR, badge, border, rounded corner, mockup, device, shadow or watermark. Make it feel like an art card, not a tourism poster. Output a complete opaque rectangular card face.
+```
+
+Branding edit requested by the user:
+
+```text
+Use case: precise-object-edit. Image 1 is the EDIT TARGET: a finished elegant Greater Bay Area sea-bridge concept card. Image 2 is ONLY a visual reference for the short red-and-blue '交通联合 / China T-Union' mark located at the upper-right of that old Guangzhou card; do NOT copy its composition, tower, flowers, lines, or Lingnan Tong logo. Preserve image 1's bridge, islands, tides, blue-green water, champagne sunrise, composition and full landscape framing. Add exactly TWO tasteful small marks, painted as part of the same scene: (A) at the upper-left in the quiet pale sky, create an ORIGINAL, clearly fictional '大湾区通' concept logo: three clean interlocking bay/bridge arcs in sea-glass blue, deep navy and muted gold, with the exact Chinese words '大湾区通' below or beside it in elegant dark-navy type; no claim it is an existing operator. (B) at the lower-right over a quiet dark-water area, add a modest recognizable short-form red-and-blue '交通联合' / China T-Union style mark inspired by image 2, rendered legibly as a nonofficial stylized interpretation. Keep both marks balanced and separated, not oversized, and do not let either obscure the bridge. No other words, station names, card number, chip, NFC/contactless icon, QR, border, device, shadow, rounded mask, mockup, or watermark. Fully OPAQUE rectangular card face. This is a precise branding addition, not a redesign.
+```
+
+## 佛山 · 赤金醒狮 × 广佛通
+
+- Output: [`foshan-lion-dance-guangfo-tong.png`](foshan-lion-dance-guangfo-tong.png)
+- Visual reference: [`../skills/card-creator/assets/logo-references/cities/guangfo-tong-reference.png`](../skills/card-creator/assets/logo-references/cities/guangfo-tong-reference.png)
+
+```text
+Use case: stylized-concept. Asset type: finished downloadable Foshan city transit-card face for a noncommercial fan-art gallery. Image 1 is ONLY a visual identity reference for the 广佛通 / Guangfo Tong mark, not a card composition reference. Create a new flat edge-to-edge OPAQUE landscape card artwork, approximately 1.586:1. Central subject: an elegant Foshan lion-dance HEAD in dynamic three-quarter profile, with expressive round eyes and layered fabric details, not a real lion animal and not a cartoon mascot. Art direction: high-end Lingnan lacquer and hand-cut paper collage, dramatically simplified into a few strong shapes; deep cinnabar red, muted antique gold, ink-black and warm ivory paper, tiny jade accents. Let the lion-dance ribbons sweep from left-center toward the lower edge with breathing room on the right. Include one modest clear style-matched 广佛通 mark based on image 1 in a quiet right-hand area; preserve its arcing colored band and Chinese name as recognizable, but integrate it into the palette rather than pasting a white box. The image model paints the whole composition. No fictional station names, extra lettering, chip, card number, payment-network mark, NFC/contactless icon, QR, border, rounded corners, shadow, device, mockup or watermark. Refined, festive but not kitschy; fully opaque rectangular card face.
+```
+
 ## 西安 · 石色钟楼 × 长安通（新版）
 
 - Output: [`xian-changan-tong-bell-tower.png`](xian-changan-tong-bell-tower.png)

@@ -247,7 +247,17 @@ The Shanghai and Guangzhou gallery entries now point to new AI-generated composi
 | Featured example | Visual reference and traceable source | Note |
 |---|---|---|
 | `examples/shanghai-art-deco-unionpay-v2.png` | `payment/unionpay-compact.png` · [reference source](<https://commons.wikimedia.org/wiki/File:UnionPay_logo.svg>) | 1580 × 995 px, opaque. Art Deco Bund clock tower and fan composition. Supersedes `examples/shanghai-art-deco-unionpay.png`. |
-| `examples/guangzhou-minimal-lingnantong-tunion-v2.png` | `cities/lingnan-pass-reference.png` · [user-provided source](<https://www.lingnanpass.com/sy>) | 1578 × 997 px, opaque after an image-generation edit. Canton Tower, Pearl River and kapok. The 交通联合 mark was painted from model knowledge because no standalone local reference was available; its details are not verified against brand guidelines. Supersedes `examples/guangzhou-minimal-lingnantong-tunion.png`. |
+| `examples/guangzhou-minimal-lingnantong-tunion-v2.png` | `cities/lingnan-pass-reference.png` · [user-provided source](<https://www.lingnanpass.com/sy>) | 1578 × 997 px, opaque after an image-generation edit. Canton Tower, Pearl River and kapok. The 交通联合 mark was painted from model knowledge because no standalone local reference was available; its details are not verified against brand guidelines. Retained for provenance, no longer featured. |
+
+### Guangzhou, Greater Bay Area and Foshan redesigns added 2026-09-23
+
+The three artworks below use the built-in image-generation tool. The Guangzhou and Foshan marks are non-official style-matched interpretations of the linked local reference pictures. The **大湾区通** mark is an original fictional concept, not a real issued-card brand. Its 交通联合 mark was generated using the previous Guangzhou card only as a visual reference for that mark; neither mark establishes acceptance, interoperability or authorization. Full prompts are in [`examples/PROMPTS.md`](examples/PROMPTS.md).
+
+| Featured example | Visual reference and traceable source | Note |
+|---|---|---|
+| `examples/guangzhou-arcade-yangchengtong.png` | `cities/guangzhou-yangchengtong-official-opaque.png` · [operator source](<https://www.gzyct.com/>) | 1579 × 996 px, opaque. Lingnan enamel arcade window, Canton Tower and Pearl River at dusk; generated 羊城通 mark. Replaces the minimal line-art Guangzhou card in the gallery. |
+| `examples/greater-bay-sea-bridge-concept.png` | Original concept; `examples/guangzhou-minimal-lingnantong-tunion-v2.png` was passed only as a reference for the generated 交通联合 mark. [Transport Ministry explanation of the mark](<https://xxgk.mot.gov.cn/2020/jigou/ysfws/202006/t20200623_3315467.html>) | 1580 × 996 px, opaque. Sea bridge and tides with fictional 大湾区通 mark and generated non-official 交通联合 mark. Not a real card or interoperability claim. |
+| `examples/foshan-lion-dance-guangfo-tong.png` | `cities/guangfo-tong-reference.png` · [user-provided partner-page source](<https://www.gzyct.com/>) | 1580 × 996 px, opaque. Red-and-gold lion-dance cut-paper artwork with generated 广佛通 mark. |
 
 ### More city examples added 2026-09-23
 
