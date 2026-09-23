@@ -221,8 +221,8 @@ All six images below were generated in a Codex session with the built-in image-g
 
 | Example file | Visual reference used | Note |
 |---|---|---|
-| `examples/monet-water-lilies-visa.png` | `payment/visa.png` | Impressionist water lilies; pearl-white Visa. |
-| `examples/klimt-gold-mastercard.png` | `payment/mastercard.png` | Vienna gold-leaf ornament; thin gold Mastercard circles. |
+| `examples/monet-water-lilies-visa.png` | `payment/visa.png` | Impressionist water lilies; pearl-white Visa. Original generated PNG had partial alpha across the canvas, causing pale edges on white backgrounds; flattened losslessly to opaque RGB PNG without changing the artwork. |
+| `examples/klimt-gold-mastercard.png` | `payment/mastercard.png` | Vienna gold-leaf ornament; thin gold Mastercard circles. Original generated PNG had partial alpha across the canvas, causing pale edges on white backgrounds; flattened losslessly to opaque RGB PNG without changing the artwork. |
 | `examples/mucha-art-nouveau-octopus.png` | `overseas/hong-kong/octopus-horizontal.png` | Art Nouveau floral portrait; bronze Octopus mark. |
 | `examples/hokusai-wave-suica.png` | `overseas/japan/suica.png` | Ukiyo-e sea and distant Fuji; indigo Suica. |
 | `examples/morandi-still-life.png` | None | Three ceramic vessels; brand-free final version. A flawed draft with an unreadable Wise wordmark was discarded. |
@@ -254,8 +254,8 @@ These four flat card-face artworks were generated with the built-in image-genera
 
 | Example file | Existing visual reference and source | Note |
 |---|---|---|
-| `examples/xian-changan-tong-bell-tower.png` | `cities/xian-changan-tong.png` · [source](<http://www.xaykt.com/>) | 1579 × 996 px, opaque. Xi'an Bell Tower in a cinnabar woodblock-print style; generated Chang'an Card mark. |
-| `examples/shenzhen-bay-tong-symbol.png` | `cities/shenzhen-tong-symbol.png` · [source](<https://www.shenzhentong.com/>) | 1579 × 996 px, opaque. Pale-aqua Shenzhen Bay bridge and waterfront; generated symbol-only Shenzhen Tong mark. No unverified wordmark added. |
+| `examples/xian-changan-tong-bell-tower.png` | `cities/xian-changan-tong.png` · [source](<http://www.xaykt.com/>) | 1579 × 996 px, opaque. Replaced heavy cinnabar woodblock with airy limestone, terracotta and slate-blue Bell Tower composition; generated Chang'an Card mark. Initial transparent background was repaired with image generation. |
+| `examples/shenzhen-bay-tong-symbol.png` | `cities/shenzhen-tong-symbol.png` · [source](<https://www.shenzhentong.com/>) | 1579 × 996 px, opaque. Pale-aqua Shenzhen Bay bridge and waterfront; generated symbol-only Shenzhen Tong mark reduced in size. No unverified wordmark added. |
 | `examples/hangzhou-west-lake-citizen-card.png` | `cities/hangzhou-citizen-card-operator.png` · [source](<https://www.96225.com/smknet/service/show_allGet.action>) | 1579 × 996 px, opaque. West Lake celadon artwork. The reference and generated mark identify the Hangzhou Citizen Card operator; they are not verified as a 杭州通 product logo. |
 | `examples/chongqing-city-card-monorail.png` | `cities/chongqing-city-card-operator.png` · [source](<https://www.cqtk.com.cn/>) | 1578 × 996 px, opaque. Stylized Liziba monorail and mountain-city skyline. The reference and generated mark identify the Chongqing City Card operator; they are not verified as a 畅通卡 product logo. An invented English subtitle in the first generated draft was removed through a targeted image-generation edit before publishing. |
 
