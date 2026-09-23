@@ -62,3 +62,45 @@ Opacity-repair edit prompt (input: first generated card image):
 ```text
 Edit the supplied Guangzhou transit card face, preserving its composition, linework, Canton Tower, kapok flower, river curves, and BOTH logos. Crucial correction: fill the ENTIRE current transparent background, from edge to edge, with SOLID OPAQUE warm ivory paper (#F5F1E9). The output must have no transparent pixels anywhere. Make the dark petrol linework and both logo texts fully legible on this light background, with natural antialiasing. Keep the overall restrained editorial minimalism. Do not add objects, card mockup, rounded corners, shadow, border, extra text, NFC icon, card number, or chip. Final raster should be one complete flat rectangular card face, opaque at every pixel.
 ```
+
+## 西安 · 朱砂钟楼 × 长安通
+
+- Output: [`xian-changan-tong-bell-tower.png`](xian-changan-tong-bell-tower.png)
+- Visual reference: [`../skills/card-creator/assets/logo-references/cities/xian-changan-tong.png`](../skills/card-creator/assets/logo-references/cities/xian-changan-tong.png)
+
+```text
+Use case: stylized-concept. Asset type: finished flat transit-card face for a free noncommercial fan-art gallery. Input image 1 is a visual identity reference for the actual 长安通 / CHANGAN CARD logo; use it as guidance for one clearly recognizable, nonofficial style-matched mark, not as a pasted overlay. Create a distinctly Xi'an card, not a generic Chinese city montage. Opaque edge-to-edge landscape composition about 1.586:1. Art direction: premium modern interpretation of Tang-era architectural woodblock prints. One clean, commanding silhouette of Xi'an Bell Tower seen from slightly below, with a few receding city-wall rooflines and deliberate negative space; restrained ink-black, aged parchment ivory and cinnabar red with a tiny amount of brushed antique gold. Build depth through subtle rubbed paper grain and layered block-print textures, while keeping the landmark recognizable and the typography minimal. Integrate the Chang'an Card logo from the input comfortably within one corner, its red square and black/ivory lettering legible, naturally scaled. No other words, characters, card numbers, chip, QR, contactless/NFC mark, payment network logo, border, rounded mask, device or mockup. Model paints the whole design; output fully opaque.
+```
+
+## 深圳 · 海湾流线 × 深圳通符号
+
+- Output: [`shenzhen-bay-tong-symbol.png`](shenzhen-bay-tong-symbol.png)
+- Visual reference: [`../skills/card-creator/assets/logo-references/cities/shenzhen-tong-symbol.png`](../skills/card-creator/assets/logo-references/cities/shenzhen-tong-symbol.png). The reference is symbol-only, so no wordmark was invented.
+
+```text
+Use case: stylized-concept. Asset type: finished flat transit-card face for a free noncommercial fan-art gallery. Input image 1 is a visual identity reference for the multicolor Shenzhen Tong SYMBOL ONLY, not a wordmark or an exact compositing asset. Create a distinctly Shenzhen card face in refined, forward-looking graphic minimalism. Opaque edge-to-edge landscape composition about 1.586:1. Pearl-white and pale aqua backdrop, one flowing translucent cyan arc evoking Shenzhen Bay Bridge, a restrained blue-green waterfront silhouette in the distance and a few crisp sunlit geometric planes; generous clean negative space. Use the attached colorful asymmetric symbol once, rendered legibly as part of the artwork at a comfortable corner scale; do not add or invent any 深圳通 text because the provided reference is symbol-only. The palette should harmonize with its lime, blue and magenta accents without becoming a rainbow poster. Editorial sophistication, precise linework, subtle satin-paper sheen. No fake signs or slogans, no card numbers, chip, QR, contactless/NFC mark, payment network logo, border, rounded mask, device or mockup. Model paints the whole design; output fully opaque.
+```
+
+## 杭州 · 西湖瓷青 × 市民卡运营方
+
+- Output: [`hangzhou-west-lake-citizen-card.png`](hangzhou-west-lake-citizen-card.png)
+- Visual reference: [`../skills/card-creator/assets/logo-references/cities/hangzhou-citizen-card-operator.png`](../skills/card-creator/assets/logo-references/cities/hangzhou-citizen-card-operator.png). Operator identity, not a verified 杭州通 product sticker.
+
+```text
+Use case: stylized-concept. Asset type: finished flat city-card face for a free noncommercial art gallery. Input image 1 is a visual identity reference for the 杭州市民卡 / Hangzhou Citizen Card OPERATOR mark; it is NOT proof of a separate '杭州通' card logo. Create one distinctly Hangzhou artwork, opaque edge-to-edge landscape about 1.586:1. Art direction: contemporary Song-dynasty-inspired celadon glaze and fine silk-screen linework, spacious and quiet. One graceful, recognizable West Lake Broken Bridge crosses pale celadon water in the middle distance; a few willow fronds and lotus leaves draw the eye without turning into a souvenir collage. Palette of misty celadon green, warm porcelain white, very restrained tea-brown ink; subtle ceramic crackle/pearl sheen only in light. Include one clean readable style-matched Hangzhou Citizen Card operator logo based on the input, comfortably inside a corner; preserve its meaning as an operator mark, do not invent '杭州通' lettering. The mark may be green and teal, but should feel harmonized with the lake. No other text, card numbers, chip, QR, contactless/NFC mark, payment network logo, border, rounded mask, device or mockup. The image model paints the whole design; fully opaque.
+```
+
+## 重庆 · 山城轨道 × 城市通卡运营方
+
+- Output: [`chongqing-city-card-monorail.png`](chongqing-city-card-monorail.png)
+- Visual reference: [`../skills/card-creator/assets/logo-references/cities/chongqing-city-card-operator.png`](../skills/card-creator/assets/logo-references/cities/chongqing-city-card-operator.png). Operator identity, not a verified 畅通卡 product sticker.
+
+```text
+Use case: stylized-concept. Asset type: finished flat city-card face for a free noncommercial art gallery. Input image 1 is a visual identity reference for 重庆城市通卡 OPERATOR mark; it is NOT a verified '畅通卡' product sticker. Create a distinctly Chongqing card-face artwork, opaque edge-to-edge landscape about 1.586:1. Art direction: sophisticated contemporary screenprint poster of Chongqing's layered mountain city at blue hour. One slender, unmistakable monorail passes through the middle of a single terraced hillside building (a stylized Liziba scene); silhouettes of stacked stairways and river cliffs recede behind it. Dramatic but orderly diagonal composition, deep indigo and midnight blue with warm coral-orange window lights and a few magenta accents inspired by the reference mark. Keep sufficient calm space for one legible 重庆城市通卡 operator logo based on the attached reference, painted by the image model and harmonized with the palette. Do not add or imply any separate '畅通卡' product logo. No fake signs or slogans, no card numbers, chip, QR, contactless/NFC mark, payment network logo, border, rounded mask, device, shadow or mockup. Premium, readable, fully opaque.
+```
+
+Chongqing opacity-preserving text correction (input 1: first generated card; input 2: the same operator reference):
+
+```text
+Use case: precise-object-edit. Image 1 is the EDIT TARGET, an otherwise finished Chongqing city-card face. Image 2 is the visual reference for the operator logo. Make ONE small correction only: REMOVE the fabricated Latin/English subtitle beneath the large Chinese 重庆城市通卡 mark in the upper-left, including the nonsensical 'CHONGQING PAYEASY' lettering. Leave a clean dark-blue background in that narrow strip. Retain the colorful emblem and the Chinese title 重庆城市通卡 clearly, based on image 2. Preserve all other pixels and composition as closely as possible: same blue-hour layered city, rail train passing through building, distant bridge and river, warm lights, blue/coral palette, camera framing, full opaque rectangular canvas. Do not add any text, payment marks, chip, NFC icon, border or card mockup. This is a surgical text-removal correction, not a new design.
+```

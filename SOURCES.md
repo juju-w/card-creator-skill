@@ -248,6 +248,17 @@ The Shanghai and Guangzhou gallery entries now point to new AI-generated composi
 | `examples/shanghai-art-deco-unionpay-v2.png` | `payment/unionpay-compact.png` · [reference source](<https://commons.wikimedia.org/wiki/File:UnionPay_logo.svg>) | 1580 × 995 px, opaque. Art Deco Bund clock tower and fan composition. Supersedes `examples/shanghai-art-deco-unionpay.png`. |
 | `examples/guangzhou-minimal-lingnantong-tunion-v2.png` | `cities/lingnan-pass-reference.png` · [user-provided source](<https://www.lingnanpass.com/sy>) | 1578 × 997 px, opaque after an image-generation edit. Canton Tower, Pearl River and kapok. The 交通联合 mark was painted from model knowledge because no standalone local reference was available; its details are not verified against brand guidelines. Supersedes `examples/guangzhou-minimal-lingnantong-tunion.png`. |
 
+### More city examples added 2026-09-23
+
+These four flat card-face artworks were generated with the built-in image-generation tool from the existing local PNG references. No new logo assets were collected, and none of the generated marks is an exact or authorized sticker. The city scenes are artistic interpretations, not official transit designs. Full prompts (including the targeted correction to remove Chongqing's hallucinated English line) are in [`examples/PROMPTS.md`](examples/PROMPTS.md).
+
+| Example file | Existing visual reference and source | Note |
+|---|---|---|
+| `examples/xian-changan-tong-bell-tower.png` | `cities/xian-changan-tong.png` · [source](<http://www.xaykt.com/>) | 1579 × 996 px, opaque. Xi'an Bell Tower in a cinnabar woodblock-print style; generated Chang'an Card mark. |
+| `examples/shenzhen-bay-tong-symbol.png` | `cities/shenzhen-tong-symbol.png` · [source](<https://www.shenzhentong.com/>) | 1579 × 996 px, opaque. Pale-aqua Shenzhen Bay bridge and waterfront; generated symbol-only Shenzhen Tong mark. No unverified wordmark added. |
+| `examples/hangzhou-west-lake-citizen-card.png` | `cities/hangzhou-citizen-card-operator.png` · [source](<https://www.96225.com/smknet/service/show_allGet.action>) | 1579 × 996 px, opaque. West Lake celadon artwork. The reference and generated mark identify the Hangzhou Citizen Card operator; they are not verified as a 杭州通 product logo. |
+| `examples/chongqing-city-card-monorail.png` | `cities/chongqing-city-card-operator.png` · [source](<https://www.cqtk.com.cn/>) | 1578 × 996 px, opaque. Stylized Liziba monorail and mountain-city skyline. The reference and generated mark identify the Chongqing City Card operator; they are not verified as a 畅通卡 product logo. An invented English subtitle in the first generated draft was removed through a targeted image-generation edit before publishing. |
+
 ### User-shared ChatGPT web examples
 
 The Gardevoir and Metagross images were supplied by the user for the gallery. Their actual Chinese prompts

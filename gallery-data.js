@@ -28,5 +28,9 @@ export const works = [
   { id: "guangzhou-minimal-lingnantong-tunion", title: "广州极简线条", subtitle: "珠江曲线 × 岭南通 × 交通联合", series: "city", image: "guangzhou-minimal-lingnantong-tunion-v2.png", prompt: "使用 card-creator Skill，生成一张广州极简线条卡面：暖白纸底，广州塔、珠江曲线与木棉花，包含岭南通和交通联合。" },
   { id: "palace-museum-cranes-unionpay", title: "北京 · 故宫典藏", subtitle: "云母祥云与仙鹤", series: "city", image: "palace-museum-cranes-unionpay.png", prompt: "使用 card-creator Skill，生成一张北京故宫典藏风卡面，使用云母祥云、仙鹤、宫殿和哑金风格化标志。" },
   { id: "shanghai-art-deco-unionpay", title: "上海装饰艺术", subtitle: "外滩扇面 × 深翡翠银联", series: "city", image: "shanghai-art-deco-unionpay-v2.png", prompt: "使用 card-creator Skill，生成一张上海装饰艺术卡面：深翡翠底、古金扇面、外滩钟楼与江面倒影，右下角哑金短款银联。" },
+  { id: "xian-changan-tong-bell-tower", title: "西安 · 朱砂钟楼", subtitle: "古城碑拓 × 长安通", series: "city", image: "xian-changan-tong-bell-tower.png", prompt: "使用 card-creator Skill，生成一张西安长安通卡面：朱砂碑拓、钟楼与古城墙，左上角长安通标志，不要芯片或额外文字。" },
+  { id: "shenzhen-bay-tong-symbol", title: "深圳 · 海湾流线", subtitle: "浅青海湾 × 深圳通符号", series: "city", image: "shenzhen-bay-tong-symbol.png", prompt: "使用 card-creator Skill，生成一张深圳通卡面：浅青极简、海湾大桥与滨海天际线，左上角只放深圳通图形符号，不加字。" },
+  { id: "hangzhou-west-lake-citizen-card", title: "杭州 · 西湖瓷青", subtitle: "断桥荷叶 × 市民卡运营方", series: "city", image: "hangzhou-west-lake-citizen-card.png", origin: "AI 风格化创作示例；参考图是杭州市民卡运营方标志，不是已核实的杭州通卡种贴纸。", prompt: "使用 card-creator Skill，生成一张杭州西湖卡面：瓷青色、断桥、柳叶与荷花，右上角杭州市民卡运营方标志；不要写杭州通。" },
+  { id: "chongqing-city-card-monorail", title: "重庆 · 山城轨道", subtitle: "穿楼单轨 × 城市通卡运营方", series: "city", image: "chongqing-city-card-monorail.png", origin: "AI 风格化创作示例；参考图是重庆城市通卡运营方标志，不是已核实的畅通卡卡种贴纸。", prompt: "使用 card-creator Skill，生成一张重庆山城轨道卡面：蓝调夜色、穿楼单轨与江岸层叠，左上角重庆城市通卡运营方标志，不要虚构其他字样。" },
   { id: "minimal-mastercard", title: "一笔成线", subtitle: "暖象牙白 × Mastercard", series: "modern", image: "minimal-mastercard.png", prompt: "使用 card-creator Skill，生成一张暖象牙白的极简线条 Mastercard 卡面，右下角 Mastercard。" },
 ];
