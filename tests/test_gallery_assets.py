@@ -9,6 +9,14 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class GalleryAssetTests(unittest.TestCase):
+    def test_site_brand_matches_skill_and_gallery(self):
+        homepage = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn("<title>Card Creator · 卡面画廊</title>", homepage)
+        self.assertIn('content="Card Creator · 卡面画廊"', homepage)
+        self.assertIn('aria-label="Card Creator 卡面画廊首页"', homepage)
+        self.assertEqual(homepage.count("CARD CREATOR"), 2)
+        self.assertNotIn("Make Your Card", homepage)
+
     def test_homepage_showcase_matches_curated_lead(self):
         gallery = (ROOT / "gallery-data.js").read_text(encoding="utf-8")
         featured = re.findall(r'image: "([^"]+)"', gallery)[:6]
