@@ -22,6 +22,17 @@ The red-and-ivory image above is retained for provenance but no longer featured 
 Use case: stylized-concept. Asset type: a finished downloadable, nonofficial HSBC-inspired bank-card face for a free fan-art gallery. Input image 1 is only the HSBC logo identity reference. Input image 2 is only a visual reference for the sophisticated deep-blue low-poly facet rhythm and clear logo hierarchy; do NOT copy its mascot, words, watermark, payment circles, or screenshot edges. Make an entirely NEW, elegant card artwork. Flat full-bleed opaque rectangular landscape canvas, about 1.586:1, no rounded-corner mask or mockup. Art direction: midnight teal and mineral-blue crystalline facets radiate outward from a single sculptural guardian-lion silhouette at left-center, as if carved from blue glass and paper; the lion is dignified and abstract, not a cartoon face. Dynamic geometry is integrated into its mane and the background, with a quiet dark-blue area on the right for visual breathing room. Restrained pearlescent highlights, subtle print texture, refined bank-card finish; tiny touches of HSBC red ONLY in the upper-right logo. Put one clean recognizable small red-and-white hexagon plus white 'HSBC' wordmark at upper right, comfortably inset, based on image 1. Image model paints the complete artwork, including the brand mark. No giant second hexagon, no Hong Kong skyline, no busy red/white triangles, no lion photorealism, no bank-card number, chip, NFC icon, payment network mark, 'world debit', any other words, border, shadow, device, or watermark. Premium, restrained, memorable.
 ```
 
+The lion version is retained for provenance but no longer featured in the gallery.
+
+## 蓝晶猫影 × 汇丰（当前画廊版）
+
+- Output: [`hsbc-crystal-cat.png`](hsbc-crystal-cat.png)
+- Visual reference: [`../skills/card-creator/assets/logo-references/banks/hong-kong/hsbc.png`](../skills/card-creator/assets/logo-references/banks/hong-kong/hsbc.png). The previous lion card and the user's example image were not passed to the generator.
+
+```text
+Use case: stylized-concept. Asset type: finished downloadable card-face artwork for a noncommercial fan-art gallery. Image 1 is ONLY the HSBC logo visual identity reference; do not use any previous lion-card image as a layout reference. Make a new original flat edge-to-edge opaque landscape card face, approximately 1.586:1. Subject: an unmistakably domestic CAT, not a lion: a graceful seated cat in three-quarter profile with pointed ears, slim muzzle, small paws and an elegant curved tail. Design language: sophisticated midnight-blue and icy-cyan crystalline origami, broad angular mineral-glass facets flowing from the cat into an abstract quiet background, delicate pearlescent glints; refined and slightly playful, not cartoon mascot, not a royal guardian animal. Composition different from a close-up lion portrait: show the full cat silhouette slightly left of center, ample spacious dark-blue field at right. A small recognizable red-and-white HSBC hexagon plus clean white 'HSBC' wordmark sits comfortably in the upper-right, painted as part of the complete image, nonofficial artistic interpretation. No lion mane, no HSBC stone lion, no skyline, no second oversized hexagon, no chip, card number, contactless symbol, payment network mark, slogans, other text, rounded corners, border, shadow, device, mockup or watermark. Output fully opaque at every pixel.
+```
+
 ## 虹彩流线 × Apple Cash
 
 - Output: [`apple-cash-iridescent-ribbon-opaque.png`](apple-cash-iridescent-ribbon-opaque.png)
