@@ -96,7 +96,7 @@ to draw or paste onto the finished artwork.
 Default to landscape card proportions and return the image generator's original output. There is no
 automatic cropping or print-export pipeline. See the short [card rules](skills/card-creator/references/card-rules.md).
 
-- Transit references are grouped by mainland China, Hong Kong, Japan, USA, UK, Germany and Australia.
+- Transit references are grouped by mainland China, Hong Kong, Japan, Taiwan, South Korea, Singapore, the USA, Canada, the UK, France, Italy, Germany and Australia.
   Suica is in the Japan directory alongside ICOCA and the other Japanese cards.
 - 30 bank references cover China's Big Four and common commercial banks, Hong Kong, the USA, the UK,
   Singapore, Germany and Australia.

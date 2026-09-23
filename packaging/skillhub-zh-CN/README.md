@@ -12,9 +12,9 @@
 python3 packaging/skillhub-zh-CN/build.py /tmp/card-creator-skillhub-zh-CN
 ```
 
-输出目录是可直接交给 SkillHub CLI 的完整 Skill 包。SkillHub 不接受 PNG 二进制附件，因此构建器
-会移除 PNG 文件，把参考图索引改成 GitHub 原图直链。只取当前请求所需的图片；链接不可访问时
-使用用户参考图或模型知识。GitHub 主包保留本地 PNG。构建过程也会清理缓存文件。
+输出目录是可直接交给 SkillHub CLI 的完整 Skill 包。SkillHub 不接受图片二进制附件，因此构建器
+会移除 PNG/JPG 文件，把参考图索引改成 GitHub 原图直链。只取当前请求所需的图片；链接不可访问时
+使用用户参考图或模型知识。GitHub 主包保留本地图片。构建过程也会清理缓存文件。
 
 普通用户无需安装 Python 或任何绘图依赖；宿主需具备图片生成能力。本目录的构建脚本仅供发布维护。
 

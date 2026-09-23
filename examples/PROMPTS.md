@@ -274,3 +274,51 @@ Chongqing opacity-preserving text correction (input 1: first generated card; inp
 ```text
 Use case: precise-object-edit. Image 1 is the EDIT TARGET, an otherwise finished Chongqing city-card face. Image 2 is the visual reference for the operator logo. Make ONE small correction only: REMOVE the fabricated Latin/English subtitle beneath the large Chinese 重庆城市通卡 mark in the upper-left, including the nonsensical 'CHONGQING PAYEASY' lettering. Leave a clean dark-blue background in that narrow strip. Retain the colorful emblem and the Chinese title 重庆城市通卡 clearly, based on image 2. Preserve all other pixels and composition as closely as possible: same blue-hour layered city, rail train passing through building, distant bridge and river, warm lights, blue/coral palette, camera framing, full opaque rectangular canvas. Do not add any text, payment marks, chip, NFC icon, border or card mockup. This is a surgical text-removal correction, not a new design.
 ```
+
+## 海外城市交通卡面（2026-09-24 入选）
+
+下面四张均为非官方图像生成创作。参考图只供识别标志，不作为图层贴入；伦敦雨夜旧稿未上架。
+
+### 伦敦 · 春日厚涂 × Oyster
+
+- Output: [`london-oyster-impasto-v2.png`](london-oyster-impasto-v2.png)
+- Visual reference: [`../skills/card-creator/assets/logo-references/overseas/uk/oyster-card.png`](../skills/card-creator/assets/logo-references/overseas/uk/oyster-card.png)
+
+```text
+Use case: stylized-concept. Asset type: non-official London Oyster transit-card face candidate. Create ONE flat full-bleed landscape artwork at approximately 1.586:1, a FULLY OPAQUE RECTANGLE with color and oil paint reaching every corner. Replace the previous gloomy London rain-night mood with a bright, uplifting, sophisticated London spring afternoon. The main visual is a deliberately artful, contemporary oil painting of a London street near an Underground entrance: graceful curving station architecture, a small red bus as a distant accent, softly suggested city rooftops, sunlight across pavement. Extremely tactile heavy impasto and palette-knife painting, physically thick ridges of cobalt, turquoise, cream, coral and buttery gold paint with visible cast shadows from raised brushstrokes. Rich artistic materiality, refined high-end gallery quality; still simple enough to read as a card, with clear focal hierarchy and negative space. Add only the recognizable lowercase 'oyster' wordmark, compact and tastefully integrated at lower right in a deep blue that contrasts with the light paint. Use the attached Oyster card only as a visual reference for the wordmark, not as a source image layer or card layout. No other text, no route numbers, no card number, no chip, no NFC/contactless icon, no QR code, no frame, no physical mockup, no rounded-corner cutout, no shadow outside the artwork, NO transparency or white/empty margins. Non-official artistic interpretation.
+```
+
+### 纽约 · 地铁版画 × OMNY
+
+- Output: [`new-york-omny-graphic.png`](new-york-omny-graphic.png)
+- Visual reference: [`../skills/card-creator/assets/logo-references/overseas/usa/omny.png`](../skills/card-creator/assets/logo-references/overseas/usa/omny.png)
+
+```text
+Use case: stylized-concept. Asset type: candidate artwork for a non-commercial card-face gallery. Make ONE polished, complete, flat, edge-to-edge landscape transit-card face, approximately 1.586:1. Concept: New York OMNY as a collectible urban graphic design card, aimed at young people living abroad. Sharp but playful editorial composition: diagonal MTA-style subway tile geometry, a single orange subway train slipping into a tunnel, energetic layered transit-line ribbons, hints of Manhattan's ironwork and street-grid pattern. Distinct from cinematic illustrated landscapes: use bold clean geometric forms, sophisticated cream, subway orange, ink black, and restrained electric blue; slight printed-paper texture. Keep a spacious clean lower-right corner for a recognizable 'OMNY' mark, based on the supplied logo picture as visual reference. Brand mark can be style-matched but should read OMNY clearly; do not paste the reference as a layer. No people, no other words or lettering, no route numbers, no QR code, no chip, no contactless/NFC symbol, no mockup, no rounded-corner cutout, no border or drop shadow. This is non-official artistic fan concept, not a functioning fare card.
+```
+
+### 悉尼 · 蓝花楹海湾 × Opal
+
+- Output: [`sydney-opal-jacaranda.png`](sydney-opal-jacaranda.png)
+- Visual reference: [`../skills/card-creator/assets/logo-references/overseas/australia/opal.png`](../skills/card-creator/assets/logo-references/overseas/australia/opal.png)
+
+Base generation prompt:
+
+```text
+Use case: stylized-concept. Asset type: candidate artwork for a non-commercial card-face gallery. Make ONE complete flat, edge-to-edge landscape transit-card face, approximately 1.586:1. Concept: Sydney Opal card reimagined for a young overseas resident. The mood is fresh, serene and quietly luxurious: jacaranda blossoms drifting across a luminous pale lavender-to-sky-blue harbor morning, abstract ferry wake and soft Sydney harbor-bridge arches in the far distance, with plenty of breathing room. Use refined contemporary gouache and subtle pearlescent paper texture, not photo realism and not tourist-poster cliché. Compose blossoms mainly at left and top; retain a calm pale area at lower right for a small but readable 'opal' mark. Use the supplied Opal logo picture as visual reference only; integrate a color-harmonized recognizable opal wordmark as part of the generated artwork rather than pasting a layer. No other text or symbols, no numbers, QR code, chip, contactless/NFC icon, device, mockup, border, rounded-corner cutout or shadow. Non-official artistic interpretation, not a working transit card.
+```
+
+Final edge-repair prompt (input: first generated image):
+
+```text
+Use case: precise-object-edit. Edit target: the provided Sydney Opal card artwork. Preserve the jacaranda blossoms, Sydney harbor, bridge, ferry wake, soft gouache style, palette, and the readable 'opal' wordmark. CHANGE ONLY THE FOUR OUTER CORNERS AND EDGES: remove the rounded-card silhouette and any transparent or white cutout outside it; extend the existing sky, blossoms and water naturally all the way to every pixel of a full opaque rectangular canvas, especially top-left, top-right, bottom-left, bottom-right. The artwork must be one solid edge-to-edge 1.586:1 rectangle with no alpha/transparency anywhere, no rounded-corner mask, no background beyond the card. Do not add text, chip, numbers, NFC icon, border, shadow, mockup or UI. Keep the current composition otherwise.
+```
+
+### 威尼斯 · 石狮泻湖 × Venezia Unica
+
+- Output: [`venice-venezia-unica-marble-lion.png`](venice-venezia-unica-marble-lion.png)
+- Visual reference: [`../skills/card-creator/assets/logo-references/overseas/italy/venezia-unica-citypass.jpg`](../skills/card-creator/assets/logo-references/overseas/italy/venezia-unica-citypass.jpg)
+
+```text
+Use case: stylized-concept. Asset: ONE non-official Venezia Unica City Pass transit-card face for the Card Creator gallery. Generate a complete flat, opaque, edge-to-edge rectangular landscape artwork around 1.586:1 (no physical-card mockup or rounded-corner mask). Visual reference image: the attached official Venezia Unica City Pass logo, used ONLY to understand its distinctive CITYPASS / VENEZIA / UNICA lettering and red accent; generate the entire image together, do not paste the logo image or its white background. Art direction: an Italian Renaissance-inspired sculptural relief from Venice. A magnificent but graceful winged Lion of Saint Mark carved in warm ivory marble occupies the left-center as the unmistakable hero, with finely chiseled feathers and soft realistic stone depth; behind it, pale Venetian Renaissance arcades, a quiet turquoise lagoon and a hint of sunlit reflections. Restrained palette of ivory limestone, antique parchment, lagoon blue-green and tiny touches of oxidized terracotta red; luminous late-afternoon light, luxurious museum-quality composition, poised and spacious rather than busy or tourist-poster cliché. Keep the winged lion and sculpture tactile; leave balanced breathing room for one compact, legible, style-matched 'VENEZIA UNICA' City Pass identity in the lower right, with a small dark-red accent inspired by the reference. Only text allowed is 'VENEZIA UNICA' (optional smaller 'CITYPASS' above if perfectly spelled). The mark is an artistic, non-official interpretation. No other words, no route number, card number, barcode, QR, chip, NFC/contactless symbol, watermark, border, drop shadow, white/transparent margins, or device UI. No fake functionality or official endorsement.
+```

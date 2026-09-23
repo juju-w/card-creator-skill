@@ -87,6 +87,12 @@ Find the requested name and open only its picture(s). These pictures guide image
 |---|---|
 | 巴黎 Navigo（2018 字标） | [PNG](../assets/logo-references/overseas/france/navigo.png) |
 
+## 意大利交通 / Italy transit
+
+| 名称 / Name | 图片 / Picture |
+|---|---|
+| 威尼斯 Venezia Unica City Pass（官网组合字标，白底） | [JPG](../assets/logo-references/overseas/italy/venezia-unica-citypass.jpg) |
+
 ## 德国交通 / Germany transit
 
 | 名称 / Name | 图片 / Picture |

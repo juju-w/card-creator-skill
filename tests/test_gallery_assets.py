@@ -69,6 +69,19 @@ class GalleryAssetTests(unittest.TestCase):
                 # gallery PNG can look fine on Pages but wash out when saved.
                 self.assertIn(data[25], (0, 2))
 
+    def test_overseas_city_selection_uses_new_london_and_centered_niu_lai(self):
+        gallery = (ROOT / "gallery-data.js").read_text(encoding="utf-8")
+        for filename in (
+            "london-oyster-impasto-v2.png",
+            "new-york-omny-graphic.png",
+            "sydney-opal-jacaranda.png",
+            "venice-venezia-unica-marble-lion.png",
+            "niu-lai-amex-parody.png",
+        ):
+            with self.subTest(filename=filename):
+                self.assertIn(f'image: "{filename}"', gallery)
+        self.assertNotIn("london-oyster-rainy-night.png", gallery)
+
 
 if __name__ == "__main__":
     unittest.main()

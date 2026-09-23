@@ -34,9 +34,9 @@ class ReferenceLibraryTests(unittest.TestCase):
     def test_required_banks_and_countries_are_present(self):
         for bank in ("icbc", "abc", "boc", "ccb", "bocom", "psbc", "cmb", "citic", "everbright", "minsheng", "industrial", "spdb", "pingan", "guangfa"):
             self.assertTrue((PICTURES / f"banks/china/{bank}.png").is_file(), bank)
-        for region in ("japan", "hong-kong", "usa", "uk", "germany", "australia", "canada", "france", "singapore", "south-korea", "taiwan"):
+        for region in ("japan", "hong-kong", "usa", "uk", "germany", "australia", "canada", "france", "italy", "singapore", "south-korea", "taiwan"):
             self.assertTrue(list((PICTURES / "overseas" / region).glob("*.*")), region)
-        for file in ("canada/presto.png", "canada/compass-symbol.png", "france/navigo.png", "singapore/ez-link.png", "south-korea/tmoney-card.jpg", "taiwan/easycard.png", "usa/ventra.png"):
+        for file in ("canada/presto.png", "canada/compass-symbol.png", "france/navigo.png", "italy/venezia-unica-citypass.jpg", "singapore/ez-link.png", "south-korea/tmoney-card.jpg", "taiwan/easycard.png", "usa/ventra.png"):
             self.assertTrue((PICTURES / "overseas" / file).is_file(), file)
         for file in ("chase", "citi", "bank-of-america", "wells-fargo"):
             self.assertTrue((PICTURES / f"banks/usa/{file}.png").is_file())

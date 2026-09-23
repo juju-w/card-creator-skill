@@ -2,13 +2,13 @@
 name: card-creator
 slug: card-creator
 displayName: 卡面生成器
-version: 0.3.1
+version: 0.3.2
 description: 用一句话或参考图生成 AirCard、银行卡、交通卡卡面。用图片生成工具完成整张图，Logo 图片只供参考，可随画面风格变化。
 summary: 一句话生成完整卡面，参考图按需读取。
 homepage: https://github.com/juju-w/card-creator-skill
 license: MIT
 metadata:
-  version: 0.3.1
+  version: 0.3.2
   author: JuJu
   tags:
     - image-generation

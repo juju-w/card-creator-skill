@@ -82,6 +82,12 @@ Existing source and license notes were restored from Git history (`08f9176~2`, `
 |---|---|---|
 | `overseas/france/navigo.png` | [来源](<https://commons.wikimedia.org/wiki/File:Logo_Navigo_(2018).svg>) · [PNG 预览](<https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Logo_Navigo_%282018%29.svg/960px-Logo_Navigo_%282018%29.svg.png>) · [原始 SVG](source-assets/overseas/france/navigo.svg) | Île-de-France Mobilités 标志；Wikimedia Commons 页面标注 PD-textlogo，商标限制仍适用。原始 SVG 存于 Skill 外，PNG 未重画。 |
 
+## 意大利交通 / Italy transit
+
+| 文件（相对于图片目录） | 来源与原图 | 许可、署名与备注 |
+|---|---|---|
+| `overseas/italy/venezia-unica-citypass.jpg` | [Venezia Unica City Pass 官方说明](<https://www.veneziaunica.it/it/venezia-unica-city-pass>) · [官网组合字标原图](<https://ecomm-be.veneziaunica.it/uploads/logo_VU_city_pass_b0d3d03196.jpg>) | 官网使用的白底 JPG，未扣图或重绘；City Pass 可包含 ACTV 公共交通，但本仓库画廊图不代表有效票证或权益。第三方商标，再分发许可未核实；仅供 AI 识别字标。 |
+
 ## 韩国交通 / South Korea transit
 
 | 文件（相对于图片目录） | 来源与原图 | 许可、署名与备注 |
@@ -256,6 +262,17 @@ Collected on 2026-09-23 from the brands' public websites. These are visual refer
 ## Example artwork
 
 The gallery's Magikarp × ICOCA and Gengar × Octopus pictures were supplied by the user as Gemini outputs and approved for repository display. The other examples are AI-generated artistic demonstrations; short reproducible briefs are in `gallery-data.js` and displayed on the Pages gallery. None is an official bank or transit template. Character and brand rights remain with their owners.
+
+### Overseas city-card examples added 2026-09-24
+
+These four flat, opaque card faces were generated in a Codex session with the built-in image-generation tool; the existing London, New York and Sydney candidates were reviewed before publication. Only the brighter London impasto version was promoted; the rainy-night draft remains unpublished. All marks were generated as part of each complete picture using a logo image for visual identity only, not exact compositing. Full prompts are in [`examples/PROMPTS.md`](examples/PROMPTS.md). They are non-official artworks, not valid fare media or evidence of endorsement.
+
+| Gallery file | Visual reference and source | Note |
+|---|---|---|
+| `examples/london-oyster-impasto-v2.png` | `overseas/uk/oyster-card.png` · [Oyster reference](<https://commons.wikimedia.org/wiki/File:Oyster_Card_front.svg>) | 1579 × 996 px; bright, tactile oil-paint London street and generated Oyster wordmark. |
+| `examples/new-york-omny-graphic.png` | `overseas/usa/omny.png` · [OMNY reference](<https://commons.wikimedia.org/wiki/File:OMNY_logo.svg>) | 1580 × 996 px; orange subway and geometric print design. |
+| `examples/sydney-opal-jacaranda.png` | `overseas/australia/opal.png` · [Opal reference](<https://en.wikipedia.org/wiki/File:Opal_card_logo.svg>) | 1578 × 996 px; jacaranda, harbour, gouache and generated Opal mark. An image-generation edit repaired earlier rounded/transparent corners before publication. |
+| `examples/venice-venezia-unica-marble-lion.png` | `overseas/italy/venezia-unica-citypass.jpg` · [official City Pass page](<https://www.veneziaunica.it/it/venezia-unica-city-pass>) | 1579 × 996 px; carved winged lion and lagoon, with an AI-rendered Venezia Unica identity. |
 
 ### Anime fan-art examples added 2026-09-23
 

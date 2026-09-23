@@ -89,7 +89,7 @@ ChatGPT 的相关能力以[官方 Skill 说明](https://openai.com/academy/skill
 默认横向卡片比例，返回图片生成工具的原始成图，不自动裁切、不附加印刷导出流程。
 简短规则见 [card-rules.md](skills/card-creator/references/card-rules.md)。
 
-- 交通参考按地区整理：中国内地、香港、日本、美国、英国、德国、澳洲。Suica 与 ICOCA 等统一放在日本目录。
+- 交通参考按地区整理：中国内地、香港、日本、台湾、韩国、新加坡、美国、加拿大、英国、法国、意大利、德国、澳洲。Suica 与 ICOCA 等统一放在日本目录。
 - 银行参考共 30 家：包含四大行及常见商业银行、香港常用银行，以及美国、英国、新加坡、德国和澳洲银行。
 - 数字钱包与金融科技：Wise、Bybit、Apple Cash、X Money，包含品牌字标／符号及 X Card 官网卡面参考。不局限于动漫角色，也可做纯排版、抽象、城市或材质主题。
 - [参考图索引](skills/card-creator/references/logo-reference-index.md)直接链接实际图片；
