@@ -5,7 +5,7 @@ GitHub Pages publishes this repository's `main` branch from its root. The site i
 To add a work:
 
 1. Put its original image in `examples/` with a descriptive filename.
-2. Add one entry to `gallery-data.js`: unique `id`, title, subtitle, series, image filename, concise reproducible prompt, and provenance note when user-supplied.
+2. Add one entry to `gallery-data.js`: unique `id`, title, subtitle, one primary `series` key, image filename, concise reproducible prompt, and provenance note when user-supplied. Categories are mutually exclusive: a style such as ukiyo-e belongs under art, while `city` is for cards whose main subject is a named city.
 3. Record its source and rights context in `SOURCES.md`, and preserve the full generation prompt outside the installed Skill (see `examples/PROMPTS.md`). Check the image before publishing. Keep generated, style-matched logos labelled as non-official.
 4. Run a local static server (`python3 -m http.server 8765`), inspect desktop and mobile layouts, then push to `main`. Pages updates from the branch automatically.
 

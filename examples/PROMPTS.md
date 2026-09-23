@@ -25,3 +25,29 @@ Opacity-repair edit prompt (input: first generated card image):
 ```text
 Use case: precise-object-edit. Input image 1 is the EDIT TARGET. Repair only the unintended transparency in this finished Apple Cash card face. The near-black obsidian background must become completely opaque deep black across the entire flat rectangular canvas (full alpha 255 at every pixel), with no translucent pixels, alpha haze, pale smoky streaks or checkerboard when shown on a white webpage. Preserve exactly the current 1.586:1 landscape composition, the single smooth pearlescent mint/silver/lavender ribbon's silhouette and lighting, and the clean white Apple symbol plus 'Cash' lettering at lower right. No new design elements, no additional text, no chip, no border, no rounded corners, no mockup. This is a technical opacity correction, not a redesign.
 ```
+
+## 上海装饰艺术 × 银联（新版）
+
+- Output: [`shanghai-art-deco-unionpay-v2.png`](shanghai-art-deco-unionpay-v2.png)
+- Visual reference: [`../skills/card-creator/assets/logo-references/payment/unionpay-compact.png`](../skills/card-creator/assets/logo-references/payment/unionpay-compact.png)
+- The previous gallery image is retained as [`shanghai-art-deco-unionpay.png`](shanghai-art-deco-unionpay.png), but is no longer featured.
+
+```text
+Use case: stylized-concept. Asset type: finished card-face artwork for a free noncommercial gallery. Input image 1 is a visual identity reference for the compact UnionPay 银联 mark, not an exact compositing asset. Make a completely NEW Shanghai city card face with much stronger art direction and calm hierarchy than a busy skyline poster. Flat opaque edge-to-edge landscape artwork, approx 1.586:1, no rounded-corner mask. A high-end 1930s Shanghai Art Deco interpretation: one confident stepped fan geometry frames a simplified Bund clock-tower silhouette and a single elegant line of river reflections; the distant Oriental Pearl appears only as a subtle small counterpoint, not a forest of towers. Deep ink-jade and muted malachite, warm ivory, very restrained antique-gold foil lines; tactile silkscreen paper and quiet negative space. One medium-sized compact UnionPay 银联 mark, style-matched in warm ivory and muted gold, clearly recognizable and visually balanced, placed comfortably inside a corner. Image model paints the whole image including the mark. No huge moon, no star field, no multiple fan decorations, no fake readable building signs. No other text, card number, chip, NFC/contactless icon, QR, border, shadow, device, or mockup. Make the image fully opaque, not transparent.
+```
+
+## 广州极简线条 × 岭南通 / 交通联合（新版）
+
+- Output: [`guangzhou-minimal-lingnantong-tunion-v2.png`](guangzhou-minimal-lingnantong-tunion-v2.png)
+- Visual reference: [`../skills/card-creator/assets/logo-references/cities/lingnan-pass-reference.png`](../skills/card-creator/assets/logo-references/cities/lingnan-pass-reference.png); the 交通联合 mark was painted from model knowledge, not a local logo asset.
+- The previous gallery image is retained as [`guangzhou-minimal-lingnantong-tunion.png`](guangzhou-minimal-lingnantong-tunion.png), but is no longer featured.
+
+```text
+Use case: stylized-concept. Asset type: finished card-face artwork for a free noncommercial gallery. Input image 1 is a visual identity reference for the 岭南通 (Lingnan Pass) mark only, not an exact compositing asset or a card layout reference. Create a completely NEW Guangzhou city transit card, radically different from a dense panoramic skyline card. Flat opaque edge-to-edge landscape artwork, approximately 1.586:1, no rounded corner mask, no device or mockup. Design language: premium minimalist architectural linework, warm ivory paper, deep petrol-blue ink and one muted cinnabar-red accent. Let one elegant oversized continuous-line Canton Tower rise asymmetrically from the LEFT third; express the Pearl River as only three sweeping thin parallel curves across the lower half; place a single restrained kapok flower motif near the river. Leave substantial calm negative space, with a strong, professional editorial composition. Integrate TWO medium, comfortably inset, recognizable transit marks as part of the painted design: the 岭南通 mark based on the attached reference and a compact familiar red-and-blue China T-Union 交通联合 mark. Keep them crisp, proportionate, and harmonized with the line-art design, yet distinct. The image model paints the complete design; do not paste or composite. Do not include a row of buildings, ornate skyline, sun disc, chip, NFC/contactless indicator, card number, barcode, QR code, decorative border, shadow, fake signs, or any other text. Fully opaque, clean high-end card face.
+```
+
+Opacity-repair edit prompt (input: first generated card image):
+
+```text
+Edit the supplied Guangzhou transit card face, preserving its composition, linework, Canton Tower, kapok flower, river curves, and BOTH logos. Crucial correction: fill the ENTIRE current transparent background, from edge to edge, with SOLID OPAQUE warm ivory paper (#F5F1E9). The output must have no transparent pixels anywhere. Make the dark petrol linework and both logo texts fully legible on this light background, with natural antialiasing. Keep the overall restrained editorial minimalism. Do not add objects, card mockup, rounded corners, shadow, border, extra text, NFC icon, card number, or chip. Final raster should be one complete flat rectangular card face, opaque at every pixel.
+```

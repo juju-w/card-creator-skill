@@ -238,6 +238,15 @@ Both card faces were made with the built-in image-generation tool, not code-draw
 | `examples/hsbc-geometric-hong-kong.png` | `skills/card-creator/assets/logo-references/banks/hong-kong/hsbc.png` · [original source](<https://www.hsbc.com/-/files/hsbc/header/hsbc-logo-200x25.svg?la=en-GB&h=25&hash=FCDFB4DC1991B6B5EE0AB98E7208CB82>) | 1580 × 996 px; crimson/ivory geometric composition with Hong Kong skyline. Generated HSBC mark is not an exact asset. |
 | `examples/apple-cash-iridescent-ribbon-opaque.png` | `skills/card-creator/assets/logo-references/fintech/apple-cash.png` · [original source](<https://www.apple.com/v/apple-cash/g/images/overview/cash_hero_logo__3shzohux9cym_xlarge_2x.jpg>) | 1580 × 995 px; near-black card with pearlescent ribbon. Generated Apple Cash mark is not an exact asset. A second image-generation edit made the accidentally translucent black background fully opaque before publishing. |
 
+### Revised city examples added 2026-09-23
+
+The Shanghai and Guangzhou gallery entries now point to new AI-generated compositions. Their older images remain in `examples/` as superseded versions. The marks in both new cards were painted by the image model, are **non-official stylized interpretations**, and were not composited from exact assets. The full generation and Guangzhou opacity-repair prompts are in [`examples/PROMPTS.md`](examples/PROMPTS.md).
+
+| Featured example | Visual reference and traceable source | Note |
+|---|---|---|
+| `examples/shanghai-art-deco-unionpay-v2.png` | `payment/unionpay-compact.png` · [reference source](<https://commons.wikimedia.org/wiki/File:UnionPay_logo.svg>) | 1580 × 995 px, opaque. Art Deco Bund clock tower and fan composition. Supersedes `examples/shanghai-art-deco-unionpay.png`. |
+| `examples/guangzhou-minimal-lingnantong-tunion-v2.png` | `cities/lingnan-pass-reference.png` · [user-provided source](<https://www.lingnanpass.com/sy>) | 1578 × 997 px, opaque after an image-generation edit. Canton Tower, Pearl River and kapok. The 交通联合 mark was painted from model knowledge because no standalone local reference was available; its details are not verified against brand guidelines. Supersedes `examples/guangzhou-minimal-lingnantong-tunion.png`. |
+
 ### User-shared ChatGPT web examples
 
 The Gardevoir and Metagross images were supplied by the user for the gallery. Their actual Chinese prompts

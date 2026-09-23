@@ -10,7 +10,7 @@ and line-art interpretations are welcome. No Python dependency or online editor.
 
 ## Explore the gallery
 
-[Browse and download the card gallery](https://juju-w.github.io/card-creator-skill/) by art style, Pokémon, city, anime, and more. The gallery contains each original image, a short prompt, and provenance notes; new examples are primarily maintained there. The meme category will fill as curated work becomes available.
+[Browse and download the card gallery](https://juju-w.github.io/card-creator-skill/) by art style, Pokémon, city, anime, and more. Each work has one primary category. The gallery contains each original image, a short prompt, and provenance notes; new examples are primarily maintained there. The meme category will fill as curated work becomes available.
 
 | Impressionist water lilies × Visa | Gilded decorative art × Mastercard |
 |---|---|

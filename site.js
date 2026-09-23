@@ -13,7 +13,7 @@ function imageUrl(work, alternate = false) {
 }
 
 function render() {
-  const visible = works.filter((work) => activeSeries === "all" || work.series.includes(activeSeries));
+  const visible = works.filter((work) => activeSeries === "all" || work.series === activeSeries);
   if (sort.value === "newest") visible.reverse();
   if (sort.value === "title") visible.sort((a, b) => a.title.localeCompare(b.title, "zh-CN"));
   count.textContent = `${visible.length} 件作品`;
@@ -61,7 +61,7 @@ function openWork(work) {
   image.alt = `${work.title}，${work.subtitle}`;
   document.querySelector("#dialog-title").textContent = work.title;
   document.querySelector("#dialog-subtitle").textContent = work.subtitle;
-  document.querySelector("#dialog-series").textContent = work.series.map((key) => seriesNames[key]).join(" / ");
+  document.querySelector("#dialog-series").textContent = seriesNames[work.series];
   document.querySelector("#dialog-prompt-text").textContent = work.prompt;
   document.querySelector("#dialog-origin").textContent = work.origin || "AI 风格化创作示例；标志并非官方制图或授权版本。";
   const download = document.querySelector("#dialog-download");
