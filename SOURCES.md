@@ -213,11 +213,11 @@ Collected on 2026-09-23 from the brands' public websites. These are visual refer
 
 ## Example artwork
 
-The gallery's Magikarp × ICOCA and Gengar × Octopus pictures were supplied by the user as Gemini outputs and approved for repository display. The other examples are AI-generated artistic demonstrations; the one-line briefs are alongside each image in the READMEs. None is an official bank or transit template. Character and brand rights remain with their owners.
+The gallery's Magikarp × ICOCA and Gengar × Octopus pictures were supplied by the user as Gemini outputs and approved for repository display. The other examples are AI-generated artistic demonstrations; short reproducible briefs are in `gallery-data.js` and displayed on the Pages gallery. None is an official bank or transit template. Character and brand rights remain with their owners.
 
 ### Art-style examples added 2026-09-23
 
-All six images below were generated in this Codex session with the built-in image-generation tool and saved at their original 1579 × 996 px dimensions. The README one-line prompts describe their reproducible direction rather than quoting the longer tool inputs verbatim. The logo references were visual inputs only; none were pasted as a separate layer. Artist names identify stylistic inspiration, not attribution to the artists or their estates. No brand authorized these card-face interpretations.
+All six images below were generated in a Codex session with the built-in image-generation tool and saved at their original 1579 × 996 px dimensions. The gallery's one-line prompts describe their reproducible direction rather than quoting the longer tool inputs verbatim. The logo references were visual inputs only; none were pasted as a separate layer. Artist names identify stylistic inspiration, not attribution to the artists or their estates. No brand authorized these card-face interpretations.
 
 | Example file | Visual reference used | Note |
 |---|---|---|
@@ -226,12 +226,13 @@ All six images below were generated in this Codex session with the built-in imag
 | `examples/mucha-art-nouveau-octopus.png` | `overseas/hong-kong/octopus-horizontal.png` | Art Nouveau floral portrait; bronze Octopus mark. |
 | `examples/hokusai-wave-suica.png` | `overseas/japan/suica.png` | Ukiyo-e sea and distant Fuji; indigo Suica. |
 | `examples/morandi-still-life.png` | None | Three ceramic vessels; brand-free final version. A flawed draft with an unreadable Wise wordmark was discarded. |
+| `examples/morandi-still-life-wise.png` | `fintech/wise.png`; `examples/morandi-still-life.png` | Follow-up image-generation edit of the original still life, with subtle WISE lettering at lower right. This is a non-official style-matched interpretation, not an exact Wise logo. The unmarked version remains available. |
 | `examples/song-blue-green-unionpay.png` | `payment/unionpay-compact.png` | Blue-green mineral-pigment landscape; style-matched UnionPay. |
 
 ### User-shared ChatGPT web examples
 
 The Gardevoir and Metagross images were supplied by the user for the gallery. Their actual Chinese prompts
-are preserved in both READMEs. Only the prompts and final images were supplied; no execution trace or
+are preserved verbatim in `gallery-data.js` and displayed on the Pages gallery. Only the prompts and final images were supplied; no execution trace or
 Skill-loading record was provided. Do not present these examples as verified executions of the Skill.
 The original Metagross prompt says `word`, while the output displays `world`.
 

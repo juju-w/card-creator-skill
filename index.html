@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fbfaf7">
+    <meta name="description" content="浏览与下载 card-creator 社区的艺术、交通卡与银行卡卡面创作。">
+    <meta property="og:title" content="Make Your Card · 卡面作品集">
+    <meta property="og:description" content="让卡面成为一幅画。浏览作品、获取灵感、下载原图。">
+    <meta property="og:image" content="https://juju-w.github.io/card-creator-skill/examples/monet-water-lilies-visa.png">
+    <title>Make Your Card · 卡面作品集</title>
+    <link rel="stylesheet" href="./site.css">
+    <script type="module" src="./site.js"></script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="./" aria-label="Make Your Card 首页">MAKE YOUR CARD</a>
+        <nav class="main-nav" aria-label="主导航">
+          <a href="#gallery">作品集</a>
+          <a href="https://github.com/juju-w/card-creator-skill/blob/main/skills/card-creator/SKILL.md">使用 Skill</a>
+          <a href="https://github.com/juju-w/card-creator-skill">GitHub <span aria-hidden="true">↗</span></a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <h1 id="hero-title">让卡面成为<br>一幅画</h1>
+            <p>从名画到城市，从喜欢的角色到日常灵感。收集和分享有趣的卡面创作。</p>
+            <a class="hero-link" href="#gallery">浏览作品 <span aria-hidden="true">↗</span></a>
+          </div>
+          <figure class="hero-art">
+            <button class="hero-preview" type="button" data-open="monet-water-lilies-visa" aria-label="查看睡莲印象派卡面">
+              <img src="./examples/monet-water-lilies-visa.png" alt="蓝紫色睡莲油画卡面，右下角珠光白 Visa" width="1579" height="996" fetchpriority="high">
+            </button>
+            <figcaption>睡莲印象派 × Visa <span>艺术风格二创</span></figcaption>
+          </figure>
+        </section>
+
+        <section class="gallery-section" id="gallery" aria-labelledby="gallery-heading">
+          <div class="section-topline">
+            <h2 id="gallery-heading">作品集</h2>
+            <p id="work-count" class="work-count" aria-live="polite"></p>
+          </div>
+          <div class="gallery-controls">
+            <div class="filter-list" role="group" aria-label="按系列筛选">
+              <button type="button" class="filter is-active" data-series="all" aria-pressed="true">全部</button>
+              <button type="button" class="filter" data-series="art" aria-pressed="false">世界名画</button>
+              <button type="button" class="filter" data-series="pokemon" aria-pressed="false">宝可梦</button>
+              <button type="button" class="filter" data-series="city" aria-pressed="false">城市</button>
+              <button type="button" class="filter" data-series="anime" aria-pressed="false">二次元</button>
+              <button type="button" class="filter" data-series="meme" aria-pressed="false">玩梗</button>
+            </div>
+            <label class="sort-wrap">
+              <span class="sr-only">排序</span>
+              <select id="sort-order" aria-label="作品排序">
+                <option value="curated">精选排序</option>
+                <option value="newest">最近更新</option>
+                <option value="title">按名称</option>
+              </select>
+            </label>
+          </div>
+
+          <div id="gallery-grid" class="gallery-grid"></div>
+          <div id="empty-state" class="empty-state" hidden>
+            <h3>这一系列正在筹备</h3>
+            <p>新的卡面会直接出现在这里。</p>
+            <button type="button" id="show-all">返回全部作品</button>
+          </div>
+          <noscript><p>启用 JavaScript 可按系列筛选和下载作品；也可以在 <a href="https://github.com/juju-w/card-creator-skill/tree/main/examples">GitHub 图片目录</a>浏览全部原图。</p></noscript>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-brand">MAKE YOUR CARD<span>把喜欢的画作，做成你的卡片。</span></div>
+        <div class="footer-links">
+          <a href="https://github.com/juju-w/card-creator-skill">GitHub 仓库 ↗</a>
+          <a href="https://github.com/juju-w/card-creator-skill/blob/main/skills/card-creator/SKILL.md">Skill 说明 ↗</a>
+          <a href="https://github.com/juju-w/card-creator-skill/blob/main/SOURCES.md">图片来源 ↗</a>
+          <a href="https://github.com/juju-w/card-creator-skill/blob/main/DISCLAIMER.md">使用声明 ↗</a>
+        </div>
+        <p class="footer-note">免费、非商业的创作交流。作品中的角色及标志归各权利人所有，不代表官方合作或授权。</p>
+      </footer>
+    </div>
+
+    <dialog id="artwork-dialog" class="artwork-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-topline">
+        <span id="dialog-series"></span>
+        <button type="button" class="dialog-close" id="dialog-close" aria-label="关闭作品预览">关闭 ×</button>
+      </div>
+      <img id="dialog-image" src="" alt="">
+      <div class="dialog-details">
+        <div>
+          <h2 id="dialog-title"></h2>
+          <p id="dialog-subtitle"></p>
+        </div>
+        <div class="dialog-actions">
+          <a id="dialog-alternate" class="alternate-download" href="" download hidden>下载无标志版</a>
+          <a id="dialog-download" class="download-primary" href="" download>下载原图 <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <div class="dialog-prompt">
+        <span>参考 Prompt</span>
+        <p id="dialog-prompt-text"></p>
+        <button type="button" id="copy-prompt">复制 Prompt</button>
+      </div>
+      <p id="dialog-origin" class="dialog-origin"></p>
+    </dialog>
+  </body>
+</html>
