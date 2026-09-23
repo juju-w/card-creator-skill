@@ -1,6 +1,7 @@
 // One entry per featured card face. Images remain in examples/ so Pages and GitHub share the same originals.
 export const seriesNames = {
   art: "世界名画",
+  modern: "现代设计",
   pokemon: "宝可梦",
   city: "城市",
   anime: "二次元",
@@ -10,7 +11,9 @@ export const seriesNames = {
 export const works = [
   { id: "monet-water-lilies-visa", title: "睡莲印象派", subtitle: "珠光水面 × Visa", series: ["art"], image: "monet-water-lilies-visa.png", prompt: "使用 card-creator Skill，生成一张睡莲印象派卡面：蓝紫水面、少量珠光，右下角银白 Visa。" },
   { id: "klimt-gold-mastercard", title: "金箔装饰画", subtitle: "旋涡枝蔓 × Mastercard", series: ["art"], image: "klimt-gold-mastercard.png", prompt: "使用 card-creator Skill，生成一张金箔装饰画卡面：旋涡枝蔓、宝石色点缀，右下角金线 Mastercard。" },
-  { id: "morandi-still-life-wise", title: "莫兰迪静物", subtitle: "灰粉陶器 × WISE", series: ["art"], image: "morandi-still-life-wise.png", alternate: "morandi-still-life.png", prompt: "使用 card-creator Skill，生成一张莫兰迪风格的三件陶器静物卡面：灰粉、燕麦与鼠尾草绿，右下角加低调的 WISE 字标。" },
+  { id: "morandi-still-life-wise", title: "莫兰迪静物", subtitle: "灰粉陶器 × WISE", series: ["art", "modern"], image: "morandi-still-life-wise.png", alternate: "morandi-still-life.png", prompt: "使用 card-creator Skill，生成一张莫兰迪风格的三件陶器静物卡面：灰粉、燕麦与鼠尾草绿，右下角加低调的 WISE 字标。" },
+  { id: "hsbc-geometric-hong-kong", title: "折面之城", subtitle: "红白几何 × 汇丰", series: ["modern", "city"], image: "hsbc-geometric-hong-kong.png", prompt: "使用 card-creator Skill，生成一张汇丰风格的红白几何卡面：折纸般的三角切面与香港天际线，右上角汇丰标志，不要角色、芯片或多余文字。" },
+  { id: "apple-cash-iridescent-ribbon", title: "虹彩流线", subtitle: "黑曜石 × Apple Cash", series: ["modern"], image: "apple-cash-iridescent-ribbon-opaque.png", prompt: "使用 card-creator Skill，生成一张 Apple Cash 风格卡面：黑曜石底色、一条薄荷银紫色虹彩丝带，右下角白色 Apple Cash 标志，极简且不要芯片。" },
   { id: "mucha-art-nouveau-octopus", title: "新艺术花卉", subtitle: "复古纸感 × 八达通", series: ["art"], image: "mucha-art-nouveau-octopus.png", prompt: "使用 card-creator Skill，生成一张穆夏新艺术风格卡面：花卉人物、复古纸感，右下角古铜色八达通。" },
   { id: "hokusai-wave-suica", title: "浮世绘海浪", subtitle: "远山与浪 × Suica", series: ["art", "city"], image: "hokusai-wave-suica.png", prompt: "使用 card-creator Skill，生成一张浮世绘海浪与远处富士山的卡面，右下角深蓝 Suica。" },
   { id: "song-blue-green-unionpay", title: "青绿山水", subtitle: "矿物色与云母 × 银联", series: ["art"], image: "song-blue-green-unionpay.png", prompt: "使用 card-creator Skill，生成一张宋画青绿山水卡面：矿物颜料、云母云雾，右下角金蓝风格化银联。" },
@@ -25,5 +28,5 @@ export const works = [
   { id: "guangzhou-minimal-lingnantong-tunion", title: "广州极简线条", subtitle: "岭南通 × 交通联合", series: ["city"], image: "guangzhou-minimal-lingnantong-tunion.png", prompt: "使用 card-creator Skill，生成一张广州极简线条卡面，包含岭南通和交通联合。" },
   { id: "palace-museum-cranes-unionpay", title: "故宫典藏", subtitle: "云母祥云与仙鹤", series: ["city", "art"], image: "palace-museum-cranes-unionpay.png", prompt: "使用 card-creator Skill，生成一张故宫典藏风卡面，使用云母祥云、仙鹤、宫殿和哑金风格化标志。" },
   { id: "shanghai-art-deco-unionpay", title: "上海装饰艺术", subtitle: "深翡翠夜景 × 银联", series: ["city", "art"], image: "shanghai-art-deco-unionpay.png", prompt: "使用 card-creator Skill，生成一张深翡翠与古金配色的上海装饰艺术卡面，右下角哑金短款银联。" },
-  { id: "minimal-mastercard", title: "一笔成线", subtitle: "暖象牙白 × Mastercard", series: ["art"], image: "minimal-mastercard.png", prompt: "使用 card-creator Skill，生成一张暖象牙白的极简线条 Mastercard 卡面，右下角 Mastercard。" },
+  { id: "minimal-mastercard", title: "一笔成线", subtitle: "暖象牙白 × Mastercard", series: ["art", "modern"], image: "minimal-mastercard.png", prompt: "使用 card-creator Skill，生成一张暖象牙白的极简线条 Mastercard 卡面，右下角 Mastercard。" },
 ];

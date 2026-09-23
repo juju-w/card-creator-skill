@@ -229,6 +229,15 @@ All six images below were generated in a Codex session with the built-in image-g
 | `examples/morandi-still-life-wise.png` | `fintech/wise.png`; `examples/morandi-still-life.png` | Follow-up image-generation edit of the original still life, with subtle WISE lettering at lower right. This is a non-official style-matched interpretation, not an exact Wise logo. The unmarked version remains available. |
 | `examples/song-blue-green-unionpay.png` | `payment/unionpay-compact.png` | Blue-green mineral-pigment landscape; style-matched UnionPay. |
 
+### Modern-design examples added 2026-09-23
+
+Both card faces were made with the built-in image-generation tool, not code-drawn or assembled with exact logo overlays. The repository logo images below were visual references only. The generated brand marks are non-official artistic interpretations; no brand authorization or functionality is implied. Full generation prompts are preserved in [`examples/PROMPTS.md`](examples/PROMPTS.md).
+
+| Example file | Visual reference used | Note |
+|---|---|---|
+| `examples/hsbc-geometric-hong-kong.png` | `skills/card-creator/assets/logo-references/banks/hong-kong/hsbc.png` · [original source](<https://www.hsbc.com/-/files/hsbc/header/hsbc-logo-200x25.svg?la=en-GB&h=25&hash=FCDFB4DC1991B6B5EE0AB98E7208CB82>) | 1580 × 996 px; crimson/ivory geometric composition with Hong Kong skyline. Generated HSBC mark is not an exact asset. |
+| `examples/apple-cash-iridescent-ribbon-opaque.png` | `skills/card-creator/assets/logo-references/fintech/apple-cash.png` · [original source](<https://www.apple.com/v/apple-cash/g/images/overview/cash_hero_logo__3shzohux9cym_xlarge_2x.jpg>) | 1580 × 995 px; near-black card with pearlescent ribbon. Generated Apple Cash mark is not an exact asset. A second image-generation edit made the accidentally translucent black background fully opaque before publishing. |
+
 ### User-shared ChatGPT web examples
 
 The Gardevoir and Metagross images were supplied by the user for the gallery. Their actual Chinese prompts
