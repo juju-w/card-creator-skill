@@ -6,6 +6,15 @@
 
 Existing source and license notes were restored from Git history (`08f9176~2`, `4b7f500`); they are attribution records, not a fresh legal clearance. New references were collected on 2026-09-22. Source SVGs, when encountered, were rasterized without redrawing; no SVGs or drawing scripts are installed.
 
+## 玩梗卡面外部视觉参考 / Meme-card visual references
+
+仅在生成时临时参照，原图未收入仓库；卡面是非官方二创，不表示角色、电影、交通卡或支付品牌授权。公开可见不等于获得再分发许可。
+
+| 画廊作品 | 外部参考 | 备注 |
+|---|---|---|
+| 牛来 × American Express | [运通官网卡面示例](https://www.americanexpress.com/content/dam/homepage/en-ca/assets/ca-en-hp-cardart-all-SC-646x416-04102022.jpg) · [《牛来》海报图](https://image.tmdb.org/t/p/w500/jDJafeKmAMylsMQjpXFxeG1O1We.jpg) | 仅参考经典运通肖像构图及电影角色特征；图像模型重绘整张卡，不复用原图像素。电影角色版权及品牌商标归各权利人。 |
+| 奶龙捧腹大笑 × Suica | [经典 Suica 卡照片](https://i.ebayimg.com/images/g/yrMAAOSwjoNoFYxa/s-l1200.jpg) · [捧腹大笑表情包](https://imgheybox.max-c.com/bbs/2026/01/15/b2651cd314d13862f5eb928ea8d2fc13/thumb.png) | 仅参考斜切布局和用户指定的抽象大笑姿势；非 JR 东日本或角色权利人发行。 |
+
 ## 中国内地交通 / Mainland China transit
 
 | 文件（相对于图片目录） | 来源与原图 | 许可、署名与备注 |

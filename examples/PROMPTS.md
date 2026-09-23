@@ -2,6 +2,32 @@
 
 These are the full prompts used for the named gallery images below, preserved for provenance. They are longer than the one-line prompts shown to visitors and are **not** instructions required to use the `card-creator` Skill. The outputs were created with the built-in image-generation tool from the specified visual reference images. Generated brand marks are non-official artistic interpretations.
 
+## 牛来 × American Express（非官方玩梗）
+
+- Output: [`niu-lai-amex-parody.png`](niu-lai-amex-parody.png)
+- Visual references: [American Express official card example](https://www.americanexpress.com/content/dam/homepage/en-ca/assets/ca-en-hp-cardart-all-SC-646x416-04102022.jpg), [《牛来》海报图](https://image.tmdb.org/t/p/w500/jDJafeKmAMylsMQjpXFxeG1O1We.jpg), [`../skills/card-creator/assets/logo-references/payment/american-express.png`](../skills/card-creator/assets/logo-references/payment/american-express.png). The card example and poster were used only as visual references, not republished here.
+
+```text
+Generate one complete nonofficial parody BANK CARD FACE, flat edge-to-edge opaque rectangular landscape canvas, about 1.586:1. Reference 1 shows a classic American Express Centurion-style card: premium blue engraved portrait composition and brand hierarchy. Use it for design grammar ONLY, not its chip, number, contactless sign, cardholder text, member-since ribbon, border, or any screenshot crop. Reference 2 is the character 牛来 / Niu Lai, protagonist of the 2026 animated film: a slightly awkward golden-yellow furry young cow/calf standing upright, short gray horns, half-lidded sidelong eyes, broad lavender-pink bovine muzzle, innocent deadpan expression. Keep those uniquely recognizable traits, especially the odd side-eye and pink snout. Reference 3 is only American Express brand identity reference. The joke: replace the stately Roman centurion PORTRAIT with a majestic engraved formal portrait of this unmistakable goofy calf, placed prominently in a large subtle oval medallion at center-left, as if Niu Lai has become a prestigious card icon. Sophisticated dark lapis and midnight navy field, layered cobalt guilloché engraving, antique champagne-gold fine lines and foil glints; premium and unusually tasteful despite absurd subject. A restrained legible two-line AMERICAN EXPRESS wordmark in the upper right, comfortably inset. Cow portrait is the main hero, large enough to read at gallery thumbnail scale, not a generic bull or minotaur, and no human warrior. Entire picture and mark generated together by image model. No other text (not even NIU LAI), no chip, card number, NFC/contactless icon, payment symbol, mockup, device, rounded-corner mask, shadow, watermark, ornate outer frame or screenshot UI.
+```
+
+## 奶龙捧腹大笑 × 黄色 Suica（非官方玩梗）
+
+- Output: [`laughing-nailong-suica.png`](laughing-nailong-suica.png)
+- Visual references: [经典 Suica 卡外观](https://i.ebayimg.com/images/g/yrMAAOSwjoNoFYxa/s-l1200.jpg), [奶龙捧腹大笑表情包](https://imgheybox.max-c.com/bbs/2026/01/15/b2651cd314d13862f5eb928ea8d2fc13/thumb.png), [`../skills/card-creator/assets/logo-references/overseas/japan/suica.png`](../skills/card-creator/assets/logo-references/overseas/japan/suica.png). The source photos were used as visual references, not republished. An earlier friendly-wave draft was discarded after the user clarified the meme.
+
+Initial composition prompt (reference images: classic Suica card, ordinary Nai Long character, Suica logo):
+
+```text
+Create ONE finished, flat, edge-to-edge LANDSCAPE card-face illustration, aspect ratio about 1.586:1, full opaque image. A witty high-quality nonofficial fan-art reinterpretation of the classic Suica transit-card layout. Reference 1 is ONLY the classic Suica card design layout: broad left trapezoid with slanted right edge, pale right field, large simple 'Suica' word on the left, penguin at right. Reference 2 is the Nai Long (奶龙) character identity: round sunny yellow cartoon dinosaur, white belly, tiny horns, green-black eyes, adorable awkward grin. Reference 3 is only a visual reference for Suica identity; DO NOT paste any reference screenshot, wood surface, border, device, watermark or text from it. Replace the Suica penguin entirely with one recognizable Nai Long on the right, charmingly leaning into the diagonal edge. Recolor the strong left trapezoid to warm vivid marigold yellow; use creamy ivory and pale lemon as the surrounding palette; retain the iconic diagonal composition and a clean large 'Suica' word on the yellow area in white, plus only a restrained tiny style-matched Suica identity symbol near the upper right. Premium minimal Japanese transit-card design, playful but impeccably composed, generous breathable space, crisp shapes, soft tactile printed finish, no collage. No other characters, no chips, card numbers, NFC/contactless symbol, QR, slogan, arbitrary letters, wallet UI, rounded-card mockup or shadow. The complete artwork including all text and marks must be image-generated, not overlaid.
+```
+
+Final image-generation edit prompt (input 1: initial card; input 2: specific laughing meme reference):
+
+```text
+Edit image 1, a finished yellow Suica fan-art card face. Keep the entire card layout, large marigold left trapezoid, big white Suica word, pale cream field and upper-right small Suica identity exactly as they are. Replace ONLY the cute waving dinosaur on the right with the exact absurd '奶龙捧腹大笑' meme pose shown in reference image 2: a long-bodied pale yellow creature bent forward laughing uncontrollably, eyes squeezed shut in curved slits, HUGE dark wide-open mouth, both hands clasping its round belly, distorted ungainly posture and gray hands. It must read immediately as the specific belly-laugh meme, not as a friendly wave or gentle smile. Make the whole laughing figure visible on the right, slightly large, with enough margin; harmonize its lighting into the premium card illustration without making the expression less absurd. Keep this a flat fully opaque 1.586:1 card-face raster, no wood, screenshot, mockup, border, chip, card number, NFC icon or new words. This is a targeted character replacement, not a full redesign.
+```
+
 ## 折面之城 × 汇丰
 
 - Output: [`hsbc-geometric-hong-kong.png`](hsbc-geometric-hong-kong.png)
