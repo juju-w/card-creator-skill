@@ -9,6 +9,14 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class GalleryAssetTests(unittest.TestCase):
+    def test_all_site_card_surfaces_share_rounded_corners(self):
+        css = (ROOT / "site.css").read_text(encoding="utf-8")
+        self.assertIn(
+            ".hero-preview,.work-preview,.artwork-dialog>img{border-radius:3.7% / 5.9%}",
+            css,
+        )
+        self.assertIn(".artwork-dialog>img{width:auto;max-width:100%;margin-inline:auto}", css)
+
     def test_site_brand_matches_skill_and_gallery(self):
         homepage = (ROOT / "index.html").read_text(encoding="utf-8")
         self.assertIn("<title>Card Creator · 卡面画廊</title>", homepage)
