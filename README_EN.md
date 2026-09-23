@@ -1,8 +1,13 @@
 # card-creator-skill
 
+<img src="brand/icon.png" width="72" alt="Card Creator icon">
+
 [简体中文](README.md) | [English](README_EN.md)
 
 [![skills.sh](https://skills.sh/b/juju-w/card-creator-skill)](https://skills.sh/juju-w/card-creator-skill)
+[![GitHub Stars](https://img.shields.io/github/stars/juju-w/card-creator-skill?style=flat-square&logo=github)](https://github.com/juju-w/card-creator-skill/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/juju-w/card-creator-skill?style=flat-square&logo=github)](https://github.com/juju-w/card-creator-skill/forks)
+[![Card Creator Skill on AI Agents Listing](https://aiagentslisting.com/card-creator-skill/badge.svg?claim=1080f8ea087cc1881566e4ed826f8708)](https://aiagentslisting.com/mcp/card-creator-skill)
 
 A one-sentence Skill for AirCard, bank-card and transit-card artwork. Image generation creates the whole
 composition, including style-matched logos. Reference pictures guide their appearance; foil, monochrome
@@ -46,11 +51,11 @@ Or download this repository and run the following from its root to install into 
 cp -R skills/card-creator ~/.codex/skills/
 ```
 
-The localized SkillHub / WorkBuddy package is maintained under
-[`packaging/skillhub-zh-CN`](packaging/skillhub-zh-CN/README.md). After approval, install it with:
+The Simplified Chinese package published on Tencent SkillHub is maintained under
+[`packaging/skillhub-zh-CN`](packaging/skillhub-zh-CN/README.md). Install it with:
 
 ```bash
-skillhub install card-creator
+skillhub install card-creator --namespace indiv-juju-w
 ```
 
 Once the client recognizes `card-creator`, use a short prompt:

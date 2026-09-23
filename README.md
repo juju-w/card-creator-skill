@@ -1,8 +1,13 @@
 # card-creator-skill
 
+<img src="brand/icon.png" width="72" alt="Card Creator 图标">
+
 [简体中文](README.md) | [English](README_EN.md)
 
 [![skills.sh](https://skills.sh/b/juju-w/card-creator-skill)](https://skills.sh/juju-w/card-creator-skill)
+[![GitHub Stars](https://img.shields.io/github/stars/juju-w/card-creator-skill?style=flat-square&logo=github)](https://github.com/juju-w/card-creator-skill/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/juju-w/card-creator-skill?style=flat-square&logo=github)](https://github.com/juju-w/card-creator-skill/forks)
+[![Card Creator Skill on AI Agents Listing](https://aiagentslisting.com/card-creator-skill/badge.svg?claim=1080f8ea087cc1881566e4ed826f8708)](https://aiagentslisting.com/mcp/card-creator-skill)
 
 一个用一句话生成 AirCard、银行卡和交通卡卡面的 Skill。图片生成工具一次完成画面与标志；
 参考图库帮助模型理解 Logo，也允许烫金、单色、线稿等风格变化。无需 Python，不含在线编辑器。
@@ -44,11 +49,11 @@ npx skills add juju-w/card-creator-skill
 cp -R skills/card-creator ~/.codex/skills/
 ```
 
-SkillHub / WorkBuddy 简体中文版的源码与发布说明位于
-[`packaging/skillhub-zh-CN`](packaging/skillhub-zh-CN/README.md)。审核上架后可运行：
+腾讯 SkillHub 简体中文版的源码与发布说明位于
+[`packaging/skillhub-zh-CN`](packaging/skillhub-zh-CN/README.md)。安装已发布的版本：
 
 ```bash
-skillhub install card-creator
+skillhub install card-creator --namespace indiv-juju-w
 ```
 
 确认客户端已识别 `card-creator` 后，直接使用短 Prompt：

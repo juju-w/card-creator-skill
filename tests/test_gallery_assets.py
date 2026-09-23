@@ -9,6 +9,24 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class GalleryAssetTests(unittest.TestCase):
+    def test_gallery_and_skill_share_a_real_brand_icon(self):
+        homepage = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn('href="./favicon.png"', homepage)
+        self.assertIn('src="./brand/icon.png"', homepage)
+        for filename in ("favicon.png", "brand/icon.png"):
+            with self.subTest(filename=filename):
+                data = (ROOT / filename).read_bytes()
+                self.assertEqual(data[:8], b"\x89PNG\r\n\x1a\n")
+                self.assertIn(data[25], (0, 2))
+
+    def test_readmes_show_project_and_directory_badges(self):
+        for filename in ("README.md", "README_EN.md"):
+            readme = (ROOT / filename).read_text(encoding="utf-8")
+            with self.subTest(filename=filename):
+                self.assertIn("img.shields.io/github/stars/juju-w/card-creator-skill", readme)
+                self.assertIn("img.shields.io/github/forks/juju-w/card-creator-skill", readme)
+                self.assertIn("aiagentslisting.com/mcp/card-creator-skill", readme)
+
     def test_all_site_card_surfaces_share_rounded_corners(self):
         css = (ROOT / "site.css").read_text(encoding="utf-8")
         self.assertIn(

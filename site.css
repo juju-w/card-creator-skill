@@ -3,3 +3,4 @@
 .hero-preview,.work-preview,.artwork-dialog>img{border-radius:3.7% / 5.9%}
 /* Let the dialog image box follow the artwork; otherwise object-fit letterboxes square artwork inside a rounded box. */
 .artwork-dialog>img{width:auto;max-width:100%;margin-inline:auto}
+.brand{display:inline-flex;align-items:center;gap:11px}.brand-icon{width:32px;height:32px;object-fit:cover;border-radius:7px;flex:none}@media(max-width:620px){.brand-icon{width:26px;height:26px;border-radius:6px}.brand{gap:8px}}
