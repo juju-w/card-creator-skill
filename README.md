@@ -7,7 +7,7 @@
 一个用一句话生成 AirCard、银行卡和交通卡卡面的 Skill。图片生成工具一次完成画面与标志；
 参考图库帮助模型理解 Logo，也允许烫金、单色、线稿等风格变化。无需 Python，不含在线编辑器。
 
-## 先看作品：12 种卡面与一句话 Prompt
+## 先看作品：18 种卡面与一句话 Prompt
 
 先看两张用户分享的 ChatGPT 网页版原图，附实际输入的 Prompt。**未核实这两次生成是否加载了 Skill**，
 不将成图当作 Skill 调用成功的证明。
@@ -38,6 +38,21 @@
 以下其他示例配有**已加载 Skill** 时可用的短 Prompt。没有安装 Skill 的 ChatGPT / Gemini 网页对话，
 请用下方的[网页版用法](#网页版链接与参考图)；有参考图时同时上传并写“参考图如上”。
 
+| 睡莲印象派 · 珠光 × Visa | 金箔装饰画 · Mastercard |
+|---|---|
+| <img src="examples/monet-water-lilies-visa.png" width="420" alt="蓝紫睡莲油画与珠光白 Visa 卡面"> | <img src="examples/klimt-gold-mastercard.png" width="420" alt="金箔旋涡枝蔓与金线 Mastercard 卡面"> |
+| `使用 card-creator Skill，生成一张莫奈睡莲印象派卡面：蓝紫水面、少量珠光，右下角银白 Visa。` | `使用 card-creator Skill，生成一张克里姆特金箔装饰画卡面：旋涡枝蔓、宝石色点缀，右下角金线 Mastercard。` |
+
+| 穆夏新艺术 · 八达通 | 浮世绘海浪 · Suica |
+|---|---|
+| <img src="examples/mucha-art-nouveau-octopus.png" width="420" alt="穆夏式花卉人物与古铜色八达通卡面"> | <img src="examples/hokusai-wave-suica.png" width="420" alt="浮世绘海浪、富士山与深蓝 Suica 卡面"> |
+| `使用 card-creator Skill，生成一张穆夏新艺术风格卡面：花卉人物、复古纸感，右下角古铜色八达通。` | `使用 card-creator Skill，生成一张浮世绘海浪与远处富士山的卡面，右下角深蓝 Suica。` |
+
+| 莫兰迪静物 · 无标志 | 宋画青绿山水 · 银联 |
+|---|---|
+| <img src="examples/morandi-still-life.png" width="420" alt="莫兰迪风格陶器静物卡面，无标志"> | <img src="examples/song-blue-green-unionpay.png" width="420" alt="矿物颜料青绿山水与金蓝银联卡面"> |
+| `使用 card-creator Skill，生成一张莫兰迪风格的三件陶器静物卡面：灰粉、燕麦与鼠尾草绿，不加标志。` | `使用 card-creator Skill，生成一张宋画青绿山水卡面：矿物颜料、云母云雾，右下角金蓝风格化银联。` |
+
 | 简洁角色卡 · 鲤鱼王 × ICOCA | 紫色科技感 · 耿鬼 × 八达通 |
 |---|---|
 | <img src="examples/gemini-magikarp-icoca.jpeg" width="420" alt="简洁鲤鱼王与 ICOCA 卡面"> | <img src="examples/gemini-gengar-octopus.jpeg" width="420" alt="紫色耿鬼与八达通卡面"> |
@@ -63,7 +78,8 @@
 | <img src="examples/palace-museum-cranes-unionpay.png" width="420" alt="云母祥云仙鹤与故宫主题卡面"> | <img src="examples/shanghai-art-deco-unionpay.png" width="420" alt="上海装饰艺术夜景与哑金银联卡面"> |
 | `使用 card-creator Skill，生成一张故宫典藏风卡面，使用云母祥云、仙鹤、宫殿和哑金风格化标志。` | `使用 card-creator Skill，生成一张深翡翠与古金配色的上海装饰艺术卡面，右下角哑金短款银联。` |
 
-鲤鱼王与耿鬼两张是用户提供并授权发布的 Gemini 成图原样展示，其中生成图内的 ICOCA、
+新增的六张艺术风格示例由图片生成工具完成；上面的短 Prompt 是便于使用已加载 Skill 时复现方向的提要，
+不是生成时逐字输入的完整指令。莫兰迪版按用户允许不加标志。鲤鱼王与耿鬼两张是用户提供并授权发布的 Gemini 成图原样展示，其中生成图内的 ICOCA、
 JR-West 与紫色八达通标志均为非官方风格化诠释。华山、广州与故宫示例中的标志也是由 AI
 结合参考图生成的非官方风格化版本。所有示例均为个人、非商业创作演示，不代表品牌、角色、交通
 运营方或金融机构授权、合作或认可。图库示例保留各自的原始尺寸与比例。

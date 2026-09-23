@@ -8,7 +8,7 @@ A one-sentence Skill for AirCard, bank-card and transit-card artwork. Image gene
 composition, including style-matched logos. Reference pictures guide their appearance; foil, monochrome
 and line-art interpretations are welcome. No Python dependency or online editor.
 
-## Start here: twelve card styles and one-line prompts
+## Start here: eighteen card styles and one-line prompts
 
 These first two images were shared by the user from ChatGPT on the web, with the actual prompts used.
 **Skill loading was not verified for either generation**; the images are not evidence of successful Skill invocation.
@@ -40,6 +40,21 @@ redrawing or adding logos. The Chinese prompts are the actual inputs, not transl
 The remaining examples have short prompts intended for an **already-loaded Skill**. For a ChatGPT / Gemini web conversation
 without an installed Skill, see [web usage](#web-usage-links-and-reference-pictures) below. Attach references when applicable.
 
+| Impressionist water lilies · pearl-white Visa | Gilded decorative art · Mastercard |
+|---|---|
+| <img src="examples/monet-water-lilies-visa.png" width="420" alt="Blue-violet water lilies oil painting with pearl-white Visa"> | <img src="examples/klimt-gold-mastercard.png" width="420" alt="Gold-leaf swirling branches with gold-outline Mastercard"> |
+| `Using the card-creator Skill, create a Monet-inspired water-lily card in blue and violet with subtle pearlescence and a silver-white Visa at lower right.` | `Using the card-creator Skill, create a Klimt-inspired gold-leaf card with spiral branches, jewel accents and gold-outline Mastercard at lower right.` |
+
+| Mucha Art Nouveau · Octopus | Ukiyo-e wave · Suica |
+|---|---|
+| <img src="examples/mucha-art-nouveau-octopus.png" width="420" alt="Art Nouveau floral portrait with bronze Octopus mark"> | <img src="examples/hokusai-wave-suica.png" width="420" alt="Woodblock-print wave and Mount Fuji with indigo Suica"> |
+| `Using the card-creator Skill, create a Mucha-inspired Art Nouveau card with a floral portrait and an antique-bronze Octopus mark at lower right.` | `Using the card-creator Skill, create a ukiyo-e wave card with distant Mount Fuji and indigo Suica at lower right.` |
+
+| Morandi still life · no mark | Song blue-green landscape · UnionPay |
+|---|---|
+| <img src="examples/morandi-still-life.png" width="420" alt="Morandi-inspired ceramic still life without a brand mark"> | <img src="examples/song-blue-green-unionpay.png" width="420" alt="Mineral-pigment blue-green landscape with blue-and-gold UnionPay"> |
+| `Using the card-creator Skill, create a Morandi-inspired still-life card with three ceramic vessels in dusty pink, oat and sage, without any logo.` | `Using the card-creator Skill, create a Song-style blue-green landscape card with mineral pigments, mica clouds and style-matched blue-and-gold UnionPay at lower right.` |
+
 | Minimal character card · Magikarp × ICOCA | Purple tech · Gengar × Octopus |
 |---|---|
 | <img src="examples/gemini-magikarp-icoca.jpeg" width="420" alt="Minimal Magikarp and ICOCA card"> | <img src="examples/gemini-gengar-octopus.jpeg" width="420" alt="Purple Gengar and Octopus card"> |
@@ -65,7 +80,7 @@ without an installed Skill, see [web usage](#web-usage-links-and-reference-pictu
 | <img src="examples/palace-museum-cranes-unionpay.png" width="420" alt="Palace collection card with mica clouds and cranes"> | <img src="examples/shanghai-art-deco-unionpay.png" width="420" alt="Shanghai Art Deco night card with matte-gold UnionPay"> |
 | `Using the card-creator Skill, create a Palace collection card with mica clouds, cranes, architecture, and style-matched antique-gold marks.` | `Using the card-creator Skill, create a deep-jade and antique-gold Shanghai Art Deco card with compact UnionPay at lower right.` |
 
-The Magikarp and Gengar images are user-supplied Gemini outputs published with permission. Their generated
+The six newly added art-style images were created with image generation. Their short prompts summarize a direction for an already-loaded Skill; they are not verbatim records of the full generation instructions. The Morandi design intentionally has no mark. The Magikarp and Gengar images are user-supplied Gemini outputs published with permission. Their generated
 ICOCA, JR-West, and purple Octopus marks are non-official stylized interpretations. The Hua Shan, Guangzhou,
 and Palace examples likewise use AI-generated marks guided by visual references. All
 examples are personal, non-commercial demonstrations and do not imply authorization or endorsement. The
