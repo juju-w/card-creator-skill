@@ -2,6 +2,90 @@
 
 These are the full prompts used for the named gallery images below, preserved for provenance. They are longer than the one-line prompts shown to visitors and are **not** instructions required to use the `card-creator` Skill. The outputs were created with the built-in image-generation tool from the specified visual reference images. Generated brand marks are non-official artistic interpretations.
 
+## 二次元系列（2026-09-23 新增）
+
+以下均为非官方 AI 二创，图片生成模型绘制整张卡面，标志未以脚本贴图。最终八张均为不含 alpha 通道的完整矩形 PNG。试稿中的写实五条悟、利姆露史莱姆和佐佐木／田山双人版未入库；《胆大党》的第一稿有手部错误，画廊使用的是修正版。
+
+### 祢豆子 × ICOCA
+
+- Output: [`anime-nezuko-icoca.png`](anime-nezuko-icoca.png)
+- Character reference: model knowledge; [Demon Slayer official character page](https://kimetsu.com/anime/yukakuhen/character/?id=02) was used to verify identity. ICOCA was rendered by the model, not overlaid from a local file.
+
+```text
+Use case: stylized-concept. Create one finished downloadable flat rectangular card-face image, landscape 1.586:1, fully opaque from edge to edge. A refined nonofficial fan-art transit card inspired by Demon Slayer: Nezuko Kamado unmistakably recognizable with long dark hair fading copper, pink kimono geometric pattern and small bamboo muzzle, shown in a graceful half-body portrait on the LEFT. Art direction: premium modern Japanese woodblock print, dark indigo night, muted sakura pink, a few crisp bamboo leaves and a single soft moon disk; intentional depth and generous uncluttered dark field on RIGHT. Add one modest, legible style-matched ICOCA wordmark at lower-right as part of the whole generated illustration, not a pasted sticker. Do not add Demon Slayer title, other text, chip, number, payment wave, NFC, QR, border, corner rounding, card mockup, device, watermark, shadows outside canvas, or transparent pixels. Avoid gore, keep restrained sophisticated hierarchy.
+```
+
+### 高专同学 Q 版 × Visa
+
+- Output: [`anime-jujutsu-high-chibi-visa.png`](anime-jujutsu-high-chibi-visa.png)
+- Character reference: model knowledge; no image file passed. This replaces a discarded realistic Gojo concept.
+
+```text
+Use case: stylized-concept. Make one finished fully opaque flat landscape collectible card face, 1.586:1, a nonofficial chibi fan-art interpretation of Jujutsu Kaisen's Tokyo Jujutsu High classmates: Yuji Itadori (short pink hair and dark uniform with red hood), Megumi Fushiguro (spiky dark hair, serious), Nobara Kugisaki (short orange-brown bob, confident), and Panda (friendly black-and-white panda teammate). Draw exactly these four, unmistakable as a playful cohesive group, each as a neat chibi full-body figure with short arms and simple hands; avoid extra fingers or anatomy glitches. No Satoru Gojo and no death/finale imagery. Art direction: polished Japanese enamel pin / sticker-sheet illustration ON A SOLID WARM IVORY BACKGROUND, clean ink outlines, dark navy, brick red, muted gold accents, subtle abstract cursed-energy swirls, refined spacing not crowded. Small compact VISA mark in lower-right, style-matched and generated as part of composition. No series title, extraneous text, chip, card number, NFC/contactless, QR, border, rounded card mask, mockup, device, watermark, gore or transparency. Every pixel including every edge opaque.
+```
+
+### 桃与厄卡伦 × PASMO
+
+- Output: [`anime-dandadan-momo-okarun-pasmo.png`](anime-dandadan-momo-okarun-pasmo.png)
+- Character references: [Momo](https://anime-dandadan.com/_assets/images/char/detail/momo_pc.png), [Okarun](https://anime-dandadan.com/_assets/images/char/detail/ken_pc.png) from the [official character page](https://anime-dandadan.com/character/). The image inputs were temporary references, not redistributed.
+
+Initial prompt:
+
+```text
+Use case: stylized-concept. Reference images 1 and 2 show the official visual appearances of Momo Ayase and Okarun from Dandadan; use them for character identity ONLY, never copy the poses or page layout. Generate one complete nonofficial fan-art card face, flat edge-to-edge opaque landscape 1.586:1. Hero composition: Momo on LEFT, confident expression, brown hair, green earrings, pink top; Okarun on RIGHT, messy dark hair and round glasses, black school outfit; dynamic but clearly readable pair in the middle distance. A single large graphic UFO ellipse arcs behind them, with a few white-and-orange paranormal sparks. Art direction: striking 1970s Japanese screenprint poster, magenta, tangerine, acid mint and deep midnight navy, halftone texture but not messy. A compact style-matched PASMO wordmark in the lower-right, integrated in the whole generated image; no series title or stray letters. No chip, number, NFC, QR, border, rounded corners, mockup, device, watermark or transparency. All pixels opaque.
+```
+
+Final edit prompt (input: first generated card image):
+
+```text
+Use case: precise-object-edit. Input is the card face to repair. The oversized foreshortened hands in front of Momo and Okarun are anatomically wrong: Momo's hand has reversed handedness and too few fingers. Remove BOTH giant foreground hands entirely and recompose both characters as relaxed upper-body portraits with their hands out of frame. Preserve both recognizable faces, hair, clothing, green earrings, the striking magenta/orange/mint retro screenprint UFO background, and the PASMO mark in lower right. Preserve all other artwork as much as possible. Flat opaque edge-to-edge landscape card face 1.586:1; no added lettering, card number, chip, NFC, QR, border, rounded corners, device, mockup or transparent pixels. This is an anatomy/layout repair, not a wholesale redesign.
+```
+
+### 山田／田山 × Suica
+
+- Output: [`anime-yamada-tayama-suica.png`](anime-yamada-tayama-suica.png)
+- Visual references: [official character-announcement lineup](https://yanisuu.com/news/post-100), [official Tayama standing image](https://yanisuu.com/assets/img/character/chara2/stand.webp?ver=1.41). Images were used only temporarily to understand the two looks and were not redistributed.
+
+```text
+Use case: stylized-concept. Reference image 1 is the OFFICIAL character lineup of Smoking Behind the Supermarket with You; the same adult woman appears as Tayama in black leather jacket / white dress / burgundy hair (second figure) AND as Yamada in red supermarket apron / olive blouse / burgundy bob (third figure). Reference image 2 is Tayama's official standing appearance. Create one new nonofficial fan-art landscape card face, fully opaque flat rectangular 1.586:1. The central artistic idea is TWO SIDES OF THE SAME WOMAN: Yamada on LEFT, friendly smiling red-apron supermarket worker in warm daylight cream and coral; Tayama on RIGHT, cool subtle smile, burgundy hair, black leather jacket and white dress in rainy after-hours indigo. A vertical soft light seam or thin sliding door divides the two worlds, with the same facial features on both sides. No male protagonist, no extra people. Add a delicate small curl of smoke only on the night side, but no cigarette advertising feel. Cinematic yet graphic clean art with strong side-by-side contrast and enough room for faces; do not copy the source lineup layout. Place one modest ivory SUICA wordmark bottom-right on dark side. No series title, labels, additional text, chip, number, NFC, QR, border, rounded corners, device, mockup, watermark or transparency. Every pixel fully opaque.
+```
+
+### 克罗诺亚 × Mastercard
+
+- Output: [`anime-chronoa-mastercard.png`](anime-chronoa-mastercard.png)
+- Visual reference: [official Chronoa page](https://www.ten-sura.com/character/chronoa), [official character image](https://www.ten-sura.com/4GfGdAp7/wp-content/themes/tensura_portal/assets/images/character/chronoa/character-image.png?v=6), used as a temporary visual input only. Replaces a discarded Rimuru concept.
+
+```text
+Use case: stylized-concept. Image 1 is official Chronoa character appearance reference from That Time I Got Reincarnated as a Slime; use it for identity only, NOT as a cutout or existing layout. Generate a fresh complete nonofficial fan-art card face, flat fully opaque edge-to-edge landscape 1.586:1. Chronoa is a mysterious black-haired girl with blue-violet eyes and dark armor, elegant long cape and a gold-accented sword. Place her slightly LEFT of center, poised and composed; make a large circular fractured CLOCK / time-halo behind her, gold hour markers and violet-blue magical trails sweeping toward a spacious right half. Art direction: premium fantasy art nouveau with midnight navy, antique gold, muted violet and subtle mica gloss, detailed yet carefully composed. A small readable style-matched Mastercard two-circle symbol at lower right, silver line treatment, no wordmark needed. No other characters, blue slime, title, card number, chip, contactless icon, QR, border, rounded corners, device, mockup, watermark or transparency. Opaque dark background all the way to every edge.
+```
+
+### 爱蜜莉雅 × Visa
+
+- Output: [`anime-emilia-visa.png`](anime-emilia-visa.png)
+- Character reference: model knowledge and [official Re:Zero character page](https://re-zero-anime.jp/tv/character/); no image file passed.
+
+```text
+Use case: stylized-concept. Generate a finished nonofficial Re:Zero fan-art card face as one flat fully opaque landscape rectangle, about 1.586:1. Emilia is the unmistakable heroine: long silver hair, violet eyes, white-and-lavender fantasy outfit, delicate flower hair ornament; three-quarter portrait left of center, elegant and kind, not generic idol. Puck, a tiny gray cat-like spirit, appears discreetly by her shoulder. Art direction: ethereal snow-crystal stained glass with soft amethyst and pearl, blue twilight, restrained luminous frost geometries leading into open negative space on the right. This should feel like a high-end collectible card, not a screenshot or busy game UI. Include only a modest style-matched Visa wordmark in lower-right, comfortably away from trim. No series title, card number, chip, NFC/contactless icon, QR, border, rounded-corner mask, mockup, device, watermark or transparency. Image must have a solid opaque background to all edges.
+```
+
+### 乔鲁诺 × Mastercard
+
+- Output: [`anime-giorno-mastercard.png`](anime-giorno-mastercard.png)
+- Character reference: model knowledge and [official JoJo animation site](https://wwws.warnerbros.co.jp/jojo-animation/); no image file passed.
+
+```text
+Use case: stylized-concept. Make one complete nonofficial JoJo's Bizarre Adventure fan-art card face, fully opaque flat rectangular landscape 1.586:1. Hero: Giorno Giovanna, recognizable blond hair with three rolled curls at forehead, confident calm gaze and purple outfit with heart-shaped chest opening and gold trim, elegantly posed left of center. Art direction: bold 1960s Italian fashion screenprint meets lavish Art Deco graphic design, gold foil geometry, amethyst purple, dusty rose, small ladybug motifs and a single diagonal sunbeam; sophisticated fashion illustration rather than a fight scene. Place a small style-matched gold-outline Mastercard overlapping-circle emblem in lower-right, comfortably inset, no brand wordmark needed. Strong clear hierarchy and some negative space on right; avoid distorted limbs and extra hands. No series title, other lettering, chip, number, NFC/contactless icon, QR, border, rounded corners, device, mockup, watermark or alpha transparency. Every edge solid and opaque.
+```
+
+### 利威尔 × Visa
+
+- Output: [`anime-levi-visa.png`](anime-levi-visa.png)
+- Character reference: model knowledge and [official Attack on Titan character page](https://shingeki.tv/season1/character/); no image file passed.
+
+```text
+Use case: stylized-concept. Create a fully opaque flat landscape card-face illustration, 1.586:1 rectangular edge-to-edge, nonofficial fan art inspired by Attack on Titan. Hero: Levi Ackerman, recognizable short black undercut hair, stern gray eyes and olive Survey Corps cloak, shown from the waist up on the LEFT in a poised quiet profile, no giant/gore. Background: layered monumental walled city fading into dawn mist, two tiny birds and a restrained wing-shaped abstract motif; no Titan attack or violent scene. Art direction: premium vintage lithograph/etching, graphite, moss green and warm aged ivory with limited antique silver light, sober dramatic atmosphere with clean room on the RIGHT. Put a small readable muted-silver VISA mark at lower-right, painted as part of the whole image. No series title or extra readable text, chip, card number, NFC/contactless icon, QR, border, rounded-corner mask, device, mockup, watermark or transparency. Solid opaque texture to every edge.
+```
+
 ## 牛来 × American Express（非官方玩梗）
 
 - Output: [`niu-lai-amex-parody.png`](niu-lai-amex-parody.png)
