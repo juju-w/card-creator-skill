@@ -1,6 +1,6 @@
 # Gallery image-generation prompts
 
-These are the full prompts used for the named gallery images below, preserved for provenance. They are longer than the one-line prompts shown to visitors and are **not** instructions required to use the `card-creator` Skill. Both outputs were created with the built-in image-generation tool from the specified visual reference images. Generated brand marks are non-official artistic interpretations.
+These are the full prompts used for the named gallery images below, preserved for provenance. They are longer than the one-line prompts shown to visitors and are **not** instructions required to use the `card-creator` Skill. The outputs were created with the built-in image-generation tool from the specified visual reference images. Generated brand marks are non-official artistic interpretations.
 
 ## 折面之城 × 汇丰
 
@@ -9,6 +9,17 @@ These are the full prompts used for the named gallery images below, preserved fo
 
 ```text
 Use case: stylized-concept. Asset type: finished downloadable bank-card face artwork for a noncommercial fan-art gallery. Use the attached HSBC logo image only as a visual identity reference, not as an exact composited asset. Create one complete flat edge-to-edge landscape card image, approximately 1.586:1 ratio. Art direction: exceptionally elegant HSBC-inspired red-and-ivory geometric modernism, with large folded-paper diamond and triangular facets radiating outward from a calm off-center focal point, a faint suggestion of Hong Kong architecture integrated in the geometry, disciplined crimson/ivory/ink-charcoal palette, subtle paper grain and embossed highlights, high-end editorial design, intentional negative space. Include a legible small HSBC hexagon-plus-'HSBC' logo as a tasteful style-matched mark in the upper right, rendered by the image model as part of the whole artwork. Do not add a lion, character, slogans, card number, payment network mark, chip, NFC/contactless icon, border, mockup, device, rounded corner mask, shadow, or extra text. Balance the brand mark with the artwork; do not crowd edges.
+```
+
+The red-and-ivory image above is retained for provenance but no longer featured in the gallery.
+
+## 蓝晶狮影 × 汇丰（新版）
+
+- Output: [`hsbc-crystal-lion.png`](hsbc-crystal-lion.png)
+- Visual references: [`../skills/card-creator/assets/logo-references/banks/hong-kong/hsbc.png`](../skills/card-creator/assets/logo-references/banks/hong-kong/hsbc.png) for the mark; the user-supplied `IMG_9001.JPG` only for the low-poly blue visual rhythm and logo hierarchy. The user image itself is not published here.
+
+```text
+Use case: stylized-concept. Asset type: a finished downloadable, nonofficial HSBC-inspired bank-card face for a free fan-art gallery. Input image 1 is only the HSBC logo identity reference. Input image 2 is only a visual reference for the sophisticated deep-blue low-poly facet rhythm and clear logo hierarchy; do NOT copy its mascot, words, watermark, payment circles, or screenshot edges. Make an entirely NEW, elegant card artwork. Flat full-bleed opaque rectangular landscape canvas, about 1.586:1, no rounded-corner mask or mockup. Art direction: midnight teal and mineral-blue crystalline facets radiate outward from a single sculptural guardian-lion silhouette at left-center, as if carved from blue glass and paper; the lion is dignified and abstract, not a cartoon face. Dynamic geometry is integrated into its mane and the background, with a quiet dark-blue area on the right for visual breathing room. Restrained pearlescent highlights, subtle print texture, refined bank-card finish; tiny touches of HSBC red ONLY in the upper-right logo. Put one clean recognizable small red-and-white hexagon plus white 'HSBC' wordmark at upper right, comfortably inset, based on image 1. Image model paints the complete artwork, including the brand mark. No giant second hexagon, no Hong Kong skyline, no busy red/white triangles, no lion photorealism, no bank-card number, chip, NFC icon, payment network mark, 'world debit', any other words, border, shadow, device, or watermark. Premium, restrained, memorable.
 ```
 
 ## 虹彩流线 × Apple Cash

@@ -12,7 +12,7 @@ export const works = [
   { id: "monet-water-lilies-visa", title: "睡莲印象派", subtitle: "珠光水面 × Visa", series: "art", image: "monet-water-lilies-visa.png", prompt: "使用 card-creator Skill，生成一张睡莲印象派卡面：蓝紫水面、少量珠光，右下角银白 Visa。" },
   { id: "klimt-gold-mastercard", title: "金箔装饰画", subtitle: "旋涡枝蔓 × Mastercard", series: "art", image: "klimt-gold-mastercard.png", prompt: "使用 card-creator Skill，生成一张金箔装饰画卡面：旋涡枝蔓、宝石色点缀，右下角金线 Mastercard。" },
   { id: "morandi-still-life-wise", title: "莫兰迪静物", subtitle: "灰粉陶器 × WISE", series: "modern", image: "morandi-still-life-wise.png", alternate: "morandi-still-life.png", prompt: "使用 card-creator Skill，生成一张莫兰迪风格的三件陶器静物卡面：灰粉、燕麦与鼠尾草绿，右下角加低调的 WISE 字标。" },
-  { id: "hsbc-geometric-hong-kong", title: "折面之城", subtitle: "红白几何 × 汇丰", series: "modern", image: "hsbc-geometric-hong-kong.png", prompt: "使用 card-creator Skill，生成一张汇丰风格的红白几何卡面：折纸般的三角切面与香港天际线，右上角汇丰标志，不要角色、芯片或多余文字。" },
+  { id: "hsbc-crystal-lion", title: "蓝晶狮影", subtitle: "折面雕塑 × 汇丰", series: "modern", image: "hsbc-crystal-lion.png", prompt: "使用 card-creator Skill，生成一张汇丰风格卡面：深蓝晶体折面从一只抽象狮子向外延展，右上角小号汇丰标志；高级克制，不要芯片或多余文字。" },
   { id: "apple-cash-iridescent-ribbon", title: "虹彩流线", subtitle: "黑曜石 × Apple Cash", series: "modern", image: "apple-cash-iridescent-ribbon-opaque.png", prompt: "使用 card-creator Skill，生成一张 Apple Cash 风格卡面：黑曜石底色、一条薄荷银紫色虹彩丝带，右下角白色 Apple Cash 标志，极简且不要芯片。" },
   { id: "mucha-art-nouveau-octopus", title: "新艺术花卉", subtitle: "复古纸感 × 八达通", series: "art", image: "mucha-art-nouveau-octopus.png", prompt: "使用 card-creator Skill，生成一张穆夏新艺术风格卡面：花卉人物、复古纸感，右下角古铜色八达通。" },
   { id: "hokusai-wave-suica", title: "浮世绘海浪", subtitle: "远山与浪 × Suica", series: "art", image: "hokusai-wave-suica.png", prompt: "使用 card-creator Skill，生成一张浮世绘海浪与远处富士山的卡面，右下角深蓝 Suica。" },
