@@ -25,6 +25,12 @@ Find the requested name and open only its picture(s). These pictures guide image
 |---|---|
 | 八达通 / Octopus（横版） | [PNG](../assets/logo-references/overseas/hong-kong/octopus-horizontal.png) |
 
+## 台湾交通 / Taiwan transit
+
+| 名称 / Name | 图片 / Picture |
+|---|---|
+| 台北悠遊卡 / EasyCard（图形标志） | [PNG](../assets/logo-references/overseas/taiwan/easycard.png) |
+
 ## 日本交通 / Japan transit
 
 | 名称 / Name | 图片 / Picture |
@@ -40,12 +46,33 @@ Find the requested name and open only its picture(s). These pictures guide image
 | Suica 西瓜卡 | [PNG](../assets/logo-references/overseas/japan/suica.png) |
 | TOICA | [PNG](../assets/logo-references/overseas/japan/toica.png) |
 
+## 韩国交通 / South Korea transit
+
+| 名称 / Name | 图片 / Picture |
+|---|---|
+| 首尔 Tmoney Card（官网英文组合标志） | [JPG](../assets/logo-references/overseas/south-korea/tmoney-card.jpg) |
+
+## 新加坡交通 / Singapore transit
+
+| 名称 / Name | 图片 / Picture |
+|---|---|
+| EZ-Link | [PNG](../assets/logo-references/overseas/singapore/ez-link.png) |
+
+## 加拿大交通 / Canada transit
+
+| 名称 / Name | 图片 / Picture |
+|---|---|
+| 多伦多／安大略 PRESTO（官网字标） | [PNG](../assets/logo-references/overseas/canada/presto.png) |
+| 温哥华 Compass（卡面字标参考） | [PNG](../assets/logo-references/overseas/canada/compass-card.png) |
+| 温哥华 Compass（图形标志） | [PNG](../assets/logo-references/overseas/canada/compass-symbol.png) |
+
 ## 美国交通 / USA transit
 
 | 名称 / Name | 图片 / Picture |
 |---|---|
 | 旧金山湾区 Clipper | [PNG](../assets/logo-references/overseas/usa/clipper.png) |
 | 纽约 OMNY | [PNG](../assets/logo-references/overseas/usa/omny.png) |
+| 芝加哥 Ventra | [PNG](../assets/logo-references/overseas/usa/ventra.png) |
 
 ## 英国交通 / UK transit
 
@@ -53,6 +80,12 @@ Find the requested name and open only its picture(s). These pictures guide image
 |---|---|
 | 伦敦 Oyster（卡面与字标参考） | [PNG](../assets/logo-references/overseas/uk/oyster-card.png) |
 | Oyster 官网卡片示意图 / card illustration | [PNG](../assets/logo-references/overseas/uk/oyster.png) |
+
+## 法国交通 / France transit
+
+| 名称 / Name | 图片 / Picture |
+|---|---|
+| 巴黎 Navigo（2018 字标） | [PNG](../assets/logo-references/overseas/france/navigo.png) |
 
 ## 德国交通 / Germany transit
 

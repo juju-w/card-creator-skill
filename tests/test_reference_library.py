@@ -13,22 +13,31 @@ class ReferenceLibraryTests(unittest.TestCase):
     def test_every_picture_has_an_index_entry_and_external_source(self):
         index = (SKILL / "references/logo-reference-index.md").read_text()
         sources = (ROOT / "SOURCES.md").read_text()
-        files = {str(p.relative_to(PICTURES)) for p in PICTURES.rglob("*.png")}
-        linked = set(re.findall(r"\]\(../assets/logo-references/([^\s)]+\.png)\)", index))
+        files = {
+            str(p.relative_to(PICTURES))
+            for p in PICTURES.rglob("*")
+            if p.suffix.lower() in {".png", ".jpg"}
+        }
+        linked = set(re.findall(r"\]\(../assets/logo-references/([^\s)]+\.(?:png|jpg))\)", index))
         self.assertEqual(files, linked)
         for file in files:
             self.assertIn("`" + file + "`", sources, file)
             data = (PICTURES / file).read_bytes()
-            self.assertEqual(data[:8], b"\x89PNG\r\n\x1a\n", file)
-            width, height = struct.unpack(">II", data[16:24])
-            self.assertGreater(width, 0, file)
-            self.assertGreater(height, 0, file)
+            if file.endswith(".png"):
+                self.assertEqual(data[:8], b"\x89PNG\r\n\x1a\n", file)
+                width, height = struct.unpack(">II", data[16:24])
+                self.assertGreater(width, 0, file)
+                self.assertGreater(height, 0, file)
+            else:
+                self.assertEqual(data[:3], b"\xff\xd8\xff", file)
 
     def test_required_banks_and_countries_are_present(self):
         for bank in ("icbc", "abc", "boc", "ccb", "bocom", "psbc", "cmb", "citic", "everbright", "minsheng", "industrial", "spdb", "pingan", "guangfa"):
             self.assertTrue((PICTURES / f"banks/china/{bank}.png").is_file(), bank)
-        for region in ("japan", "hong-kong", "usa", "uk", "germany", "australia"):
-            self.assertTrue(list((PICTURES / "overseas" / region).glob("*.png")), region)
+        for region in ("japan", "hong-kong", "usa", "uk", "germany", "australia", "canada", "france", "singapore", "south-korea", "taiwan"):
+            self.assertTrue(list((PICTURES / "overseas" / region).glob("*.*")), region)
+        for file in ("canada/presto.png", "canada/compass-symbol.png", "france/navigo.png", "singapore/ez-link.png", "south-korea/tmoney-card.jpg", "taiwan/easycard.png", "usa/ventra.png"):
+            self.assertTrue((PICTURES / "overseas" / file).is_file(), file)
         for file in ("chase", "citi", "bank-of-america", "wells-fargo"):
             self.assertTrue((PICTURES / f"banks/usa/{file}.png").is_file())
         for file in ("barclays", "lloyds", "natwest"):

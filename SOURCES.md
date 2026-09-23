@@ -1,10 +1,10 @@
 # 图片来源与署名 / Sources and attribution
 
 本文件只供仓库维护查阅，不放入安装后的 Skill，也不是生成卡面时的读取步骤。
-图片目录为 `skills/card-creator/assets/logo-references/`；所有文件都是 PNG 参考图，不是精确贴图模式。
+图片目录为 `skills/card-creator/assets/logo-references/`；其中的 PNG/JPG 只供图片生成参考，不是精确贴图模式。
 官网图片也不等于公开再分发许可。未知许可如实标注，MIT 不覆盖第三方标志。见 [免责声明](DISCLAIMER.md)。
 
-Existing source and license notes were restored from Git history (`08f9176~2`, `4b7f500`); they are attribution records, not a fresh legal clearance. New references were collected on 2026-09-22. Source SVGs, when encountered, were rasterized without redrawing; no SVGs or drawing scripts are installed.
+Existing source and license notes were restored from Git history (`08f9176~2`, `4b7f500`); they are attribution records, not a fresh legal clearance. New overseas references below were checked on 2026-09-24. Their original SVGs are retained under `source-assets/`, outside the installed Skill; its picture index points only to raster reference images. No logo was redrawn or promoted to an authorized sticker.
 
 ## 玩梗卡面外部视觉参考 / Meme-card visual references
 
@@ -12,7 +12,7 @@ Existing source and license notes were restored from Git history (`08f9176~2`, `
 
 | 画廊作品 | 外部参考 | 备注 |
 |---|---|---|
-| 牛来 × American Express | [运通官网卡面示例](https://www.americanexpress.com/content/dam/homepage/en-ca/assets/ca-en-hp-cardart-all-SC-646x416-04102022.jpg) · [《牛来》海报图](https://image.tmdb.org/t/p/w500/jDJafeKmAMylsMQjpXFxeG1O1We.jpg) | 仅参考经典运通肖像构图及电影角色特征；图像模型重绘整张卡，不复用原图像素。电影角色版权及品牌商标归各权利人。 |
+| 牛来 × American Express（居中重制） | [运通官方卡面结构说明](https://www.americanexpress.com/content/dam/amex/za/network/documents/merchant-prevent-fraud-2014.pdf) · [白金卡视觉参考](https://travelafterwork.azureedge.net/uploads/2019/08/Amex-Plat.png) · [《牛来》影片画面](https://news.ifeng.com/c/8vcLKbjIKad) | 官方资料说明传统签账卡的肖像位于中央；新稿仅借鉴居中肖像、顶部字标及对称细纹，以影片截图识别小牛外形，整体由模型重画，不复用原图像素。电影角色版权及品牌商标归各权利人。 |
 | 奶龙捧腹大笑 × Suica | [经典 Suica 卡照片](https://i.ebayimg.com/images/g/yrMAAOSwjoNoFYxa/s-l1200.jpg) · [捧腹大笑表情包](https://imgheybox.max-c.com/bbs/2026/01/15/b2651cd314d13862f5eb928ea8d2fc13/thumb.png) | 仅参考斜切布局和用户指定的抽象大笑姿势；非 JR 东日本或角色权利人发行。 |
 
 ## 中国内地交通 / Mainland China transit
@@ -59,6 +59,15 @@ Existing source and license notes were restored from Git history (`08f9176~2`, `
 |---|---|---|
 | `overseas/usa/clipper.png` | [来源](<https://commons.wikimedia.org/wiki/File:Clipper_logo.svg>) · [原图](<https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Clipper_logo.svg/500px-Clipper_logo.svg.png>) | Third-party trademark; a repository redistribution license has not been confirmed. Consult the linked source. Existing PNG preview downloaded without redrawing. |
 | `overseas/usa/omny.png` | [来源](<https://commons.wikimedia.org/wiki/File:OMNY_logo.svg>) · [原图](<https://upload.wikimedia.org/wikipedia/commons/e/eb/OMNY_logo.svg>) | PD-textlogo per Wikimedia Commons file page; trademark restrictions remain. Source SVG rasterized to PNG; no logo redraw. |
+| `overseas/usa/ventra.png` | [来源](<https://commons.wikimedia.org/wiki/File:Ventra-Handout.svg>) · [PNG 预览](<https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Ventra-Handout.svg/960px-Ventra-Handout.svg.png>) · [原始 SVG](source-assets/overseas/usa/ventra.svg) | Chicago Transit Authority 标志；Wikimedia Commons 页面标注 PD-textlogo，商标限制仍适用。原始 SVG 存于 Skill 外；PNG 为原图预览，未重画。 |
+
+## 加拿大交通 / Canada transit
+
+| 文件（相对于图片目录） | 来源与原图 | 许可、署名与备注 |
+|---|---|---|
+| `overseas/canada/presto.png` | [PRESTO 官网](<https://www.prestocard.ca/en>) · [原始 SVG](source-assets/overseas/canada/presto.svg) · [PNG 预览](<https://prestodc.prestocard.ca/image/upload/f_png,w_960/v1758045823/web_presto_logo_605529c63a.svg>) | 官网现用白色字标；运营方商标，再分发许可未核实。Cloudinary 仅格式转换，未重画；适合在深色背景上给模型参考。 |
+| `overseas/canada/compass-card.png` | [TransLink Compass Card](<https://www.translink.ca/compasscard.html>) · [原图](<https://www.translink.ca/-/media/translink/images/homepage/ct_compass_card.png?la=en&h=168&w=300&hash=1B49E8F85E1FF41D4F279477CB111550>) | 温哥华卡面与 Compass 字标示意，原站点 300×168 PNG；不是透明独立 Logo。第三方商标，再分发许可未核实。 |
+| `overseas/canada/compass-symbol.png` | [TransLink Compass Card](<https://www.translink.ca/compasscard.html>) · [原图](<https://www.translink.ca/-/media/translink/icons/content-pages/handydart/compass_needle_upperright-arrow.png>) | 官网图形标志；第三方商标，再分发许可未核实。保留原始 PNG，不重画。 |
 
 ## 英国交通 / UK transit
 
@@ -66,6 +75,30 @@ Existing source and license notes were restored from Git history (`08f9176~2`, `
 |---|---|---|
 | `overseas/uk/oyster-card.png` | [来源](<https://commons.wikimedia.org/wiki/File:Oyster_Card_front.svg>) · [原图](<https://upload.wikimedia.org/wikipedia/commons/8/8d/Oyster_Card_front.svg>) | Public domain (ineligible) per Wikimedia Commons file page; trademark restrictions remain. Source SVG rasterized to PNG; no logo redraw. |
 | `overseas/uk/oyster.png` | [来源](<https://oyster.tfl.gov.uk/>) · [原图](<https://oyster.tfl.gov.uk/tfl-oyster/images/oyster.svg>) | Third-party trademark; a repository redistribution license has not been confirmed. Consult the linked source. Official SVG rasterized unchanged to PNG. |
+
+## 法国交通 / France transit
+
+| 文件（相对于图片目录） | 来源与原图 | 许可、署名与备注 |
+|---|---|---|
+| `overseas/france/navigo.png` | [来源](<https://commons.wikimedia.org/wiki/File:Logo_Navigo_(2018).svg>) · [PNG 预览](<https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Logo_Navigo_%282018%29.svg/960px-Logo_Navigo_%282018%29.svg.png>) · [原始 SVG](source-assets/overseas/france/navigo.svg) | Île-de-France Mobilités 标志；Wikimedia Commons 页面标注 PD-textlogo，商标限制仍适用。原始 SVG 存于 Skill 外，PNG 未重画。 |
+
+## 韩国交通 / South Korea transit
+
+| 文件（相对于图片目录） | 来源与原图 | 许可、署名与备注 |
+|---|---|---|
+| `overseas/south-korea/tmoney-card.jpg` | [Tmoney 官方 CI/BI 页](<https://www.tmoney.co.kr/aeb/cmnctn/ci/ci.dev>) · [原图](<https://www.tmoney.co.kr/images/ko/sub/ci/bi-img02.jpg>) | 官网英文横版 “Tmoney Card” 组合标志；附带官网原有浅灰网格背景，不是透明独立 Logo。第三方商标，再分发许可未核实。 |
+
+## 新加坡交通 / Singapore transit
+
+| 文件（相对于图片目录） | 来源与原图 | 许可、署名与备注 |
+|---|---|---|
+| `overseas/singapore/ez-link.png` | [来源](<https://commons.wikimedia.org/wiki/File:EZ-Link_logo.svg>) · [PNG 预览](<https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/EZ-Link_logo.svg/960px-EZ-Link_logo.svg.png>) · [原始 SVG](source-assets/overseas/singapore/ez-link.svg) | Wikimedia Commons 页面标注 PD-textlogo，商标限制仍适用。原始 SVG 存于 Skill 外，PNG 未重画。 |
+
+## 台湾交通 / Taiwan transit
+
+| 文件（相对于图片目录） | 来源与原图 | 许可、署名与备注 |
+|---|---|---|
+| `overseas/taiwan/easycard.png` | [悠遊卡公司官网](<https://www.easycard.com.tw/about>) · [原图](<https://www.easycard.com.tw/styles/images/common/easycard.png>) | 官网四彩悠遊卡图形标志，非悠遊付；透明原始 PNG。第三方商标，再分发许可未核实。 |
 
 ## 德国交通 / Germany transit
 
