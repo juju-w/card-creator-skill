@@ -51,17 +51,17 @@ Change the brief to explore something else: `Palace Museum cranes and mica cloud
 
 ### Using a web image-generation interface
 
-Select the interface's **Create image** tool, then try:
+Select the interface's **Create image** tool, then paste this. The [single-file web guide](web/card-creator.md) contains the workflow and card rules, so no multi-file browsing is needed:
 
 ```text
-Refer to the card-creator Skill at https://github.com/juju-w/card-creator-skill and use image generation to create a Pokémon Gardevoir card face with China Merchants Bank and UnionPay branding: minimalist, Psychic-type pink, no chip.
+Read and follow https://raw.githubusercontent.com/juju-w/card-creator-skill/main/web/card-creator.md first. Then use image generation to create a Pokémon Gardevoir card face with China Merchants Bank and UnionPay branding: minimalist, Psychic-type pink, no chip.
 ```
 
-Pasting a repository link **does not install the Skill** or guarantee that its files were read. If the site cannot access the repository, provide [SKILL.md](skills/card-creator/SKILL.md), the short [card rules](skills/card-creator/references/card-rules.md), and any relevant [reference pictures](skills/card-creator/references/logo-reference-index.md). There is no need to scan the entire library. `@创建图像` is a tool picker in some interfaces, not universal prompt syntax.
+Pasting a URL **does not install the Skill** or guarantee that the page was read. If access fails, upload [card-creator.md](web/card-creator.md) directly; add a relevant [reference picture](skills/card-creator/references/logo-reference-index.md) only when a particular mark needs identification. `@创建图像` is a tool picker in some interfaces, not universal prompt syntax.
 
 ## How it works
 
-1. Interpret the subject, style, and placement; open only the relevant PNG reference when a mark is requested.
+1. Interpret the subject, style, and placement; use only relevant reference pictures, not the whole library.
 2. Use image generation to paint the **whole card face**, including style-matched marks. No SVG drawing, scripted rendering, or logo compositing.
 3. Check readability and balance. Return the generator's original image; do not claim print DPI or bleed files that were not produced.
 
@@ -80,9 +80,10 @@ From the repository root, install manually into Codex:
 cp -R skills/card-creator ~/.codex/skills/
 ```
 
-The Chinese SkillHub package is documented in [`packaging/skillhub-zh-CN`](packaging/skillhub-zh-CN/README.md). Before contributing, run:
+The Chinese SkillHub package is documented in [`packaging/skillhub-zh-CN`](packaging/skillhub-zh-CN/README.md). The web guide is generated from the Skill workflow and card rules; do not edit it directly. Before contributing, run:
 
 ```bash
+python3 packaging/build_web_md.py --check
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/card-creator
 python3 -m unittest discover -s tests -v
 ```

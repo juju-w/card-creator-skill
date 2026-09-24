@@ -51,17 +51,17 @@ skillhub install card-creator --namespace indiv-juju-w
 
 ### 在 ChatGPT 等网页界面使用
 
-先选择界面的**创建图像**功能，再输入：
+先选择界面的**创建图像**功能，再复制这一句；[网页单文件指南](web/card-creator.md)已包含工作流与卡面规则，不需要逐个打开仓库文档：
 
 ```text
-参考 https://github.com/juju-w/card-creator-skill 中的 card-creator Skill，用图片生成一张宝可梦沙奈朵的招商银行银联信用卡卡面：简洁，超能系粉色，不要芯片。
+请先读取并遵循 https://raw.githubusercontent.com/juju-w/card-creator-skill/main/web/card-creator.md ，然后用图片生成功能创作一张宝可梦沙奈朵的招商银行银联信用卡卡面：简洁，超能系粉色，不要芯片。
 ```
 
-贴仓库链接**不等于安装 Skill**，也不保证当前模型读到了文件。若网页无法访问仓库，可直接提供 [Skill 说明](skills/card-creator/SKILL.md)、[简短卡面规则](skills/card-creator/references/card-rules.md)，并上传所需的[参考图片](skills/card-creator/references/logo-reference-index.md)。不必让模型遍历整个素材库。`@创建图像` 是部分界面的工具入口，不是通用 Prompt 语法。
+贴链接**不等于安装 Skill**，也不保证当前模型真的读到了网页。若读不到，请直接上传 [card-creator.md](web/card-creator.md)；需要精确辨认特定标志时，再上传对应[参考图](skills/card-creator/references/logo-reference-index.md)。`@创建图像` 是部分界面的工具入口，不是通用 Prompt 语法。
 
 ## 它怎么工作
 
-1. 读你的主题、风格和位置要求；需要某个标志时，只取对应的 PNG 作为视觉参考。
+1. 读你的主题、风格和位置要求；有参考图时只取相关图片，不遍历整个图库。
 2. 用图片生成工具**一次创作整张卡面**，包括与画风协调的标志；不拿 SVG、脚本或图层事后拼贴。
 3. 检查主体是否清楚、布局是否顺眼。默认返回生成器原图，不虚称精确 DPI 或印刷出血文件。
 
@@ -80,9 +80,10 @@ Card Creator 免费、非商业，用于创作交流与参考分享，不出售�
 cp -R skills/card-creator ~/.codex/skills/
 ```
 
-SkillHub 中文分发包的维护说明在 [`packaging/skillhub-zh-CN`](packaging/skillhub-zh-CN/README.md)。提交前可运行：
+SkillHub 中文分发包的维护说明在 [`packaging/skillhub-zh-CN`](packaging/skillhub-zh-CN/README.md)。网页指南由 Skill 工作流和卡面规则自动生成，请勿手改。提交前可运行：
 
 ```bash
+python3 packaging/build_web_md.py --check
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/card-creator
 python3 -m unittest discover -s tests -v
 ```
