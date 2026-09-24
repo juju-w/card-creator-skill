@@ -4,15 +4,14 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import shutil
+import subprocess
+import sys
 from pathlib import Path
 
-
-LOCALIZED_FILES = (
-    Path("SKILL.md"),
-    Path("agents/openai.yaml"),
-    Path("references/card-rules.md"),
-)
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from skill_text import card_rules, split_frontmatter, workflow
 
 
 def remove_junk(output: Path) -> None:
@@ -23,7 +22,7 @@ def remove_junk(output: Path) -> None:
             shutil.rmtree(path)
 
 
-def omit_binary_references(output: Path) -> None:
+def omit_binary_references(output: Path, revision: str) -> None:
     """Keep a direct remote picture index in the text-only distribution."""
     references = output / "assets" / "logo-references"
     if references.exists():
@@ -33,7 +32,7 @@ def omit_binary_references(output: Path) -> None:
         text = logo_index.read_text(encoding="utf-8")
         text = text.replace(
             "../assets/logo-references/",
-            "https://raw.githubusercontent.com/juju-w/card-creator-skill/main/skills/card-creator/assets/logo-references/",
+            f"https://raw.githubusercontent.com/juju-w/card-creator-skill/{revision}/skills/card-creator/assets/logo-references/",
         )
         logo_index.write_text(text, encoding="utf-8")
 
@@ -55,15 +54,18 @@ def main() -> int:
 
     shutil.copytree(source, output)
 
-    for relative in LOCALIZED_FILES:
-        localized = packaging_dir / relative
-        if not localized.is_file():
-            parser.error(f"localized file is missing: {localized}")
-        destination = output / relative
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(localized, destination)
-
-    omit_binary_references(output)
+    revision = subprocess.check_output(
+        ["git", "rev-parse", "HEAD"], cwd=repository, text=True,
+    ).strip()
+    frontmatter, intro = split_frontmatter((packaging_dir / "entry.md").read_text(encoding="utf-8"))
+    rules_digest = hashlib.sha256((workflow() + "\n" + card_rules()).encode()).hexdigest()
+    shared = workflow().replace("# Card Creator\n", "## Shared workflow\n", 1)
+    (output / "SKILL.md").write_text(
+        f"{frontmatter}\n\n<!-- Source revision: {revision}; rules sha256: {rules_digest} -->\n\n{intro}\n\n{shared}\n",
+        encoding="utf-8",
+    )
+    shutil.copy2(packaging_dir / "agents/openai.yaml", output / "agents/openai.yaml")
+    omit_binary_references(output, revision)
     remove_junk(output)
     print(f"Built SkillHub zh-CN package: {output}")
     return 0

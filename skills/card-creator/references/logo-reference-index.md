@@ -1,6 +1,8 @@
 # Logo pictures / 标志参考图
 
-Find the requested name and open only its picture(s). These pictures guide image generation; they are not layers to paste. User attachments take precedence. 图片仅供模型参考，按需取图，不要遍历图库。
+Find the requested name or alias and open only matching pictures. These guide image generation, not compositing. User attachments take precedence. 图片仅供模型参考，按名称或别名取图，不要遍历图库。
+
+Select by use before region: bank issuer, payment network, transit product, operator or wallet. An operator logo is not automatically a card-product logo; a railway or metro company is not a payment network. 用途优先于地域；只有明确标为卡种的参考，才按该卡种处理。
 
 ## 中国内地交通 / Mainland China transit
 
@@ -10,7 +12,7 @@ Find the requested name and open only its picture(s). These pictures guide image
 | 天府通 | [PNG](../assets/logo-references/cities/chengdu-tianfu-tong.png) |
 | 重庆城市通卡运营方 / Chongqing City Card operator | [PNG](../assets/logo-references/cities/chongqing-city-card-operator.png) |
 | 广佛通 / Guangfo Tong | [PNG](../assets/logo-references/cities/guangfo-tong-reference.png) |
-| 广州地铁 / Guangzhou Metro | [PNG](../assets/logo-references/cities/guangzhou-metro-reference.png) |
+| 广州地铁 / Guangzhou Metro（运营方 / operator） | [PNG](../assets/logo-references/cities/guangzhou-metro-reference.png) |
 | 羊城通 | [PNG](../assets/logo-references/cities/guangzhou-yangchengtong-official-opaque.png) |
 | 杭州市民卡运营方 / Hangzhou Citizen Card operator | [PNG](../assets/logo-references/cities/hangzhou-citizen-card-operator.png) |
 | 岭南通 / Lingnan Pass | [PNG](../assets/logo-references/cities/lingnan-pass-reference.png) |
@@ -97,8 +99,8 @@ Find the requested name and open only its picture(s). These pictures guide image
 
 | 名称 / Name | 图片 / Picture |
 |---|---|
-| 柏林 BVG | [PNG](../assets/logo-references/overseas/germany/bvg.png) |
-| 德国铁路 Deutsche Bahn / DB | [PNG](../assets/logo-references/overseas/germany/deutsche-bahn.png) |
+| 柏林 BVG（运营方 / operator） | [PNG](../assets/logo-references/overseas/germany/bvg.png) |
+| 德国铁路 Deutsche Bahn / DB（运营方 / operator） | [PNG](../assets/logo-references/overseas/germany/deutsche-bahn.png) |
 
 ## 澳洲交通 / Australia transit
 
@@ -110,19 +112,19 @@ Find the requested name and open only its picture(s). These pictures guide image
 
 | 名称 / Name | 图片 / Picture |
 |---|---|
-| 农业银行 ABC | [PNG](../assets/logo-references/banks/china/abc.png) |
-| 中国银行 BOC | [PNG](../assets/logo-references/banks/china/boc.png) |
-| 交通银行 BOCOM | [PNG](../assets/logo-references/banks/china/bocom.png) |
-| 建设银行 CCB | [PNG](../assets/logo-references/banks/china/ccb.png) |
+| 农业银行 / 农行 / ABC | [PNG](../assets/logo-references/banks/china/abc.png) |
+| 中国银行 / 中行 / BOC | [PNG](../assets/logo-references/banks/china/boc.png) |
+| 交通银行 / 交行 / BOCOM | [PNG](../assets/logo-references/banks/china/bocom.png) |
+| 建设银行 / 建行 / CCB | [PNG](../assets/logo-references/banks/china/ccb.png) |
 | 中信银行 CITIC | [PNG](../assets/logo-references/banks/china/citic.png) |
-| 招商银行 CMB | [PNG](../assets/logo-references/banks/china/cmb.png) |
+| 招商银行 / 招行 / China Merchants Bank / CMB | [PNG](../assets/logo-references/banks/china/cmb.png) |
 | 光大银行 CEB | [PNG](../assets/logo-references/banks/china/everbright.png) |
 | 广发银行 CGB | [PNG](../assets/logo-references/banks/china/guangfa.png) |
-| 工商银行 ICBC | [PNG](../assets/logo-references/banks/china/icbc.png) |
+| 工商银行 / 工行 / ICBC | [PNG](../assets/logo-references/banks/china/icbc.png) |
 | 兴业银行 CIB | [PNG](../assets/logo-references/banks/china/industrial.png) |
 | 民生银行 CMBC | [PNG](../assets/logo-references/banks/china/minsheng.png) |
 | 平安银行 Ping An | [PNG](../assets/logo-references/banks/china/pingan.png) |
-| 邮储银行 PSBC | [PNG](../assets/logo-references/banks/china/psbc.png) |
+| 邮储银行 / 邮政储蓄银行 / PSBC | [PNG](../assets/logo-references/banks/china/psbc.png) |
 | 浦发银行 SPDB | [PNG](../assets/logo-references/banks/china/spdb.png) |
 
 ## 香港常用银行 / Banks commonly used in Hong Kong
@@ -185,16 +187,16 @@ Find the requested name and open only its picture(s). These pictures guide image
 
 | 名称 / Name | 图片 / Picture |
 |---|---|
-| American Express | [PNG](../assets/logo-references/payment/american-express.png) |
+| American Express / Amex / 美国运通 / 运通 | [PNG](../assets/logo-references/payment/american-express.png) |
 | Diners Club（紧凑标志） | [PNG](../assets/logo-references/payment/diners-club-symbol.png) |
 | Diners Club International | [PNG](../assets/logo-references/payment/diners-club.png) |
 | Discover | [PNG](../assets/logo-references/payment/discover.png) |
 | JCB | [PNG](../assets/logo-references/payment/jcb.png) |
-| Mastercard | [PNG](../assets/logo-references/payment/mastercard.png) |
+| Mastercard / Master / 万事达 | [PNG](../assets/logo-references/payment/mastercard.png) |
 | MIR | [PNG](../assets/logo-references/payment/mir.png) |
 | RuPay | [PNG](../assets/logo-references/payment/rupay.png) |
 | UnionPay 银联（紧凑版） | [PNG](../assets/logo-references/payment/unionpay-compact.png) |
 | UnionPay 银联 | [PNG](../assets/logo-references/payment/unionpay.png) |
-| Visa | [PNG](../assets/logo-references/payment/visa.png) |
+| Visa / 维萨 | [PNG](../assets/logo-references/payment/visa.png) |
 
 HSBC 与渣打也可按英国银行名称查找；上方按常用场景归在香港，不表示集团注册地。杭州、重庆的文件是运营方标志，不要当成未核实的具体卡种标志。

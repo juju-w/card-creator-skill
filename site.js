@@ -1,4 +1,5 @@
 import { works, seriesNames } from "./gallery-data.js";
+import { CHANNEL_STORAGE_KEY, createPrompt, normalizeChannel } from "./gallery-prompts.js";
 
 const grid = document.querySelector("#gallery-grid");
 const count = document.querySelector("#work-count");
@@ -8,6 +9,60 @@ const filters = [...document.querySelectorAll(".filter")];
 const dialog = document.querySelector("#artwork-dialog");
 let activeSeries = "all";
 let imageRequestId = 0;
+let currentWork = null;
+let promptRevision = 0;
+const copyTimers = new Map();
+let promptChannel = "web";
+try {
+  promptChannel = normalizeChannel(localStorage.getItem(CHANNEL_STORAGE_KEY));
+} catch {
+  // Privacy modes may block storage; the in-memory choice still works.
+}
+
+function resetCopyState() {
+  promptRevision += 1;
+  for (const timer of copyTimers.values()) clearTimeout(timer);
+  copyTimers.clear();
+  document.querySelector("#copy-status").textContent = "";
+  document.querySelector("#reference-copy-status").textContent = "";
+}
+
+function updatePrompts() {
+  resetCopyState();
+  if (!currentWork) return;
+  document.querySelector("#dialog-prompt-text").textContent = createPrompt(currentWork.brief, promptChannel);
+  document.querySelector("#reference-prompt-text").textContent = createPrompt(currentWork.brief, promptChannel, true);
+  document.querySelectorAll('input[name="prompt-channel"]').forEach((input) => {
+    input.checked = input.value === promptChannel;
+  });
+  document.querySelector("#prompt-channel-help").textContent = promptChannel === "web"
+    ? "先选择图片生成功能，再粘贴提示。链接读不到时，可下载指南后上传；链接不等于安装 Skill。"
+    : "确认当前对话已识别 card-creator，并且具备图片生成或编辑能力。";
+  document.querySelector("#guide-download").hidden = promptChannel !== "web";
+}
+
+async function copyPrompt(textId, statusId) {
+  const revision = promptRevision;
+  const text = document.querySelector(textId);
+  const status = document.querySelector(statusId);
+  clearTimeout(copyTimers.get(statusId));
+  try {
+    await navigator.clipboard.writeText(text.textContent);
+    if (revision !== promptRevision || !dialog.open) return;
+    status.textContent = "已复制 ✓";
+    copyTimers.set(statusId, setTimeout(() => {
+      if (revision === promptRevision) status.textContent = "";
+    }, 1800));
+  } catch {
+    if (revision !== promptRevision || !dialog.open) return;
+    const selection = window.getSelection();
+    const range = document.createRange();
+    range.selectNodeContents(text);
+    selection?.removeAllRanges();
+    selection?.addRange(range);
+    status.textContent = "复制失败，已选中提示，请手动复制";
+  }
+}
 
 function imageUrl(work, alternate = false) {
   return `./examples/${alternate ? work.alternate : work.image}`;
@@ -66,7 +121,14 @@ async function openWork(work) {
   document.querySelector("#dialog-title").textContent = work.title;
   document.querySelector("#dialog-subtitle").textContent = work.subtitle;
   document.querySelector("#dialog-series").textContent = seriesNames[work.series];
-  document.querySelector("#dialog-prompt-text").textContent = work.prompt;
+  currentWork = work;
+  updatePrompts();
+  document.querySelector("#original-prompt-text").textContent = work.prompt;
+  document.querySelector("#original-prompt").open = false;
+  document.querySelector("#reference-creation").open = false;
+  const reference = document.querySelector("#reference-download");
+  reference.href = imageUrl(work);
+  reference.download = work.image;
   document.querySelector("#dialog-origin").textContent = work.origin || "AI 风格化创作示例；标志并非官方制图或授权版本。";
   const download = document.querySelector("#dialog-download");
   download.href = imageUrl(work);
@@ -107,19 +169,21 @@ document.querySelector("#show-all").addEventListener("click", () => filters[0].c
 document.querySelector("#dialog-close").addEventListener("click", () => dialog.close());
 dialog.addEventListener("close", () => {
   imageRequestId += 1;
+  resetCopyState();
+  currentWork = null;
   document.querySelector("#dialog-image").hidden = true;
   document.querySelector("#dialog-image-status").hidden = true;
 });
 dialog.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); });
-document.querySelector("#copy-prompt").addEventListener("click", async (event) => {
-  try {
-    await navigator.clipboard.writeText(document.querySelector("#dialog-prompt-text").textContent);
-    event.currentTarget.textContent = "已复制 ✓";
-    setTimeout(() => { event.currentTarget.textContent = "复制 Prompt"; }, 1800);
-  } catch {
-    event.currentTarget.textContent = "复制失败，请手动选择";
-  }
+document.querySelectorAll('input[name="prompt-channel"]').forEach((input) => {
+  input.addEventListener("change", () => {
+    promptChannel = normalizeChannel(input.value);
+    try { localStorage.setItem(CHANNEL_STORAGE_KEY, promptChannel); } catch { /* session-only */ }
+    updatePrompts();
+  });
 });
+document.querySelector("#copy-prompt").addEventListener("click", () => copyPrompt("#dialog-prompt-text", "#copy-status"));
+document.querySelector("#copy-reference-prompt").addEventListener("click", () => copyPrompt("#reference-prompt-text", "#reference-copy-status"));
 document.querySelector(".hero-preview").addEventListener("click", (event) => {
   const work = works.find((item) => item.id === event.currentTarget.dataset.open);
   if (work) openWork(work);

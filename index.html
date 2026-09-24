@@ -20,7 +20,7 @@
         <a class="brand" href="./" aria-label="Card Creator 卡面画廊首页"><img class="brand-icon" src="./brand/icon.png" alt="" width="32" height="32">CARD CREATOR</a>
         <nav class="main-nav" aria-label="主导航">
           <a href="#gallery">作品集</a>
-          <a href="https://github.com/juju-w/card-creator-skill/blob/main/skills/card-creator/SKILL.md">使用 Skill</a>
+          <a href="https://github.com/juju-w/card-creator-skill#30-秒开始">开始创作</a>
           <a href="https://github.com/juju-w/card-creator-skill">GitHub <span aria-hidden="true">↗</span></a>
         </nav>
       </header>
@@ -105,9 +105,28 @@
         </div>
       </div>
       <div class="dialog-prompt">
-        <span>参考 Prompt</span>
+        <fieldset class="prompt-channel">
+          <legend>你在哪里创作？</legend>
+          <label><input type="radio" name="prompt-channel" value="web" checked> 网页版</label>
+          <label><input type="radio" name="prompt-channel" value="installed"> 已安装 Skill</label>
+        </fieldset>
+        <p id="prompt-channel-help" class="prompt-help">先选择图片生成功能，再粘贴提示。链接读不到时，可下载指南后上传。</p>
+        <a id="guide-download" href="./web/card-creator.md" download="card-creator.md">下载单文件指南 ↓</a>
         <p id="dialog-prompt-text"></p>
-        <button type="button" id="copy-prompt">复制 Prompt</button>
+        <button type="button" id="copy-prompt">复制创作提示</button>
+        <span id="copy-status" class="copy-status" role="status"></span>
+        <details id="reference-creation" class="reference-creation">
+          <summary>参考这张创作</summary>
+          <p class="prompt-help">先下载并上传这张图到绘图对话，替换【你的主题】，再发送下面的提示。复制文字不会自动附带图片。</p>
+          <a id="reference-download" href="" download>下载这张参考图 ↓</a>
+          <p id="reference-prompt-text"></p>
+          <button type="button" id="copy-reference-prompt">复制改图提示</button>
+          <span id="reference-copy-status" class="copy-status" role="status"></span>
+        </details>
+        <details id="original-prompt" class="original-prompt">
+          <summary>查看原始 Prompt</summary>
+          <p id="original-prompt-text"></p>
+        </details>
       </div>
       <p id="dialog-origin" class="dialog-origin"></p>
     </dialog>

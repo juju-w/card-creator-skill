@@ -16,7 +16,7 @@
 ## See the work first
 
 Each card starts with a short idea. Click an image to [browse the gallery](https://juju-w.github.io/card-creator-skill/), read its prompt, and download the original.
-The gallery defaults to a curated order. “Newest” sorts by the Git timestamp when the featured image was added or updated; works from the same commit retain their curated order.
+Browse curated picks or newest works. Open a card and choose “Web” or “Installed Skill” to copy the appropriate prompt. Historical prompts remain available separately.
 
 | Art · swirling night | Art · floral Art Nouveau |
 |:---:|:---:|
@@ -30,7 +30,21 @@ The gallery defaults to a curated order. “Newest” sorts by the Git timestamp
 
 ## Get started in 30 seconds
 
-Install in a client that supports both **Agent Skills** and **image generation**. The Skill does not include an image model.
+### Use a web image interface
+
+Choose **Create image** in a supported chat interface, then paste:
+
+```text
+Read and follow https://raw.githubusercontent.com/juju-w/card-creator-skill/main/web/card-creator.md first. Then use image generation to create a Pokémon Gardevoir card face with China Merchants Bank and UnionPay branding: minimalist, Psychic-type pink, no chip.
+```
+
+Or choose a work in the [gallery](https://juju-w.github.io/card-creator-skill/) and copy its “Web” prompt. The single-file guide contains the complete workflow; no multi-file browsing is needed.
+
+A link **does not install the Skill** or guarantee it was read. If access fails, download [card-creator.md](https://juju-w.github.io/card-creator-skill/web/card-creator.md) and attach it. `@创建图像` is not universal prompt syntax; select your interface's image tool instead.
+
+### Install the Skill
+
+Install in a client supporting **Agent Skills** and **image generation/editing**. The Skill does not include an image model.
 
 ```bash
 npx skills add juju-w/card-creator-skill
@@ -48,23 +62,23 @@ Once `card-creator` is recognized in your current session, ask for a card:
 Using the card-creator Skill, create a Pokémon Gardevoir card face with China Merchants Bank and UnionPay branding: minimalist, Psychic-type pink, no chip.
 ```
 
-Change the brief to explore something else: `Palace Museum cranes and mica clouds × UnionPay`, `springtime London impasto × Oyster`, or attach a card you like as a composition reference. Card numbers, chips, QR codes, and contactless symbols are omitted unless requested.
+Try `Palace Museum cranes and mica clouds × UnionPay` or `springtime London impasto transit card`. When unspecified, a suitable mark is selected automatically; say “no logo” for pure artwork. Card numbers, chips, QR codes, and contactless indicators are omitted unless requested.
 
-### Using a web image-generation interface
+### Use a reference or change one detail
 
-Select the interface's **Create image** tool, then paste this. The [single-file web guide](web/card-creator.md) contains the workflow and card rules, so no multi-file browsing is needed:
+In the gallery, choose “Create from this reference,” download the image, upload it to your image conversation, and copy the editing prompt. For an image already in the conversation, simply continue:
 
 ```text
-Read and follow https://raw.githubusercontent.com/juju-w/card-creator-skill/main/web/card-creator.md first. Then use image generation to create a Pokémon Gardevoir card face with China Merchants Bank and UnionPay branding: minimalist, Psychic-type pink, no chip.
+Only change the Octopus logo to purple; keep the character and background.
 ```
 
-Pasting a URL **does not install the Skill** or guarantee that the page was read. If access fails, upload [card-creator.md](web/card-creator.md) directly; add a relevant [reference picture](skills/card-creator/references/logo-reference-index.md) only when a particular mark needs identification. `@创建图像` is a tool picker in some interfaces, not universal prompt syntax.
+Attach a reference for a specific character or mark variant. Copying text does not attach the image automatically, and generative edits cannot guarantee pixel-identical preservation elsewhere.
 
 ## How it works
 
-1. Interpret the subject, style, and placement; use only relevant reference pictures, not the whole library.
-2. Use image generation to paint the **whole card face**, including style-matched marks. No SVG drawing, scripted rendering, or logo compositing.
-3. Check readability and balance. Return the generator's original image; do not claim print DPI or bleed files that were not produced.
+1. Interpret the subject and edit scope; choose a suitable mark if unspecified. Open only relevant reference pictures.
+2. Generate or edit the **whole card face**, including style-matched marks, with the host's image tool. No SVG drawing or scripted compositing.
+3. Check subjects, marks, unwanted transparency and borders. Request opaque artwork at about 1.586:1, preferring 1536 × 969 when supported; return the actual image without unsupported dimension, DPI or bleed claims.
 
 The reference library covers transit cards in China and abroad, major banks, payment networks, and fintech brands such as Wise and Apple Cash. Browse the [picture index](skills/card-creator/references/logo-reference-index.md) as needed; the [aspect-ratio and layout rules](skills/card-creator/references/card-rules.md) stay deliberately short. Logos may become foil, monochrome, or line art, but the outputs are **unofficial stylized interpretations**, not functioning bank or transit cards.
 
@@ -81,12 +95,16 @@ From the repository root, install manually into Codex:
 cp -R skills/card-creator ~/.codex/skills/
 ```
 
-The Chinese SkillHub package is documented in [`packaging/skillhub-zh-CN`](packaging/skillhub-zh-CN/README.md). The web guide is generated from the Skill workflow and card rules; do not edit it directly. Before contributing, run:
+The Chinese SkillHub package is documented in [`packaging/skillhub-zh-CN`](packaging/skillhub-zh-CN/README.md). It uses a Chinese introduction, shared execution rules and remote image links; the GitHub package includes local reference images. The web guide is generated from those same rules; do not edit it directly. Before contributing, run:
 
 ```bash
+python3 -m pip install -r requirements-dev.txt  # Maintainers only: pixel opacity checks
 python3 packaging/build_web_md.py --check
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/card-creator
 python3 -m unittest discover -s tests -v
+node --test tests/gallery-prompts.test.mjs
 ```
+
+Use a virtual environment for maintainer dependencies. Skill users need neither Python nor Node. Live image-generation scenarios are in [tests/skill-scenarios.md](tests/skill-scenarios.md).
 
 </details>

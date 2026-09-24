@@ -4,6 +4,8 @@ import subprocess
 import sys
 import tempfile
 import unittest
+import hashlib
+import re
 from pathlib import Path
 
 
@@ -13,7 +15,7 @@ CANONICAL_SKILL = REPOSITORY / "skills" / "card-creator"
 
 
 class SkillHubPackageTests(unittest.TestCase):
-    def test_build_localizes_docs_and_omits_binary_references(self) -> None:
+    def test_build_shares_rules_and_pins_remote_references(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             output = Path(temporary) / "card-creator"
             subprocess.run(
@@ -25,10 +27,15 @@ class SkillHubPackageTests(unittest.TestCase):
 
             skill_text = (output / "SKILL.md").read_text(encoding="utf-8")
             self.assertIn("displayName: 卡面生成器", skill_text)
-            self.assertIn("图片生成工具", skill_text)
-            self.assertIn("不得用代码绘制卡面", skill_text)
-            self.assertIn("version: 0.3.2", skill_text)
-            self.assertIn("没有图片生成工具就说明情况", skill_text)
+            entry = BUILD_SCRIPT.with_name("entry.md").read_text(encoding="utf-8")
+            self.assertEqual(re.search(r"^version: (.+)$", skill_text, re.M)[1], re.search(r"^version: (.+)$", entry, re.M)[1])
+            canonical = (CANONICAL_SKILL / "SKILL.md").read_text(encoding="utf-8").split("\n---\n", 1)[1].strip()
+            shared = skill_text.split("## Shared workflow\n", 1)[1].strip()
+            self.assertEqual(shared, canonical.split("# Card Creator\n", 1)[1].strip())
+            rules = (CANONICAL_SKILL / "references/card-rules.md").read_text(encoding="utf-8")
+            self.assertEqual((output / "references/card-rules.md").read_text(encoding="utf-8"), rules)
+            digest = hashlib.sha256((canonical + "\n" + rules.strip()).encode()).hexdigest()
+            self.assertIn(f"rules sha256: {digest}", skill_text)
             self.assertNotIn("精确贴纸模式", skill_text)
             self.assertFalse(output.joinpath("references/reference-remix.md").exists())
             self.assertFalse(output.joinpath("references/prompt-guide.md").exists())
@@ -39,7 +46,11 @@ class SkillHubPackageTests(unittest.TestCase):
             self.assertFalse(any(output.rglob("requirements.txt")))
             self.assertFalse(output.joinpath("assets/logo-references").exists())
             index = output.joinpath("references/logo-reference-index.md").read_text(encoding="utf-8")
-            self.assertIn("https://raw.githubusercontent.com/juju-w/card-creator-skill/main/", index)
+            revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=REPOSITORY, text=True).strip()
+            self.assertIn(f"Source revision: {revision}", skill_text)
+            canonical_index = (CANONICAL_SKILL / "references/logo-reference-index.md").read_text(encoding="utf-8")
+            expected = canonical_index.replace("../assets/logo-references/", f"https://raw.githubusercontent.com/juju-w/card-creator-skill/{revision}/skills/card-creator/assets/logo-references/")
+            self.assertEqual(index, expected)
             self.assertNotIn("../assets/logo-references/", index)
             for reference in ("banks/china/cmb.png", "banks/usa/chase.png", "overseas/japan/suica.png", "overseas/canada/presto.png", "overseas/usa/ventra.png", "overseas/italy/venezia-unica-citypass.jpg", "overseas/south-korea/tmoney-card.jpg"):
                 self.assertIn(reference, index)

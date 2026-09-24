@@ -4,6 +4,7 @@ import re
 import unittest
 from datetime import datetime
 from pathlib import Path
+from PIL import Image
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -73,11 +74,10 @@ class GalleryAssetTests(unittest.TestCase):
                 self.assertTrue(path.is_file())
                 if path.suffix.lower() != ".png":
                     continue
-                data = path.read_bytes()
-                self.assertEqual(data[:8], b"\x89PNG\r\n\x1a\n")
-                # PNG color types 0 and 2 have no alpha channel. A transparent
-                # gallery PNG can look fine on Pages but wash out when saved.
-                self.assertIn(data[25], (0, 2))
+                with Image.open(path) as image:
+                    # RGBA is valid if every alpha pixel is opaque. Color type
+                    # alone misses palette transparency and rejects opaque RGBA.
+                    self.assertEqual(image.convert("RGBA").getchannel("A").getextrema(), (255, 255))
 
     def test_newest_sort_uses_dated_gallery_entries(self):
         gallery = (ROOT / "gallery-data.js").read_text(encoding="utf-8")

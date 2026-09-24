@@ -3,6 +3,7 @@
 import importlib.util
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,10 +21,15 @@ class WebGuideTests(unittest.TestCase):
         self.assertEqual(content, module.build_text())
         self.assertIn("## Card rules", content)
         self.assertIn("1.586:1", content)
-        self.assertIn("[optional picture index]", content)
-        self.assertNotIn("When a logo is named, find it", content)
+        self.assertIn("[picture index](https://raw.githubusercontent.com/", content)
         self.assertNotIn("(references/card-rules.md)", content)
         self.assertNotIn("(references/logo-reference-index.md)", content)
+
+        # Changing shared behavior must reach Web without a second rewrite table.
+        with patch.object(module, "workflow", return_value=module.workflow() + "\n\nA new shared decision."), patch.object(module, "card_rules", return_value=module.card_rules() + "\n\nA new canvas rule."):
+            rebuilt = module.build_text()
+        self.assertEqual(rebuilt.count("A new shared decision."), 1)
+        self.assertEqual(rebuilt.count("A new canvas rule."), 1)
 
 
 if __name__ == "__main__":
