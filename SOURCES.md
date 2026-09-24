@@ -6,6 +6,15 @@
 
 Existing source and license notes were restored from Git history (`08f9176~2`, `4b7f500`); they are attribution records, not a fresh legal clearance. New overseas references below were checked on 2026-09-24. Their original SVGs are retained under `source-assets/`, outside the installed Skill; its picture index points only to raster reference images. No logo was redrawn or promoted to an authorized sticker.
 
+## JOJO 二创卡面临时参考 / JoJo fan-art visual references
+
+以下动画官网立绘仅在图片生成时作人物识别参考，原图及临时下载文件均未收入仓库。画廊卡面是新场景中的非官方 AI 二创，不含银行或交通品牌标志；官网公开图片不等于角色权利授权。
+
+| 画廊作品 | 官方人物参考 | 备注 |
+|---|---|---|
+| `examples/anime-steel-ball-run-johnny-gyro.png` | [乔尼·乔斯达](https://jojo-portal.com/anime/sbr/character/01/) · [杰洛·齐贝林](https://jojo-portal.com/anime/sbr/character/02/) | 原立绘仅作身份和服装参考；新构图为二人骑马穿越荒漠，非官网卡面。 |
+| `examples/anime-stone-ocean-jolyne.png` | [空条徐伦／乔伦](https://jojo-portal.com/anime/so/character/01/) | 原立绘仅作身份和服装参考；新构图为丝线、蝶影与海上破晓，非官网卡面。 |
+
 ## 玩梗卡面外部视觉参考 / Meme-card visual references
 
 仅在生成时临时参照，原图未收入仓库；卡面是非官方二创，不表示角色、电影、交通卡或支付品牌授权。公开可见不等于获得再分发许可。
