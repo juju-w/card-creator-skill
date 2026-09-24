@@ -36,6 +36,15 @@ class GalleryAssetTests(unittest.TestCase):
         )
         self.assertIn(".artwork-dialog>img{width:auto;max-width:100%;margin-inline:auto}", css)
 
+    def test_dialog_hides_old_image_until_replacement_decodes(self):
+        homepage = (ROOT / "index.html").read_text(encoding="utf-8")
+        script = (ROOT / "site.js").read_text(encoding="utf-8")
+        self.assertIn('id="dialog-image-status"', homepage)
+        self.assertIn('image.hidden = true;', script)
+        self.assertIn('await nextImage.decode();', script)
+        self.assertIn('image.replaceWith(nextImage);', script)
+        self.assertIn('requestId !== imageRequestId', script)
+
     def test_site_brand_matches_skill_and_gallery(self):
         homepage = (ROOT / "index.html").read_text(encoding="utf-8")
         self.assertIn("<title>Card Creator · 卡面画廊</title>", homepage)

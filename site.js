@@ -7,6 +7,7 @@ const sort = document.querySelector("#sort-order");
 const filters = [...document.querySelectorAll(".filter")];
 const dialog = document.querySelector("#artwork-dialog");
 let activeSeries = "all";
+let imageRequestId = 0;
 
 function imageUrl(work, alternate = false) {
   return `./examples/${alternate ? work.alternate : work.image}`;
@@ -55,10 +56,13 @@ function createCard(work) {
   return card;
 }
 
-function openWork(work) {
+async function openWork(work) {
+  const requestId = ++imageRequestId;
   const image = document.querySelector("#dialog-image");
-  image.src = imageUrl(work);
-  image.alt = `${work.title}，${work.subtitle}`;
+  const imageStatus = document.querySelector("#dialog-image-status");
+  image.hidden = true;
+  imageStatus.textContent = "正在加载图片…";
+  imageStatus.hidden = false;
   document.querySelector("#dialog-title").textContent = work.title;
   document.querySelector("#dialog-subtitle").textContent = work.subtitle;
   document.querySelector("#dialog-series").textContent = seriesNames[work.series];
@@ -74,6 +78,19 @@ function openWork(work) {
     alternate.download = work.alternate;
   }
   dialog.showModal();
+
+  const nextImage = new Image();
+  nextImage.id = "dialog-image";
+  nextImage.alt = `${work.title}，${work.subtitle}`;
+  nextImage.src = imageUrl(work);
+  try {
+    await nextImage.decode();
+    if (requestId !== imageRequestId || !dialog.open) return;
+    image.replaceWith(nextImage);
+    imageStatus.hidden = true;
+  } catch {
+    if (requestId === imageRequestId && dialog.open) imageStatus.textContent = "图片加载失败，请关闭后重试";
+  }
 }
 
 filters.forEach((button) => button.addEventListener("click", () => {
@@ -88,6 +105,11 @@ filters.forEach((button) => button.addEventListener("click", () => {
 sort.addEventListener("change", render);
 document.querySelector("#show-all").addEventListener("click", () => filters[0].click());
 document.querySelector("#dialog-close").addEventListener("click", () => dialog.close());
+dialog.addEventListener("close", () => {
+  imageRequestId += 1;
+  document.querySelector("#dialog-image").hidden = true;
+  document.querySelector("#dialog-image-status").hidden = true;
+});
 dialog.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); });
 document.querySelector("#copy-prompt").addEventListener("click", async (event) => {
   try {
