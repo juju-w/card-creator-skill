@@ -49,7 +49,7 @@ class GalleryAssetTests(unittest.TestCase):
         self.assertEqual(len(featured), 6)
         for readme in ("README.md", "README_EN.md"):
             content = (ROOT / readme).read_text(encoding="utf-8")
-            showcase = re.findall(r'<img src="examples/([^"]+)" width="420"', content)
+            showcase = re.findall(r'<img src="examples/([^"]+)" width="320"', content)
             with self.subTest(readme=readme):
                 self.assertEqual(showcase, featured)
         homepage = (ROOT / "index.html").read_text(encoding="utf-8")
