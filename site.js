@@ -14,7 +14,7 @@ function imageUrl(work, alternate = false) {
 
 function render() {
   const visible = works.filter((work) => activeSeries === "all" || work.series === activeSeries);
-  if (sort.value === "newest") visible.reverse();
+  if (sort.value === "newest") visible.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
   if (sort.value === "title") visible.sort((a, b) => a.title.localeCompare(b.title, "zh-CN"));
   count.textContent = `${visible.length} 件作品`;
   empty.hidden = visible.length !== 0;

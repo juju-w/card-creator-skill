@@ -2,6 +2,7 @@
 
 import re
 import unittest
+from datetime import datetime
 from pathlib import Path
 
 
@@ -68,6 +69,22 @@ class GalleryAssetTests(unittest.TestCase):
                 # PNG color types 0 and 2 have no alpha channel. A transparent
                 # gallery PNG can look fine on Pages but wash out when saved.
                 self.assertIn(data[25], (0, 2))
+
+    def test_newest_sort_uses_dated_gallery_entries(self):
+        gallery = (ROOT / "gallery-data.js").read_text(encoding="utf-8")
+        rows = re.findall(r'^\s*\{ id: "[^"]+".*image: "[^"]+".*$', gallery, re.M)
+        self.assertTrue(rows)
+        for row in rows:
+            with self.subTest(row=row[:80]):
+                match = re.search(r'publishedAt: "([^"]+)"', row)
+                self.assertIsNotNone(match)
+                self.assertIsNotNone(datetime.fromisoformat(match.group(1)).tzinfo)
+
+        homepage = (ROOT / "index.html").read_text(encoding="utf-8")
+        script = (ROOT / "site.js").read_text(encoding="utf-8")
+        self.assertIn('<option value="newest">最新发布</option>', homepage)
+        self.assertIn('Date.parse(b.publishedAt) - Date.parse(a.publishedAt)', script)
+        self.assertNotIn('visible.reverse()', script)
 
     def test_overseas_city_selection_uses_new_london_and_centered_niu_lai(self):
         gallery = (ROOT / "gallery-data.js").read_text(encoding="utf-8")

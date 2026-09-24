@@ -16,6 +16,7 @@
 ## See the work first
 
 Each card starts with a short idea. Click an image to [browse the gallery](https://juju-w.github.io/card-creator-skill/), read its prompt, and download the original.
+The gallery defaults to a curated order. “Newest” sorts by the Git timestamp when the featured image was added or updated; works from the same commit retain their curated order.
 
 | Art · swirling night | Art · floral Art Nouveau |
 |:---:|:---:|
