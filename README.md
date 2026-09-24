@@ -16,7 +16,7 @@
 ## 先看作品，再动手
 
 每张卡都从一个很短的想法出发。点击图片可去[画廊](https://juju-w.github.io/card-creator-skill/)浏览、查看 Prompt 和下载原图。
-画廊可按精选或最新发布浏览。打开作品，选择「网页版／已安装 Skill」，即可复制适合当前入口的创作提示；原始 Prompt 也会保留。
+画廊可按精选或最新发布浏览。打开作品，选择「网页直接使用／通过已安装的 Skill」，即可复制对应的提示词；原始 Prompt 也会保留。
 
 | 艺术 · 旋涡夜景 | 艺术 · 新艺术花卉 |
 |:---:|:---:|
@@ -38,7 +38,7 @@
 请先读取并遵循 https://raw.githubusercontent.com/juju-w/card-creator-skill/main/web/card-creator.md ，然后用图片生成功能创作一张宝可梦沙奈朵的招商银行银联信用卡卡面：简洁，超能系粉色，不要芯片。
 ```
 
-也可以去[画廊](https://juju-w.github.io/card-creator-skill/)选择作品，直接复制「网页版」提示。单文件指南已经包含全部执行规则，不用逐个翻阅仓库。
+也可以去[画廊](https://juju-w.github.io/card-creator-skill/)选择作品，直接复制「网页直接使用」的提示词。单文件指南已经包含全部执行规则，不用逐个翻阅仓库。
 
 链接**不等于安装 Skill**，也不保证当前模型读到了网页。读不到时，下载 [card-creator.md](https://juju-w.github.io/card-creator-skill/web/card-creator.md) 后上传到对话。`@创建图像` 不是通用 Prompt 语法，请以当前界面的工具入口为准。
 

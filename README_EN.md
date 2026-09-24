@@ -16,7 +16,7 @@
 ## See the work first
 
 Each card starts with a short idea. Click an image to [browse the gallery](https://juju-w.github.io/card-creator-skill/), read its prompt, and download the original.
-Browse curated picks or newest works. Open a card and choose “Web” or “Installed Skill” to copy the appropriate prompt. Historical prompts remain available separately.
+Browse curated picks or newest works. Open a card and choose “Use on the web” or “Use an installed Skill” to copy the appropriate prompt. Historical prompts remain available separately.
 
 | Art · swirling night | Art · floral Art Nouveau |
 |:---:|:---:|
@@ -38,7 +38,7 @@ Choose **Create image** in a supported chat interface, then paste:
 Read and follow https://raw.githubusercontent.com/juju-w/card-creator-skill/main/web/card-creator.md first. Then use image generation to create a Pokémon Gardevoir card face with China Merchants Bank and UnionPay branding: minimalist, Psychic-type pink, no chip.
 ```
 
-Or choose a work in the [gallery](https://juju-w.github.io/card-creator-skill/) and copy its “Web” prompt. The single-file guide contains the complete workflow; no multi-file browsing is needed.
+Or choose a work in the [gallery](https://juju-w.github.io/card-creator-skill/) and copy its “Use on the web” prompt. The single-file guide contains the complete workflow; no multi-file browsing is needed.
 
 A link **does not install the Skill** or guarantee it was read. If access fails, download [card-creator.md](https://juju-w.github.io/card-creator-skill/web/card-creator.md) and attach it. `@创建图像` is not universal prompt syntax; select your interface's image tool instead.
 

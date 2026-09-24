@@ -36,8 +36,8 @@ function updatePrompts() {
     input.checked = input.value === promptChannel;
   });
   document.querySelector("#prompt-channel-help").textContent = promptChannel === "web"
-    ? "先选择图片生成功能，再粘贴提示。链接读不到时，可下载指南后上传；链接不等于安装 Skill。"
-    : "确认当前对话已识别 card-creator，并且具备图片生成或编辑能力。";
+    ? "无需安装 Skill。复制提示词，在 ChatGPT、Gemini 等网页中选择图片生成功能后发送；链接读不到时，可下载指南并上传。"
+    : "适合已安装 card-creator 的 Codex 等工具。复制提示词，在已识别该 Skill 且支持图片生成或编辑的对话中发送。";
   document.querySelector("#guide-download").hidden = promptChannel !== "web";
 }
 
