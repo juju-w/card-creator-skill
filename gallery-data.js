@@ -8,6 +8,7 @@ export const seriesNames = {
   city: "城市",
   anime: "二次元",
   meme: "玩梗",
+  sports: "体育系列",
 };
 
 export const works = [
@@ -53,4 +54,9 @@ export const works = [
   { id: "hangzhou-west-lake-citizen-card", title: "杭州 · 西湖瓷青", subtitle: "断桥荷叶 × 市民卡运营方", series: "city", image: "hangzhou-west-lake-citizen-card.png", publishedAt: "2026-09-23T11:55:40+08:00", origin: "AI 风格化创作示例；参考图是杭州市民卡运营方标志，不是已核实的杭州通卡种贴纸。", brief: "生成一张杭州西湖卡面：瓷青色、断桥、柳叶与荷花，右上角杭州市民卡运营方标志；不要写杭州通。", prompt: "使用 card-creator Skill，生成一张杭州西湖卡面：瓷青色、断桥、柳叶与荷花，右上角杭州市民卡运营方标志；不要写杭州通。" },
   { id: "chongqing-city-card-monorail", title: "重庆 · 山城轨道", subtitle: "穿楼单轨 × 城市通卡运营方", series: "city", image: "chongqing-city-card-monorail.png", publishedAt: "2026-09-23T11:55:40+08:00", origin: "AI 风格化创作示例；参考图是重庆城市通卡运营方标志，不是已核实的畅通卡卡种贴纸。", brief: "生成一张重庆山城轨道卡面：蓝调夜色、穿楼单轨与江岸层叠，左上角重庆城市通卡运营方标志，不要虚构其他字样。", prompt: "使用 card-creator Skill，生成一张重庆山城轨道卡面：蓝调夜色、穿楼单轨与江岸层叠，左上角重庆城市通卡运营方标志，不要虚构其他字样。" },
   { id: "minimal-mastercard", title: "一笔成线", subtitle: "暖象牙白 × Mastercard", series: "modern", image: "minimal-mastercard.png", publishedAt: "2026-09-23T09:47:32+08:00", brief: "生成一张暖象牙白的极简线条 Mastercard 卡面，右下角 Mastercard。", prompt: "使用 card-creator Skill，生成一张暖象牙白的极简线条 Mastercard 卡面，右下角 Mastercard。" },
+  { id: "curry-blue-gold-chase-mastercard", title: "库里 · 蓝金三分弧", subtitle: "蓝金丝网版画 × Chase × Mastercard", series: "sports", image: "curry-blue-gold-chase-mastercard.png", publishedAt: "2026-09-25T07:00:00+08:00", origin: "非官方 AI 球迷艺术；人物肖像及标志为模型绘制，不表示本人、球队或品牌授权、联名、赞助或代言，无支付功能。", brief: "生成库里主题卡面，蓝金丝网版画，三分投篮的动势，配 Chase 和金色线条 Mastercard。", prompt: "使用 card-creator，生成库里主题卡面，蓝金丝网版画，三分投篮的动势，配 Chase 和金色线条 Mastercard。" },
+  { id: "federer-grass-court-amex", title: "费德勒 · 草地午后", subtitle: "草地油画 × American Express", series: "sports", image: "federer-grass-court-amex.png", publishedAt: "2026-09-25T07:00:00+08:00", origin: "非官方 AI 球迷艺术；人物肖像及标志为模型绘制，不表示本人、球队或品牌授权、联名、赞助或代言，无支付功能。", brief: "生成费德勒主题卡面，复古草地网球、奶油白与墨绿，油画笔触，配香槟金 American Express。", prompt: "使用 card-creator，生成费德勒主题卡面，复古草地网球、奶油白与墨绿，油画笔触，配香槟金 American Express。" },
+  { id: "hamilton-scarlet-mastercard", title: "汉密尔顿 · 赤焰金属", subtitle: "赤焰金属 × Ferrari × Mastercard", series: "sports", image: "hamilton-scarlet-mastercard.png", publishedAt: "2026-09-25T07:00:00+08:00", origin: "非官方 AI 球迷艺术；人物肖像及标志为模型绘制，不表示本人、球队或品牌授权、联名、赞助或代言，无支付功能。", brief: "生成汉密尔顿主题卡面，法拉利红、黑铬与金属拉丝肖像，配跃马盾标和银色线条 Mastercard。", prompt: "使用 card-creator，生成汉密尔顿主题卡面，法拉利红、黑铬与金属拉丝肖像，配跃马盾标和银色线条 Mastercard。" },
+  { id: "verstappen-navy-orange-visa", title: "维斯塔潘 · 深蓝电光", subtitle: "深蓝电光 × Red Bull Racing × Visa", series: "sports", image: "verstappen-navy-orange-visa.png", publishedAt: "2026-09-25T07:00:00+08:00", origin: "非官方 AI 球迷艺术；人物肖像及标志为模型绘制，不表示本人、球队或品牌授权、联名、赞助或代言，无支付功能。", brief: "生成维斯塔潘主题卡面，深蓝橙色、速度线与亮面珐琅，配 Red Bull Racing 和 Visa。", prompt: "使用 card-creator，生成维斯塔潘主题卡面，深蓝橙色、速度线与亮面珐琅，配 Red Bull Racing 和 Visa。" },
+  { id: "ronaldo-burgundy-gold-visa", title: "C 罗 · 赤绿金芒", subtitle: "葡萄牙配色厚涂 × Visa", series: "sports", image: "ronaldo-burgundy-gold-visa.png", publishedAt: "2026-09-25T07:00:00+08:00", origin: "非官方 AI 球迷艺术；人物肖像及标志为模型绘制，不表示本人、球队或品牌授权、联名、赞助或代言，无支付功能。", brief: "生成 C 罗主题卡面，葡萄牙酒红与墨绿、古金调色刀厚涂肖像，配哑金 Visa。", prompt: "使用 card-creator，生成 C 罗主题卡面，葡萄牙酒红与墨绿、古金调色刀厚涂肖像，配哑金 Visa。" },
 ];

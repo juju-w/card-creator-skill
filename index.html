@@ -54,6 +54,7 @@
               <button type="button" class="filter" data-series="city" aria-pressed="false">城市</button>
               <button type="button" class="filter" data-series="anime" aria-pressed="false">二次元</button>
               <button type="button" class="filter" data-series="meme" aria-pressed="false">玩梗</button>
+              <button type="button" class="filter" data-series="sports" aria-pressed="false">体育系列</button>
             </div>
             <label class="sort-wrap">
               <span class="sr-only">排序</span>
@@ -65,6 +66,7 @@
             </label>
           </div>
 
+          <p class="rights-notice gallery-rights">非官方 AI 创作。下载不授予第三方内容使用权，请阅读<a href="https://github.com/juju-w/card-creator-skill/blob/main/DISCLAIMER.md">使用与权利声明</a>。</p>
           <div id="gallery-grid" class="gallery-grid"></div>
           <div id="empty-state" class="empty-state" hidden>
             <h3>这一系列正在筹备</h3>
@@ -82,8 +84,9 @@
           <a href="https://github.com/juju-w/card-creator-skill/blob/main/skills/card-creator/SKILL.md">Skill 说明 ↗</a>
           <a href="https://github.com/juju-w/card-creator-skill/blob/main/SOURCES.md">图片来源 ↗</a>
           <a href="https://github.com/juju-w/card-creator-skill/blob/main/DISCLAIMER.md">使用声明 ↗</a>
+          <a href="https://github.com/juju-w/card-creator-skill/issues/new?title=%5BRights%5D%20">权利反馈 / 申请移除 ↗</a>
         </div>
-        <p class="footer-note">免费、非商业的创作交流。作品中的角色及标志归各权利人所有，不代表官方合作或授权。</p>
+        <p class="footer-note">个人爱好与技术交流项目，免费分享，不出售卡面或素材。作品含 AI 生成或辅助创作；涉及的肖像、商标与著作权等权益归相应权利人，不代表授权、联名、赞助或代言。非营利不等于免责。如涉及您的权益，请联系维护者核实、移除或更正。</p>
       </footer>
     </div>
 
@@ -101,9 +104,10 @@
         </div>
         <div class="dialog-actions">
           <a id="dialog-alternate" class="alternate-download" href="" download hidden>下载无标志版</a>
-          <a id="dialog-download" class="download-primary" href="" download>下载原图 <span aria-hidden="true">↓</span></a>
+          <a id="dialog-download" class="download-primary" href="" download aria-describedby="download-rights">下载原图 <span aria-hidden="true">↓</span></a>
         </div>
       </div>
+      <p id="download-rights" class="rights-notice">非官方 AI 创作，无支付功能。下载不授予肖像、商标或作品使用权；未经所需授权，请勿商用、售卖或再分发。<a href="https://github.com/juju-w/card-creator-skill/blob/main/DISCLAIMER.md">使用声明</a> · <a href="https://github.com/juju-w/card-creator-skill/issues/new?title=%5BRights%5D%20">权利反馈 / 申请移除</a></p>
       <div class="dialog-prompt">
         <fieldset class="prompt-channel">
           <legend>你在哪里创作？</legend>

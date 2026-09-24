@@ -108,6 +108,37 @@ class GalleryAssetTests(unittest.TestCase):
                 self.assertIn(f'image: "{filename}"', gallery)
         self.assertNotIn("london-oyster-rainy-night.png", gallery)
 
+    def test_sports_series_contains_five_traceable_unofficial_cards(self):
+        gallery = (ROOT / "gallery-data.js").read_text(encoding="utf-8")
+        homepage = (ROOT / "index.html").read_text(encoding="utf-8")
+        records = (ROOT / "examples/SPORTS.md").read_text(encoding="utf-8")
+        sources = (ROOT / "SOURCES.md").read_text(encoding="utf-8")
+        self.assertIn('sports: "体育系列"', gallery)
+        self.assertIn('data-series="sports"', homepage)
+        rows = [row for row in gallery.splitlines() if 'series: "sports"' in row]
+        self.assertEqual(len(rows), 5)
+        for row in rows:
+            filename = re.search(r'image: "([^"]+)"', row).group(1)
+            with self.subTest(filename=filename):
+                self.assertIn(filename, records)
+                self.assertIn(filename, sources)
+                self.assertIn('非官方 AI 球迷艺术', row)
+                self.assertIn('brief:', row)
+                self.assertIn('prompt:', row)
+        self.assertNotIn('messi', gallery.lower())
+
+    def test_rights_notice_reaches_grid_footer_and_download(self):
+        homepage = (ROOT / "index.html").read_text(encoding="utf-8")
+        disclaimer = (ROOT / "DISCLAIMER.md").read_text(encoding="utf-8")
+        self.assertIn('class="rights-notice gallery-rights"', homepage)
+        self.assertIn('aria-describedby="download-rights"', homepage)
+        self.assertIn('id="download-rights"', homepage)
+        self.assertIn('权利反馈 / 申请移除', homepage)
+        self.assertIn('不代表授权、联名、赞助或代言', homepage)
+        self.assertIn('不是自动免责的依据', disclaimer)
+        self.assertIn('Issue 是公开渠道', disclaimer)
+        self.assertIn('likeness', disclaimer)
+
 
 if __name__ == "__main__":
     unittest.main()

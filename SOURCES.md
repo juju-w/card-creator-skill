@@ -366,3 +366,17 @@ The original Metagross prompt says `word`, while the output displays `world`.
 |---|---|---|---|
 | `examples/chatgpt-gardevoir-cmb-unionpay.png` | `ChatGPT Image 2026年9月22日 23_39_53.png` | 1586 × 992 | `0bfeceff525ec927cbcb0d92dd16630342b69a2f45613ef38fe2ff733037c1fa` |
 | `examples/chatgpt-metagross-icbc-mastercard-world.png` | `codex-clipboard-dfaf87e9-21cd-4d08-ba14-17216b7b49f1.png` | 1583 × 994 | `7d8f17ce5c107db2f7410e0702b7fbb7bf97270b8aa1e111058078532cb4acae` |
+
+### Sports series added 2026-09-25
+
+Five non-official athlete fan-art cards were generated with the built-in image tool. No athlete photos were added to the reference library. Local logo pictures were visual references only; marks were generated with the artwork, not composited. These pairings do not establish authorization, sponsorship or endorsement. Existing logo attribution above remains applicable. Short prompts and exact tool inputs are recorded in [examples/SPORTS.md](examples/SPORTS.md); see [DISCLAIMER.md](DISCLAIMER.md) for likeness and third-party rights.
+
+| Example file | Inputs and provenance | Original dimensions |
+|---|---|---|
+| `examples/curry-blue-gold-chase-mastercard.png` | Curry's identity was checked against [NBA's profile](https://www.nba.com/player/201939/stephen-curry/bio); no photo input. Existing `banks/usa/chase.png` and `payment/mastercard.png` were shape references. | 1580 × 995; opaque RGB |
+| `examples/federer-grass-court-amex.png` | [Federer's website](https://rogerfederer.com/) was used for identity checking; no photo input. Existing `payment/american-express.png` was a wordmark reference. | 1579 × 996; opaque RGB |
+| `examples/hamilton-scarlet-mastercard.png` | [F1 profile](https://www.formula1.com/en/drivers/lewis-hamilton) and [F1 portrait](https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/ferrari/lewham01/2026ferrarilewham01right.webp); the portrait was a temporary likeness/suit-colour input, not redistributed. Ferrari mark informed by the suit and model knowledge; existing `payment/mastercard.png` was the other reference. | 1579 × 996; opaque RGB |
+| `examples/verstappen-navy-orange-visa.png` | [F1 profile](https://www.formula1.com/en/drivers/max-verstappen) and [F1 portrait](https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/redbullracing/maxver01/2026redbullracingmaxver01right.webp); temporary likeness/suit-colour input, not redistributed. Red Bull Racing mark was model-drawn; existing `payment/visa.png` was the other reference. | 1579 × 996; opaque RGB |
+| `examples/ronaldo-burgundy-gold-visa.png` | Cristiano Ronaldo's likeness was generated from model knowledge; no athlete photo input. Existing `payment/visa.png` was the only image reference. | 1579 × 996; opaque RGB |
+
+All five files preserve their original generated pixels, without resizing, cropping, masking or deterministic compositing. An earlier Messi attempt returned no image; the provider did not establish a copyright-related reason. It is not included in the gallery.

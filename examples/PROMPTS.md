@@ -308,6 +308,10 @@ Chongqing opacity-preserving text correction (input 1: first generated card; inp
 Use case: precise-object-edit. Image 1 is the EDIT TARGET, an otherwise finished Chongqing city-card face. Image 2 is the visual reference for the operator logo. Make ONE small correction only: REMOVE the fabricated Latin/English subtitle beneath the large Chinese 重庆城市通卡 mark in the upper-left, including the nonsensical 'CHONGQING PAYEASY' lettering. Leave a clean dark-blue background in that narrow strip. Retain the colorful emblem and the Chinese title 重庆城市通卡 clearly, based on image 2. Preserve all other pixels and composition as closely as possible: same blue-hour layered city, rail train passing through building, distant bridge and river, warm lights, blue/coral palette, camera framing, full opaque rectangular canvas. Do not add any text, payment marks, chip, NFC icon, border or card mockup. This is a surgical text-removal correction, not a new design.
 ```
 
+## 体育系列（2026-09-25 入选）
+
+库里、费德勒、汉密尔顿、维斯塔潘与 C 罗：见 [短提示与完整生成记录](SPORTS.md)。
+
 ## 海外城市交通卡面（2026-09-24 入选）
 
 下面四张均为非官方图像生成创作。参考图只供识别标志，不作为图层贴入；伦敦雨夜旧稿未上架。
