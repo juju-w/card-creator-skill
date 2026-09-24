@@ -8,12 +8,14 @@ Existing source and license notes were restored from Git history (`08f9176~2`, `
 
 ## JOJO 二创卡面临时参考 / JoJo fan-art visual references
 
-以下动画官网立绘仅在图片生成时作人物识别参考，原图及临时下载文件均未收入仓库。画廊卡面是新场景中的非官方 AI 二创，不含银行或交通品牌标志；官网公开图片不等于角色权利授权。
+以下动画官网立绘仅在图片生成时作人物识别参考，原图及临时下载文件均未收入仓库。画廊卡面是新场景中的非官方 AI 二创；官网公开图片不等于角色权利授权。带标志版由图片模型对原稿进行局部编辑，不是精确 Logo 贴图，也不代表品牌授权或支付／通行功能。
 
 | 画廊作品 | 官方人物参考 | 备注 |
 |---|---|---|
 | `examples/anime-steel-ball-run-johnny-gyro.png` | [乔尼·乔斯达](https://jojo-portal.com/anime/sbr/character/01/) · [杰洛·齐贝林](https://jojo-portal.com/anime/sbr/character/02/) | 原立绘仅作身份和服装参考；新构图为二人骑马穿越荒漠，非官网卡面。 |
 | `examples/anime-stone-ocean-jolyne.png` | [空条徐伦／乔伦](https://jojo-portal.com/anime/so/character/01/) | 原立绘仅作身份和服装参考；新构图为丝线、蝶影与海上破晓，非官网卡面。 |
+| `examples/anime-steel-ball-run-johnny-gyro-amex.png` | 前一版无标志卡面 + 本仓库 `payment/american-express.png` 视觉参考（[来源与许可见下表](#支付组织--payment-networks)） | 右上角复古金色 AMERICAN EXPRESS 为模型绘制的艺术变体；美式旅行主题关联，不是历史发行卡、官方联名或真实支付卡。 |
+| `examples/anime-stone-ocean-jolyne-sunpass.png` | 前一版无标志卡面 + [SunPass 官网](https://www.sunpass.com/en/home/index.shtml/)及[带标志的官方申请表](https://www.sunpass.com/en/other/SunPass_Private_Account_Application.pdf)用于核对佛罗里达身份和太阳／道路意象；未下载或收入其商标图片 | 左上角 SunPass 为模型绘制的艺术变体。SunPass 是佛罗里达预付费道路通行项目，不是此画廊实际可用的卡产品；其商标权归相应权利人。 |
 
 ## 玩梗卡面外部视觉参考 / Meme-card visual references
 
