@@ -72,6 +72,13 @@ Existing source and license notes were restored from Git history (`08f9176~2`, `
 | `overseas/usa/omny.png` | [来源](<https://commons.wikimedia.org/wiki/File:OMNY_logo.svg>) · [原图](<https://upload.wikimedia.org/wikipedia/commons/e/eb/OMNY_logo.svg>) | PD-textlogo per Wikimedia Commons file page; trademark restrictions remain. Source SVG rasterized to PNG; no logo redraw. |
 | `overseas/usa/ventra.png` | [来源](<https://commons.wikimedia.org/wiki/File:Ventra-Handout.svg>) · [PNG 预览](<https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Ventra-Handout.svg/960px-Ventra-Handout.svg.png>) · [原始 SVG](source-assets/overseas/usa/ventra.svg) | Chicago Transit Authority 标志；Wikimedia Commons 页面标注 PD-textlogo，商标限制仍适用。原始 SVG 存于 Skill 外；PNG 为原图预览，未重画。 |
 
+## 马来西亚交通 / Malaysia transit
+
+| 文件（相对于图片目录） | 来源与原图 | 许可、署名与备注 |
+|---|---|---|
+| `overseas/malaysia/touch-n-go.png` | [Touch 'n Go 官方网站](https://www.touchngo.com.my/) · [官网 PNG](https://www.touchngo.com.my/assets/favicon.png) | 官方蓝底黄白组合标志，原始 72×48 PNG，未经重绘或放大；仅作模型识别参考。第三方商标，再分发授权未核实；非 eWallet 标志，不表示授权。 |
+| `overseas/malaysia/touch-n-go-card-reference.png` | [Classic Card 官方产品页](https://www.touchngo.com.my/consumer/toll/card/classic-card) · [官网原图](https://www.touchngo.com.my/assets/key-visual/hero/kv-touch-n-go-card.png) | 原始 800×600 PNG 及其 DPI 元数据保留；手持交通卡的产品照片，只参考卡上的 TNG 标志，不复制人物、车、票面图案或信息。来源署名 Touch 'n Go；第三方图片与商标，再分发许可未核实。SHA-256 c05c68105e87a739a4bd778628bf31fd08495a5025c29ca2ceaa1de8c8b5d7ce。 |
+
 ## 加拿大交通 / Canada transit
 
 | 文件（相对于图片目录） | 来源与原图 | 许可、署名与备注 |
@@ -380,3 +387,11 @@ Five non-official athlete fan-art cards were generated with the built-in image t
 | `examples/ronaldo-burgundy-gold-visa.png` | Cristiano Ronaldo's likeness was generated from model knowledge; no athlete photo input. Existing `payment/visa.png` was the only image reference. | 1579 × 996; opaque RGB |
 
 All five files preserve their original generated pixels, without resizing, cropping, masking or deterministic compositing. An earlier Messi attempt returned no image; the provider did not establish a copyright-related reason. It is not included in the gallery.
+
+### Himalayan and sacred gallery release 2026-09-26
+
+Four user-approved artworks were added to the gallery: `examples/manjushri-mineral-landscape.png` (996×1579), `examples/yellow-jambhala-mineral-unionpay.png` (980×1605), `examples/everest-lhotse-contours.png` and `examples/machhapuchhre-mbc-abc-contours.png` (both 1578×996). All are opaque, unchanged ImageGen outputs, not script-rendered or cropped exports. The contour images restore the previously withdrawn V2 only; the earlier withdrawal is historical. Full concrete input chains, prompts, checks and inherited sources: [HIMALAYAN-SACRED.md](examples/HIMALAYAN-SACRED.md).
+
+Portraits inherit text-only iconography consultation from [The Met](https://www.metmuseum.org/art/collection/search/39420), [Cleveland Museum](https://www.clevelandart.org/print/art/1964.370) and [The Robert Beer Archive](https://tibetanart.com/artworks/405-five-forms-of-jambhala) (text Robert Beer; art Chewang Dorje; no artwork input). Manjushri's T-Union shape was referenced from [this Xuzhou Metro-published Jiangsu card image](https://pics.xzdtjt.com/upload/20251203111838.png); only the shared mark, not Jiangsu-specific branding or other art, was used. Yellow Jambhala uses the existing `payment/unionpay-compact.png` visual reference listed above. These are non-official religious-art/card concepts, not ritual certification, endorsement, wealth promises or functioning cards. Gold/mineral pigments are visual effects.
+
+The contour chain used a private user-provided CardArt/Xiaohongshu style image (not redistributed) and temporary [Esri World Topographic Map](https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer) exports, followed by AI simplification. Sources: Esri, HERE, Garmin, Intermap, increment P Corp., GEBCO, USGS, FAO, NPS, NRCAN, GeoBase, IGN, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), (c) OpenStreetMap contributors, and the GIS User Community. No raw map tiles or private reference were published. Terrain, route traces and peak/camp spacing are artistic reconstructions, not survey results, the user's GPS recording or navigation guidance. Visa/Mastercard reference attribution listed above remains applicable. Public availability does not establish a licence to all third-party material.

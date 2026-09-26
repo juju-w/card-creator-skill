@@ -78,7 +78,7 @@ Attach a reference for a specific character or mark variant. Copying text does n
 
 1. Interpret the subject and edit scope; choose a suitable mark if unspecified. Open only relevant reference pictures.
 2. Generate or edit the **whole card face**, including style-matched marks, with the host's image tool. No SVG drawing or scripted compositing.
-3. Check subjects, marks, unwanted transparency and borders. Request opaque artwork at about 1.586:1, preferring 1536 × 969 when supported; return the actual image without unsupported dimension, DPI or bleed claims.
+3. Check subjects, marks, unwanted transparency and borders. Landscape is the default; simply request a “portrait card” for an upright composition, not a rotated or cropped landscape image. See the [card rules](skills/card-creator/references/card-rules.md) for ratios and preferred dimensions; return actual output without unsupported pixel, DPI or bleed claims.
 
 The reference library covers transit cards in China and abroad, major banks, payment networks, and fintech brands such as Wise and Apple Cash. Browse the [picture index](skills/card-creator/references/logo-reference-index.md) as needed; the [aspect-ratio and layout rules](skills/card-creator/references/card-rules.md) stay deliberately short. Logos may become foil, monochrome, or line art, but the outputs are **unofficial stylized interpretations**, not functioning bank or transit cards.
 

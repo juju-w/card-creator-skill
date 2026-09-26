@@ -139,6 +139,29 @@ class GalleryAssetTests(unittest.TestCase):
         self.assertIn('Issue 是公开渠道', disclaimer)
         self.assertIn('likeness', disclaimer)
 
+    def test_portrait_cards_are_not_cropped_into_landscape_previews(self):
+        gallery = (ROOT / "gallery-data.js").read_text(encoding="utf-8")
+        script = (ROOT / "site.js").read_text(encoding="utf-8")
+        css = (ROOT / "site.css").read_text(encoding="utf-8")
+        for name in ("manjushri-mineral-landscape", "yellow-jambhala-mineral-unionpay"):
+            row = next(row for row in gallery.splitlines() if f'id: "{name}"' in row)
+            self.assertIn('orientation: "portrait"', row)
+            with Image.open(ROOT / "examples" / (name + ".png")) as image:
+                self.assertGreater(image.height, image.width)
+        self.assertIn('preview.classList.toggle("is-portrait", work.orientation === "portrait")', script)
+        self.assertIn('.work-preview.is-portrait img{width:auto;height:100%;aspect-ratio:auto;object-fit:contain;', css)
+
+    def test_restored_contours_have_navigation_limits_and_provenance(self):
+        gallery = (ROOT / "gallery-data.js").read_text(encoding="utf-8")
+        records = (ROOT / "examples/HIMALAYAN-SACRED.md").read_text(encoding="utf-8")
+        for name in ("everest-lhotse-contours", "machhapuchhre-mbc-abc-contours"):
+            row = next(row for row in gallery.splitlines() if f'id: "{name}"' in row)
+            self.assertIn('series: "nature"', row)
+            self.assertIn('导航', row)
+            self.assertIn(name + ".png", records)
+        self.assertIn('Esri', records)
+        self.assertIn('OpenStreetMap', records)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -8,6 +8,8 @@ Maintainer checks, not instructions loaded during ordinary card creation. Use th
 | 鲤鱼王 × ICOCA，简洁，右下角 ICOCA | Recognizable character and requested mark, correct placement; only matching reference opened if needed. |
 | On that image: 只把 ICOCA 改成深蓝，主体和背景不动 | Uses the previous image as the edit target; only the requested mark should materially change. Record any drift rather than claiming pixel-perfect preservation. |
 | 无标志莫兰迪静物卡面 | No mark or added text despite the automatic-logo default. |
+| 做一张竖版卡面，主体、文字和标志都朝上 | Generates portrait artwork near 1:1.586, with a native upright composition and important details intact; no sideways landscape or forced crop. Record actual dimensions rather than promising 969 × 1536. |
+| 做一张无标志的文殊菩萨竖版纪念卡 | Portrait composition keeps crown, raised sword and lotus pedestal visible; no payment mark, fabricated script or transparent corners. Inspect hands and attributes rather than treating packaging tests as visual validation. |
 | Repeat a short request with image tools unavailable | Explains the capability limitation; no script, SVG drawing or pretend image. |
 | Named mark with inaccessible reference URL | No download loop or library audit; uses an available user reference or confident knowledge, otherwise resolves genuine uncertainty. |
 

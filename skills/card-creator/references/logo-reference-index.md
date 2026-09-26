@@ -60,6 +60,15 @@ Select by use before region: bank issuer, payment network, transit product, oper
 |---|---|
 | EZ-Link | [PNG](../assets/logo-references/overseas/singapore/ez-link.png) |
 
+## 马来西亚交通 / Malaysia transit
+
+马来西亚交通／城市题材未指定标志时，优先考虑 Touch 'n Go；用户指定或无标志要求优先。Use the transit-card mark, not the eWallet variant. 图片仅供识别与风格化参考。
+
+| 名称 / Name | 图片 / Picture |
+|---|---|
+| Touch 'n Go / Touch & Go / TNG / 一触即通（官网小尺寸标志） | [PNG](../assets/logo-references/overseas/malaysia/touch-n-go.png) |
+| Touch 'n Go（官网实体交通卡参考；只看卡上标志，不复制手、车辆、票面或其他信息） | [PNG](../assets/logo-references/overseas/malaysia/touch-n-go-card-reference.png) |
+
 ## 加拿大交通 / Canada transit
 
 | 名称 / Name | 图片 / Picture |

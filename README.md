@@ -78,7 +78,7 @@ skillhub install card-creator --namespace indiv-juju-w
 
 1. 理解主题与修改范围，未指定标志时按题材、卡片类型和地域搭配；只读取相关参考图。
 2. 用宿主图片工具创作或编辑完整卡面，包括与画风协调的标志；不使用 SVG 绘画或脚本拼贴。
-3. 检查主体、标志和意外透明白边。默认请求约 1.586:1 的不透明卡面，支持时优先 1536 × 969；返回实际成图，不虚称尺寸、DPI 或出血文件。
+3. 检查主体、标志和意外透明白边。默认横版，也支持直接说「竖版卡面」；按方向重新构图，不旋转或裁切横图充当竖图。比例与推荐尺寸见[卡面规则](skills/card-creator/references/card-rules.md)，返回实际成图，不虚称尺寸、DPI 或出血文件。
 
 参考库涵盖中国内地与海外交通卡、常见中外银行、支付组织及 Wise、Apple Cash 等金融科技标志。可从[图片索引](skills/card-creator/references/logo-reference-index.md)按需选用；[比例与构图规则](skills/card-creator/references/card-rules.md)保持简短。Logo 可随画面变成烫金、单色或线稿，但生成结果只是**非官方风格化诠释**，不是可用的真实银行卡或交通卡。
 

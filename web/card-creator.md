@@ -20,7 +20,8 @@ Wallet screenshots reference only the card, not the surrounding UI. Allow text i
 
 ## Card rules
 
-- Default to flat, opaque, edge-to-edge landscape artwork, about **1.586:1**. Prefer **1536 × 969 px** when supported; follow explicit user choices instead of defaults.
-- Return the generator's actual output and report only verified dimensions. Do not promise unproduced exact pixels, DPI or bleed files. Printing preparation requires a separate request.
-- Keep important details comfortably inside the picture; deliberate edge-to-edge illustration is fine. Balance spacing visually, without fixed safe-area boxes or logo-size limits.
-- Unless requested, omit transparent corners, white borders, rounded masks, frames, shadows, devices and wallet UI. Check actual opacity and unintended pale edges. Do not crop or distort a finished composition to force the default ratio. Rounded website previews must not change downloaded artwork.
+- Default to flat, opaque, edge-to-edge artwork. Landscape: **1.586:1**, preferably **1536 × 969 px** when supported. Portrait: **1:1.586**, preferably **969 × 1536 px**. Use landscape unless requested otherwise; explicit user dimensions take priority.
+- Compose subjects, text and marks upright for the chosen orientation; do not turn a landscape image sideways or crop it into portrait.
+- Return actual output and verified dimensions, without unproduced pixel, DPI or bleed claims. Printing preparation needs a separate request.
+- Keep important details comfortably inside; balance spacing visually without fixed safe-area boxes or logo-size limits.
+- Unless requested, omit transparent corners, white borders, rounded masks, frames, shadows, devices and wallet UI. Check opacity and pale edges. Never crop or distort artwork to force a ratio; rounded previews must not alter downloads.

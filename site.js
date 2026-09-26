@@ -83,6 +83,7 @@ function createCard(work) {
   const preview = document.createElement("button");
   preview.type = "button";
   preview.className = "work-preview";
+  preview.classList.toggle("is-portrait", work.orientation === "portrait");
   preview.setAttribute("aria-label", `查看${work.title}卡面`);
   preview.addEventListener("click", () => openWork(work));
   const picture = document.createElement("img");
@@ -143,6 +144,7 @@ async function openWork(work) {
 
   const nextImage = new Image();
   nextImage.id = "dialog-image";
+  nextImage.dataset.orientation = work.orientation || "landscape";
   nextImage.alt = `${work.title}，${work.subtitle}`;
   nextImage.src = imageUrl(work);
   try {

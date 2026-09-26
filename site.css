@@ -3,6 +3,10 @@
 .hero-preview,.work-preview,.artwork-dialog>img{border-radius:3.7% / 5.9%}
 /* Let the dialog image box follow the artwork; otherwise object-fit letterboxes square artwork inside a rounded box. */
 .artwork-dialog>img{width:auto;max-width:100%;margin-inline:auto}
+/* Portrait cards keep their full composition in a same-height gallery slot. */
+.work-preview.is-portrait{aspect-ratio:1.58577;display:flex;justify-content:center;border-radius:0;overflow:visible}
+.work-preview.is-portrait img{width:auto;height:100%;aspect-ratio:auto;object-fit:contain;border-radius:5.9% / 3.7%}
+.artwork-dialog>img[data-orientation="portrait"]{border-radius:5.9% / 3.7%}
 .rights-notice{color:#625d54;font-size:12px;line-height:1.8}
 .rights-notice a{text-decoration:underline;text-underline-offset:3px}
 .gallery-rights{margin:0 0 24px}
