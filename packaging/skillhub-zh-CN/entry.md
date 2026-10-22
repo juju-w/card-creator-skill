@@ -2,7 +2,6 @@
 name: card-creator
 slug: card-creator
 displayName: 卡面生成器
-version: 0.4.0
 description: 用一句话或参考图创作、修改 AirCard、银行卡和交通卡卡面。自动搭配标志，局部修改保留其他内容；需要宿主提供图片生成能力。
 summary: 一句话创作或改图，自动搭配标志，参考图按需读取。
 homepage: https://github.com/juju-w/card-creator-skill

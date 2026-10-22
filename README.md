@@ -7,6 +7,7 @@
 <p align="center"><a href="https://juju-w.github.io/card-creator-skill/">逛卡面画廊</a> · <a href="#30-秒开始">开始使用</a> · <a href="README_EN.md">English</a></p>
 
 <p align="center">
+  <a href="https://github.com/juju-w/card-creator-skill/releases/latest"><img src="https://img.shields.io/github/v/release/juju-w/card-creator-skill?style=flat-square" alt="Latest release"></a>
   <a href="https://skills.sh/juju-w/card-creator-skill"><img src="https://skills.sh/b/juju-w/card-creator-skill" alt="skills.sh"></a>
   <a href="https://github.com/juju-w/card-creator-skill/stargazers"><img src="https://img.shields.io/github/stars/juju-w/card-creator-skill?style=flat-square&logo=github" alt="GitHub Stars"></a>
   <a href="https://github.com/juju-w/card-creator-skill/forks"><img src="https://img.shields.io/github/forks/juju-w/card-creator-skill?style=flat-square&logo=github" alt="GitHub Forks"></a>
@@ -82,6 +83,12 @@ skillhub install card-creator --namespace indiv-juju-w
 
 参考库涵盖中国内地与海外交通卡、常见中外银行、支付组织及 Wise、Apple Cash 等金融科技标志。可从[图片索引](skills/card-creator/references/logo-reference-index.md)按需选用；[比例与构图规则](skills/card-creator/references/card-rules.md)保持简短。Logo 可随画面变成烫金、单色或线稿，但生成结果只是**非官方风格化诠释**，不是可用的真实银行卡或交通卡。
 
+## 版本与更新
+
+稳定版、下载包和每次改动见 [Releases](https://github.com/juju-w/card-creator-skill/releases) 与 [更新日志](CHANGELOG.md)。`main` 持续更新；想固定版本，可下载对应 Release 的 ZIP，将其中 `card-creator/` 安装到客户端。
+
+主包与中文包共用一个版本号，位于主 Skill 的 `metadata.version`。完整包附带本地参考图，中文轻量包使用固定提交的图片链接；GitHub 发布和腾讯 SkillHub 更新是独立步骤。维护流程见 [版本发布说明](packaging/RELEASING.md)。
+
 ## 关于这个项目
 
 Card Creator 免费、非商业，用于创作交流与参考分享，不出售卡面或素材，也不代表品牌授权。第三方标志、角色和作品的权利归原权利人；**非盈利与注明来源不自动等于获得许可**。仓库的 MIT License 不覆盖第三方内容。完整说明、来源和移除联系方法分别见 [DISCLAIMER.md](DISCLAIMER.md)、[SOURCES.md](SOURCES.md)。
@@ -100,6 +107,7 @@ SkillHub 中文分发包的维护说明在 [`packaging/skillhub-zh-CN`](packagin
 ```bash
 python3 -m pip install -r requirements-dev.txt  # 仅维护端：检查图片实际透明度
 python3 packaging/build_web_md.py --check
+python3 packaging/release.py check
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/card-creator
 python3 -m unittest discover -s tests -v
 node --test tests/gallery-prompts.test.mjs

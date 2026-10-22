@@ -1,6 +1,8 @@
 ---
 name: card-creator
 description: Create or edit AirCard, bank-card and transit-card artwork from a short brief or reference image. Use image generation, choose suitable marks when unspecified, and preserve the rest during targeted edits.
+metadata:
+  version: "0.5.0"
 ---
 
 # Card Creator

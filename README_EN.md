@@ -7,6 +7,7 @@
 <p align="center"><a href="https://juju-w.github.io/card-creator-skill/">Explore the gallery</a> · <a href="#get-started-in-30-seconds">Get started</a> · <a href="README.md">简体中文</a></p>
 
 <p align="center">
+  <a href="https://github.com/juju-w/card-creator-skill/releases/latest"><img src="https://img.shields.io/github/v/release/juju-w/card-creator-skill?style=flat-square" alt="Latest release"></a>
   <a href="https://skills.sh/juju-w/card-creator-skill"><img src="https://skills.sh/b/juju-w/card-creator-skill" alt="skills.sh"></a>
   <a href="https://github.com/juju-w/card-creator-skill/stargazers"><img src="https://img.shields.io/github/stars/juju-w/card-creator-skill?style=flat-square&logo=github" alt="GitHub Stars"></a>
   <a href="https://github.com/juju-w/card-creator-skill/forks"><img src="https://img.shields.io/github/forks/juju-w/card-creator-skill?style=flat-square&logo=github" alt="GitHub Forks"></a>
@@ -82,6 +83,12 @@ Attach a reference for a specific character or mark variant. Copying text does n
 
 The reference library covers transit cards in China and abroad, major banks, payment networks, and fintech brands such as Wise and Apple Cash. Browse the [picture index](skills/card-creator/references/logo-reference-index.md) as needed; the [aspect-ratio and layout rules](skills/card-creator/references/card-rules.md) stay deliberately short. Logos may become foil, monochrome, or line art, but the outputs are **unofficial stylized interpretations**, not functioning bank or transit cards.
 
+## Versions and updates
+
+See [Releases](https://github.com/juju-w/card-creator-skill/releases) and the [changelog](CHANGELOG.md) for stable snapshots and downloads. `main` keeps evolving. To install a specific version, download its release ZIP and install the enclosed `card-creator/` folder.
+
+Both packages inherit one version from the main Skill's `metadata.version`. The full package includes local reference pictures; the lightweight Chinese package uses commit-pinned image links. GitHub releases and Tencent SkillHub publication are separate. Maintainers: see [Releasing](packaging/RELEASING.md).
+
 ## About the project
 
 Card Creator is a free, non-commercial project for creative exchange and reference sharing. It sells no card faces or assets and claims no brand endorsement. Third-party marks, characters, and art belong to their respective owners; **non-profit use and attribution do not automatically grant permission**. The repository's MIT License does not cover third-party material. See [DISCLAIMER.md](DISCLAIMER.md) for rights and removal requests, and [SOURCES.md](SOURCES.md) for provenance.
@@ -100,6 +107,7 @@ The Chinese SkillHub package is documented in [`packaging/skillhub-zh-CN`](packa
 ```bash
 python3 -m pip install -r requirements-dev.txt  # Maintainers only: pixel opacity checks
 python3 packaging/build_web_md.py --check
+python3 packaging/release.py check
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/card-creator
 python3 -m unittest discover -s tests -v
 node --test tests/gallery-prompts.test.mjs

@@ -5,13 +5,14 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import re
 import shutil
 import subprocess
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from skill_text import card_rules, split_frontmatter, workflow
+from skill_text import card_rules, split_frontmatter, version, workflow
 
 
 def remove_junk(output: Path) -> None:
@@ -40,6 +41,7 @@ def omit_binary_references(output: Path, revision: str) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("output", type=Path, help="new output directory")
+    parser.add_argument("--revision", help="full source commit; supplied when building a Git archive")
     args = parser.parse_args()
 
     packaging_dir = Path(__file__).resolve().parent
@@ -52,12 +54,16 @@ def main() -> int:
     if not source.is_dir():
         parser.error(f"canonical skill directory is missing: {source}")
 
-    shutil.copytree(source, output)
-
-    revision = subprocess.check_output(
+    revision = args.revision or subprocess.check_output(
         ["git", "rev-parse", "HEAD"], cwd=repository, text=True,
     ).strip()
+    if not re.fullmatch(r"[0-9a-f]{40}", revision):
+        parser.error("revision must be a full 40-character Git commit")
     frontmatter, intro = split_frontmatter((packaging_dir / "entry.md").read_text(encoding="utf-8"))
+    if re.search(r"^version:", frontmatter, re.M):
+        parser.error("entry.md must not maintain a separate version")
+    frontmatter = frontmatter.replace("\n---", f'\nversion: "{version()}"\n---', 1)
+    shutil.copytree(source, output)
     rules_digest = hashlib.sha256((workflow() + "\n" + card_rules()).encode()).hexdigest()
     shared = workflow().replace("# Card Creator\n", "## Shared workflow\n", 1)
     (output / "SKILL.md").write_text(

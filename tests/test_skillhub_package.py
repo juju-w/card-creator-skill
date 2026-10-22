@@ -12,6 +12,8 @@ from pathlib import Path
 REPOSITORY = Path(__file__).resolve().parents[1]
 BUILD_SCRIPT = REPOSITORY / "packaging" / "skillhub-zh-CN" / "build.py"
 CANONICAL_SKILL = REPOSITORY / "skills" / "card-creator"
+sys.path.insert(0, str(REPOSITORY / "packaging"))
+from skill_text import version
 
 
 class SkillHubPackageTests(unittest.TestCase):
@@ -28,7 +30,8 @@ class SkillHubPackageTests(unittest.TestCase):
             skill_text = (output / "SKILL.md").read_text(encoding="utf-8")
             self.assertIn("displayName: 卡面生成器", skill_text)
             entry = BUILD_SCRIPT.with_name("entry.md").read_text(encoding="utf-8")
-            self.assertEqual(re.search(r"^version: (.+)$", skill_text, re.M)[1], re.search(r"^version: (.+)$", entry, re.M)[1])
+            self.assertNotRegex(entry, r"(?m)^version:")
+            self.assertEqual(re.search(r'^version: "(.+)"$', skill_text, re.M)[1], version())
             canonical = (CANONICAL_SKILL / "SKILL.md").read_text(encoding="utf-8").split("\n---\n", 1)[1].strip()
             shared = skill_text.split("## Shared workflow\n", 1)[1].strip()
             self.assertEqual(shared, canonical.split("# Card Creator\n", 1)[1].strip())

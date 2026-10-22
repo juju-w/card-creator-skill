@@ -28,7 +28,10 @@ skillhub --skip-self-upgrade publish /tmp/card-creator-skillhub-zh-CN \
   --changelog "统一执行规则，增加自动标志搭配与局部改图，优化网页复制入口。"
 ```
 
-版本只维护在 `entry.md` 顶层。正式构建前先提交并推送源码，确保固定提交的图片链接能访问。
+版本只维护在主包 `skills/card-creator/SKILL.md` 的 `metadata.version`，构建时自动写入中文入口顶层。
+上面的命令用于本地预览；正式发布请按[版本发布流程](../RELEASING.md)从 Git 标签构建中文 ZIP，
+解压后将其中的 `card-creator/` 交给 CLI，避免把未提交素材打包进去。
+正式发布前先推送源提交，确保固定提交的图片链接能访问。
 本机 CLI 的 `--dry-run` 仅校验元数据，不能证明包文件可发布或远程素材可用。
 
 发布后用 `skillhub --skip-self-upgrade install card-creator --namespace indiv-juju-w --dir <全新临时目录>`
