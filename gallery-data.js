@@ -7,6 +7,7 @@ export const seriesNames = {
   pokemon: "宝可梦",
   city: "城市",
   nature: "山野自然",
+  diving: "潜水卡",
   anime: "二次元",
   meme: "玩梗",
   sports: "体育系列",
@@ -67,4 +68,5 @@ export const works = [
   { id: "cardboard-amex-handdrawn", title: "纸皮运通", subtitle: "旧纸箱 × 黑笔手绘", series: "meme", image: "cardboard-amex-handdrawn.png", publishedAt: "2026-10-15T02:09:20+08:00", origin: "非官方 AI 恶搞二创；参考用户提供的纸皮卡截图，只借鉴材质与手绘感，原始截图未公开。American Express 字样和百夫长为模型的艺术化描绘。", brief: "生成一张纸皮运通卡面：旧瓦楞纸箱质感、黑色圆珠笔手绘、居中百夫长头像和对称花纹，只保留 AMERICAN EXPRESS 品牌文字。", prompt: "使用 card-creator Skill，生成一张纸皮运通卡面：旧瓦楞纸箱质感、黑色圆珠笔手绘、居中百夫长头像和对称花纹，只保留 AMERICAN EXPRESS 品牌文字。" },
   { id: "ludens-x-money-titanium", title: "Ludens · 冷银浮雕", subtitle: "拉丝钛金属 × X Money", series: "modern", image: "ludens-x-money-titanium.png", publishedAt: "2026-10-22T12:25:04+08:00", origin: "非官方 AI 同人概念；KOJIMA PRODUCTIONS 与 X Money 标志均为模型风格化描绘，不代表品牌授权、联名或发卡。参考来源见 examples/KOJIMA.md。", brief: "生成一张 Ludens × X Money 概念卡面：冷银拉丝钛金属，大幅浮雕头盔骷髅徽记，少量冰蓝反光，只留必要品牌标识。", prompt: "使用 card-creator Skill，生成一张 Ludens × X Money 概念卡面：冷银拉丝钛金属，大幅浮雕头盔骷髅徽记，少量冰蓝反光，只留必要品牌标识。" },
   { id: "ludens-x-money-minimal-black", title: "Ludens · 哑黑极简", subtitle: "银白徽记 × X Money", series: "modern", image: "ludens-x-money-minimal-black.png", publishedAt: "2026-10-22T12:25:04+08:00", origin: "非官方 AI 同人概念；KOJIMA PRODUCTIONS 与 X Money 标志均为模型风格化描绘，不代表品牌授权、联名或发卡。参考来源见 examples/KOJIMA.md。", brief: "生成一张极简纯色的 KOJIMA PRODUCTIONS × X Money 概念卡：哑黑底、居中银白头盔骷髅徽记与原有字标，右下角小号 X Money。", prompt: "使用 card-creator Skill，生成一张极简纯色的 KOJIMA PRODUCTIONS × X Money 概念卡：哑黑底、居中银白头盔骷髅徽记与原有字标，右下角小号 X Money。" },
+  { id: "padi-thresher-shark-blue", title: "长尾鲨 · 深海蓝", subtitle: "水面柔光 × PADI", series: "diving", image: "padi-thresher-shark-blue.png", publishedAt: "2026-10-22T15:08:34+08:00", origin: "非官方 AI 潜水主题卡面；鲨鱼由模型生成，PADI 标志为艺术化描绘。原图与来源记录见 examples/PADI.md。", brief: "生成一张长尾鲨主题 PADI 卡面：自然深海蓝、水面柔光，完整展现修长上尾叶，画面简洁，左下角白色 PADI Logo。", prompt: "使用 card-creator Skill，生成一张长尾鲨主题 PADI 卡面：自然深海蓝、水面柔光，完整展现修长上尾叶，画面简洁，左下角白色 PADI Logo。" },
 ];
