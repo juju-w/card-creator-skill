@@ -182,6 +182,17 @@ Select by use before region: bank issuer, payment network, transit product, oper
 |---|---|
 | 澳洲联邦银行 CommBank | [PNG](../assets/logo-references/banks/australia/commbank.png) |
 
+## 潜水卡 / Diving cards
+
+PADI 的标志与卡面风格参考；PADI AWARE 是保育主题，不是潜水等级。
+
+| 名称 / Name | 图片 / Picture |
+|---|---|
+| PADI / 潜水（官方竖版红蓝组合标志，透明底 / official stacked logo, transparent） | [PNG](../assets/logo-references/diving/padi-logo.png) |
+| PADI 经典蓝／金／黑卡面合集（完整展示图 / standard card design reference） | [PNG](../assets/logo-references/diving/padi-standard-cards-reference.png) |
+| PADI AWARE 蝠鲼 / Mantas in Motion，摄影 Rayna O’Nan（卡面参考） | [JPG](../assets/logo-references/diving/padi-aware-manta-card-reference.jpg) |
+| PADI AWARE 海龟 / Sea Turtle Legend，摄影 Stan Moniz（卡面参考） | [JPG](../assets/logo-references/diving/padi-aware-turtle-card-reference.jpg) |
+
 ## 数字钱包与金融科技 / Digital wallets & fintech
 
 | 名称 / Name | 图片 / Picture |
